@@ -60,7 +60,7 @@ public/                     # 唯一的网站静态资源目录
     english-basic.js        # 常用英文小词的中文解释
     love/ seed/             # text.js（和合本、分段、用简单的话理解）、study.js（对应与问题）、words.js（词典）
   audio/<lesson>/{zh,en}/*.mp3 + manifest.json
-  images/words/manifest.json  # 词语配图（24 个概念，等待 Codex 制作）
+  images/words/manifest.json  # 词语配图（24 个概念，WebP 与双语 alt 已齐全）
 worker/index.js             # GET /api/passage；其余请求交给静态资源
 scripts/                    # validate、check-english、narration-scripts、publish-audio、word-images
 docs/                       # word-images.md（配图清单）、release.md（部署与验收记录）
@@ -109,6 +109,8 @@ Whisper 听不出同音字（锣/罗、钹/伯、嫉妒/极度），所以中文
 ## 词语图片
 
 词条可以带一个概念 ID；中文词和它的英文对应词共用一张图（如「忍耐」与 patient、perseveres）。`public/images/words/manifest.json` 里填好 `src` 和 `alt` 后，词义面板（阅读页和弹窗）才显示图片；没有图时不显示空白画框。清单见 [docs/word-images.md](docs/word-images.md)。
+
+24 张词语图已完成并接入词语面板，统一为 800×600 WebP，总计约 2.27 MiB。使用内置 `image_gen` 生成；完整提示词、源文件记录和验收结果见 [docs/image-generation/README.md](docs/image-generation/README.md)，部署状态见 [docs/release.md](docs/release.md)。
 
 ## 部署
 

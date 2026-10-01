@@ -53,7 +53,7 @@
 
 1. **人工抽听**：`love/zh/v13-c1`（如今常存的有信…：Whisper 有时听成「有幸」，并在「有」后断开）、`love/en/v07-c4`（always perseveres：句末的 s 偏弱）、`love/en/v02-whole`（换成了 fathom 和 faith 都读对的一条，语速在其他整节范围内但偏快）。
 2. **真机**：iPad / iPhone 上的 Safari 自动播放、系统语音、麦克风录音与回放、指定配音的音量与听感。
-3. **词语图片**：24 个概念等待 Codex 制作，清单见 [word-images.md](word-images.md)。
+3. **词语图片已完成**：24 个概念的 WebP、`src` 与双语 `alt` 已齐全，本地页面与逐句弹窗验证通过，清单见 [word-images.md](word-images.md)。
 4. **授权**：英文配音是 NIV 文字的音频，和 QA 截图一起放在公开仓库里。Biblica 的 NIV 授权允许以包括音频在内的任何形式引用至多 500 节并附版权说明（页尾已显示）；YouVersion API 条款对把取到的文字做成长期保存的派生内容是否另有限制，建议确认。
 5. **中文阅读器**：`lucas-academy-chinese` 线上的马可福音 4:4 中文录音（`assets/audio/mark-4/verse-04.mp3`）同样把「撒」读成「阿」，本次没有改动那个项目。
 6. **英文产品名**：中文名「语言的桥」，英文暂用 Language Bridge（与「语言的桥」直接对应）；如果想用选项里的 Word Bridge，只需改 `public/js/strings.js` 一处。

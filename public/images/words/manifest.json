@@ -17,8 +17,8 @@
         "en": "A child makes room on a bench and invites another child to sit down."
       },
       "file": "images/words/love.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/love.webp",
+      "alt": "一个孩子指着长椅上的空位，邀请背着书包的朋友坐下。 A child gestures to an empty place on a bench, inviting a friend to sit.",
       "caption": ""
     },
     {
@@ -38,8 +38,8 @@
         "en": "A child waits, listening, until a friend has finished speaking."
       },
       "file": "images/words/patience.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/patience.webp",
+      "alt": "一个孩子安静地听朋友说话，等对方讲完。 A child listens quietly while a friend speaks.",
       "caption": ""
     },
     {
@@ -58,8 +58,8 @@
         "en": "A child bends down to help a friend pick up spilled crayons."
       },
       "file": "images/words/kindness.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/kindness.webp",
+      "alt": "两个孩子蹲下来，一起捡起从盒子里散落的蜡笔。 Two children kneel to pick up crayons that spilled from a box.",
       "caption": ""
     },
     {
@@ -78,9 +78,9 @@
         "en": "A friend has new paintbrushes; the other child looks at their own brush, then paints alongside."
       },
       "file": "images/words/envy.webp",
-      "src": null,
-      "alt": "",
-      "caption": ""
+      "src": "images/words/envy.webp",
+      "alt": "一个孩子看看自己的旧画笔，朋友带着新画笔，两人一起画画。 A child looks at an old brush while a friend has new brushes; they paint together.",
+      "caption": "朋友有新画笔，我们也可以一起画。 / A friend has new brushes. We can still paint together."
     },
     {
       "id": "boasting",
@@ -98,9 +98,9 @@
         "en": "A child shows their block tower and leaves space for a friend to show theirs."
       },
       "file": "images/words/boasting.webp",
-      "src": null,
-      "alt": "",
-      "caption": ""
+      "src": "images/words/boasting.webp",
+      "alt": "一个孩子展示自己的积木塔，也伸手邀请朋友介绍旁边的积木塔。 A child shows a block tower and invites a friend to show theirs too.",
+      "caption": "不自夸：分享自己的开心，也让朋友说一说。 / Share your joy and give your friend a turn too."
     },
     {
       "id": "pride",
@@ -117,9 +117,9 @@
         "en": "Two children set their artwork side by side on a table of the same height."
       },
       "file": "images/words/pride.webp",
-      "src": null,
-      "alt": "",
-      "caption": ""
+      "src": "images/words/pride.webp",
+      "alt": "两个孩子把自己的画并排放在同一张桌子上，相互欣赏。 Two children place their drawings side by side and appreciate each other’s work.",
+      "caption": "不张狂：你和我一样重要。 / You matter just as much as I do."
     },
     {
       "id": "lasting",
@@ -134,8 +134,8 @@
         "en": "The same two friends waiting for each other on different days (small panels: sun, rain, autumn)."
       },
       "file": "images/words/lasting.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/lasting.webp",
+      "alt": "晴天、雨天和秋天里，同一对朋友轮流等候对方。 The same two friends wait for each other on sunny, rainy and autumn days.",
       "caption": ""
     },
     {
@@ -151,11 +151,11 @@
       },
       "scene": {
         "zh": "两个孩子用不同语言谈论同一张画。",
-        "en": "Two children talk about the same picture, each in their own language (speech bubbles with 你好 and hello)."
+        "en": "Two children talk about the same flower drawing; picture-only speech bubbles show the shared meaning without written words."
       },
       "file": "images/words/languages.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/languages.webp",
+      "alt": "两个孩子讨论同一幅花的画，各自的气泡里有不同画法的同一朵花。 Two children discuss a flower drawing, with the same flower pictured differently in their speech bubbles.",
       "caption": ""
     },
     {
@@ -173,8 +173,8 @@
         "en": "A round gong and its small mallet."
       },
       "file": "images/words/gong.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/gong.webp",
+      "alt": "一面圆形铜锣悬挂在木架上，旁边放着软头木槌。 A round brass gong hangs from a wooden frame beside a padded mallet.",
       "caption": ""
     },
     {
@@ -193,8 +193,8 @@
         "en": "A pair of round brass cymbals with curved sound lines."
       },
       "file": "images/words/cymbal.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/cymbal.webp",
+      "alt": "两片带皮质握带的铜钹，旁边的弧线表示响声。 Two brass cymbals with leather hand straps and curved lines showing their ringing sound.",
       "caption": ""
     },
     {
@@ -213,8 +213,8 @@
         "en": "A child points at a drawing to explain; the friend nods, understanding."
       },
       "file": "images/words/understanding.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/understanding.webp",
+      "alt": "一个孩子指着树的画解释，朋友点头听懂了。 A child explains a drawing of a tree while a friend nods in understanding.",
       "caption": ""
     },
     {
@@ -232,8 +232,8 @@
         "en": "An open book, a ruler, and a leaf a child is studying."
       },
       "file": "images/words/knowledge.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/knowledge.webp",
+      "alt": "两个孩子观察叶子，桌上有植物图画书和尺子。 Two children study a leaf beside an open botanical picture book and a ruler.",
       "caption": ""
     },
     {
@@ -252,8 +252,8 @@
         "en": "A child holds the hand of a trusted grown-up on a path."
       },
       "file": "images/words/faith.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/faith.webp",
+      "alt": "一个孩子牵着信任的大人的手，一起走在小路上。 A child walks along a path holding the hand of a trusted grown-up.",
       "caption": ""
     },
     {
@@ -272,8 +272,8 @@
         "en": "A small child in front of a huge mountain, showing the contrast in size."
       },
       "file": "images/words/moving-mountains.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/moving-mountains.webp",
+      "alt": "一个小小的孩子站在远处，仰望一座巨大的山。 A small child looks up at a huge mountain from a distance.",
       "caption": ""
     },
     {
@@ -292,8 +292,8 @@
         "en": "Handing a basket of food to a neighbor who needs it."
       },
       "file": "images/words/giving.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/giving.webp",
+      "alt": "两个孩子把装着面包、水果和蔬菜的篮子递给邻居。 Two children hand a basket of bread, fruit and vegetables to a neighbor.",
       "caption": ""
     },
     {
@@ -312,8 +312,8 @@
         "en": "An upset child pauses and takes a slow breath before speaking."
       },
       "file": "images/words/anger.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/anger.webp",
+      "alt": "一个有些生气的孩子闭眼慢慢呼吸，朋友在旁边安静陪伴。 An upset child pauses for a slow breath while a friend sits quietly nearby.",
       "caption": ""
     },
     {
@@ -331,8 +331,8 @@
         "en": "After knocking over a cup, a child honestly points to themself and explains what happened."
       },
       "file": "images/words/truth.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/truth.webp",
+      "alt": "桌上的杯子倒了，孩子指着自己向大人说明经过。 Beside a tipped cup and spilled water, a child points to themself and explains what happened.",
       "caption": ""
     },
     {
@@ -350,8 +350,8 @@
         "en": "Paint splashes onto a drawing; two children work out together what to do."
       },
       "file": "images/words/bearing-with.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/bearing-with.webp",
+      "alt": "两个孩子一起把画纸上的颜料污点变成一条鱼。 Two children turn an accidental paint splash into a fish in their drawing.",
       "caption": ""
     },
     {
@@ -370,8 +370,8 @@
         "en": "Two children water a seedling that has just sprouted."
       },
       "file": "images/words/hope.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/hope.webp",
+      "alt": "两个孩子给刚长出两片小叶子的幼苗浇水。 Two children water a tiny seedling with two fresh leaves.",
       "caption": ""
     },
     {
@@ -390,8 +390,8 @@
         "en": "A jigsaw puzzle with a gap where pieces are still missing."
       },
       "file": "images/words/in-part.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/in-part.webp",
+      "alt": "树的拼图还缺几块，两个孩子拿着散落的拼图片观察。 Two children examine a tree puzzle with missing pieces and loose pieces nearby.",
       "caption": ""
     },
     {
@@ -410,8 +410,8 @@
         "en": "The last puzzle pieces fit, completing the whole picture."
       },
       "file": "images/words/completeness.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/completeness.webp",
+      "alt": "树的拼图已经拼完整，孩子的手指放在刚拼好的位置。 A tree puzzle is complete, with a child’s finger resting on the newly fitted piece.",
       "caption": ""
     },
     {
@@ -429,8 +429,8 @@
         "en": "A small mirror showing a child’s face."
       },
       "file": "images/words/mirror.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/mirror.webp",
+      "alt": "一个孩子望着小圆镜，镜子映出同一个孩子的笑脸。 A child looks into a small oval mirror that reflects their smiling face.",
       "caption": ""
     },
     {
@@ -448,8 +448,8 @@
         "en": "The same leaf seen two ways: blurred behind frosted glass, and clearly in the open."
       },
       "file": "images/words/unclear.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/unclear.webp",
+      "alt": "两个孩子观察同一片叶子，隔着雾玻璃的一半模糊，露出的一半清楚。 Two children look at one leaf: half is blurred behind frosted glass and half is clear.",
       "caption": ""
     },
     {
@@ -467,8 +467,8 @@
         "en": "Two children sitting at the same height, talking face to face."
       },
       "file": "images/words/face-to-face.webp",
-      "src": null,
-      "alt": "",
+      "src": "images/words/face-to-face.webp",
+      "alt": "两个孩子坐在同样高的小凳子上，面对面说话和倾听。 Two children sit on matching stools, speaking and listening face to face.",
       "caption": ""
     }
   ]
