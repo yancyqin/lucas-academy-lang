@@ -1,0 +1,8 @@
+.DS_Store
+.dev.vars
+.env*
+node_modules/
+.wrangler/
+__pycache__/
+*.log
+preview/.runtime/

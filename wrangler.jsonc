@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lucas-academy-lang",
+  "main": "./worker/index.js",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    // Only ./public is the site: never the repository root, the docs, the
+    // preview server, or local configuration.
+    "directory": "./public",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    // The pages are plain assets; only the English endpoint needs the Worker.
+    // Without this the asset handler could answer /api/* (404) first.
+    "run_worker_first": ["/api/*"]
+  },
+  "routes": [
+    {
+      "pattern": "lang.lucasacademy.org",
+      "custom_domain": true
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "note": "Word pictures, one per concept: a Chinese word and its English partners share one. Set src (and alt) when a picture exists; until then the word teaches by text and no frame is shown. `words` is refreshed by npm run images:list.",
+  "style": "Warm, simple illustration for children aged 7–10; Design 1 palette (paper #F8F5ED, ink #293D36, sage #DDE6DB, coral #CB765D); no text in the image; 4:3, about 800×600, WebP.",
+  "concepts": [
+    {
+      "id": "love",
+      "words": {
+        "zh": [
+          "爱"
+        ],
+        "en": [
+          "love"
+        ]
+      },
+      "scene": {
+        "zh": "一个孩子留出身边的位置，邀请另一个孩子坐下。",
+        "en": "A child makes room on a bench and invites another child to sit down."
+      },
+      "file": "images/words/love.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "patience",
+      "words": {
+        "zh": [
+          "忍耐"
+        ],
+        "en": [
+          "patient",
+          "patience",
+          "perseveres"
+        ]
+      },
+      "scene": {
+        "zh": "一个孩子等朋友把话讲完，再开口。",
+        "en": "A child waits, listening, until a friend has finished speaking."
+      },
+      "file": "images/words/patience.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "kindness",
+      "words": {
+        "zh": [
+          "恩慈"
+        ],
+        "en": [
+          "kind",
+          "kindness"
+        ]
+      },
+      "scene": {
+        "zh": "一个孩子弯下身，帮朋友捡起散落的蜡笔。",
+        "en": "A child bends down to help a friend pick up spilled crayons."
+      },
+      "file": "images/words/kindness.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "envy",
+      "words": {
+        "zh": [
+          "嫉妒"
+        ],
+        "en": [
+          "envy",
+          "envies"
+        ]
+      },
+      "scene": {
+        "zh": "朋友得到新画笔，另一个孩子先看看自己的笔，再和他一起画。",
+        "en": "A friend has new paintbrushes; the other child looks at their own brush, then paints alongside."
+      },
+      "file": "images/words/envy.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "boasting",
+      "words": {
+        "zh": [
+          "自夸"
+        ],
+        "en": [
+          "boast",
+          "boasts"
+        ]
+      },
+      "scene": {
+        "zh": "孩子展示自己的积木，也给朋友留下展示的位置。",
+        "en": "A child shows their block tower and leaves space for a friend to show theirs."
+      },
+      "file": "images/words/boasting.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "pride",
+      "words": {
+        "zh": [
+          "张狂"
+        ],
+        "en": [
+          "proud"
+        ]
+      },
+      "scene": {
+        "zh": "两个孩子把自己的作品放在同样高的桌面上。",
+        "en": "Two children set their artwork side by side on a table of the same height."
+      },
+      "file": "images/words/pride.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "lasting",
+      "words": {
+        "zh": [
+          "恒久"
+        ],
+        "en": []
+      },
+      "scene": {
+        "zh": "同一对朋友在不同日子里互相等候。",
+        "en": "The same two friends waiting for each other on different days (small panels: sun, rain, autumn)."
+      },
+      "file": "images/words/lasting.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "languages",
+      "words": {
+        "zh": [
+          "方言"
+        ],
+        "en": [
+          "tongues",
+          "languages"
+        ]
+      },
+      "scene": {
+        "zh": "两个孩子用不同语言谈论同一张画。",
+        "en": "Two children talk about the same picture, each in their own language (speech bubbles with 你好 and hello)."
+      },
+      "file": "images/words/languages.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "gong",
+      "words": {
+        "zh": [
+          "锣"
+        ],
+        "en": [
+          "gong"
+        ]
+      },
+      "scene": {
+        "zh": "一面圆锣和一根敲锣的小槌。",
+        "en": "A round gong and its small mallet."
+      },
+      "file": "images/words/gong.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "cymbal",
+      "words": {
+        "zh": [
+          "钹"
+        ],
+        "en": [
+          "cymbal",
+          "clanging"
+        ]
+      },
+      "scene": {
+        "zh": "两片圆形铜钹，旁边有弯曲的声音线。",
+        "en": "A pair of round brass cymbals with curved sound lines."
+      },
+      "file": "images/words/cymbal.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "understanding",
+      "words": {
+        "zh": [
+          "明白"
+        ],
+        "en": [
+          "understand",
+          "fathom"
+        ]
+      },
+      "scene": {
+        "zh": "一个孩子指着画解释，朋友点头。",
+        "en": "A child points at a drawing to explain; the friend nods, understanding."
+      },
+      "file": "images/words/understanding.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "knowledge",
+      "words": {
+        "zh": [
+          "知识"
+        ],
+        "en": [
+          "knowledge"
+        ]
+      },
+      "scene": {
+        "zh": "打开的书、尺子和孩子观察的叶子。",
+        "en": "An open book, a ruler, and a leaf a child is studying."
+      },
+      "file": "images/words/knowledge.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "faith",
+      "words": {
+        "zh": [
+          "信"
+        ],
+        "en": [
+          "faith",
+          "trusts"
+        ]
+      },
+      "scene": {
+        "zh": "一个孩子牵着信任的大人的手，走在小路上。",
+        "en": "A child holds the hand of a trusted grown-up on a path."
+      },
+      "file": "images/words/faith.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "moving-mountains",
+      "words": {
+        "zh": [
+          "移山"
+        ],
+        "en": [
+          "mountains",
+          "move"
+        ]
+      },
+      "scene": {
+        "zh": "一座山与很小的孩子，用大小对比表达。",
+        "en": "A small child in front of a huge mountain, showing the contrast in size."
+      },
+      "file": "images/words/moving-mountains.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "giving",
+      "words": {
+        "zh": [
+          "赒济"
+        ],
+        "en": [
+          "give",
+          "poor"
+        ]
+      },
+      "scene": {
+        "zh": "把一篮食物递给需要食物的邻居。",
+        "en": "Handing a basket of food to a neighbor who needs it."
+      },
+      "file": "images/words/giving.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "anger",
+      "words": {
+        "zh": [
+          "发怒"
+        ],
+        "en": [
+          "angered",
+          "angry"
+        ]
+      },
+      "scene": {
+        "zh": "一个孩子生气时先停一停，慢慢呼吸。",
+        "en": "An upset child pauses and takes a slow breath before speaking."
+      },
+      "file": "images/words/anger.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "truth",
+      "words": {
+        "zh": [
+          "真理"
+        ],
+        "en": [
+          "truth"
+        ]
+      },
+      "scene": {
+        "zh": "孩子打翻杯子后，诚实地指着自己说明经过。",
+        "en": "After knocking over a cup, a child honestly points to themself and explains what happened."
+      },
+      "file": "images/words/truth.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "bearing-with",
+      "words": {
+        "zh": [
+          "包容"
+        ],
+        "en": [
+          "protects"
+        ]
+      },
+      "scene": {
+        "zh": "画画时颜色溅到纸上，两个孩子一起想办法。",
+        "en": "Paint splashes onto a drawing; two children work out together what to do."
+      },
+      "file": "images/words/bearing-with.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "hope",
+      "words": {
+        "zh": [
+          "盼望"
+        ],
+        "en": [
+          "hope",
+          "hopes"
+        ]
+      },
+      "scene": {
+        "zh": "两个孩子给刚发芽的小植物浇水。",
+        "en": "Two children water a seedling that has just sprouted."
+      },
+      "file": "images/words/hope.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "in-part",
+      "words": {
+        "zh": [
+          "有限"
+        ],
+        "en": [
+          "part",
+          "partially"
+        ]
+      },
+      "scene": {
+        "zh": "一块拼图旁边留着还没拼好的位置。",
+        "en": "A jigsaw puzzle with a gap where pieces are still missing."
+      },
+      "file": "images/words/in-part.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "completeness",
+      "words": {
+        "zh": [
+          "完全"
+        ],
+        "en": [
+          "completeness",
+          "complete"
+        ]
+      },
+      "scene": {
+        "zh": "几块拼图拼成一整幅图。",
+        "en": "The last puzzle pieces fit, completing the whole picture."
+      },
+      "file": "images/words/completeness.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "mirror",
+      "words": {
+        "zh": [
+          "镜子"
+        ],
+        "en": [
+          "mirror"
+        ]
+      },
+      "scene": {
+        "zh": "一面能看到孩子脸庞的小镜子。",
+        "en": "A small mirror showing a child’s face."
+      },
+      "file": "images/words/mirror.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "unclear",
+      "words": {
+        "zh": [
+          "模糊不清"
+        ],
+        "en": [
+          "reflection"
+        ]
+      },
+      "scene": {
+        "zh": "同一片叶子：一边隔着雾玻璃，一边直接看。",
+        "en": "The same leaf seen two ways: blurred behind frosted glass, and clearly in the open."
+      },
+      "file": "images/words/unclear.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    },
+    {
+      "id": "face-to-face",
+      "words": {
+        "zh": [
+          "面对面"
+        ],
+        "en": [
+          "face"
+        ]
+      },
+      "scene": {
+        "zh": "两个孩子坐在同样高度，面对面谈话。",
+        "en": "Two children sitting at the same height, talking face to face."
+      },
+      "file": "images/words/face-to-face.webp",
+      "src": null,
+      "alt": "",
+      "caption": ""
+    }
+  ]
+}

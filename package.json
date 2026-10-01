@@ -1,0 +1,22 @@
+{
+  "name": "lucas-academy-lang",
+  "version": "1.0.0",
+  "private": true,
+  "description": "互惠的门 · 你教我，我教你 — bilingual reading for children, parents and friends",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "wrangler dev --port 8197",
+    "validate": "node scripts/validate.mjs",
+    "check:english": "node scripts/check-english.mjs",
+    "narration:scripts": "node scripts/narration-scripts.mjs love ../lucas-academy-media/data/processed/lucas-lang",
+    "audio:publish": "node scripts/publish-audio.mjs",
+    "images:list": "node scripts/word-images.mjs",
+    "deploy": "npm run validate && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.135.0"
+  }
+}
