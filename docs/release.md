@@ -1,5 +1,23 @@
 # 发布与验收记录
 
+## 2026-09-30 · 24 张词语图片上线
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/> |
+| 部署的 commit | `3c5dd2e` Add 24 bilingual vocabulary illustrations；已推送到 `origin/main` |
+| 部署版本 | `7a6175a3-1fd7-4c4b-ac99-ae32f4a55c05`（2026-10-01T05:33:40Z，100% 流量） |
+| 发布内容 | 24 张 800×600 WebP 和配图 manifest，共 25 个新增或变更的静态资源；词语面板与逐句弹窗共用 |
+| 可回退版本 | `a894ba9c-412e-415f-b824-686451f920a3`；命令：`npx wrangler rollback a894ba9c-412e-415f-b824-686451f920a3` |
+
+部署后验证：
+
+- 根页面返回 200；线上配图 manifest 与提交版本完全一致。
+- 24 张图片全部返回 200 / `image/webp`；逐个比对响应字节，与仓库 WebP 完全一致。
+- `npm run validate` 通过，配图覆盖为 24/24。
+- `LANG_API_URL=https://lang.lucasacademy.org npm run check:english` 通过：43 个短句准确拼回，65 条英文配音的文字 hash 与线上英文一致。
+- 部署前已在浏览器验证中英词语共图、阅读页、逐句弹窗及 390 px 手机显示，记录见 [image-generation/README.md](image-generation/README.md)。
+
 ## 2026-09-30 · 首次发布
 
 | 项目 | 记录 |
