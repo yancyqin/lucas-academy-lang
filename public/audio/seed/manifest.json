@@ -1,0 +1,204 @@
+{
+ "lessonId": "seed",
+ "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
+ "clips": [
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 13.61,
+   "textHash": "1b131f1e",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.2",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v02-whole.mp3",
+   "duration": 8.29,
+   "textHash": "a4b9d1d1",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.3",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v03-whole.mp3",
+   "duration": 5.06,
+   "textHash": "c74f81ac",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.4",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v04-whole.mp3",
+   "duration": 6.07,
+   "textHash": "813a9a51",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.5",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v05-whole.mp3",
+   "duration": 7.92,
+   "textHash": "9eb42ce0",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 5.91,
+   "textHash": "897c238d",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.7",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v07-whole.mp3",
+   "duration": 7.45,
+   "textHash": "c18a0fc0",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.8",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v08-whole.mp3",
+   "duration": 10.8,
+   "textHash": "83af8665",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.9",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v09-whole.mp3",
+   "duration": 4.72,
+   "textHash": "a1b4d31c",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 15.14,
+   "textHash": "b1ec0908",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.2",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v02-whole.mp3",
+   "duration": 4.38,
+   "textHash": "482a93f4",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.3",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v03-whole.mp3",
+   "duration": 5,
+   "textHash": "197a3d1a",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.4",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v04-whole.mp3",
+   "duration": 8.22,
+   "textHash": "89a75b3c",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.5",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v05-whole.mp3",
+   "duration": 10.96,
+   "textHash": "cc4077c7",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 7.04,
+   "textHash": "c6d25728",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.7",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v07-whole.mp3",
+   "duration": 8.22,
+   "textHash": "c01f7c8e",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.8",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v08-whole.mp3",
+   "duration": 12.53,
+   "textHash": "f5d878f4",
+   "speed": 0.85
+  },
+  {
+   "lessonId": "seed",
+   "verseId": "MRK.4.9",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v09-whole.mp3",
+   "duration": 6.7,
+   "textHash": "1375a4fd",
+   "speed": 0.85
+  }
+ ]
+}
