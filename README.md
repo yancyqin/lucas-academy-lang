@@ -1,6 +1,8 @@
-# 互惠的门 · 你教我，我教你
+# 语言的桥 · Language Bridge
 
-Lucas Academy Lang：孩子和家长、同伴一起读中文和英文。每一节先完整读一种语言，紧接着读同一节的另一种语言；「逐句学」用大字一句一句地读，也可以按意思拆成短句，每个整句和短句都有自己的一道生活小问题。
+你教我，我教你 · You teach me, I teach you。Lucas Academy Lang：孩子和家长、同伴一起读中文和英文。每一节先完整读一种语言，紧接着读同一节的另一种语言；「逐句学」用大字一句一句地读，也可以按意思拆成短句，每个整句和短句都有自己的一道生活小问题。
+
+界面跟着「先读的语言」走：页面最上方的按钮写着先读的语言（「中文在前 ⇅」/「English first ⇅」），点一下交换顺序，所有按钮、标签和提示也一起换成那种语言。产品名 2026-09-30 由「互惠的门」改为「语言的桥」；`CC-HANDOFF.md`、`design-qa.md` 和 `preview/` 保留旧名作为当时的设计记录。
 
 - 正式网站：<https://lang.lucasacademy.org/>
 - 代码：<https://github.com/yancyqin/lucas-academy-lang>
@@ -44,6 +46,7 @@ public/                     # 唯一的网站静态资源目录
   styles/                   # app.css（原阅读页）、study.css（Design 1 逐句弹窗）
   js/
     main.js                 # 状态与连接：课文、段落、语言顺序、进度、生词本、录音
+    strings.js              # 界面文字（中 / 英），跟着先读的语言切换
     reader.js  wordpanel.js # 阅读页与词语面板 / 生词本
     study.js                # 逐句学弹窗（原生 dialog）
     audio.js                # 唯一的声音控制器：配音、系统声音、逐词慢读、自己的录音

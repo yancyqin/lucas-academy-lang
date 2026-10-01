@@ -22,7 +22,7 @@ for (const entry of lessons) {
     const slot = used.get(info.concept) || {zh: new Set(), en: new Set(), lessons: new Set()};
     slot.zh.add(word);
     for (const alias of english[word] || []) slot.en.add(alias);
-    slot.lessons.add(lesson.title);
+    slot.lessons.add(lesson.title.zh);
     used.set(info.concept, slot);
   }
 }

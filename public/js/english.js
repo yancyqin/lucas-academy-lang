@@ -5,6 +5,8 @@
 // A 404 (no Worker behind a plain static server) or 503 (the server has no
 // key) means no English this visit: say so once instead of asking again for
 // every section. A 502 or a dropped connection stays retryable.
+import {t} from './strings.js';
+
 const texts = new Map(); // verse id -> text
 const inFlight = new Map(); // section key -> promise
 const failed = new Map(); // section key -> 'offline' | 'retry'
@@ -65,8 +67,8 @@ export function ensure(lesson, section) {
 }
 
 export function describe(reason) {
-  if (reason === 'offline') return '现在没有网络，英文暂时看不到。中文仍然可以学习。';
-  if (reason === 'not-configured') return '这个网站的英文服务还没有设置好。中文仍然可以学习。';
-  if (reason === 'no-server') return '这里没有连接英文服务，只能先读中文。';
-  return '英文暂时没有连接上，中文仍然可以学习。';
+  if (reason === 'offline') return t('englishOffline');
+  if (reason === 'not-configured') return t('englishNotConfigured');
+  if (reason === 'no-server') return t('englishNoServer');
+  return t('englishRetry');
 }

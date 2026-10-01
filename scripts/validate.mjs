@@ -29,6 +29,8 @@ check(new Set(lessons.map(l => l.id)).size === lessons.length, 'duplicate lesson
 
 for (const lesson of lessons) {
   const tag = lesson.id;
+  check(lesson.title?.zh && lesson.title?.en && lesson.reference?.zh && lesson.reference?.en, `${tag}: title and reference need both languages`);
+  check(registry.find(e => e.id === tag)?.title?.en === lesson.title.en, `${tag}: registry title differs from the lesson`);
   // Verses: stable ids, numbered in order, text intact.
   const ids = lesson.verses.map(v => v.id);
   check(new Set(ids).size === ids.length, `${tag}: duplicate verse ids`);
@@ -49,7 +51,7 @@ for (const lesson of lessons) {
     check(s.range[0] === next, `${tag}: section ${s.id} should start at verse ${next}`);
     const size = s.range[1] - s.range[0] + 1;
     check(size >= 1 && size <= MAX_VERSES, `${tag}: section ${s.id} has ${size} verses (max ${MAX_VERSES})`);
-    check(s.title && s.intro, `${tag}: section ${s.id} needs a title and intro`);
+    check(s.title?.zh && s.title?.en && s.intro?.zh && s.intro?.en, `${tag}: section ${s.id} needs a title and intro in both languages`);
     next = s.range[1] + 1;
   }
   check(next === lesson.verses.length + 1, `${tag}: sections do not cover every verse`);
@@ -115,7 +117,7 @@ for (const lesson of lessons) {
   const expected = lesson.verses.length + clauseCount;
   const zhClips = clips.filter(c => c.language === 'zh').length;
   const enClips = clips.filter(c => c.language === 'en').length;
-  summary.push(`${lesson.title}: ${lesson.verses.length} verses in ${lesson.sections.map(s => s.range[1] - s.range[0] + 1).join('/')}, ` +
+  summary.push(`${lesson.title.zh}: ${lesson.verses.length} verses in ${lesson.sections.map(s => s.range[1] - s.range[0] + 1).join('/')}, ` +
     `${clauseCount} aligned clauses, ${Object.keys(lesson.dict).length} words; narration zh ${zhClips}/${expected}, en ${enClips}/${expected}`);
   if (lesson.id === 'love') {
     check(lesson.verses.length === 13, 'love: 13 verses');
@@ -124,6 +126,14 @@ for (const lesson of lessons) {
     check(zhClips === expected && enClips === expected, `love: narration incomplete (zh ${zhClips}, en ${enClips} of ${expected})`);
   }
 }
+
+// The interface speaks both languages: every string exists in each.
+const {strings} = await import('../public/js/strings.js');
+const zhKeys = Object.keys(strings.zh).sort().join();
+const enKeys = Object.keys(strings.en).sort().join();
+check(zhKeys === enKeys, `strings: zh and en keys differ (${Object.keys(strings.zh).filter(k => !(k in strings.en)).concat(Object.keys(strings.en).filter(k => !(k in strings.zh))).join(', ')})`);
+const indexHtml = await readFile(join(pub, 'index.html'), 'utf8');
+for (const [, key] of indexHtml.matchAll(/data-i18n(?:-[a-z-]+)?="([^"]+)"/g)) check(key in strings.zh, `index.html: unknown string ${key}`);
 
 // English everyday words are lower case and complete.
 for (const [word, value] of Object.entries(englishBasic)) {

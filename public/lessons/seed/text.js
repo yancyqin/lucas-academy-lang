@@ -35,6 +35,10 @@ export const verses = lines.map((line, i) => ({
 }));
 
 export const sections = [
-  {id: '1-4', title: '听一个撒种的故事', range: [1, 4], intro: '一起来听，再把故事讲给对方。'},
-  {id: '5-9', title: '不同地方的种子', range: [5, 9], intro: '同样的种子，在不同的地方会怎么样？'},
+  {id: '1-4', range: [1, 4],
+    title: {zh: '听一个撒种的故事', en: 'A story about sowing seed'},
+    intro: {zh: '一起来听，再把故事讲给对方。', en: 'Listen together, then tell the story to each other.'}},
+  {id: '5-9', range: [5, 9],
+    title: {zh: '不同地方的种子', en: 'Seed in different places'},
+    intro: {zh: '同样的种子，在不同的地方会怎么样？', en: 'What happens to the same seed in different places?'}},
 ];

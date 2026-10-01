@@ -44,7 +44,13 @@ export const verses = lines.map((line, i) => ({
 
 // No section may hold more than seven verses.
 export const sections = [
-  {id: '1-4', title: '有爱，才有意义', range: [1, 4], intro: '会很多本领，也可以温柔地关心别人。'},
-  {id: '5-8', title: '把爱做出来', range: [5, 8], intro: '在小小的事情上，练习关心彼此。'},
-  {id: '9-13', title: '长大，也继续学着爱', range: [9, 13], intro: '我们都有还不懂的事，也都有可以教给别人的东西。'},
+  {id: '1-4', range: [1, 4],
+    title: {zh: '有爱，才有意义', en: 'Love gives it meaning'},
+    intro: {zh: '会很多本领，也可以温柔地关心别人。', en: 'You can be good at many things and still care gently for others.'}},
+  {id: '5-8', range: [5, 8],
+    title: {zh: '把爱做出来', en: 'Love in what we do'},
+    intro: {zh: '在小小的事情上，练习关心彼此。', en: 'Practicing care for each other in small things.'}},
+  {id: '9-13', range: [9, 13],
+    title: {zh: '长大，也继续学着爱', en: 'Growing up, still learning to love'},
+    intro: {zh: '我们都有还不懂的事，也都有可以教给别人的东西。', en: 'We all have things we do not understand yet, and things we can teach others.'}},
 ];

@@ -1,10 +1,10 @@
 // The reading page: the lesson rail, and the section's verses — each verse
 // whole in the first language, then the same verse in the second.
 import {el, button, fill} from './tokens.js';
+import {t, pick} from './strings.js';
 import * as english from './english.js';
 
 const $ = id => document.getElementById(id);
-const languageName = lang => (lang === 'zh' ? '中文' : 'English');
 
 export function createReader(app) {
   const {state} = app;
@@ -12,7 +12,7 @@ export function createReader(app) {
   function renderNav() {
     const lesson = app.lesson();
     $('lesson-select').value = lesson.id;
-    $('lesson-reference').textContent = lesson.reference;
+    $('lesson-reference').textContent = pick(lesson.reference);
     const nav = $('section-nav');
     nav.replaceChildren();
     lesson.sections.forEach((section, i) => {
@@ -20,14 +20,14 @@ export function createReader(app) {
       const item = button('', () => app.changeSection(i), 'section-button');
       if (i === state.section) item.setAttribute('aria-current', 'step');
       const copy = el('span');
-      const count = section.verseIds.length;
-      copy.append(el('strong', '', section.title), el('small', '', `${section.range[0]}–${section.range[1]} 节 · ${count} 句`));
+      const meta = t('sectionMeta', {first: section.range[0], last: section.range[1], count: section.verseIds.length});
+      copy.append(el('strong', '', pick(section.title)), el('small', '', meta));
       item.append(el('span', 'section-number', done ? '✓' : String(i + 1)), copy);
-      if (done) item.setAttribute('aria-label', `${section.title}，已学完`);
+      if (done) item.setAttribute('aria-label', t('sectionDone', {title: pick(section.title)}));
       nav.append(item);
     });
     const finished = lesson.sections.filter(app.isDone).length;
-    $('progress-text').textContent = `已学 ${finished} / ${lesson.sections.length} 小段`;
+    $('progress-text').textContent = t('progress', {done: finished, total: lesson.sections.length});
     $('lesson-progress').max = lesson.sections.length;
     $('lesson-progress').value = finished;
   }
@@ -38,22 +38,22 @@ export function createReader(app) {
     const tools = el('div', 'line-controls');
     tools.append(el('span', 'lang-code', lang === 'zh' ? '中' : 'EN'));
     const play = button('▶', () => app.readVerse(verse, lang), 'line-play');
-    play.setAttribute('aria-label', `读第${verse.n}节${languageName(lang)}`);
+    play.setAttribute('aria-label', t('readVerse', {n: verse.n, language: t(lang)}));
     tools.append(play);
     if (state.dictation) {
-      const slow = button('慢读', () => app.readVerse(verse, lang, true), 'slow-verse');
-      slow.setAttribute('aria-label', `逐词慢读第${verse.n}节${languageName(lang)}`);
+      const slow = button(t('slow'), () => app.readVerse(verse, lang, true), 'slow-verse');
+      slow.setAttribute('aria-label', t('slowVerse', {n: verse.n, language: t(lang)}));
       tools.append(slow);
     }
     row.append(tools);
 
     const hidden = state.dictation && lang === state.first && !state.revealed.has(verse.id + lang);
     if (hidden) {
-      const reveal = button('先听一听，写好后点这里看原文', () => {
+      const reveal = button(t('reveal'), () => {
         state.revealed.add(verse.id + lang);
         renderVerses();
       }, 'blank-line');
-      reveal.setAttribute('aria-label', `显示第${verse.n}节${languageName(lang)}原文`);
+      reveal.setAttribute('aria-label', t('revealLabel', {n: verse.n, language: t(lang)}));
       row.append(reveal);
       return row;
     }
@@ -62,13 +62,22 @@ export function createReader(app) {
     const words = lang === 'zh' ? verse.tokens.join('') : english.text(verse.id);
     if (!words) {
       const reason = english.problem(app.lesson(), app.section());
-      text.append(el('span', 'en-pending', reason ? '英文暂时看不到，请看下方的说明。' : '正在加载这一节英文…'));
+      text.append(el('span', 'en-pending', t(reason ? 'englishSeeBelow' : 'loadingEnglish')));
     } else {
       fill(text, {lang, text: words, tokens: verse.tokens}, app.tokenContext(),
         (word, language, source) => app.openWord(word, language, verse, source));
     }
     row.append(text);
     return row;
+  }
+
+  // 用简单的话理解, in the reading order: the first language's line on top.
+  function explanation(verse) {
+    return [state.first, app.other(state.first)].map(lang => {
+      const p = el('p', '', verse.explain[lang]);
+      p.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      return p;
+    });
   }
 
   function renderVerses() {
@@ -83,11 +92,9 @@ export function createReader(app) {
       if (!state.dictation) {
         const actions = el('div', 'verse-actions');
         const detail = el('details', 'sentence-explain');
-        const en = el('p', '', verse.explain.en);
-        en.lang = 'en';
-        detail.append(el('summary', '', '用简单的话理解'), el('p', '', verse.explain.zh), en);
-        const learn = button('学这一句', () => app.study.open(verse.id, learn), 'verse-study');
-        learn.setAttribute('aria-label', `学第${verse.n}节这一句`);
+        detail.append(el('summary', '', t('simpleWords')), ...explanation(verse));
+        const learn = button(t('studyThis'), () => app.study.open(verse.id, learn), 'verse-study');
+        learn.setAttribute('aria-label', t('studyThisLabel', {n: verse.n}));
         actions.append(detail, learn);
         content.append(actions);
       }
@@ -100,7 +107,7 @@ export function createReader(app) {
     status.replaceChildren();
     const reason = english.problem(app.lesson(), app.section());
     if (reason) {
-      status.append(document.createTextNode(english.describe(reason)), button('重试英文', app.retryEnglish));
+      status.append(document.createTextNode(english.describe(reason)), button(t('retryEnglish'), app.retryEnglish));
     }
   }
 
@@ -108,5 +115,5 @@ export function createReader(app) {
     document.querySelectorAll('.verse-group').forEach(node => node.classList.toggle('playing', node.dataset.verse === verseId));
   }
 
-  return {renderNav, renderVerses, markPlaying};
+  return {renderNav, renderVerses, markPlaying, explanation};
 }

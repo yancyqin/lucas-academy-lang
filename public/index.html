@@ -3,74 +3,74 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>互惠的门 · 你教我，我教你</title>
-  <meta name="description" content="孩子和家长、同伴一起读中文和英文：一句一句地读，互相教，也一起说说生活里的小事。">
+  <title>语言的桥 · 你教我，我教你</title>
+  <meta name="description" content="语言的桥 · Language Bridge：孩子和家长、同伴一起读中文和英文，一句一句地读，互相教，也一起说说生活里的小事。">
   <meta name="theme-color" content="#faf9f5">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles/app.css">
   <link rel="stylesheet" href="styles/study.css">
 </head>
 <body>
-  <a class="skip" href="#reading">跳到课文</a>
+  <a class="skip" href="#reading" data-i18n="skip">跳到课文</a>
   <header class="site-header">
-    <a class="brand" href="./"><span class="brand-name">互惠的门</span><span class="brand-sub">你教我，我教你</span></a>
-    <div class="header-right"><span class="academy">LUCAS ACADEMY · LANG</span><button id="flip" class="order-button" type="button" aria-describedby="order-hint"><span id="flip-label">中文在前</span> <span class="order-icon" aria-hidden="true">⇅</span></button><span id="order-hint" class="visually-hidden">每一节先读这种语言，再读另一种。点一下，交换先后顺序。</span><button id="open-wordbook" type="button">生词本 <span id="word-count">0</span></button></div>
+    <a class="brand" href="./"><span class="brand-name" data-i18n="name">语言的桥</span><span class="brand-sub" data-i18n="tagline">你教我，我教你</span></a>
+    <div class="header-right"><span class="academy">LUCAS ACADEMY · LANG</span><button id="flip" class="order-button" type="button" aria-describedby="order-hint"><span id="flip-label">中文在前</span> <span class="order-icon" aria-hidden="true">⇅</span></button><span id="order-hint" class="visually-hidden" data-i18n="orderHint">每一节先读这种语言，再读另一种。点一下，交换先后顺序。</span><button id="open-wordbook" type="button"><span data-i18n="wordbook">生词本</span> <span id="word-count">0</span></button></div>
   </header>
   <div id="workspace" class="workspace">
     <aside class="lesson-nav">
-      <label class="overline" for="lesson-select">今天一起读</label>
+      <label class="overline" for="lesson-select" data-i18n="todayRead">今天一起读</label>
       <select id="lesson-select"></select>
       <p id="lesson-reference" class="nav-reference"></p>
-      <div class="nav-section-heading">每次一小段</div>
-      <nav id="section-nav" aria-label="学习段落"></nav>
-      <div class="nav-note"><strong>读一读，听一听。</strong><p>你会的词，可以教给我。<br>我会的词，也可以教给你。</p></div>
+      <div class="nav-section-heading" data-i18n="onePart">每次一小段</div>
+      <nav id="section-nav" data-i18n-aria-label="parts" aria-label="学习段落"></nav>
+      <div class="nav-note"><strong data-i18n="navNoteTitle">读一读，听一听。</strong><p><span data-i18n="navNote1">你会的词，可以教给我。</span><br><span data-i18n="navNote2">我会的词，也可以教给你。</span></p></div>
       <div class="progress-meta"><span id="progress-text"></span><progress id="lesson-progress" max="3" value="0"></progress></div>
     </aside>
     <main id="reading" tabindex="-1">
       <div class="heading-row"><div><p class="overline" id="section-kicker"></p><h1 id="lesson-title">爱的篇章</h1><p id="section-intro" class="section-intro"></p></div></div>
       <div class="reading-toolbar">
-        <button id="open-study" class="primary" type="button">逐句学</button>
-        <button id="play-section" type="button">听这一小段</button>
-        <button id="pause" type="button" hidden>暂停</button><button id="stop" type="button" hidden>停止</button>
-        <label class="inline-control"><input type="checkbox" id="pinyin">拼音</label>
-        <label class="inline-control"><input type="checkbox" id="dictation">默写先读的语言</label>
-        <details class="tools"><summary>更多工具</summary><div class="tools-content">
-          <label>朗读速度<select id="speed"><option value="0.85">慢一点 · 0.85×</option><option value="0.65">很慢 · 0.65×</option><option value="1">自然 · 1×</option></select></label>
-          <button id="record" type="button">录下我的朗读</button><button id="play-recording" type="button" hidden>听我的录音</button><button id="delete-recording" type="button" hidden>删除录音</button>
+        <button id="open-study" class="primary" type="button" data-i18n="studyAll">逐句学</button>
+        <button id="play-section" type="button" data-i18n="playSection">听这一小段</button>
+        <button id="pause" type="button" hidden>暂停</button><button id="stop" type="button" data-i18n="stop" hidden>停止</button>
+        <label class="inline-control"><input type="checkbox" id="pinyin"><span data-i18n="pinyin">拼音</span></label>
+        <label class="inline-control"><input type="checkbox" id="dictation"><span data-i18n="dictation">默写先读的语言</span></label>
+        <details class="tools"><summary data-i18n="moreTools">更多工具</summary><div class="tools-content">
+          <label><span data-i18n="speed">朗读速度</span><select id="speed"><option value="0.85" data-i18n="speedSlow">慢一点 · 0.85×</option><option value="0.65" data-i18n="speedVerySlow">很慢 · 0.65×</option><option value="1" data-i18n="speedNatural">自然 · 1×</option></select></label>
+          <button id="record" type="button">录下我的朗读</button><button id="play-recording" type="button" data-i18n="playRecording" hidden>听我的录音</button><button id="delete-recording" type="button" hidden>删除录音</button>
           <p id="record-note">录音只保存在这台设备。每次最长 3 分钟。</p>
-          <button id="restart-lesson" type="button">重新学这一篇</button>
+          <button id="restart-lesson" type="button" data-i18n="restart">重新学这一篇</button>
         </div></details>
       </div>
-      <p class="reading-hint">先读一小段，再点「逐句学」慢慢读、一起聊。词语也可以点开。</p>
+      <p class="reading-hint" data-i18n="readingHint">先读一小段，再点「逐句学」慢慢读、一起聊。词语也可以点开。</p>
       <div id="audio-status" class="audio-status" role="status" aria-live="polite"></div>
-      <div id="verses" aria-label="逐节双语课文"></div>
+      <div id="verses" data-i18n-aria-label="versesLabel" aria-label="逐节双语课文"></div>
       <div id="english-state" class="english-state" role="status"></div>
-      <div class="next-row"><button id="previous" type="button">上一小段</button><span id="section-counter"></span><button id="complete-next" class="primary" type="button">这段学完了，下一段</button></div>
-      <footer class="credit"><details><summary>文字来源</summary>
+      <div class="next-row"><button id="previous" type="button" data-i18n="previousPart">上一小段</button><span id="section-counter"></span><button id="complete-next" class="primary" type="button">这段学完了，下一段</button></div>
+      <footer class="credit"><details><summary data-i18n="sources">文字来源</summary>
         <div id="copyright"></div>
         <p id="voice-credit"></p>
-        <p><a id="youversion-link" href="https://www.bible.com/versions/111" target="_blank" rel="noopener">YouVersion</a><span> · </span><a id="chinese-source" href="https://b.ibible.hk/bible/9/1co/13" target="_blank" rel="noopener">中文经文来源</a></p>
+        <p><a id="youversion-link" href="https://www.bible.com/versions/111" target="_blank" rel="noopener">YouVersion</a><span> · </span><a id="chinese-source" href="https://b.ibible.hk/bible/9/1co/13" target="_blank" rel="noopener" data-i18n="chineseSource">中文经文来源</a></p>
       </details></footer>
     </main>
-    <aside id="word-panel" class="word-panel" aria-label="词语学习" hidden><div class="panel-heading"><span id="panel-label" class="overline">一起认识这个词</span><button id="close-panel" type="button" aria-label="关闭词语面板">关闭</button></div><div id="panel-body"></div></aside>
+    <aside id="word-panel" class="word-panel" data-i18n-aria-label="learnWord" aria-label="一起认识这个词" hidden><div class="panel-heading"><span id="panel-label" class="overline">一起认识这个词</span><button id="close-panel" type="button" data-i18n="close" data-i18n-aria-label="closePanel" aria-label="关闭词语面板">关闭</button></div><div id="panel-body"></div></aside>
   </div>
   <dialog id="study-dialog" aria-labelledby="study-title">
-    <header class="study-header"><div><span class="overline">你教我，我教你 · 逐句学</span><h2 id="study-title" tabindex="-1">爱的篇章</h2></div><button id="study-close" type="button" autofocus>回到课文 <span aria-hidden="true">×</span></button></header>
+    <header class="study-header"><div><span class="overline" data-i18n="studyOverline">你教我，我教你 · 逐句学</span><h2 id="study-title" tabindex="-1">爱的篇章</h2></div><button id="study-close" type="button" autofocus><span data-i18n="backToReading">回到课文</span> <span aria-hidden="true">×</span></button></header>
     <div class="study-scroll" id="study-scroll">
-      <div class="study-path"><p id="study-context"></p><nav id="study-verse-nav" aria-label="选择这一段中的句子"></nav></div>
-      <div class="study-options"><div class="study-modes" role="group" aria-label="阅读方式"><button id="study-whole" type="button" aria-pressed="true">读整句</button><button id="study-parts" type="button" aria-pressed="false">拆成短句</button></div><div class="study-options-right"><label class="inline-control"><input type="checkbox" id="study-pinyin">拼音</label><button id="study-flip" type="button">中文在前 ⇅</button></div></div>
+      <div class="study-path"><p id="study-context"></p><nav id="study-verse-nav" data-i18n-aria-label="studyVerseNav" aria-label="选择这一段中的句子"></nav></div>
+      <div class="study-options"><div class="study-modes" role="group" data-i18n-aria-label="readingMode" aria-label="阅读方式"><button id="study-whole" type="button" aria-pressed="true" data-i18n="modeWhole">读整句</button><button id="study-parts" type="button" aria-pressed="false" data-i18n="modeParts">拆成短句</button></div><div class="study-options-right"><label class="inline-control"><input type="checkbox" id="study-pinyin"><span data-i18n="pinyin">拼音</span></label><button id="study-flip" type="button">中文在前 ⇅</button></div></div>
       <p class="study-unit" id="study-unit" aria-live="polite"></p>
       <div id="study-reading" class="study-reading"></div>
-      <div class="study-audio"><button id="study-listen" type="button">听这两句</button><button id="study-pause" type="button" hidden>暂停</button><button id="study-stop" type="button" hidden>停止</button><button id="study-retry" type="button" hidden>重试英文</button><span id="study-audio-status" role="status" aria-live="polite"></span></div>
-      <aside id="study-word" class="study-word" aria-label="当前词语" hidden></aside>
-      <section class="study-discussion" aria-labelledby="study-question-title"><p class="overline">和这一句有关的小事</p><h3 id="study-question-title">说说你会怎么做</h3><div id="study-question"></div><details class="study-hint"><summary>给我一点小提示</summary><p>可以想想今天的一件小事。说一说，也听听对方的想法。</p><p lang="en">Think of one small moment from today. Share your idea, then listen to your partner.</p></details></section>
-      <details class="study-explain" id="study-explain"><summary>用简单的话理解这一整句</summary><p id="study-explain-zh"></p><p id="study-explain-en" lang="en"></p></details>
-      <div class="study-teach"><div><span class="overline">换个角色，再试一次</span><p id="study-teach-text"></p></div><button id="study-switch-teacher" type="button">换你来教</button></div>
-      <details class="my-thought" id="study-notes"><summary>记下这一句的想法</summary><label for="study-thought">可以用中文，也可以用 English。</label><textarea id="study-thought" rows="3" placeholder="我想说……"></textarea><span class="small">只保存在这台设备。</span></details>
+      <div class="study-audio"><button id="study-listen" type="button">听这一句 · 双语</button><button id="study-pause" type="button" hidden>暂停</button><button id="study-stop" type="button" data-i18n="stop" hidden>停止</button><button id="study-retry" type="button" data-i18n="retryEnglish" hidden>重试英文</button><span id="study-audio-status" role="status" aria-live="polite"></span></div>
+      <aside id="study-word" class="study-word" data-i18n-aria-label="learnWord" aria-label="一起认识这个词" hidden></aside>
+      <section class="study-discussion" aria-labelledby="study-question-title"><p class="overline" data-i18n="discussOverline">和这一句有关的小事</p><h3 id="study-question-title" data-i18n="discussTitle">说说你会怎么做</h3><div id="study-question"></div><details class="study-hint"><summary data-i18n="hint">给我一点小提示</summary><div id="study-hint-text"><p lang="zh-CN" data-language="zh">可以想想今天的一件小事。说一说，也听听对方的想法。</p><p lang="en" data-language="en">Think of one small moment from today. Share your idea, then listen to your partner.</p></div></details></section>
+      <details class="study-explain" id="study-explain"><summary data-i18n="explainVerse">用简单的话理解这一整句</summary><div id="study-explain-text"><p id="study-explain-zh" lang="zh-CN" data-language="zh"></p><p id="study-explain-en" lang="en" data-language="en"></p></div></details>
+      <div class="study-teach"><div><span class="overline" data-i18n="teachOverline">换个角色，再试一次</span><p id="study-teach-text"></p></div><button id="study-switch-teacher" type="button" data-i18n="teachSwitch">换你来教</button></div>
+      <details class="my-thought" id="study-notes"><summary data-i18n="noteSummary">记下这一句的想法</summary><label for="study-thought" data-i18n="noteLabel">可以用中文，也可以用 English。</label><textarea id="study-thought" rows="3" data-i18n-placeholder="notePlaceholder" placeholder="我想说……"></textarea><span class="small" data-i18n="noteSmall">只保存在这台设备。</span></details>
     </div>
     <footer class="study-footer"><button id="study-previous" type="button">上一句</button><span id="study-step"></span><button id="study-next" class="primary" type="button">下一句</button></footer>
   </dialog>
-  <noscript><p class="noscript">这个学习页面需要打开浏览器的 JavaScript。</p></noscript>
+  <noscript><p class="noscript">这个学习页面需要打开浏览器的 JavaScript。This page needs JavaScript.</p></noscript>
   <script type="module" src="js/main.js"></script>
 </body>
 </html>

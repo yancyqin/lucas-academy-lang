@@ -7,6 +7,7 @@ import {studyUnits} from './units.js';
 import * as dictionary from './dictionary.js';
 import * as english from './english.js';
 import {picture} from './wordpanel.js';
+import {t, pick} from './strings.js';
 
 const $ = id => document.getElementById(id);
 const other = lang => (lang === 'zh' ? 'en' : 'zh');
@@ -29,7 +30,7 @@ export function createStudy(app) {
     return mode === 'parts' && data.parts.length ? data.parts[part] : data.whole;
   };
   const noteKey = () => `note.${app.lesson().id}.${verse().id}.${unit().id}`;
-  const where = () => `第 ${verse().n} 节${mode === 'parts' ? ' · 短句 ' + (part + 1) : ''}`;
+  const where = () => (mode === 'parts' ? t('wherePart', {n: verse().n, p: part + 1}) : t('whereVerse', {n: verse().n}));
 
   function item(current, lang) {
     const text = current[lang];
@@ -63,21 +64,21 @@ export function createStudy(app) {
     const label = el('div');
     const title = el('h3', '', word);
     title.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    label.append(title, el('p', '', info.pronunciation || (lang === 'en' ? 'English' : '中文')));
-    const close = button('收起词语', () => {
+    label.append(title, el('p', '', info.pronunciation || t(lang)));
+    const close = button(t('hideWord'), () => {
       hideWord();
       source?.classList.remove('selected');
       if (source?.isConnected) source.focus({preventScroll: true});
     });
     heading.append(label, close);
     box.append(heading);
-    box.append(el('p', 'study-word-meaning', info.meaning), el('p', '', info.explain || '先听一听，再看看它在这一句里的意思。'));
+    box.append(el('p', 'study-word-meaning', info.meaning), el('p', '', info.explain || t('studyWordFallback')));
     const figure = picture(info);
     if (figure) box.append(figure);
     const actions = el('div', 'study-word-actions');
-    actions.append(button('听这个词', () => app.readWord(word, lang)));
-    actions.append(button('慢一点', () => app.readWord(word, lang, true)));
-    actions.append(button(app.isMarked(word, lang) ? '移出生词本' : '加入生词本', () => {
+    actions.append(button(t('hearWord'), () => app.readWord(word, lang)));
+    actions.append(button(t('slower'), () => app.readWord(word, lang, true)));
+    actions.append(button(t(app.isMarked(word, lang) ? 'removeWord' : 'addWord'), () => {
       app.toggleMark(word, lang);
       source?.classList.toggle('marked', app.isMarked(word, lang));
       renderWord();
@@ -99,9 +100,11 @@ export function createStudy(app) {
     const first = app.state.first;
     const lesson = app.lesson();
     const section = app.section();
-    $('study-title').textContent = lesson.title;
-    $('study-context').textContent = `${section.title} · 第 ${verses[0].n}–${verses.at(-1).n} 节`;
-    $('study-unit').textContent = `第 ${index + 1} / ${verses.length} 句${mode === 'parts' ? ' · 短句 ' + (part + 1) + ' / ' + data.parts.length : ' · 慢慢读，再一起说说'}`;
+    $('study-title').textContent = pick(lesson.title);
+    $('study-context').textContent = t('studyContext', {title: pick(section.title), first: verses[0].n, last: verses.at(-1).n});
+    $('study-unit').textContent = mode === 'parts'
+      ? t('unitPart', {i: index + 1, n: verses.length, p: part + 1, m: data.parts.length})
+      : t('unitWhole', {i: index + 1, n: verses.length});
 
     const nav = $('study-verse-nav');
     nav.replaceChildren();
@@ -111,7 +114,7 @@ export function createStudy(app) {
         part = 0;
         move();
       });
-      jump.setAttribute('aria-label', `学习第${v.n}节`);
+      jump.setAttribute('aria-label', t('jumpVerse', {n: v.n}));
       if (index === i) jump.setAttribute('aria-current', 'step');
       nav.append(jump);
     });
@@ -119,11 +122,7 @@ export function createStudy(app) {
     $('study-whole').setAttribute('aria-pressed', String(mode === 'whole'));
     $('study-parts').setAttribute('aria-pressed', String(mode === 'parts'));
     $('study-parts').disabled = !data.parts.length;
-    $('study-parts').title = {
-      loading: '英文加载后，可以对照拆成短句',
-      changed: '这一句的文字有更新，先读完整的一句',
-      unavailable: '这篇先按整句学习',
-    }[data.reason] || '按意思，一小句一小句地读';
+    $('study-parts').title = t({loading: 'partsLoading', changed: 'partsChanged', unavailable: 'partsUnavailable'}[data.reason] || 'partsReady');
     $('study-flip').textContent = (first === 'zh' ? '中文在前' : 'English first') + ' ⇅';
     $('study-pinyin').checked = app.state.pinyin;
 
@@ -133,8 +132,9 @@ export function createStudy(app) {
       const line = el('div', 'study-language');
       line.dataset.language = lang;
       const header = el('div', 'study-language-label');
-      header.append(el('span', '', lang === 'zh' ? '中文' : 'English'));
-      const play = button(lang === 'zh' ? '听中文' : 'Listen', () => app.audio.play([item(current, lang)]));
+      header.append(el('span', '', t(lang)));
+      const play = button(t('listen_' + lang), () => app.audio.play([item(current, lang)]));
+      play.setAttribute('aria-label', t('listenLabel_' + lang));
       play.disabled = !current[lang];
       header.append(play);
       const text = el('p', 'study-text ' + lang);
@@ -147,17 +147,22 @@ export function createStudy(app) {
           });
       } else {
         const reason = english.problem(lesson, section);
-        text.append(el('span', 'en-pending', reason ? english.describe(reason) : '正在加载这一节英文…'));
+        text.append(el('span', 'en-pending', reason ? english.describe(reason) : t('loadingEnglish')));
       }
       line.append(header, text);
       reading.append(line);
     }
 
     $('study-listen').disabled = !current.en;
-    $('study-listen').textContent = mode === 'parts' ? '听这个短句 · 双语' : '听这一句 · 双语';
+    $('study-listen').textContent = t(mode === 'parts' ? 'listenBothPart' : 'listenBothVerse');
     $('study-retry').hidden = Boolean(current.en) || !english.problem(lesson, section);
     $('study-explain-zh').textContent = verse().explain.zh;
     $('study-explain-en').textContent = verse().explain.en;
+    // Bilingual helper text follows the reading order too.
+    for (const id of ['study-explain-text', 'study-hint-text']) {
+      const box = $(id);
+      box.append(box.querySelector(`[data-language="${first}"]`), box.querySelector(`[data-language="${other(first)}"]`));
+    }
 
     const questions = $('study-question');
     questions.replaceChildren();
@@ -170,10 +175,10 @@ export function createStudy(app) {
     renderTeacher();
 
     $('study-previous').disabled = index === 0 && part === 0;
-    $('study-previous').textContent = mode === 'parts' ? '上一小句' : '上一句';
+    $('study-previous').textContent = t(mode === 'parts' ? 'prevPart' : 'prevVerse');
     const last = index === verses.length - 1 && (mode === 'whole' || part === data.parts.length - 1);
-    $('study-next').textContent = last ? '这段学完了' : mode === 'parts' && part < data.parts.length - 1 ? '下一小句' : '下一句';
-    $('study-step').textContent = `${index + 1} / ${verses.length}${mode === 'parts' ? ' · ' + (part + 1) + '/' + data.parts.length : ''}`;
+    $('study-next').textContent = t(last ? 'finishPart' : mode === 'parts' && part < data.parts.length - 1 ? 'nextUnitPart' : 'nextVerse');
+    $('study-step').textContent = t('step', mode === 'parts' ? {i: index + 1, n: verses.length, p: part + 1, m: data.parts.length} : {i: index + 1, n: verses.length});
   }
 
   // Any change of verse or clause ends the old sound and starts at the top.
@@ -307,7 +312,7 @@ export function createStudy(app) {
     controls(active, paused) {
       $('study-pause').hidden = !active;
       $('study-stop').hidden = !active;
-      $('study-pause').textContent = paused ? '继续' : '暂停';
+      $('study-pause').textContent = t(paused ? 'resume' : 'pause');
     },
     get isOpen() {
       return dialog.open;

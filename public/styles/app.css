@@ -18,3 +18,9 @@
 .reading-toolbar{border-top:1px solid var(--line);padding-top:22px}
 @media(max-width:700px){.reading-toolbar{padding-top:18px}.order-button{gap:5px}.order-icon{font-size:15px}}
 @media(max-width:360px){.site-header{padding:12px 14px;gap:8px}.brand-name{font-size:19px}.header-right{gap:8px}.header-right button{padding:7px 8px}}
+/* "The Love Chapter" needs a little more room than 爱的篇章 in the lesson menu. */
+.lesson-nav select{padding-left:10px;padding-right:26px}
+/* "Language Bridge" and "Word book" are longer than 语言的桥 and 生词本: header buttons never wrap, the name may stack on phones, and the narrowest screens give the name its own row. */
+.header-right button{white-space:nowrap}.section-button small{white-space:nowrap}
+@media(max-width:700px){.brand-name{line-height:1.15}.header-right{flex:none}}
+@media(max-width:360px){.site-header{flex-wrap:wrap;row-gap:6px}.header-right{margin-left:auto}}

@@ -13,8 +13,8 @@ for (const [list, small] of [[words, false], [connectors, true]]) {
 
 export default {
   id: 'love',
-  title: '爱的篇章',
-  reference: '哥林多前书 13 章',
+  title: {zh: '爱的篇章', en: 'The Love Chapter'},
+  reference: {zh: '哥林多前书 13 章', en: '1 Corinthians 13'},
   passage: {book: '1CO', chapter: 13},
   chineseSource: 'https://b.ibible.hk/bible/9/1co/13',
   sections,

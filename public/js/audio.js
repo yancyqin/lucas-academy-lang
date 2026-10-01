@@ -8,12 +8,12 @@
 // item synchronously: callers resolve narration clips beforehand (the manifest
 // is loaded with the lesson) and never await before calling in.
 import * as recording from './recording.js';
+import {t} from './strings.js';
 
 const GAP_MS = 420;
 const SLOW_GAP_MS = 360;
 const SLOW_RATE = 0.62;
 
-const languageName = lang => (lang === 'zh' ? '中文' : 'English');
 
 let generation = 0;
 let queue = [];
@@ -94,17 +94,17 @@ function pickVoice(lang) {
 // Plays a list of {text, lang, clip?, where?, slow?, n?}. A clip is
 // {src, speed}; without one (or if it fails to load) the system voice reads
 // the text, and the status line says so.
-export function play(items, {done = '这一遍读完了。现在可以换你来读。'} = {}) {
+export function play(items, {done = t('readDone')} = {}) {
   stop();
   queue = items.filter(item => item.text);
   if (!queue.length) {
-    hooks.status('这句英文还在加载，加载完成后就可以听。');
+    hooks.status(t('englishStillLoading'));
     return;
   }
   if (!speechAvailable() && queue.some(item => !item.clip)) {
     queue = queue.filter(item => item.clip);
     if (!queue.length) {
-      hooks.status('这台设备暂时没有可用的朗读声音。');
+      hooks.status(t('noVoice'));
       return;
     }
   }
@@ -121,7 +121,7 @@ export function play(items, {done = '这一遍读完了。现在可以换你来�
   };
 
   const label = (item, recorded) =>
-    `${recorded ? '配音' : '系统试听'} · ${languageName(item.lang)}${item.where ? ' · ' + item.where : ''}`;
+    `${t(recorded ? 'narration' : 'deviceVoice')} · ${t(item.lang)}${item.where ? ' · ' + item.where : ''}`;
 
   const speak = item => {
     if (!speechAvailable()) {
@@ -139,7 +139,7 @@ export function play(items, {done = '这一遍读完了。现在可以换你来�
     utterance.onerror = () => {
       if (mine !== generation) return;
       stop(true);
-      hooks.status('系统声音暂时不可用。请在 Safari 或 Chrome 中点击试听。');
+      hooks.status(t('voiceError'));
     };
     speechSynthesis.speak(utterance);
   };
@@ -197,7 +197,7 @@ export function togglePause() {
       const next = held;
       held = null;
       emit();
-      hooks.status('继续朗读。');
+      hooks.status(t('resumed'));
       next();
       return;
     } else if (!inGap) {
@@ -211,7 +211,7 @@ export function togglePause() {
     else if (!inGap && current === 'speech') speechSynthesis.pause();
   }
   emit();
-  hooks.status(paused ? '已暂停。准备好后可以继续。' : '继续朗读。');
+  hooks.status(t(paused ? 'paused' : 'resumed'));
 }
 
 // The reader's own take, through the same stop/pause switch.
@@ -221,18 +221,18 @@ export function playRecording({onEnded, onError} = {}) {
   active = true;
   current = 'recording';
   emit();
-  hooks.status('正在播放你的录音。');
+  hooks.status(t('playingRecording'));
   const started = recording.playClip({
     onEnded: () => {
       if (mine !== generation) return;
       stop(true);
-      hooks.status('你的录音播放完了。');
+      hooks.status(t('recordingEnded'));
       onEnded?.();
     },
     onError: () => {
       if (mine !== generation) return;
       stop(true);
-      hooks.status('这段录音暂时不能播放。');
+      hooks.status(t('recordingError'));
       onError?.();
     },
   });

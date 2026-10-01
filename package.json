@@ -2,7 +2,7 @@
   "name": "lucas-academy-lang",
   "version": "1.0.0",
   "private": true,
-  "description": "互惠的门 · 你教我，我教你 — bilingual reading for children, parents and friends",
+  "description": "语言的桥 · Language Bridge — 你教我，我教你: bilingual reading for children, parents and friends",
   "type": "module",
   "engines": {
     "node": ">=22"

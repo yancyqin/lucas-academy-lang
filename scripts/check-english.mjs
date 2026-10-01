@@ -74,7 +74,7 @@ for (const entry of registry) {
       checkedClips += 1;
     }
   }
-  lines.push(`${lesson.title}: ${lesson.verses.length} verses, ${clauses} aligned clauses rebuilt exactly, ` +
+  lines.push(`${lesson.title.zh}: ${lesson.verses.length} verses, ${clauses} aligned clauses rebuilt exactly, ` +
     `${wholeOnly} whole-verse only, ${checkedClips} English clips match the text`);
 }
 
