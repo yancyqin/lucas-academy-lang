@@ -160,9 +160,9 @@ function render() {
   $('section-kicker').textContent = `${lesson.reference} · 第 ${state.section + 1} 小段`;
   $('section-intro').textContent = app.section().intro;
   $('chinese-source').href = lesson.chineseSource;
-  $('first-language').value = state.first;
-  $('second-language').value = other(state.first);
-  $('order-hint').textContent = state.first === 'zh' ? '一句中文，一句英文。' : '一句英文，一句中文。';
+  // The button names the language read first; flipping (here or in 逐句学) relabels it.
+  $('flip-label').textContent = state.first === 'zh' ? '中文在前' : 'English first';
+  $('flip').lang = state.first === 'zh' ? 'zh-CN' : 'en';
   $('complete-next').dataset.review = 'false';
   $('pinyin').checked = state.pinyin;
   $('dictation').checked = state.dictation;
@@ -230,8 +230,6 @@ app.study = study;
 $('lesson-select').replaceChildren(...lessons.map(l => new Option(l.title, l.id)));
 $('lesson-select').onchange = event => changeLesson(event.target.value);
 $('flip').onclick = () => app.changeOrder(other(state.first));
-$('first-language').onchange = event => app.changeOrder(event.target.value);
-$('second-language').onchange = event => app.changeOrder(other(event.target.value));
 $('pinyin').onchange = event => app.setPinyin(event.target.checked);
 $('dictation').onchange = event => {
   audio.stop();
