@@ -9,7 +9,9 @@
           "爱"
         ],
         "en": [
-          "love"
+          "love",
+          "attachment",
+          "loved"
         ]
       },
       "scene": {
@@ -201,7 +203,8 @@
       "id": "understanding",
       "words": {
         "zh": [
-          "明白"
+          "明白",
+          "懂"
         ],
         "en": [
           "understand",
@@ -280,7 +283,8 @@
       "id": "giving",
       "words": {
         "zh": [
-          "赒济"
+          "赒济",
+          "送给"
         ],
         "en": [
           "give",
@@ -358,7 +362,8 @@
       "id": "hope",
       "words": {
         "zh": [
-          "盼望"
+          "盼望",
+          "希望"
         ],
         "en": [
           "hope",

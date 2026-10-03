@@ -8,6 +8,7 @@
 - 代码：<https://github.com/yancyqin/lucas-academy-lang>
 - 首篇《爱的篇章》：哥林多前书 13 章，13 节分 1–4 / 5–8 / 9–13 三段，可拆成 43 个中英对应短句。
 - 参考课文《种子与好土》：马可福音 4:1–9，按整句学习（还没有校对过的短句对应）。
+- 故事《快乐王子》：王尔德童话（1888，公有领域），全文 132 句分 24 小段，按整句学习。全文不适合一节课读完，所以结尾三小段（第 112–115、116–121、127–132 句）标为「课堂共读」，老师上课带着读；其他小段是选读。英文随课文提供，中文为本项目翻译（初稿，待审定后配音）。见下方「故事课文」。
 
 设计依据见 [CC-HANDOFF.md](CC-HANDOFF.md)、[design-qa.md](design-qa.md) 和 `preview/`（用户确认过的交互预览，保留作对照，不部署）。
 
@@ -26,8 +27,8 @@ npm run dev                      # http://127.0.0.1:8197 ，含 /api/passage
 | 命令 | 作用 |
 | --- | --- |
 | `npm run dev` | Wrangler 本地运行 Worker + `public/` |
-| `npm run validate` | 离线校验：13 节 / 4·4·5 分段 / 43 短句拼回原文、每个单元的双语问题、词典与拼音全覆盖、配音 manifest（文件真实存在、时长、声音、中文 hash）、配图 manifest、`public/` 里没有密钥或不该发布的文件 |
-| `npm run check:english` | 连接英文接口（默认本地 dev；`LANG_API_URL=https://lang.lucasacademy.org` 查线上）：短句按当天英文精确拼回、改动/缺失时回退整句、英文配音 hash 与当天英文一致、仓库任何文件里都没有英文经文 |
+| `npm run validate` | 离线校验：13 节 / 4·4·5 分段 / 43 短句拼回原文、每个单元的双语问题、词典与拼音全覆盖、配音 manifest（文件真实存在、时长、声音、中文 hash）、配图 manifest、`public/` 里没有密钥或不该发布的文件；故事课文另查英文排版与文字来源，并报告多少英文词能查到中文 |
+| `npm run check:english` | 连接英文接口（默认本地 dev；`LANG_API_URL=https://lang.lucasacademy.org` 查线上）：短句按当天英文精确拼回、改动/缺失时回退整句、英文配音 hash 与当天英文一致、仓库任何文件里都没有英文经文（故事课文的英文是公有领域，随课文提供，不请求） |
 | `npm run deploy` | 先 validate，再 `wrangler deploy` |
 | `npm run images:list` | 从词条刷新配图清单 `docs/word-images.md` 与 `public/images/words/manifest.json` |
 
@@ -59,6 +60,8 @@ public/                     # 唯一的网站静态资源目录
     passages.js             # Worker 允许的经文范围，与课文共用
     english-basic.js        # 常用英文小词的中文解释
     love/ seed/             # text.js（和合本、分段、用简单的话理解）、study.js（对应与问题）、words.js（词典）
+    happy-prince/           # 《快乐王子》：text.js（132 个编号单元，英文原文 + 中文译文）、study.js（每个单元的问题）、
+                            # words.js（词典与英文对应）、index.js（24 小段，标出课堂共读）
   audio/<lesson>/{zh,en}/*.mp3 + manifest.json
   images/words/manifest.json  # 词语配图（24 个概念，WebP 与双语 alt 已齐全）
 worker/index.js             # GET /api/passage；其余请求交给静态资源
@@ -69,7 +72,7 @@ preview/  design/           # 本轮确认依据，不部署
 
 ### 数据与 ID
 
-- 经节 ID 用 `1CO.13.4` 这种稳定写法，段落 ID 如 `1-4`，短句 ID 为 `c1`、`c2`……，整句为 `whole`。问题、笔记、配音、词语图片都绑定 ID，不用屏幕位置。
+- 经节 ID 用 `1CO.13.4` 这种稳定写法，故事的句子 ID 为 `happy-prince.12`（课文 ID + 序号）；段落 ID 如 `1-4`，短句 ID 为 `c1`、`c2`……，整句为 `whole`。问题、笔记、配音、词语图片都绑定 ID，不用屏幕位置。
 - `lessons/love/study.js` 只记录对应关系的**数量**：每个短句占几个中文标点分句（`zh`）、几个英文词（`en`），以及校对时英文整节的 fingerprint（`hash`）。英文不进仓库；当天英文的 hash 不同，就只开放整句。
 - 本地存储前缀 `lucas-lang.`，与中文阅读器分开：`first`、`pinyin`、`speed`、`lesson`、`marks`、`done`（键为 `课文/段落`）、`note.<课文>.<经节>.<单元>`、`my-recording`。没有账户、登录或云同步。
 
@@ -82,6 +85,23 @@ preview/  design/           # 本轮确认依据，不部署
 ```bash
 npx wrangler secret put YVP_APP_KEY
 ```
+
+## 故事课文
+
+课文的 `kind: 'story'` 表示公有领域的故事，而不是经文：
+
+- 英文写在每一句的 `en` 里，随课文提供，不经过 `/api/passage`；`passage` 不填，`passages.js` 也不登记。
+- 页尾「文字来源」显示课文自己的 `sources`（说明 + 链接），不显示 YouVersion 和中文经文来源。
+- 界面把「节 / verse」说成「句 / sentence」（`strings.js` 的 `storyZh` / `storyEn` 只覆盖这些字眼）；小段超过 4 个时，左侧小段列表在桌面上可以滚动，在手机上变成可以横向滑动的一行。
+- 问题、配音、笔记、生词本与经文课文完全一样。还没有写短句对应的故事按整句学习。
+- 小段可以标 `inClass: true`，表示老师上课带着读（课堂共读）：左侧小段列表上有珊瑚色的「课堂共读」，列表上方有一句说明，课文标题上方写「课堂共读」或「选读」。没有标记的课文（两篇经文）显示不变。《快乐王子》标了结尾三小段；它们的导语交代了前面的情节，老师可以直接从第 21 小段开始读。
+
+《快乐王子》的准备方法：
+
+- 英文依据 [Project Gutenberg #902](https://www.gutenberg.org/ebooks/902)（1910 年第七次印刷本），对照 Wikisource 上的 1888 年初版改正三处排印错误（“chose”、“Egypt”!”、“said the Mayor in fact”）；把 to-night、to-morrow、good-bye、some one、every one 改成现代写法；为孩子略去一句（He passed over the Ghetto…，一句关于犹太人和钱的刻板描写）。长段落在句末拆开，接着说话的句子以 “ 开头。
+- 中文为本项目翻译（2026-10 由 Claude 起草，待审定）。词条拼音按课本写法：标出轻声，词内的「一」「不」变调，单独的「一」「不」用原调；只有一种读法的多音字才单独成词（得 = de、地 = de、只 = zhǐ）。
+- 英文每个词都能点出中文：故事词条的英文对应 + `english-basic.js` 里新加的一些常用词。
+- 配音等译文审定后再做（见下）。在这之前用设备的系统声音，并标为「系统试听」。
 
 ## 配音
 
@@ -100,6 +120,15 @@ cd ../lucas-academy-lang
 npm run audio:publish -- love ../lucas-academy-media/data/processed/lucas-lang \
   zh=../lucas-academy-media/outputs/fangfang/zh/lang-love en=../lucas-academy-media/outputs/louise/en/lang-love
 npm run validate && npm run check:english
+```
+
+故事课文的英文就在课文里，生成脚本不用开 dev：
+
+```bash
+node scripts/narration-scripts.mjs happy-prince ../lucas-academy-media/data/processed/lucas-lang
+# 然后同上：lucas-narrate（输出目录 lang-happy-prince）、check_narration.py，再
+npm run audio:publish -- happy-prince ../lucas-academy-media/data/processed/lucas-lang \
+  zh=../lucas-academy-media/outputs/fangfang/zh/lang-happy-prince en=../lucas-academy-media/outputs/louise/en/lang-happy-prince
 ```
 
 `audio:publish` 去掉合成留下的首尾静音（保留 0.15 s 起音和 0.25 s 尾音），编码为单声道 32 kHz 48 kbps MP3（MPEG-1 Layer III，Safari / iPad 都能播放），并统计实际文件大小与时长；任何一条缺失或为空都会中止。
@@ -122,4 +151,6 @@ Worker `lucas-academy-lang`，自定义域名 `lang.lucasacademy.org`，静态�
 
 ## 内容来源
 
-中文为公版和合本，按 [iBible 哥林多前书 13](https://b.ibible.hk/bible/9/1co/13) 核对；《种子与好土》中文与词典来自 `lucas-academy-chinese`。中文分词、儿童释义、短句对应和全部讨论问题为本项目整理。暂按 7–10 岁、亲子或同伴共读设计。
+中文为公版和合本，按 [iBible 哥林多前书 13](https://b.ibible.hk/bible/9/1co/13) 核对；《种子与好土》中文与词典来自 `lucas-academy-chinese`。中文分词、儿童释义、短句对应和全部讨论问题为本项目整理。《快乐王子》的英文为公有领域（见「故事课文」），中文译文、分词、释义和问题为本项目整理。暂按 7–10 岁、亲子或同伴共读设计。
+
+《小王子》（Le Petit Prince，1943）在美国 2039 年 1 月 1 日才进入公有领域，所有英文和中文译本也都还有版权，节选也一样，所以现在不收录；已向 Gallimard 写信申请授权。
