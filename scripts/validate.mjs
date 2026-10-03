@@ -10,6 +10,8 @@ import {PASSAGES, MAX_VERSES} from '../public/lessons/passages.js';
 import {englishBasic} from '../public/lessons/english-basic.js';
 import {chineseClauses, chineseUnits, fingerprint} from '../public/js/units.js';
 
+const ENGLISH_WORDS = /[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu;
+
 const root = fileURLToPath(new URL('..', import.meta.url));
 const pub = join(root, 'public');
 const failures = [];
@@ -36,14 +38,26 @@ for (const lesson of lessons) {
   check(new Set(ids).size === ids.length, `${tag}: duplicate verse ids`);
   lesson.verses.forEach((v, i) => {
     check(v.n === i + 1, `${tag}: verse ${v.id} out of order`);
-    check(v.id === `${lesson.passage.book}.${lesson.passage.chapter}.${v.n}`, `${tag}: verse id ${v.id} does not match its passage`);
+    const id = lesson.passage ? `${lesson.passage.book}.${lesson.passage.chapter}.${v.n}` : `${lesson.id}.${v.n}`;
+    check(v.id === id, `${tag}: verse id ${v.id} should be ${id}`);
     check(v.tokens.length && v.tokens.every(t => t.length), `${tag}: ${v.id} has an empty token`);
     check(v.explain?.zh && v.explain?.en, `${tag}: ${v.id} needs both 用简单的话理解 lines`);
   });
 
-  // The English endpoint must serve exactly this passage.
-  const allowed = PASSAGES[`${lesson.passage.book}.${lesson.passage.chapter}`];
-  check(allowed && allowed[0] === 1 && allowed[1] === lesson.verses.length, `${tag}: passages.js does not list verses 1–${lesson.verses.length}`);
+  if (lesson.passage) {
+    // The English endpoint must serve exactly this passage.
+    const allowed = PASSAGES[`${lesson.passage.book}.${lesson.passage.chapter}`];
+    check(allowed && allowed[0] === 1 && allowed[1] === lesson.verses.length, `${tag}: passages.js does not list verses 1–${lesson.verses.length}`);
+  } else {
+    // A story carries its own public-domain English, typeset, and names its sources.
+    check(lesson.kind === 'story', `${tag}: a lesson without a passage must be a story`);
+    const {note, links} = lesson.sources || {};
+    check(note?.zh && note?.en && links?.length && links.every(l => l.href?.startsWith('https://') && l.label?.zh && l.label?.en),
+      `${tag}: a story names its sources, in both languages`);
+    for (const v of lesson.verses) {
+      check(typeof v.en === 'string' && v.en.length > 1 && v.en === v.en.trim() && !/\s{2}|"/.test(v.en), `${tag}: ${v.id} needs its English (curly quotes, single spaces)`);
+    }
+  }
 
   // Sections: ≤ 7 verses, contiguous, covering every verse once.
   let next = 1;
@@ -52,6 +66,7 @@ for (const lesson of lessons) {
     const size = s.range[1] - s.range[0] + 1;
     check(size >= 1 && size <= MAX_VERSES, `${tag}: section ${s.id} has ${size} verses (max ${MAX_VERSES})`);
     check(s.title?.zh && s.title?.en && s.intro?.zh && s.intro?.en, `${tag}: section ${s.id} needs a title and intro in both languages`);
+    check(s.inClass === undefined || s.inClass === true, `${tag}: section ${s.id} marks inClass with true or not at all`);
     next = s.range[1] + 1;
   }
   check(next === lesson.verses.length + 1, `${tag}: sections do not cover every verse`);
@@ -119,6 +134,12 @@ for (const lesson of lessons) {
   const enClips = clips.filter(c => c.language === 'en').length;
   summary.push(`${lesson.title.zh}: ${lesson.verses.length} verses in ${lesson.sections.map(s => s.range[1] - s.range[0] + 1).join('/')}, ` +
     `${clauseCount} aligned clauses, ${Object.keys(lesson.dict).length} words; narration zh ${zhClips}/${expected}, en ${enClips}/${expected}`);
+  // How much of a story's English a child can tap for a Chinese meaning.
+  if (!lesson.passage) {
+    const english = new Set(lesson.verses.flatMap(v => (v.en.match(ENGLISH_WORDS) || []).map(w => w.toLowerCase())));
+    const glossed = [...english].filter(w => lesson.aliases[w] || englishBasic[w]).length;
+    summary.push(`${lesson.title.zh}: ${glossed} of ${english.size} distinct English words have a Chinese meaning`);
+  }
   if (lesson.id === 'love') {
     check(lesson.verses.length === 13, 'love: 13 verses');
     check(lesson.sections.map(s => s.range[1] - s.range[0] + 1).join('/') === '4/4/5', 'love: sections 4/4/5');
@@ -128,9 +149,14 @@ for (const lesson of lessons) {
 }
 
 // The interface speaks both languages: every string exists in each.
-const {strings} = await import('../public/js/strings.js');
+const {strings, storyStrings} = await import('../public/js/strings.js');
 const zhKeys = Object.keys(strings.zh).sort().join();
 const enKeys = Object.keys(strings.en).sort().join();
+for (const [lang, override] of Object.entries(storyStrings)) {
+  for (const [key, value] of Object.entries(override)) {
+    check(key in strings[lang] && typeof value === typeof strings[lang][key], `strings: story ${lang}.${key} does not replace a ${lang} string of the same kind`);
+  }
+}
 check(zhKeys === enKeys, `strings: zh and en keys differ (${Object.keys(strings.zh).filter(k => !(k in strings.en)).concat(Object.keys(strings.en).filter(k => !(k in strings.zh))).join(', ')})`);
 const indexHtml = await readFile(join(pub, 'index.html'), 'utf8');
 for (const [, key] of indexHtml.matchAll(/data-i18n(?:-[a-z-]+)?="([^"]+)"/g)) check(key in strings.zh, `index.html: unknown string ${key}`);

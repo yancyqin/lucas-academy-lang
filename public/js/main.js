@@ -12,7 +12,7 @@ import {spokenWords} from './tokens.js';
 import {createReader} from './reader.js';
 import {createWordPanel} from './wordpanel.js';
 import {createStudy} from './study.js';
-import {t, pick, setLanguage, applyPage, uiLanguage} from './strings.js';
+import {t, pick, setLanguage, setKind, applyPage, uiLanguage} from './strings.js';
 
 const $ = id => document.getElementById(id);
 const other = lang => (lang === 'zh' ? 'en' : 'zh');
@@ -23,6 +23,7 @@ for (const lesson of lessons) {
     section.verseIds = lesson.verses.filter(v => v.n >= section.range[0] && v.n <= section.range[1]).map(v => v.id);
   }
 }
+for (const lesson of lessons) english.register(lesson);
 dictionary.setLessons(lessons);
 dictionary.loadPictures();
 
@@ -66,6 +67,8 @@ const app = {
   section: () => state.lesson.sections[state.section],
   verses: () => state.lesson.verses.filter(v => app.section().verseIds.includes(v.id)),
   isDone: section => Boolean(state.done[`${state.lesson.id}/${section.id}`]),
+  // A lesson may mark the parts read with the teacher in class; then the rest are 选读.
+  marksClass: () => state.lesson.sections.some(s => s.inClass),
   isMarked: (word, lang) => state.marks.some(m => m.word === word && m.lang === lang),
   tokenContext: () => ({lesson: state.lesson, isMarked: app.isMarked, selected: panel?.selected || null}),
   clipFor: (verseId, unitId, lang, text) => narration.clip(state.lesson, verseId, unitId, lang, text),
@@ -131,11 +134,31 @@ app.retryEnglish = () => {
 function afterEnglish() {
   reader.renderVerses();
   study?.refresh();
-  const credit = english.credit();
-  if (credit) {
-    $('copyright').textContent = credit.copyright || '';
-    if (credit.youVersionDeepLink?.startsWith('https://')) $('youversion-link').href = credit.youVersionDeepLink;
+  renderSources();
+}
+
+// 文字来源: a passage credits the licensed English and the Chinese Bible text;
+// a public-domain story names its own sources.
+function renderSources() {
+  const lesson = state.lesson;
+  $('scripture-links').hidden = Boolean(lesson.sources);
+  $('story-links').hidden = !lesson.sources;
+  if (lesson.sources) {
+    $('copyright').textContent = pick(lesson.sources.note);
+    $('story-links').replaceChildren(...lesson.sources.links.flatMap((link, i) => {
+      const a = document.createElement('a');
+      a.href = link.href;
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = pick(link.label);
+      return i ? [document.createTextNode(' · '), a] : [a];
+    }));
+    return;
   }
+  const credit = english.credit();
+  $('copyright').textContent = credit?.copyright || '';
+  if (credit?.youVersionDeepLink?.startsWith('https://')) $('youversion-link').href = credit.youVersionDeepLink;
+  $('chinese-source').href = lesson.chineseSource;
 }
 
 function loadEnglish() {
@@ -159,13 +182,16 @@ function renderVoiceCredit() {
 function render() {
   const lesson = state.lesson;
   setLanguage(state.first);
+  setKind(lesson.kind);
   applyPage();
   for (const option of $('lesson-select').options) option.textContent = pick(lessons.find(l => l.id === option.value).title);
   reader.renderNav();
   $('lesson-title').textContent = pick(lesson.title);
-  $('section-kicker').textContent = t('kicker', {reference: pick(lesson.reference), n: state.section + 1});
+  const mark = app.marksClass() ? ` · ${t(app.section().inClass ? 'inClass' : 'optional')}` : '';
+  $('section-kicker').textContent = t('kicker', {reference: pick(lesson.reference), n: state.section + 1}) + mark;
+  $('reading-note').hidden = !app.marksClass();
   $('section-intro').textContent = pick(app.section().intro);
-  $('chinese-source').href = lesson.chineseSource;
+  renderSources();
   // The button names the language read first; flipping (here or in 逐句学) relabels it.
   $('flip-label').textContent = state.first === 'zh' ? '中文在前' : 'English first';
   $('flip').lang = state.first === 'zh' ? 'zh-CN' : 'en';

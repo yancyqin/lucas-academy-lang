@@ -4,10 +4,11 @@
 //   node scripts/narration-scripts.mjs love ../lucas-academy-media/data/processed/lucas-lang
 //
 // Writes <lesson>-zh.json and <lesson>-en.json: {"lines": [{id, verseId, unitId, text}]}.
-// The Chinese comes from the lesson. The English is licensed: it is fetched
-// from /api/passage (LANG_API_URL, default http://127.0.0.1:8197 — `npm run dev`)
-// and written only to the output directory, which must be outside this
-// repository so it can never be committed here.
+// The Chinese comes from the lesson. A passage's English is licensed: it is
+// fetched from /api/passage (LANG_API_URL, default http://127.0.0.1:8197 —
+// `npm run dev`) and written only to the output directory, which must be
+// outside this repository so it can never be committed here. A story's
+// English is public domain and comes from the lesson itself.
 import {mkdir, writeFile} from 'node:fs/promises';
 import {resolve, relative, isAbsolute} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -33,7 +34,7 @@ const lesson = (await entry.load()).default;
 const api = process.env.LANG_API_URL || 'http://127.0.0.1:8197';
 
 const english = new Map();
-for (const section of lesson.sections) {
+for (const section of lesson.passage ? lesson.sections : []) {
   const ref = `${lesson.passage.book}.${lesson.passage.chapter}.${section.range[0]}-${section.range[1]}`;
   const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref})}`);
   if (!response.ok) throw new Error(`/api/passage ${ref} returned ${response.status}`);
@@ -44,7 +45,7 @@ const pad = n => String(n).padStart(2, '0');
 const zh = [];
 const en = [];
 for (const verse of lesson.verses) {
-  const text = english.get(verse.n);
+  const text = verse.en ?? english.get(verse.n);
   if (!text) throw new Error(`No English for ${verse.id}`);
   const units = studyUnits(lesson, verse, text);
   if (lesson.study?.[verse.id]?.units && units.reason) {

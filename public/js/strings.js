@@ -18,6 +18,9 @@ const zh = {
   kicker: ({reference, n}) => `${reference} · 第 ${n} 小段`,
   sectionMeta: ({first, last, count}) => `${first}–${last} 节 · ${count} 句`,
   sectionDone: ({title}) => `${title}，已学完`,
+  inClass: '课堂共读',
+  optional: '选读',
+  inClassNote: '标着「课堂共读」的小段，老师上课会带着读；其他小段是选读。',
   studyAll: '逐句学',
   playSection: '听这一小段',
   pause: '暂停',
@@ -162,6 +165,9 @@ const en = {
   kicker: ({reference, n}) => `${reference} · Part ${n}`,
   sectionMeta: ({first, last}) => `Verses ${first}–${last}`,
   sectionDone: ({title}) => `${title}, done`,
+  inClass: 'Read in class',
+  optional: 'Optional reading',
+  inClassNote: 'Parts marked “Read in class” are read with the teacher in class; the others are optional reading.',
   studyAll: 'Study verse by verse',
   playSection: 'Listen to this part',
   pause: 'Pause',
@@ -290,18 +296,73 @@ const en = {
   lessonDone: 'You finished the lesson! Read it again, or choose another lesson.',
 };
 
+// A story is read sentence by sentence, not verse by verse: in a story lesson
+// (lesson.kind === 'story') these keys replace the ones above.
+const storyZh = {
+  orderHint: '每一句先读这种语言，再读另一种。点一下，交换先后顺序。',
+  sectionMeta: ({first, last}) => `第 ${first}–${last} 句`,
+  versesLabel: '逐句双语课文',
+  readVerse: ({n, language}) => `读第${n}句${language}`,
+  slowVerse: ({n, language}) => `逐词慢读第${n}句${language}`,
+  revealLabel: ({n, language}) => `显示第${n}句${language}原文`,
+  studyThisLabel: ({n}) => `学第${n}句`,
+  verseSimple: ({n}) => `第 ${n} 句 · 用简单的话理解`,
+  studyContext: ({title, first, last}) => `${title} · 第 ${first}–${last} 句`,
+  jumpVerse: ({n}) => `学习第${n}句`,
+  whereVerse: ({n}) => `第 ${n} 句`,
+  wherePart: ({n, p}) => `第 ${n} 句 · 短句 ${p}`,
+};
+
+const storyEn = {
+  orderHint: 'Each sentence is read in this language first, then in the other. Press to swap the order.',
+  sectionMeta: ({first, last}) => `Sentences ${first}–${last}`,
+  studyAll: 'Study sentence by sentence',
+  readingHint: 'Read one part first, then press "Study sentence by sentence" to go slowly and talk it over. You can tap any word.',
+  versesLabel: 'The reading, sentence by sentence in both languages',
+  readVerse: ({n, language}) => `Read sentence ${n} in ${language}`,
+  slowVerse: ({n, language}) => `Read sentence ${n} in ${language} word by word`,
+  revealLabel: ({n, language}) => `Show sentence ${n} in ${language}`,
+  studyThis: 'Study this sentence',
+  studyThisLabel: ({n}) => `Study sentence ${n}`,
+  partsUnavailable: 'This story is read sentence by sentence for now',
+  unitWhole: ({i, n}) => `Sentence ${i} of ${n} · Read slowly, then talk it over`,
+  unitPart: ({i, n, p, m}) => `Sentence ${i} of ${n} · Part ${p} of ${m}`,
+  listenBothVerse: 'Hear this sentence · both languages',
+  discussOverline: 'A small moment from this sentence',
+  explainVerse: 'This sentence in simple words',
+  noteSummary: 'Write down a thought about this sentence',
+  prevVerse: 'Previous sentence',
+  nextVerse: 'Next sentence',
+  studyWordFallback: 'Listen first, then see what it means in this sentence.',
+  whereVerse: ({n}) => `sentence ${n}`,
+  wherePart: ({n, p}) => `sentence ${n} · part ${p}`,
+  verseSimple: ({n}) => `Sentence ${n} · In simple words`,
+  hearVerse: 'Hear the whole sentence',
+  studyOverline: 'You teach me, I teach you · Sentence by sentence',
+  studyContext: ({title, first, last}) => `${title} · Sentences ${first}–${last}`,
+  studyVerseNav: 'Choose a sentence in this part',
+  jumpVerse: ({n}) => `Sentence ${n}`,
+};
+
 export const strings = {zh, en};
+export const storyStrings = {zh: storyZh, en: storyEn};
 let language = 'zh';
+let kind = 'scripture';
 
 export function setLanguage(value) {
   language = value === 'en' ? 'en' : 'zh';
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
 }
 
+// The kind of lesson in hand: 'story' words its labels by sentence.
+export function setKind(value) {
+  kind = value === 'story' ? 'story' : 'scripture';
+}
+
 export const uiLanguage = () => language;
 
 export function t(key, values = {}) {
-  const entry = strings[language][key] ?? strings.zh[key];
+  const entry = (kind === 'story' ? storyStrings[language][key] : undefined) ?? strings[language][key] ?? strings.zh[key];
   if (entry === undefined) return key;
   return typeof entry === 'function' ? entry(values) : entry;
 }

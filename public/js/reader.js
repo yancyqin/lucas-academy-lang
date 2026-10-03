@@ -22,10 +22,22 @@ export function createReader(app) {
       const copy = el('span');
       const meta = t('sectionMeta', {first: section.range[0], last: section.range[1], count: section.verseIds.length});
       copy.append(el('strong', '', pick(section.title)), el('small', '', meta));
+      // 课堂共读: a part the teacher reads with the class.
+      if (section.inClass) {
+        item.classList.add('in-class');
+        copy.append(el('span', 'reading-mark', t('inClass')));
+      }
       item.append(el('span', 'section-number', done ? '✓' : String(i + 1)), copy);
       if (done) item.setAttribute('aria-label', t('sectionDone', {title: pick(section.title)}));
       nav.append(item);
     });
+    // A story has many parts: the list scrolls, and keeps the current part in view.
+    nav.classList.toggle('many', lesson.sections.length > 4);
+    const current = nav.querySelector('[aria-current="step"]');
+    if (current && nav.classList.contains('many')) {
+      nav.scrollTop = current.offsetTop - (nav.clientHeight - current.offsetHeight) / 2;
+      nav.scrollLeft = current.offsetLeft - (nav.clientWidth - current.offsetWidth) / 2;
+    }
     const finished = lesson.sections.filter(app.isDone).length;
     $('progress-text').textContent = t('progress', {done: finished, total: lesson.sections.length});
     $('lesson-progress').max = lesson.sections.length;

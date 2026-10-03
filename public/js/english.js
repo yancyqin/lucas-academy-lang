@@ -5,6 +5,9 @@
 // A 404 (no Worker behind a plain static server) or 503 (the server has no
 // key) means no English this visit: say so once instead of asking again for
 // every section. A 502 or a dropped connection stays retryable.
+//
+// A public-domain story carries its own English (verse.en): it is registered
+// once and never fetched.
 import {t} from './strings.js';
 
 const texts = new Map(); // verse id -> text
@@ -18,8 +21,13 @@ const key = (lesson, section) => `${lesson.id}/${section.id}`;
 export const text = verseId => texts.get(verseId);
 export const credit = () => attribution;
 
+export function register(lesson) {
+  for (const verse of lesson.verses) if (typeof verse.en === 'string' && verse.en) texts.set(verse.id, verse.en);
+}
+
 // null while loading or loaded; otherwise why the English is missing.
 export function problem(lesson, section) {
+  if (loaded(lesson, section)) return null;
   return latched || failed.get(key(lesson, section)) || null;
 }
 
@@ -36,7 +44,7 @@ export function retry(lesson, section) {
 export function ensure(lesson, section) {
   const k = key(lesson, section);
   if (loaded(lesson, section)) return Promise.resolve(true);
-  if (latched || failed.has(k)) return Promise.resolve(false);
+  if (!lesson.passage || latched || failed.has(k)) return Promise.resolve(false);
   if (inFlight.has(k)) return inFlight.get(k);
   const ref = `${lesson.passage.book}.${lesson.passage.chapter}.${section.range[0]}-${section.range[1]}`;
   const request = (async () => {

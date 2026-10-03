@@ -22,6 +22,7 @@
       <select id="lesson-select"></select>
       <p id="lesson-reference" class="nav-reference"></p>
       <div class="nav-section-heading" data-i18n="onePart">每次一小段</div>
+      <p id="reading-note" class="nav-reading-note" data-i18n="inClassNote" hidden>标着「课堂共读」的小段，老师上课会带着读；其他小段是选读。</p>
       <nav id="section-nav" data-i18n-aria-label="parts" aria-label="学习段落"></nav>
       <div class="nav-note"><strong data-i18n="navNoteTitle">读一读，听一听。</strong><p><span data-i18n="navNote1">你会的词，可以教给我。</span><br><span data-i18n="navNote2">我会的词，也可以教给你。</span></p></div>
       <div class="progress-meta"><span id="progress-text"></span><progress id="lesson-progress" max="3" value="0"></progress></div>
@@ -49,7 +50,8 @@
       <footer class="credit"><details><summary data-i18n="sources">文字来源</summary>
         <div id="copyright"></div>
         <p id="voice-credit"></p>
-        <p><a id="youversion-link" href="https://www.bible.com/versions/111" target="_blank" rel="noopener">YouVersion</a><span> · </span><a id="chinese-source" href="https://b.ibible.hk/bible/9/1co/13" target="_blank" rel="noopener" data-i18n="chineseSource">中文经文来源</a></p>
+        <p id="scripture-links"><a id="youversion-link" href="https://www.bible.com/versions/111" target="_blank" rel="noopener">YouVersion</a><span> · </span><a id="chinese-source" href="https://b.ibible.hk/bible/9/1co/13" target="_blank" rel="noopener" data-i18n="chineseSource">中文经文来源</a></p>
+        <p id="story-links" hidden></p>
       </details></footer>
     </main>
     <aside id="word-panel" class="word-panel" data-i18n-aria-label="learnWord" aria-label="一起认识这个词" hidden><div class="panel-heading"><span id="panel-label" class="overline">一起认识这个词</span><button id="close-panel" type="button" data-i18n="close" data-i18n-aria-label="closePanel" aria-label="关闭词语面板">关闭</button></div><div id="panel-body"></div></aside>
