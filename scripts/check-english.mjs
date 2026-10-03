@@ -23,6 +23,11 @@ const sentences = new Set();
 
 for (const entry of registry) {
   const lesson = (await entry.load()).default;
+  if (!lesson.passage) {
+    // A story's English is public domain and ships with the lesson: nothing to fetch or keep out.
+    lines.push(`${lesson.title.zh}: public-domain English in the lesson, not fetched`);
+    continue;
+  }
   const english = new Map();
   for (const section of lesson.sections) {
     const ref = `${lesson.passage.book}.${lesson.passage.chapter}.${section.range[0]}-${section.range[1]}`;

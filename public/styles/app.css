@@ -24,3 +24,9 @@
 .header-right button{white-space:nowrap}.section-button small{white-space:nowrap}
 @media(max-width:700px){.brand-name{line-height:1.15}.header-right{flex:none}}
 @media(max-width:360px){.site-header{flex-wrap:wrap;row-gap:6px}.header-right{margin-left:auto}}
+/* A story has many parts: the list scrolls inside the sidebar instead of growing past the screen, and on phones it becomes one row that scrolls sideways instead of squeezing every part into the width. */
+#section-nav.many{position:relative;max-height:calc(100vh - 330px);overflow-y:auto;overscroll-behavior:contain}#section-nav.many .section-button{flex-shrink:0;min-height:54px;padding:9px 10px}
+@media(max-width:700px){#section-nav.many{max-height:none;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;padding-bottom:6px}#section-nav.many .section-button{flex:0 0 132px;scroll-snap-align:start}#section-nav.many .section-button>span:last-child{min-width:0}#section-nav.many .section-button strong{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+/* 课堂共读: the parts a teacher reads with the class stand out in the parts list, and a lesson that marks them says so once, above the list. */
+.reading-mark{display:block;margin-top:3px;font-size:11px;font-weight:600;color:#9c4f37}.section-button.in-class .section-number{border:2px solid var(--coral);color:#9c4f37}.section-button.in-class[aria-current=step] .section-number{background:var(--accent);color:#fff}.nav-reading-note{font-size:11px;line-height:1.7;color:var(--muted);margin:-4px 0 12px}
+@media(max-width:700px){.nav-reading-note{margin:12px 0 0}}
