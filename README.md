@@ -29,7 +29,7 @@ npm run dev                      # http://127.0.0.1:8197 ，含 /api/passage
 | `npm run dev` | Wrangler 本地运行 Worker + `public/` |
 | `npm run validate` | 离线校验：13 节 / 4·4·5 分段 / 43 短句拼回原文、每个单元的双语问题、词典与拼音全覆盖、配音 manifest（文件真实存在、时长、声音、中文 hash）、配图 manifest、`public/` 里没有密钥或不该发布的文件；故事课文另查英文排版与文字来源，并报告多少英文词能查到中文 |
 | `npm run check:english` | 连接英文接口（默认本地 dev；`LANG_API_URL=https://lang.lucasacademy.org` 查线上）：短句按当天英文精确拼回、改动/缺失时回退整句、英文配音 hash 与当天英文一致、仓库任何文件里都没有英文经文（故事课文的英文是公有领域，随课文提供，不请求） |
-| `npm run deploy` | 先 validate，再 `wrangler deploy` |
+| `npm run deploy` | 先 validate，再 `wrangler deploy`（平时由 `main` 自动部署，见「部署」） |
 | `npm run images:list` | 从词条刷新配图清单 `docs/word-images.md` 与 `public/images/words/manifest.json` |
 
 预览对照（原 Codex 预览，端口 8095，读取 `../lucas-academy-chinese/.dev.vars`）：
@@ -142,6 +142,12 @@ Whisper 听不出同音字（锣/罗、钹/伯、嫉妒/极度），所以中文
 24 张词语图已完成并接入词语面板，统一为 800×600 WebP，总计约 2.27 MiB。使用内置 `image_gen` 生成；完整提示词、源文件记录和验收结果见 [docs/image-generation/README.md](docs/image-generation/README.md)，部署状态见 [docs/release.md](docs/release.md)。
 
 ## 部署
+
+⚠️ `main` 一有新提交（合并 PR 或直接推送），就会自动部署到 lang.lucasacademy.org。所以平时在分支上改，用 PR 合并。
+
+自动部署用 Cloudflare Workers Builds：Worker 的 **Settings → Builds** 连接 GitHub 仓库 `yancyqin/lucas-academy-lang`，分支 `main`，构建命令 `npm run validate`（离线校验不通过就不部署），部署命令 `npx wrangler deploy`，Node 版本取 `.nvmrc`。每次构建的记录和日志在同一页。
+
+需要时仍可以在本机手动部署（同样先校验）：
 
 ```bash
 npm run deploy
