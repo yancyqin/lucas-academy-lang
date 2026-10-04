@@ -33,3 +33,5 @@
 /* 遮住英文: on by default. The button carries a tick while it is on, and each second-language line waits under a card until it is tapped. Phones let the header wrap to a second row instead of running past the screen. */
 .hide-button[aria-pressed=true]{background:var(--soft);border-color:#c9d8c7;color:var(--accent);font-weight:600}.hide-button[aria-pressed=true]::before{content:"✓ "}.blank-line.second-cover{min-height:56px;background:#f6f3ea;border-color:#d9cfb7}
 @media(max-width:700px){.site-header{flex-wrap:wrap;row-gap:8px}.header-right{margin-left:auto}}
+/* Highlights in orange: the tapped word and the line being read aloud stand out far more than the pale coral and green they replace; pinyin over a highlighted word turns dark to stay legible. */
+:root{--highlight:#ffa94d;--highlight-soft:#ffe8cc;--highlight-edge:#f08c00}.word.selected{background:var(--highlight);color:var(--ink)}.word.selected rt{color:var(--ink)}.playing{background:var(--highlight-soft);box-shadow:inset 4px 0 0 var(--highlight-edge)}.playing .verse-number{color:#9a4a00}
