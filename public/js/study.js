@@ -22,6 +22,7 @@ export function createStudy(app) {
   let opener = null;
   let activeWord = null;
   let isOpen = false;
+  const revealed = new Set(); // 遮住: second-language lines opened in this visit
 
   const verse = () => verses[index];
   const units = () => studyUnits(app.lesson(), verse(), english.text(verse().id));
@@ -137,6 +138,18 @@ export function createStudy(app) {
       play.setAttribute('aria-label', t('listenLabel_' + lang));
       play.disabled = !current[lang];
       header.append(play);
+      // 遮住: the second language waits under a card until it is tapped.
+      const key = `${verse().id}#${current.id}#${lang}`;
+      if (lang !== first && app.state.hideSecond && !revealed.has(key)) {
+        const cover = button(t('revealSecond'), () => {
+          revealed.add(key);
+          render();
+          dialog.querySelector(`.study-language[data-language="${lang}"] .study-language-label button`)?.focus({preventScroll: true});
+        }, 'study-cover');
+        line.append(header, cover);
+        reading.append(line);
+        continue;
+      }
       const text = el('p', 'study-text ' + lang);
       text.lang = lang === 'zh' ? 'zh-CN' : 'en';
       if (current[lang]) {
@@ -253,6 +266,10 @@ export function createStudy(app) {
     render();
   };
   $('study-pinyin').onchange = event => app.setPinyin(event.target.checked);
+  $('study-hide').onclick = () => {
+    revealed.clear();
+    app.setHideSecond(!app.state.hideSecond);
+  };
   $('study-listen').onclick = () => {
     const current = unit();
     app.audio.play([app.state.first, other(app.state.first)].map(lang => item(current, lang)));
@@ -299,6 +316,7 @@ export function createStudy(app) {
       part = 0;
       mode = 'whole';
       teacher = 'zh';
+      revealed.clear();
       hideWord();
       dialog.showModal();
       isOpen = true;

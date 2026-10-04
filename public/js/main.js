@@ -36,6 +36,9 @@ const state = {
   // 默写 always starts off: a page that opens with its text hidden reads as
   // broken to whoever picks the iPad up next.
   dictation: false,
+  // 遮住: the second language waits under a card until it is tapped. On
+  // unless the reader has turned it off.
+  hideSecond: storage.load('hideSecond', true) !== false,
   revealed: new Set(),
   marks: [],
   done: {},
@@ -118,6 +121,20 @@ app.toggleMark = (word, lang) => {
   reader.renderVerses();
 };
 
+// Changing 遮住 covers every line again.
+app.setHideSecond = value => {
+  state.hideSecond = value;
+  storage.save('hideSecond', value);
+  state.revealed.clear();
+  renderHide();
+  reader.renderVerses();
+  study?.refresh();
+};
+
+function renderHide() {
+  for (const id of ['hide-second', 'study-hide']) $(id).setAttribute('aria-pressed', String(state.hideSecond));
+}
+
 app.setPinyin = value => {
   state.pinyin = value;
   storage.save('pinyin', value);
@@ -195,6 +212,7 @@ function render() {
   // The button names the language read first; flipping (here or in 逐句学) relabels it.
   $('flip-label').textContent = state.first === 'zh' ? '中文在前' : 'English first';
   $('flip').lang = state.first === 'zh' ? 'zh-CN' : 'en';
+  renderHide();
   $('complete-next').dataset.review = 'false';
   $('pinyin').checked = state.pinyin;
   $('dictation').checked = state.dictation;
@@ -265,6 +283,7 @@ app.study = study;
 $('lesson-select').replaceChildren(...lessons.map(l => new Option(pick(l.title), l.id)));
 $('lesson-select').onchange = event => changeLesson(event.target.value);
 $('flip').onclick = () => app.changeOrder(other(state.first));
+$('hide-second').onclick = () => app.setHideSecond(!state.hideSecond);
 $('pinyin').onchange = event => app.setPinyin(event.target.checked);
 $('dictation').onchange = event => {
   audio.stop();

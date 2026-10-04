@@ -69,6 +69,17 @@ export function createReader(app) {
       row.append(reveal);
       return row;
     }
+    // 遮住: the second language waits under a card. Think first, then tap.
+    const covered = state.hideSecond && lang !== state.first && !state.revealed.has(verse.id + lang);
+    if (covered) {
+      const reveal = button(t('revealSecond'), () => {
+        state.revealed.add(verse.id + lang);
+        renderVerses();
+      }, 'blank-line second-cover');
+      reveal.setAttribute('aria-label', t('revealSecondLabel', {n: verse.n}));
+      row.append(reveal);
+      return row;
+    }
     const text = el('p', 'verse-text ' + lang);
     text.lang = lang === 'zh' ? 'zh-CN' : 'en';
     const words = lang === 'zh' ? verse.tokens.join('') : english.text(verse.id);
