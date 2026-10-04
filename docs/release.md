@@ -1,5 +1,23 @@
 # 发布与验收记录
 
+## 2026-10-03 · 故事《快乐王子》上线
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/> |
+| 部署的 commit | `652f1ea` Merge pull request #1（`bde9a8f` Support public-domain story lessons and class reading marks；`0c1850c` Add The Happy Prince, with three parts marked for class）；已在 `origin/main` |
+| 部署版本 | `b7b15055-2d4e-45a0-833a-6b7ceb0723e8`（2026-10-03T15:39:19Z，100% 流量；本机 `npm run deploy`） |
+| 发布内容 | 故事课文类型：英文随课文提供、界面用「句」、小段列表可滚动、课堂共读标记。《快乐王子》全文 132 句 24 小段，结尾三小段（第 112–115、116–121、127–132 句）为课堂共读，其余为选读。共 14 个新增或变更的静态资源 |
+| 可回退版本 | `7a6175a3-1fd7-4c4b-ac99-ae32f4a55c05`；命令：`npx wrangler rollback 7a6175a3-1fd7-4c4b-ac99-ae32f4a55c05` |
+
+部署后验证：
+
+- 根页面、`/lessons/happy-prince/index.js`、`/lessons/happy-prince/text.js`、`/audio/happy-prince/manifest.json` 返回 200。
+- `/api/passage?translation=NIV&ref=1CO.13.1-4` 返回 200：4 节英文，带版权说明，英文经文不受影响。
+- 部署前 `npm run validate` 通过（《快乐王子》883 / 883 个英文词能查到中文）；`npm run check:english` 在本地 dev 通过。
+- 线上浏览器：下拉菜单有「快乐王子」，第 21 小段标题上方显示「课堂共读」，三段标记正确，没有失败请求。
+- 还没有配音：故事课文用设备的系统声音，标为「系统试听」。自动部署（Workers Builds）没有开，部署仍在本机手动执行。
+
 ## 2026-09-30 · 24 张词语图片上线
 
 | 项目 | 记录 |

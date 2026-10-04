@@ -30,3 +30,8 @@
 /* 课堂共读: the parts a teacher reads with the class stand out in the parts list, and a lesson that marks them says so once, above the list. */
 .reading-mark{display:block;margin-top:3px;font-size:11px;font-weight:600;color:#9c4f37}.section-button.in-class .section-number{border:2px solid var(--coral);color:#9c4f37}.section-button.in-class[aria-current=step] .section-number{background:var(--accent);color:#fff}.nav-reading-note{font-size:11px;line-height:1.7;color:var(--muted);margin:-4px 0 12px}
 @media(max-width:700px){.nav-reading-note{margin:12px 0 0}}
+/* 遮住英文: on by default. The button carries a tick while it is on, and each second-language line waits under a card until it is tapped. Phones let the header wrap to a second row instead of running past the screen. */
+.hide-button[aria-pressed=true]{background:var(--soft);border-color:#c9d8c7;color:var(--accent);font-weight:600}.hide-button[aria-pressed=true]::before{content:"✓ "}.blank-line.second-cover{min-height:56px;background:#f6f3ea;border-color:#d9cfb7}
+@media(max-width:700px){.site-header{flex-wrap:wrap;row-gap:8px}.header-right{margin-left:auto}}
+/* Highlights in orange: the tapped word and the line being read aloud stand out far more than the pale coral and green they replace; pinyin over a highlighted word turns dark to stay legible. */
+:root{--highlight:#ffa94d;--highlight-soft:#ffe8cc;--highlight-edge:#f08c00}.word.selected{background:var(--highlight);color:var(--ink)}.word.selected rt{color:var(--ink)}.playing{background:var(--highlight-soft);box-shadow:inset 4px 0 0 var(--highlight-edge)}.playing .verse-number{color:#9a4a00}
