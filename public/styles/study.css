@@ -109,3 +109,5 @@ body.study-open{overflow:hidden}
 .study-cover{display:block;width:100%;min-height:104px;margin:0;border:2px dashed #d9cfb7;border-radius:14px;background:#fbf7ee;color:#717a73;font-size:18px;text-align:center;padding:20px}.study-cover:hover{background:#f6efe0}
 /* The tapped word in orange, as on the reading page. */
 .study-text .word.selected{background:var(--highlight);color:var(--study-ink)}.study-text .word.selected rt{color:var(--study-ink)}
+/* Hover in the same see-through yellow as the reading page. */
+.study-text .word:not(.selected):not(.marked):hover{background:var(--hover);color:inherit}

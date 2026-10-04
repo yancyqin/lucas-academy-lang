@@ -35,3 +35,5 @@
 @media(max-width:700px){.site-header{flex-wrap:wrap;row-gap:8px}.header-right{margin-left:auto}}
 /* Highlights in orange: the tapped word and the line being read aloud stand out far more than the pale coral and green they replace; pinyin over a highlighted word turns dark to stay legible. */
 :root{--highlight:#ffa94d;--highlight-soft:#ffe8cc;--highlight-edge:#f08c00}.word.selected{background:var(--highlight);color:var(--ink)}.word.selected rt{color:var(--ink)}.playing{background:var(--highlight-soft);box-shadow:inset 4px 0 0 var(--highlight-edge)}.playing .verse-number{color:#9a4a00}
+/* Hover in a see-through yellow: lighter than the orange of a tapped word and the yellow of a word-book word, so the three never look alike. */
+:root{--hover:rgba(255,212,0,.25)}.word:not(.selected):not(.marked):hover{background:var(--hover);color:inherit}
