@@ -1,5 +1,23 @@
 # 发布与验收记录
 
+## 2026-10-05 · 东西方的奇幻之旅：格列佛的小人国、镜花缘的君子国
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/> |
+| 部署的 commit | `bb24a3e` Merge pull request #5（`52e7235` Add the Fantastic Journeys stories: Lilliput and the Land of Gentlemen），前面是 `9dc4092` Merge pull request #4（`78cf6ed` Hover in a see-through yellow；`e92a3f5` Record the hide-second-language release）；已在 `origin/main` |
+| 部署版本 | `1fb11f7d-35c8-494a-b238-a238930d67da`（2026-10-05，100% 流量；本机 `npm run deploy`） |
+| 发布内容 | 新系列「东西方的奇幻之旅」：《格列佛游记 · 小人国》67 句 11 小段、《镜花缘 · 君子国和小人国》64 句 11 小段，各标三小段课堂共读；`english-basic.js` 补了 34 个常用词；鼠标悬停的词改为半透明黄色。共 14 个新增或变更的静态资源 |
+| 可回退版本 | `59f4f9a8-a400-49bb-a5a2-762c40a1b763`；命令：`npx wrangler rollback 59f4f9a8-a400-49bb-a5a2-762c40a1b763` |
+
+部署后验证：
+
+- 根页面，两课的 `index.js`、`text.js`、`words.js`，两课的 `audio/*/manifest.json` 都返回 200；线上 `lessons/gentlemen/text.js` 与 main 完全一致；`app.css` 有 `--hover:rgba(255,212,0,.25)`。部署后第一次请求 `audio/gentlemen/manifest.json` 返回过一次 404，之后连续三次都是 200。
+- `/api/passage?translation=NIV&ref=1CO.13.4` 返回 200。
+- 线上浏览器：下拉菜单有两篇新课；两课各 11 小段，课堂共读标在「被绑着醒来、搜口袋、鸡蛋大战」和「要加价的买家、多出来的银子、小人国」；默认遮住英文；所有请求都是 200。
+- 部署前 `npm run validate` 通过（英文词 446 / 446、468 / 468 都有中文意思）；部署后 `LANG_API_URL=https://lang.lucasacademy.org npm run check:english` 通过。
+- 还没有配音：两篇用设备的系统声音，标为「系统试听」。
+
 ## 2026-10-04 · 遮住英文、橙色高亮
 
 | 项目 | 记录 |
