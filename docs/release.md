@@ -1,5 +1,22 @@
 # 发布与验收记录
 
+## 2026-10-04 · 遮住英文、橙色高亮
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/> |
+| 部署的 commit | `f32d84f` Merge pull request #3（`d0df66c` Cover the second language until it is tapped；`af38019` Highlight in orange；`eea776c` Record the Happy Prince release）；已在 `origin/main` |
+| 部署版本 | `59f4f9a8-a400-49bb-a5a2-762c40a1b763`（2026-10-04，100% 流量；本机 `npm run deploy`） |
+| 发布内容 | 「遮住英文 / Hide Chinese」开关（顶部和逐句学弹窗里各一个，默认打开，第二种语言点一下才显示）；点开的词和正在朗读的一节改用橙色高亮。共 7 个变更的静态资源 |
+| 可回退版本 | `b7b15055-2d4e-45a0-833a-6b7ceb0723e8`；命令：`npx wrangler rollback b7b15055-2d4e-45a0-833a-6b7ceb0723e8` |
+
+部署后验证：
+
+- 线上 `index.html` 有新开关，`app.css` 有橙色变量，`main.js`、`study.js` 是新版本；静态资源 `Cache-Control: public, max-age=0, must-revalidate`，旧设备下次打开就会取到新文件。
+- `/api/passage?translation=NIV&ref=1CO.13.1-4` 返回 200。
+- 线上浏览器：默认打开「遮住英文」，第一小段 4 句英文都盖着；没有失败请求。
+- 部署前 `npm run validate` 通过；本地 `npm run check:english` 通过。
+
 ## 2026-10-03 · 故事《快乐王子》上线
 
 | 项目 | 记录 |
