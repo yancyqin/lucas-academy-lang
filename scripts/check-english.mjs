@@ -24,8 +24,27 @@ const sentences = new Set();
 for (const entry of registry) {
   const lesson = (await entry.load()).default;
   if (!lesson.passage) {
-    // A story's English is public domain and ships with the lesson: nothing to fetch or keep out.
-    lines.push(`${lesson.title.zh}: public-domain English in the lesson, not fetched`);
+    // A story's English is public domain and ships with the lesson: nothing to
+    // fetch or keep out. A lesson of poems fetches only its scripture units.
+    const scripture = lesson.sections.map(section => lesson.verses.filter(v => v.ref && v.n >= section.range[0] && v.n <= section.range[1])).filter(list => list.length);
+    for (const verses of scripture) {
+      const [book, chapter] = verses[0].ref.split('.');
+      const numbers = verses.map(v => Number(v.ref.split('.')[2]));
+      const ref = `${book}.${chapter}.${numbers.length > 1 ? `${numbers[0]}-${numbers[numbers.length - 1]}` : numbers[0]}`;
+      const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref})}`);
+      assert.equal(response.ok, true, `${ref}: /api/passage returned ${response.status}`);
+      assert.match(response.headers.get('cache-control') || '', /no-store/, `${ref}: English must not be cached by the browser`);
+      const data = await response.json();
+      assert.ok(data.translation?.copyright, `${ref}: the copyright notice must come with the text`);
+      const byNumber = new Map(data.verses.map(v => [v.n, v.text]));
+      for (const [i, verse] of verses.entries()) {
+        const text = byNumber.get(numbers[i]);
+        assert.ok(text, `${verse.id} (${verse.ref}): no English`);
+        sentences.add(text.replace(/\s+/g, ' ').trim().toLowerCase());
+      }
+    }
+    const fetched = scripture.flat().length;
+    lines.push(`${lesson.title.zh}: public-domain English in the lesson` + (fetched ? `; ${fetched} scripture verses fetched` : ', not fetched'));
     continue;
   }
   const english = new Map();

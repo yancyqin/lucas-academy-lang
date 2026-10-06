@@ -155,13 +155,16 @@ function afterEnglish() {
 }
 
 // 文字来源: a passage credits the licensed English and the Chinese Bible text;
-// a public-domain story names its own sources.
+// a public-domain story names its own sources; a lesson of poems names its
+// sources and, for its scripture, credits the Bible texts too.
 function renderSources() {
   const lesson = state.lesson;
-  $('scripture-links').hidden = Boolean(lesson.sources);
+  const scripture = !lesson.sources || lesson.verses.some(v => v.ref);
+  const credit = scripture ? english.credit() : null;
+  $('scripture-links').hidden = !scripture;
   $('story-links').hidden = !lesson.sources;
   if (lesson.sources) {
-    $('copyright').textContent = pick(lesson.sources.note);
+    $('copyright').textContent = [pick(lesson.sources.note), credit?.copyright].filter(Boolean).join('\n');
     $('story-links').replaceChildren(...lesson.sources.links.flatMap((link, i) => {
       const a = document.createElement('a');
       a.href = link.href;
@@ -170,12 +173,25 @@ function renderSources() {
       a.textContent = pick(link.label);
       return i ? [document.createTextNode(' · '), a] : [a];
     }));
-    return;
+  } else {
+    $('copyright').textContent = credit?.copyright || '';
   }
-  const credit = english.credit();
-  $('copyright').textContent = credit?.copyright || '';
+  if (!scripture) return;
   if (credit?.youVersionDeepLink?.startsWith('https://')) $('youversion-link').href = credit.youVersionDeepLink;
   $('chinese-source').href = lesson.chineseSource;
+}
+
+// A work in a lesson of poems can have a living painting in art-lab, where a
+// child paints living brushes onto the picture.
+const ART_LAB = 'https://art-lab.lucasacademy.org/living';
+function renderPainting() {
+  const section = app.section();
+  const link = $('section-painting');
+  link.hidden = !section.painting;
+  if (!section.painting) return;
+  link.href = `${ART_LAB}?${new URLSearchParams({w: section.painting.id, lang: uiLanguage()})}`;
+  link.textContent = t('paintingLink', {style: pick(section.painting.style)});
+  link.setAttribute('aria-label', t('paintingLabel', {title: pick(section.title)}));
 }
 
 function loadEnglish() {
@@ -209,6 +225,7 @@ function render() {
   $('reading-note').hidden = !app.marksClass();
   $('section-intro').textContent = pick(app.section().intro);
   renderSources();
+  renderPainting();
   // The button names the language read first; flipping (here or in 逐句学) relabels it.
   $('flip-label').textContent = state.first === 'zh' ? '中文在前' : 'English first';
   $('flip').lang = state.first === 'zh' ? 'zh-CN' : 'en';

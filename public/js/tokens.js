@@ -40,11 +40,17 @@ function wordButton(word, lang, ctx, onWord) {
 
 // Chinese punctuation stays glued to the word before it (and an opening
 // bracket to the word after), so a line never starts with ，or ends with （.
+// A poem keeps its lines: a "\n" (a token of its own in Chinese, inside the
+// text in English) starts a new line.
 export function fill(container, {lang, text, tokens}, ctx, onWord) {
   if (lang === 'zh') {
     let prefix = '';
     for (let i = 0; i < tokens.length; i += 1) {
       const token = tokens[i];
+      if (token === '\n') {
+        container.append(el('br'));
+        continue;
+      }
       if (OPENERS.test(token)) {
         prefix += token;
         continue;
@@ -60,7 +66,7 @@ export function fill(container, {lang, text, tokens}, ctx, onWord) {
         prefix = '';
       }
       group.append(wordButton(token, lang, ctx, onWord));
-      while (i + 1 < tokens.length && !dictionary.isWord(tokens[i + 1]) && !OPENERS.test(tokens[i + 1])) {
+      while (i + 1 < tokens.length && tokens[i + 1] !== '\n' && !dictionary.isWord(tokens[i + 1]) && !OPENERS.test(tokens[i + 1])) {
         group.append(document.createTextNode(tokens[++i]));
       }
       container.append(group);
@@ -68,8 +74,14 @@ export function fill(container, {lang, text, tokens}, ctx, onWord) {
     return;
   }
   for (const part of text.split(ENGLISH_WORDS)) {
-    if (dictionary.isWord(part)) container.append(wordButton(part, lang, ctx, onWord));
-    else if (part) container.append(document.createTextNode(part));
+    if (dictionary.isWord(part)) {
+      container.append(wordButton(part, lang, ctx, onWord));
+      continue;
+    }
+    part.split('\n').forEach((piece, i) => {
+      if (i) container.append(el('br'));
+      if (piece) container.append(document.createTextNode(piece));
+    });
   }
 }
 

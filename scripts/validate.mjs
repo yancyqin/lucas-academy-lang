@@ -49,14 +49,34 @@ for (const lesson of lessons) {
     const allowed = PASSAGES[`${lesson.passage.book}.${lesson.passage.chapter}`];
     check(allowed && allowed[0] === 1 && allowed[1] === lesson.verses.length, `${tag}: passages.js does not list verses 1–${lesson.verses.length}`);
   } else {
-    // A story carries its own public-domain English, typeset, and names its sources.
-    check(lesson.kind === 'story', `${tag}: a lesson without a passage must be a story`);
+    // A story carries its own public-domain English, typeset, and names its
+    // sources. So does a lesson of poems, except for its scripture units: they
+    // name a verse (ref) whose English the Worker fetches.
+    check(lesson.kind === 'story' || lesson.kind === 'poems', `${tag}: a lesson without a passage must be a story or poems`);
     const {note, links} = lesson.sources || {};
     check(note?.zh && note?.en && links?.length && links.every(l => l.href?.startsWith('https://') && l.label?.zh && l.label?.en),
       `${tag}: a story names its sources, in both languages`);
     for (const v of lesson.verses) {
-      check(typeof v.en === 'string' && v.en.length > 1 && v.en === v.en.trim() && !/\s{2}|"/.test(v.en), `${tag}: ${v.id} needs its English (curly quotes, single spaces)`);
+      if (v.ref !== undefined) {
+        const m = /^([1-3]?[A-Z]{2,3})\.(\d{1,3})\.(\d{1,3})$/.exec(v.ref);
+        const allowed = m && PASSAGES[`${m[1]}.${Number(m[2])}`];
+        check(lesson.kind === 'poems' && v.en === undefined, `${tag}: ${v.id} names a verse, so only a lesson of poems may, and without English of its own`);
+        check(allowed && Number(m[3]) >= allowed[0] && Number(m[3]) <= allowed[1], `${tag}: ${v.id} names ${v.ref}, which passages.js does not list`);
+        continue;
+      }
+      check(typeof v.en === 'string' && v.en.length > 1 && v.en === v.en.trim() && !/[ \t]\n|\n[ \t]|\s{2}|"/.test(v.en), `${tag}: ${v.id} needs its English (curly quotes, single spaces)`);
     }
+    // One request per section: its scripture units are consecutive verses of one chapter.
+    for (const s of lesson.sections) {
+      const refs = lesson.verses.filter(v => v.ref && v.n >= s.range[0] && v.n <= s.range[1]).map(v => v.ref.split('.'));
+      const together = refs.every(([book, chapter, n], i) => book === refs[0][0] && chapter === refs[0][1] && Number(n) === Number(refs[0][2]) + i);
+      check(together, `${tag}: section ${s.id} mixes verses that are not one run of one chapter`);
+      if (s.painting !== undefined) {
+        check(/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s.painting.id || '') && s.painting.style?.zh && s.painting.style?.en,
+          `${tag}: section ${s.id} names its living painting by id, with its style in both languages`);
+      }
+    }
+    if (lesson.verses.some(v => v.ref)) check(lesson.chineseSource?.startsWith('https://'), `${tag}: a lesson with scripture names its Chinese source`);
   }
 
   // Sections: ≤ 7 verses, contiguous, covering every verse once.
@@ -136,7 +156,7 @@ for (const lesson of lessons) {
     `${clauseCount} aligned clauses, ${Object.keys(lesson.dict).length} words; narration zh ${zhClips}/${expected}, en ${enClips}/${expected}`);
   // How much of a story's English a child can tap for a Chinese meaning.
   if (!lesson.passage) {
-    const english = new Set(lesson.verses.flatMap(v => (v.en.match(ENGLISH_WORDS) || []).map(w => w.toLowerCase())));
+    const english = new Set(lesson.verses.filter(v => v.en).flatMap(v => (v.en.match(ENGLISH_WORDS) || []).map(w => w.toLowerCase())));
     const glossed = [...english].filter(w => lesson.aliases[w] || englishBasic[w]).length;
     summary.push(`${lesson.title.zh}: ${glossed} of ${english.size} distinct English words have a Chinese meaning`);
   }

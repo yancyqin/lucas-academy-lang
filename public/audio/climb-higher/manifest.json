@@ -1,0 +1,5 @@
+{
+ "lessonId": "climb-higher",
+ "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
+ "clips": []
+}

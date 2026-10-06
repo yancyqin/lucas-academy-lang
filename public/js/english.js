@@ -7,7 +7,8 @@
 // every section. A 502 or a dropped connection stays retryable.
 //
 // A public-domain story carries its own English (verse.en): it is registered
-// once and never fetched.
+// once and never fetched. A lesson of poems carries its poems' English the
+// same way; only its scripture units (verse.ref, like 'PSA.121.1') are fetched.
 import {t} from './strings.js';
 
 const texts = new Map(); // verse id -> text
@@ -41,15 +42,34 @@ export function retry(lesson, section) {
   return ensure(lesson, section);
 }
 
+// What a section asks the Worker for: a passage lesson's verses of its
+// chapter, or a poem lesson's scripture units (consecutive verses of one
+// chapter). Null when nothing in the section is fetched.
+function wanted(lesson, section) {
+  if (lesson.passage) {
+    return {
+      ref: `${lesson.passage.book}.${lesson.passage.chapter}.${section.range[0]}-${section.range[1]}`,
+      ids: section.verseIds,
+      numbers: section.verseIds.map(id => Number(id.split('.').pop())),
+    };
+  }
+  const verses = lesson.verses.filter(v => v.ref && section.verseIds.includes(v.id));
+  if (!verses.length) return null;
+  const [book, chapter] = verses[0].ref.split('.');
+  const numbers = verses.map(v => Number(v.ref.split('.')[2]));
+  const range = numbers.length > 1 ? `${numbers[0]}-${numbers[numbers.length - 1]}` : String(numbers[0]);
+  return {ref: `${book}.${chapter}.${range}`, ids: verses.map(v => v.id), numbers};
+}
+
 export function ensure(lesson, section) {
   const k = key(lesson, section);
   if (loaded(lesson, section)) return Promise.resolve(true);
-  if (!lesson.passage || latched || failed.has(k)) return Promise.resolve(false);
+  const want = wanted(lesson, section);
+  if (!want || latched || failed.has(k)) return Promise.resolve(false);
   if (inFlight.has(k)) return inFlight.get(k);
-  const ref = `${lesson.passage.book}.${lesson.passage.chapter}.${section.range[0]}-${section.range[1]}`;
   const request = (async () => {
     try {
-      const response = await fetch('/api/passage?' + new URLSearchParams({translation: 'NIV', ref}));
+      const response = await fetch('/api/passage?' + new URLSearchParams({translation: 'NIV', ref: want.ref}));
       if (response.status === 404) latched = 'no-server';
       else if (response.status === 503) latched = 'not-configured';
       if (!response.ok) throw new Error(String(response.status));
@@ -57,9 +77,8 @@ export function ensure(lesson, section) {
       const verses = Array.isArray(data.verses) ? data.verses : [];
       // All or nothing: a section never shows half its English.
       const byNumber = new Map(verses.filter(v => v && typeof v.text === 'string' && v.text.trim()).map(v => [v.n, v.text.trim()]));
-      const numbers = section.verseIds.map(id => Number(id.split('.').pop()));
-      if (numbers.some(n => !byNumber.has(n))) throw new Error('incomplete');
-      section.verseIds.forEach((id, i) => texts.set(id, byNumber.get(numbers[i])));
+      if (want.numbers.some(n => !byNumber.has(n))) throw new Error('incomplete');
+      want.ids.forEach((id, i) => texts.set(id, byNumber.get(want.numbers[i])));
       if (data.translation) attribution = data.translation;
       failed.delete(k);
       return true;
