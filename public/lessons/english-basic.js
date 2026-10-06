@@ -127,4 +127,8 @@ export const englishBasic = {
   'they’re': ['他们是', 'they are 合在一起'],
   'doesn’t': ['不', 'does not 合在一起'],
   'didn’t': ['没有', 'did not 合在一起'],
+  // Everyday words from 看得见的诗 that no word of the poems stands for.
+  at: ['在', '说在什么时候、什么地方'],
+  on: ['在……上；继续', '「on both banks」是在两岸上；「on goes」是继续往前'],
+  home: ['家', '「come home」就是回到家'],
 };

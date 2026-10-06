@@ -27,6 +27,8 @@ const zh = {
   revealSecondLabel: ({n}) => `显示第${n}节英文`,
   studyAll: '逐句学',
   playSection: '听这一小段',
+  paintingLink: ({style}) => `活画 · ${style} ↗`,
+  paintingLabel: ({title}) => `在 art-lab 打开「${title}」的活画，可以自己画（新窗口）`,
   pause: '暂停',
   resume: '继续',
   stop: '停止',
@@ -178,6 +180,8 @@ const en = {
   revealSecondLabel: ({n}) => `Show the Chinese of verse ${n}`,
   studyAll: 'Study verse by verse',
   playSection: 'Listen to this part',
+  paintingLink: ({style}) => `Living painting · ${style} ↗`,
+  paintingLabel: ({title}) => `Open the living painting for “${title}” in art-lab and paint on it (new window)`,
   pause: 'Pause',
   resume: 'Resume',
   stop: 'Stop',
@@ -308,7 +312,7 @@ const en = {
 // (lesson.kind === 'story') these keys replace the ones above.
 const storyZh = {
   orderHint: '每一句先读这种语言，再读另一种。点一下，交换先后顺序。',
-  sectionMeta: ({first, last}) => `第 ${first}–${last} 句`,
+  sectionMeta: ({first, last}) => first === last ? `第 ${first} 句` : `第 ${first}–${last} 句`,
   versesLabel: '逐句双语课文',
   readVerse: ({n, language}) => `读第${n}句${language}`,
   slowVerse: ({n, language}) => `逐词慢读第${n}句${language}`,
@@ -316,7 +320,7 @@ const storyZh = {
   revealSecondLabel: ({n}) => `显示第${n}句英文`,
   studyThisLabel: ({n}) => `学第${n}句`,
   verseSimple: ({n}) => `第 ${n} 句 · 用简单的话理解`,
-  studyContext: ({title, first, last}) => `${title} · 第 ${first}–${last} 句`,
+  studyContext: ({title, first, last}) => first === last ? `${title} · 第 ${first} 句` : `${title} · 第 ${first}–${last} 句`,
   jumpVerse: ({n}) => `学习第${n}句`,
   whereVerse: ({n}) => `第 ${n} 句`,
   wherePart: ({n, p}) => `第 ${n} 句 · 短句 ${p}`,
@@ -324,7 +328,7 @@ const storyZh = {
 
 const storyEn = {
   orderHint: 'Each sentence is read in this language first, then in the other. Press to swap the order.',
-  sectionMeta: ({first, last}) => `Sentences ${first}–${last}`,
+  sectionMeta: ({first, last}) => first === last ? `Sentence ${first}` : `Sentences ${first}–${last}`,
   studyAll: 'Study sentence by sentence',
   readingHint: 'Read one part first, then press "Study sentence by sentence" to go slowly and talk it over. You can tap any word.',
   versesLabel: 'The reading, sentence by sentence in both languages',
@@ -334,7 +338,7 @@ const storyEn = {
   revealSecondLabel: ({n}) => `Show the Chinese of sentence ${n}`,
   studyThis: 'Study this sentence',
   studyThisLabel: ({n}) => `Study sentence ${n}`,
-  partsUnavailable: 'This story is read sentence by sentence for now',
+  partsUnavailable: 'This lesson is read sentence by sentence for now',
   unitWhole: ({i, n}) => `Sentence ${i} of ${n} · Read slowly, then talk it over`,
   unitPart: ({i, n, p, m}) => `Sentence ${i} of ${n} · Part ${p} of ${m}`,
   listenBothVerse: 'Hear this sentence · both languages',
@@ -349,7 +353,7 @@ const storyEn = {
   verseSimple: ({n}) => `Sentence ${n} · In simple words`,
   hearVerse: 'Hear the whole sentence',
   studyOverline: 'You teach me, I teach you · Sentence by sentence',
-  studyContext: ({title, first, last}) => `${title} · Sentences ${first}–${last}`,
+  studyContext: ({title, first, last}) => first === last ? `${title} · Sentence ${first}` : `${title} · Sentences ${first}–${last}`,
   studyVerseNav: 'Choose a sentence in this part',
   jumpVerse: ({n}) => `Sentence ${n}`,
 };
@@ -364,9 +368,10 @@ export function setLanguage(value) {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
 }
 
-// The kind of lesson in hand: 'story' words its labels by sentence.
+// The kind of lesson in hand: a story, or a lesson of poems, words its labels
+// by sentence.
 export function setKind(value) {
-  kind = value === 'story' ? 'story' : 'scripture';
+  kind = value === 'story' || value === 'poems' ? 'story' : 'scripture';
 }
 
 export const uiLanguage = () => language;
