@@ -1,5 +1,182 @@
 {
  "lessonId": "climb-higher",
  "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
- "clips": []
+ "clips": [
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 6.23,
+   "textHash": "97606636",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.2",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v02-whole.mp3",
+   "duration": 5.46,
+   "textHash": "7b9d5b93",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.3",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v03-whole.mp3",
+   "duration": 5.61,
+   "textHash": "9a1e3bdf",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.4",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v04-whole.mp3",
+   "duration": 7.62,
+   "textHash": "653ef597",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.5",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v05-whole.mp3",
+   "duration": 7.86,
+   "textHash": "445dc6c",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 9.4,
+   "textHash": "be2daf53",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.7",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v07-whole.mp3",
+   "duration": 8.49,
+   "textHash": "fbda7755",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.8",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v08-whole.mp3",
+   "duration": 6.84,
+   "textHash": "d00ed929",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 6,
+   "textHash": "6339e818",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.2",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v02-whole.mp3",
+   "duration": 6.57,
+   "textHash": "10dddb9b",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.3",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v03-whole.mp3",
+   "duration": 5.63,
+   "textHash": "9ca86756",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.4",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v04-whole.mp3",
+   "duration": 8.11,
+   "textHash": "56c83db0",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.5",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v05-whole.mp3",
+   "duration": 7.55,
+   "textHash": "521d0fdf",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 7.45,
+   "textHash": "cd521c86",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.7",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v07-whole.mp3",
+   "duration": 5.75,
+   "textHash": "fe91a7ba",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "climb-higher",
+   "verseId": "climb-higher.8",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v08-whole.mp3",
+   "duration": 5.15,
+   "textHash": "d7ce0b49",
+   "speed": 0.75
+  }
+ ]
 }

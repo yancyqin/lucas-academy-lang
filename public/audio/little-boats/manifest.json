@@ -1,5 +1,160 @@
 {
  "lessonId": "little-boats",
  "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
- "clips": []
+ "clips": [
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 7.24,
+   "textHash": "e781a34c",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.2",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v02-whole.mp3",
+   "duration": 7.02,
+   "textHash": "a7b65d4",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.3",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v03-whole.mp3",
+   "duration": 14.13,
+   "textHash": "12496b22",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.4",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v04-whole.mp3",
+   "duration": 12.7,
+   "textHash": "d1a513bf",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.5",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v05-whole.mp3",
+   "duration": 10.07,
+   "textHash": "f3fa9244",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 11.16,
+   "textHash": "c1d3a64",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.7",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v07-whole.mp3",
+   "duration": 16.2,
+   "textHash": "fd465cd3",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 11.61,
+   "textHash": "4f30ead5",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.2",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v02-whole.mp3",
+   "duration": 10.63,
+   "textHash": "6ffc5fc4",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.3",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v03-whole.mp3",
+   "duration": 11.57,
+   "textHash": "6e1db46a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.4",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v04-whole.mp3",
+   "duration": 11.89,
+   "textHash": "c3939e51",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.5",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v05-whole.mp3",
+   "duration": 8.95,
+   "textHash": "4f7d48e9",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 12.13,
+   "textHash": "acbdcc91",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "little-boats",
+   "verseId": "little-boats.7",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v07-whole.mp3",
+   "duration": 15.72,
+   "textHash": "b55e7ce1",
+   "speed": 0.75
+  }
+ ]
 }

@@ -1,8 +1,12 @@
 // Publish checked narration takes as web audio, with their manifest:
 //
-//   npm run audio:publish -- love ../lucas-academy-media/data/processed/lucas-lang \
-//     zh=../lucas-academy-media/outputs/fangfang/zh/lang-love \
-//     en=../lucas-academy-media/outputs/louise/en/lang-love
+//   npm run audio:publish -- happy-prince ../lucas-academy-media/data/processed/lucas-lang \
+//     zh=../lucas-academy-media/outputs/fangfang/zh/lang-happy-prince \
+//     en=../lucas-academy-media/outputs/louise/en/lang-happy-prince
+//
+// speed=<n> is the lucas-narrate --speed the takes were made at (default 0.75,
+// the children's pace; love and seed were made at 0.85, so republish them
+// with speed=0.85).
 //
 // For every line of <scripts>/<lesson>-<lang>.json (from narration-scripts.mjs)
 // it takes <wav-dir>/<id>.wav, trims the silence the synthesiser leaves around
@@ -18,14 +22,15 @@ import {fileURLToPath} from 'node:url';
 import {fingerprint} from '../public/js/units.js';
 
 const VOICES = {zh: 'fangfang/zh', en: 'louise/en'};
-const NATIVE_SPEED = 0.85; // lucas-narrate --speed: the children's pace
 const LEAD_IN = 0.15;
 const TAIL = 0.25;
 
 const [lessonId, scriptsDir, ...dirs] = process.argv.slice(2);
-const wavDirs = Object.fromEntries(dirs.map(arg => arg.split('=')).filter(([lang, dir]) => VOICES[lang] && dir));
+const args = dirs.map(arg => arg.split('='));
+const wavDirs = Object.fromEntries(args.filter(([lang, dir]) => VOICES[lang] && dir));
+const NATIVE_SPEED = Number(Object.fromEntries(args).speed) || 0.75; // lucas-narrate --speed
 if (!lessonId || !scriptsDir || !Object.keys(wavDirs).length) {
-  console.error('usage: node scripts/publish-audio.mjs <lesson> <scripts-dir> zh=<wav-dir> en=<wav-dir>');
+  console.error('usage: node scripts/publish-audio.mjs <lesson> <scripts-dir> zh=<wav-dir> en=<wav-dir> [speed=0.75]');
   process.exit(2);
 }
 const root = fileURLToPath(new URL('..', import.meta.url));
@@ -96,7 +101,7 @@ for (const [lang, wavDir] of Object.entries(wavDirs)) {
     clips.push({
       lessonId, verseId: line.verseId, unitId: line.unitId, language: lang, voice: VOICES[lang],
       src: `${lang}/${line.id}.mp3`, duration: Math.round(duration * 100) / 100,
-      textHash: fingerprint(line.text), speed: NATIVE_SPEED,
+      textHash: line.hash ?? fingerprint(line.text), speed: NATIVE_SPEED,
     });
   }
 }

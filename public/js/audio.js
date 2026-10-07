@@ -24,7 +24,7 @@ let held = null; // the next step, waiting while paused in the gap between items
 let gapTimer = null;
 let inGap = false; // between two lines: nothing is sounding, the next is scheduled
 let current = null; // 'clip' | 'speech' | 'recording'
-let speed = 0.85;
+let speed = 0.75;
 let element = null;
 let hooks = {state() {}, status() {}, line() {}};
 
@@ -33,7 +33,7 @@ export function configure(options) {
 }
 
 export function setSpeed(value) {
-  speed = Number(value) || 0.85;
+  speed = Number(value) || 0.75;
 }
 
 export const isActive = () => active;

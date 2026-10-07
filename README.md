@@ -123,11 +123,11 @@ npx wrangler secret put YVP_APP_KEY
 - 诗按行显示：中文里 `\n` 单独算一个词，英文里直接写 `\n`，页面上就是换行。
 - 小段可以有 `painting: {id, style}`：工具栏上出现「活画 · 淡彩水墨 ↗」，新窗口打开 `https://art-lab.lucasacademy.org/living?w=<id>&lang=<界面语言>`，孩子在那幅画上用会动的画笔画。没有 `painting` 的小段不显示这个按钮。
 - 页尾「文字来源」显示课文自己的来源，经文部分另外显示 NIV 版权、YouVersion 和中文经文来源。
-- 配音脚本 `narration-scripts.mjs` 还不支持经文单元，配音前要先补上。
+- 配音脚本 `narration-scripts.mjs` 按 `ref` 逐节去取经文英文（要开 dev）。诗的换行读成停顿：行尾没有标点的补一个逗号，只改朗读的文字，`hash` 仍是屏幕上的原文。
 
 ## 配音
 
-中文 `fangfang/zh`、英文 `louise/en`，由 `../lucas-academy-media` 的 CosyVoice 工作流生成（`--speed 0.85` 儿童慢速；网页按 1× 播放，「朗读速度」只按这个基准相对调整，不会重复减速）。每节整句和每个短句都有独立的中英文 clip；manifest 记录 `{lessonId, verseId, unitId, language, voice, src, duration, textHash, speed}`。clip 的 textHash 与屏幕上的文字不符、文件缺失或加载失败时，改用设备的系统声音，并明确标为「系统试听」；词语发音始终是系统声音。
+中文 `fangfang/zh`、英文 `louise/en`，由 `../lucas-academy-media` 的 CosyVoice 工作流生成（`--speed 0.75` 儿童慢速；「朗读速度」默认就是 0.75，这时按 1× 播放，其他档只按 clip 自己的 `speed` 相对调整，不会重复减速）。爱的篇章和种子与好土是更早按 0.85 录的，默认 0.75 下会放慢到 0.88 倍播放（保持音高）。每节整句和每个短句都有独立的中英文 clip；manifest 记录 `{lessonId, verseId, unitId, language, voice, src, duration, textHash, speed}`。clip 的 textHash 与屏幕上的文字不符、文件缺失或加载失败时，改用设备的系统声音，并明确标为「系统试听」；词语发音始终是系统声音。
 
 重新生成（英文脚本只写到 media 仓库被 gitignore 的目录，不进本仓库）：
 
@@ -135,9 +135,9 @@ npx wrangler secret put YVP_APP_KEY
 npm run dev    # 另开一个终端
 npm run narration:scripts
 cd ../lucas-academy-media
-.conda/bin/lucas-narrate data/processed/lucas-lang/love-zh.json --profile fangfang/zh --language zh --speed 0.85 --output-dir outputs/fangfang/zh/lang-love
-.conda/bin/lucas-narrate data/processed/lucas-lang/love-en.json --profile louise/en --language en --speed 0.85 --output-dir outputs/louise/en/lang-love
-.conda/bin/python scripts/check_narration.py data/processed/lucas-lang/love-en.json outputs/louise/en/lang-love --language en --fix --profile louise/en
+.conda/bin/lucas-narrate data/processed/lucas-lang/love-zh.json --profile fangfang/zh --language zh --speed 0.75 --output-dir outputs/fangfang/zh/lang-love
+.conda/bin/lucas-narrate data/processed/lucas-lang/love-en.json --profile louise/en --language en --speed 0.75 --output-dir outputs/louise/en/lang-love
+.conda/bin/python scripts/check_narration.py data/processed/lucas-lang/love-en.json outputs/louise/en/lang-love --language en --fix --profile louise/en --speed 0.75
 cd ../lucas-academy-lang
 npm run audio:publish -- love ../lucas-academy-media/data/processed/lucas-lang \
   zh=../lucas-academy-media/outputs/fangfang/zh/lang-love en=../lucas-academy-media/outputs/louise/en/lang-love
