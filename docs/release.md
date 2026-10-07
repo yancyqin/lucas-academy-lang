@@ -1,5 +1,33 @@
 # 发布与验收记录
 
+## 2026-10-07 · 所有课都有配音，读得慢一点
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/> |
+| 部署的 commit | `9f642f4` Merge pull request #7（`24c58eb` Read a little slower: 0.75 by default, and narrate poem lessons；`ecb22d5` Narrate the stories and poems: Fangfang and Louise at 0.75；`9cc3721` Record the Fantastic Journeys release）；已在 `origin/main` |
+| 部署版本 | `20b6f34e-6efc-49a2-b767-d65284e151c1`（2026-10-07，100% 流量；本机 `npm run deploy`） |
+| 发布内容 | 《快乐王子》《格列佛游记 · 小人国》《镜花缘 · 君子国和小人国》《爬高一点，看远一点》《小船去远方》每一句都有中文 Fangfang、英文 Louise 配音（556 个 clip，37 MB，`--speed 0.75`）；「朗读速度」默认改为 0.75（很慢 0.6、自然 1），爱的篇章、种子与好土的 0.85 录音在默认档按 0.88 倍播放。共 565 个新增或变更的静态资源 |
+| 可回退版本 | `5ee87a42-7b9d-405f-87e0-b8e31daf1ce0`；命令：`npx wrangler rollback 5ee87a42-7b9d-405f-87e0-b8e31daf1ce0` |
+
+部署后验证：
+
+- 新课的 manifest 都是全覆盖（climb-higher 16、little-boats 14、happy-prince 264、lilliput 134、gentlemen 128 个 clip，speed 0.75；love 112、seed 18 个仍是 0.85）；抽查的 MP3 都返回 200 `audio/mpeg`，线上 `gentlemen/zh/v16-whole.mp3` 与仓库里的重录版完全一致。部署后头几秒新文件还是 404、manifest 是旧的空清单，随后全部正常。
+- 根页面的「朗读速度」选项是 0.75 / 0.6 / 1；`/api/passage?translation=NIV&ref=PSA.121.1` 返回 200。
+- 线上浏览器：快乐王子、君子国逐句播放录音，1× 播放；小船去远方的经文句（NIV）也播录音；爱的篇章 0.882×；没有一句退回系统声音。
+- 部署前 `npm run validate` 通过；部署后 `LANG_API_URL=https://lang.lucasacademy.org npm run check:english` 通过（仓库里没有经文英文）。
+- 配音质检见 PR #7：英文 Whisper 逐句核对并自动重录；中文按无声调拼音比对后重录约 40 句。仍待人耳确认：爬高一点第 1 句「尽」，快乐王子第 20「嚷」、54「星星」、111「纯金」、118「你」句，小人国第 1 句「莱缪尔」，君子国第 41 句「心想」。
+
+## 2026-10-06 · 看得见的诗：爬高一点，看远一点；小船去远方
+
+| 项目 | 记录 |
+| --- | --- |
+| 部署的 commit | `5b487cd` Merge pull request #6（`bf1e9ef` Add Poems You Can See: two poem lessons with living paintings） |
+| 部署版本 | `5ee87a42-7b9d-405f-87e0-b8e31daf1ce0`（2026-10-06 04:33 UTC，由 owner 在 poems 工作区部署） |
+| 可回退版本 | `1fb11f7d-35c8-494a-b238-a238930d67da` |
+
+当时没有写验收记录；部署后线上 `lessons/climb-higher` 是 `kind: 'poems'`。
+
 ## 2026-10-05 · 东西方的奇幻之旅：格列佛的小人国、镜花缘的君子国
 
 | 项目 | 记录 |
