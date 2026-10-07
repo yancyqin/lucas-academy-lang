@@ -47,7 +47,7 @@ const marks = storage.load('marks', []);
 state.marks = Array.isArray(marks) ? marks.filter(m => m && typeof m.word === 'string' && (m.lang === 'zh' || m.lang === 'en')) : [];
 const done = storage.load('done', {});
 state.done = done && typeof done === 'object' && !Array.isArray(done) ? done : {};
-const savedSpeed = String(storage.load('speed', '0.85'));
+const savedSpeed = String(storage.load('speed', '0.75'));
 if ([...$('speed').options].some(o => o.value === savedSpeed)) $('speed').value = savedSpeed;
 audio.setSpeed($('speed').value);
 setLanguage(state.first);

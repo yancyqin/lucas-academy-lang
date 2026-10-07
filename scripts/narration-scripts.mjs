@@ -40,19 +40,33 @@ for (const section of lesson.passage ? lesson.sections : []) {
   if (!response.ok) throw new Error(`/api/passage ${ref} returned ${response.status}`);
   for (const verse of (await response.json()).verses) english.set(verse.n, verse.text);
 }
+// A poem lesson's scripture units name their verse instead (ref, 'PSA.121.1').
+for (const verse of lesson.passage ? [] : lesson.verses.filter(v => v.ref)) {
+  const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref: verse.ref})}`);
+  if (!response.ok) throw new Error(`/api/passage ${verse.ref} returned ${response.status}`);
+  const found = (await response.json()).verses?.[0]?.text?.trim();
+  if (found) english.set(verse.ref, found);
+}
+
+// What the voice reads: a poem's line breaks become pauses, so a line that
+// ends without a mark gets a comma. The hash stays that of the text on screen.
+const spoken = (text, language) => text.trim()
+  .replace(/([^\s\p{P}])[ \t]*\n\s*/gu, language === 'zh' ? '$1，' : '$1, ')
+  .replace(/\s*\n\s*/g, language === 'zh' ? '' : ' ');
 
 const pad = n => String(n).padStart(2, '0');
 const zh = [];
 const en = [];
 for (const verse of lesson.verses) {
-  const text = verse.en ?? english.get(verse.n);
+  const text = verse.en ?? english.get(verse.ref ?? verse.n);
   if (!text) throw new Error(`No English for ${verse.id}`);
   const units = studyUnits(lesson, verse, text);
   if (lesson.study?.[verse.id]?.units && units.reason) {
     throw new Error(`${verse.id}: alignment ${units.reason}; fix it before narrating clauses`);
   }
   const line = (list, unitId, words) => list.push({
-    id: `v${pad(verse.n)}-${unitId}`, verseId: verse.id, unitId, text: words.trim(), hash: fingerprint(words),
+    id: `v${pad(verse.n)}-${unitId}`, verseId: verse.id, unitId,
+    text: spoken(words, list === zh ? 'zh' : 'en'), hash: fingerprint(words),
   });
   line(zh, 'whole', verse.tokens.join(''));
   line(en, 'whole', text);
