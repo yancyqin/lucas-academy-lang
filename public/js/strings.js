@@ -8,6 +8,8 @@ const zh = {
   skip: '跳到课文',
   orderHint: '每一节先读这种语言，再读另一种。点一下，交换先后顺序。',
   wordbook: '生词本',
+  category: '分类',
+  allLessons: '全部',
   todayRead: '今天一起读',
   onePart: '每次一小段',
   parts: '学习段落',
@@ -21,6 +23,10 @@ const zh = {
   inClass: '课堂共读',
   optional: '选读',
   inClassNote: '标着「课堂共读」的小段，老师上课会带着读；其他小段是选读。',
+  // 视角: how a unit (an idiom's scripture) looks at the theme of its part.
+  angle_similar: '相似的视角',
+  angle_opposite: '相反的视角',
+  angle_related: '相关的视角',
   hideSecond: '遮住英文',
   hideHint: '打开后，英文先遮住：想一想，再点一下看。',
   revealSecond: '想一想，再点一下看英文',
@@ -153,6 +159,21 @@ const zh = {
   partDone: '这一小段学完了！可以再读一次，也可以换下一段。',
   lastPartDone: '最后一小段也学完了！可以再读一次，也可以换一篇。',
   lessonDone: '这一篇学完了！可以再读一次，也可以换一篇。',
+  // 课程表 (/class)
+  classTitle: '课程表',
+  classIntro: '选年级，再选一周。每一周都有自己的链接，上课前后都能打开。',
+  grades: '年级',
+  weeks: '周',
+  weekN: ({n}) => `第 ${n} 周`,
+  thisWeek: '本周',
+  startLesson: '开始上课 ▶',
+  wholeLesson: '整篇一起读',
+  partsList: ({list}) => `第 ${list} 小段`,
+  homework: '作业',
+  noWeeks: '这个年级还没有安排课程。',
+  noSuchWeek: '没有这一周，先看本周的。',
+  otherLanguage: 'English',
+  otherLanguageLabel: '切换界面语言',
 };
 
 const en = {
@@ -161,6 +182,8 @@ const en = {
   skip: 'Skip to the reading',
   orderHint: 'Each verse is read in this language first, then in the other. Press to swap the order.',
   wordbook: 'Word book',
+  category: 'Category',
+  allLessons: 'All',
   todayRead: 'Today we read',
   onePart: 'One part at a time',
   parts: 'Parts of the lesson',
@@ -174,6 +197,9 @@ const en = {
   inClass: 'Read in class',
   optional: 'Optional reading',
   inClassNote: 'Parts marked “Read in class” are read with the teacher in class; the others are optional reading.',
+  angle_similar: 'A similar view',
+  angle_opposite: 'The opposite view',
+  angle_related: 'A related view',
   hideSecond: 'Hide Chinese',
   hideHint: 'When on, the Chinese stays hidden: think first, then tap to see it.',
   revealSecond: 'Think first, then tap to see the Chinese',
@@ -306,6 +332,21 @@ const en = {
   partDone: 'You finished this part! Read it again, or go on to the next part.',
   lastPartDone: 'You finished the last part! Read it again, or choose another lesson.',
   lessonDone: 'You finished the lesson! Read it again, or choose another lesson.',
+  // 课程表 (/class)
+  classTitle: 'Class schedule',
+  classIntro: 'Pick a grade, then a week. Every week has its own link, before and after class.',
+  grades: 'Grade',
+  weeks: 'Week',
+  weekN: ({n}) => `Week ${n}`,
+  thisWeek: 'This week',
+  startLesson: 'Start the lesson ▶',
+  wholeLesson: 'The whole lesson, together',
+  partsList: ({list}) => `Parts ${list}`,
+  homework: 'Homework',
+  noWeeks: 'No classes are scheduled for this grade yet.',
+  noSuchWeek: "There's no such week, so here is this week's.",
+  otherLanguage: '中文',
+  otherLanguageLabel: 'Switch the interface language',
 };
 
 // A story is read sentence by sentence, not verse by verse: in a story lesson
@@ -368,10 +409,10 @@ export function setLanguage(value) {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
 }
 
-// The kind of lesson in hand: a story, or a lesson of poems, words its labels
-// by sentence.
+// The kind of lesson in hand: a story, a lesson of poems or a set of idioms
+// words its labels by sentence.
 export function setKind(value) {
-  kind = value === 'story' || value === 'poems' ? 'story' : 'scripture';
+  kind = value === 'story' || value === 'poems' || value === 'idioms' ? 'story' : 'scripture';
 }
 
 export const uiLanguage = () => language;

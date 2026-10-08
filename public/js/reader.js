@@ -22,8 +22,8 @@ export function createReader(app) {
       const copy = el('span');
       const meta = t('sectionMeta', {first: section.range[0], last: section.range[1], count: section.verseIds.length});
       copy.append(el('strong', '', pick(section.title)), el('small', '', meta));
-      // 课堂共读: a part the teacher reads with the class.
-      if (section.inClass) {
+      // 课堂共读: a part the teacher reads with the class (the lesson's own marks, or a link's).
+      if (app.isInClass(section)) {
         item.classList.add('in-class');
         copy.append(el('span', 'reading-mark', t('inClass')));
       }
@@ -111,6 +111,8 @@ export function createReader(app) {
       row.dataset.verse = verse.id;
       row.append(el('span', 'verse-number', String(verse.n).padStart(2, '0')));
       const content = el('div', 'verse-content');
+      // 视角: a unit may say how it looks at the part's theme (an idiom's scripture).
+      if (verse.angle) content.append(el('p', 'verse-angle', t('angle_' + verse.angle)));
       for (const lang of [state.first, app.other(state.first)]) content.append(line(verse, lang));
       if (!state.dictation) {
         const actions = el('div', 'verse-actions');

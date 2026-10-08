@@ -127,6 +127,8 @@ export function createStudy(app) {
     $('study-flip').textContent = (first === 'zh' ? '中文在前' : 'English first') + ' ⇅';
     $('study-pinyin').checked = app.state.pinyin;
 
+    $('study-angle').hidden = !verse().angle;
+    $('study-angle').textContent = verse().angle ? t('angle_' + verse().angle) : '';
     const reading = $('study-reading');
     reading.replaceChildren();
     for (const lang of [first, other(first)]) {

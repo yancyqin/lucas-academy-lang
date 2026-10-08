@@ -16,6 +16,8 @@
   - 第一期《爬高一点，看远一点》：《登鹳雀楼》、Foreign Lands（第 1、4 节）、诗篇 121:1–2。
   - 第二期《小船去远方》：《早发白帝城》、Where Go the Boats?、以赛亚书 40:31。
 
+课文分四类：成语、诗词、小说、圣经。侧栏先选分类（默认「全部」，按分类分组列出所有课文），再选课文；分类定义在 `public/lessons/index.js`，每篇课文在 registry 里标 `category`，有课文的分类才出现在菜单里。成语课文（`kind: 'idioms'`）的做法见 [docs/idioms.md](docs/idioms.md)：一辑一篇课文，一个成语一小段，每个成语配一点圣经，经文单元用 `angle` 标出相似、相反或相关的视角。
+
 设计依据见 [CC-HANDOFF.md](CC-HANDOFF.md)、[design-qa.md](design-qa.md) 和 `preview/`（用户确认过的交互预览，保留作对照，不部署）。
 
 ## 运行
@@ -50,9 +52,11 @@ node scripts/check-study-alignment.mjs
 ```text
 public/                     # 唯一的网站静态资源目录
   index.html  404.html  _headers  icon.svg
-  styles/                   # app.css（原阅读页）、study.css（Design 1 逐句弹窗）
+  class.html                # 课程表 /class：年级 → 周，每周的课文链接和作业
+  styles/                   # app.css（原阅读页）、study.css（Design 1 逐句弹窗）、class.css（课程表）
   js/
-    main.js                 # 状态与连接：课文、段落、语言顺序、进度、生词本、录音
+    main.js                 # 状态与连接：课文、段落、语言顺序、进度、生词本、录音；网址参数与地址栏同步
+    class.js                # 课程表页：年级、本周、每周的课文链接和作业
     strings.js              # 界面文字（中 / 英），跟着先读的语言切换
     reader.js  wordpanel.js # 阅读页与词语面板 / 生词本
     study.js                # 逐句学弹窗（原生 dialog）
@@ -62,7 +66,8 @@ public/                     # 唯一的网站静态资源目录
     units.js                # 整句 / 短句切分与 fingerprint（页面和脚本共用）
     dictionary.js tokens.js storage.js recording.js
   lessons/
-    index.js                # 课文 registry（下拉菜单顺序）
+    index.js                # 课文 registry（下拉菜单顺序）和分类
+    schedule.js             # 课程表：年级，每周的课文（整篇或几小段）和作业
     passages.js             # Worker 允许的经文范围，与课文共用
     english-basic.js        # 常用英文小词的中文解释
     love/ seed/             # text.js（和合本、分段、用简单的话理解）、study.js（对应与问题）、words.js（词典）
@@ -70,6 +75,7 @@ public/                     # 唯一的网站静态资源目录
                             # words.js（词典与英文对应）、index.js（24 小段，标出课堂共读）
     lilliput/ gentlemen/    # 东西方的奇幻之旅：格列佛的小人国、镜花缘的君子国和小人国（同样的四个文件，各 11 小段）
     climb-higher/ little-boats/  # 看得见的诗：第一期、第二期（kind: 'poems'，每件作品一小段）
+    idioms-1/               # 成语 · 第一辑（kind: 'idioms'，一个成语一小段；契约见 docs/idioms.md）
   audio/<lesson>/{zh,en}/*.mp3 + manifest.json
   images/words/manifest.json  # 词语配图（24 个概念，WebP 与双语 alt 已齐全）
 worker/index.js             # GET /api/passage；其余请求交给静态资源
@@ -83,6 +89,12 @@ preview/  design/           # 本轮确认依据，不部署
 - 经节 ID 用 `1CO.13.4` 这种稳定写法，故事的句子 ID 为 `happy-prince.12`（课文 ID + 序号）；段落 ID 如 `1-4`，短句 ID 为 `c1`、`c2`……，整句为 `whole`。问题、笔记、配音、词语图片都绑定 ID，不用屏幕位置。
 - `lessons/love/study.js` 只记录对应关系的**数量**：每个短句占几个中文标点分句（`zh`）、几个英文词（`en`），以及校对时英文整节的 fingerprint（`hash`）。英文不进仓库；当天英文的 hash 不同，就只开放整句。
 - 本地存储前缀 `lucas-lang.`，与中文阅读器分开：`first`、`pinyin`、`speed`、`lesson`、`marks`、`done`（键为 `课文/段落`）、`note.<课文>.<经节>.<单元>`、`my-recording`。没有账户、登录或云同步。
+
+## 课程表与链接
+
+- 阅读页认网址参数：`/?lesson=happy-prince` 打开一篇课文，`&part=21` 打开第 21 小段，`&parts=21-23`（或 `1,3,21`）把这几小段标为这一次的「课堂共读」（珊瑚色圈和列表上方的说明，和课文自己的 `inClass` 标记一样）并从其中第一段开始。课文 id 不存在就当没有参数。切换课文或小段时地址栏跟着变（`replaceState`），随时可以复制当前位置作链接；换一篇课文，链接带来的标记就不再生效。
+- `/class` 是课程表：先选年级，再选一周。`/class?g=3&w=1` 固定指向三年级第 1 周，上课前发群里、上完课发作业都用它。每周的数据在 `public/lessons/schedule.js`：年级、周号、标题、`readings`（整篇，或 `parts: [21, 22, 23]`；可以几篇混排）、`homework`，以及可选的 `date`（上课那天）。有日期时 `/class` 打开今天或之后最近的一周，没有就打开最后一周；年级记在 `lucas-lang.grade`，下次直接看自己年级。`validate` 检查年级、周号、课文 id、小段范围和双语文字，所以排错的课表不会部署出去。每周只改这一个文件。
+- 课文单元可以带 `angle: 'similar' | 'opposite' | 'related'`：阅读页和逐句学里显示一个「相似的视角 / 相反的视角 / 相关的视角」小标签，用于成语配的经文；没有这个字段的单元不显示任何东西。
 
 ## 英文（NIV）
 

@@ -18,6 +18,8 @@
   </header>
   <div id="workspace" class="workspace">
     <aside class="lesson-nav">
+      <label class="overline" for="category-select" data-i18n="category">分类</label>
+      <select id="category-select"></select>
       <label class="overline" for="lesson-select" data-i18n="todayRead">今天一起读</label>
       <select id="lesson-select"></select>
       <p id="lesson-reference" class="nav-reference"></p>
@@ -34,8 +36,8 @@
         <button id="play-section" type="button" data-i18n="playSection">听这一小段</button>
         <button id="pause" type="button" hidden>暂停</button><button id="stop" type="button" data-i18n="stop" hidden>停止</button>
         <a id="section-painting" class="painting-link" target="_blank" rel="noopener" hidden></a>
-        <label class="inline-control"><input type="checkbox" id="pinyin"><span data-i18n="pinyin">拼音</span></label>
-        <label class="inline-control"><input type="checkbox" id="dictation"><span data-i18n="dictation">默写先读的语言</span></label>
+        <label class="inline-control pinyin-control"><input type="checkbox" id="pinyin"><span data-i18n="pinyin">拼音</span></label>
+        <label class="inline-control dictation-control"><input type="checkbox" id="dictation"><span data-i18n="dictation">默写先读的语言</span></label>
         <details class="tools"><summary data-i18n="moreTools">更多工具</summary><div class="tools-content">
           <label><span data-i18n="speed">朗读速度</span><select id="speed"><option value="0.75" data-i18n="speedSlow">慢一点 · 0.75×</option><option value="0.6" data-i18n="speedVerySlow">很慢 · 0.6×</option><option value="1" data-i18n="speedNatural">自然 · 1×</option></select></label>
           <button id="record" type="button">录下我的朗读</button><button id="play-recording" type="button" data-i18n="playRecording" hidden>听我的录音</button><button id="delete-recording" type="button" hidden>删除录音</button>
@@ -63,6 +65,7 @@
       <div class="study-path"><p id="study-context"></p><nav id="study-verse-nav" data-i18n-aria-label="studyVerseNav" aria-label="选择这一段中的句子"></nav></div>
       <div class="study-options"><div class="study-modes" role="group" data-i18n-aria-label="readingMode" aria-label="阅读方式"><button id="study-whole" type="button" aria-pressed="true" data-i18n="modeWhole">读整句</button><button id="study-parts" type="button" aria-pressed="false" data-i18n="modeParts">拆成短句</button></div><div class="study-options-right"><label class="inline-control"><input type="checkbox" id="study-pinyin"><span data-i18n="pinyin">拼音</span></label><button id="study-flip" type="button">中文在前 ⇅</button><button id="study-hide" class="hide-button" type="button" aria-pressed="true" data-i18n="hideSecond">遮住英文</button></div></div>
       <p class="study-unit" id="study-unit" aria-live="polite"></p>
+      <p id="study-angle" class="study-angle" hidden></p>
       <div id="study-reading" class="study-reading"></div>
       <div class="study-audio"><button id="study-listen" type="button">听这一句 · 双语</button><button id="study-pause" type="button" hidden>暂停</button><button id="study-stop" type="button" data-i18n="stop" hidden>停止</button><button id="study-retry" type="button" data-i18n="retryEnglish" hidden>重试英文</button><span id="study-audio-status" role="status" aria-live="polite"></span></div>
       <aside id="study-word" class="study-word" data-i18n-aria-label="learnWord" aria-label="一起认识这个词" hidden></aside>

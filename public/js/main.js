@@ -1,7 +1,7 @@
 // 语言的桥 · Language Bridge — page entry. Holds the reading state and wires
 // the reader, the word panel, the study dialog and the one audio controller.
 // The interface speaks the language read first (strings.js).
-import {lessons as registry} from '../lessons/index.js';
+import {lessons as registry, categories} from '../lessons/index.js';
 import * as storage from './storage.js';
 import * as audio from './audio.js';
 import * as english from './english.js';
@@ -17,7 +17,10 @@ import {t, pick, setLanguage, setKind, applyPage, uiLanguage} from './strings.js
 const $ = id => document.getElementById(id);
 const other = lang => (lang === 'zh' ? 'en' : 'zh');
 
-const lessons = (await Promise.all(registry.map(entry => entry.load()))).map(module => module.default);
+const lessons = await Promise.all(registry.map(async entry => Object.assign((await entry.load()).default, {category: entry.category})));
+// 分类: the categories that have a lesson, in their own order; 全部 shows every lesson grouped by them.
+const usedCategories = categories.filter(c => lessons.some(l => l.category === c.id));
+const inCategory = id => lessons.filter(l => l.category === id);
 for (const lesson of lessons) {
   for (const section of lesson.sections) {
     section.verseIds = lesson.verses.filter(v => v.n >= section.range[0] && v.n <= section.range[1]).map(v => v.id);
@@ -27,10 +30,34 @@ for (const lesson of lessons) english.register(lesson);
 dictionary.setLessons(lessons);
 dictionary.loadPictures();
 
+// A link can open a lesson at a part: /?lesson=happy-prince&part=21. With
+// &parts=21-23 (or 21,22,23) those parts are this visit's 课堂共读 — marked in
+// the parts list like a lesson's own inClass parts — and reading starts at the
+// first of them. The link beats the lesson saved on this device; an unknown
+// lesson id is ignored. The address bar follows every change of lesson or part,
+// so whatever is on screen can be copied as a link (see syncUrl).
+const params = new URLSearchParams(location.search);
+const linkedLesson = lessons.find(l => l.id === params.get('lesson')) || null;
+function parseParts(text, count) {
+  const parts = new Set();
+  for (const piece of String(text || '').split(',')) {
+    const m = /^(\d+)(?:-(\d+))?$/.exec(piece.trim());
+    if (!m) continue;
+    const first = Number(m[1]);
+    const last = Number(m[2] ?? m[1]);
+    for (let n = first; n <= last; n += 1) if (n >= 1 && n <= count) parts.add(n);
+  }
+  return parts;
+}
 const savedLesson = storage.load('lesson', 'love');
+const savedCategory = storage.load('category', 'all');
 const state = {
-  lesson: lessons.find(l => l.id === savedLesson) || lessons[0],
+  lesson: linkedLesson || lessons.find(l => l.id === savedLesson) || lessons[0],
   section: 0,
+  // 'all', or a category id: which lessons the lesson menu lists.
+  category: usedCategories.some(c => c.id === savedCategory) ? savedCategory : 'all',
+  // Part numbers (1-based) the link marked 课堂共读, or null when the lesson's own marks apply.
+  classParts: null,
   first: storage.load('first', 'zh') === 'en' ? 'en' : 'zh',
   pinyin: storage.load('pinyin', false) === true,
   // 默写 always starts off: a page that opens with its text hidden reads as
@@ -47,6 +74,14 @@ const marks = storage.load('marks', []);
 state.marks = Array.isArray(marks) ? marks.filter(m => m && typeof m.word === 'string' && (m.lang === 'zh' || m.lang === 'en')) : [];
 const done = storage.load('done', {});
 state.done = done && typeof done === 'object' && !Array.isArray(done) ? done : {};
+if (linkedLesson) {
+  const parts = parseParts(params.get('parts'), linkedLesson.sections.length);
+  if (parts.size) state.classParts = parts;
+  const part = Number(params.get('part'));
+  if (Number.isInteger(part) && part >= 1 && part <= linkedLesson.sections.length) state.section = part - 1;
+  else if (parts.size) state.section = Math.min(...parts) - 1;
+  storage.save('lesson', linkedLesson.id);
+}
 const savedSpeed = String(storage.load('speed', '0.75'));
 if ([...$('speed').options].some(o => o.value === savedSpeed)) $('speed').value = savedSpeed;
 audio.setSpeed($('speed').value);
@@ -71,7 +106,9 @@ const app = {
   verses: () => state.lesson.verses.filter(v => app.section().verseIds.includes(v.id)),
   isDone: section => Boolean(state.done[`${state.lesson.id}/${section.id}`]),
   // A lesson may mark the parts read with the teacher in class; then the rest are 选读.
-  marksClass: () => state.lesson.sections.some(s => s.inClass),
+  // A link's &parts= marks replace the lesson's own for this visit.
+  marksClass: () => Boolean(state.classParts) || state.lesson.sections.some(s => s.inClass),
+  isInClass: section => (state.classParts ? state.classParts.has(state.lesson.sections.indexOf(section) + 1) : Boolean(section.inClass)),
   isMarked: (word, lang) => state.marks.some(m => m.word === word && m.lang === lang),
   tokenContext: () => ({lesson: state.lesson, isMarked: app.isMarked, selected: panel?.selected || null}),
   clipFor: (verseId, unitId, lang, text) => narration.clip(state.lesson, verseId, unitId, lang, text),
@@ -212,15 +249,39 @@ function renderVoiceCredit() {
   $('voice-credit').textContent = parts.length ? t('voiceCredit', {voices: parts.join(uiLanguage() === 'zh' ? '，' : ', ')}) : t('voiceCreditNone');
 }
 
+// The two menus: a category, then the lessons in it (全部 lists every lesson,
+// grouped by category). Labels follow the interface language, so both are
+// rebuilt on every render. A lesson opened from a link or the 全部 list pulls
+// the category menu along, so the lesson menu always contains the lesson.
+function renderMenus() {
+  if (state.category !== 'all' && state.lesson.category !== state.category) state.category = state.lesson.category;
+  const category = $('category-select');
+  category.replaceChildren(new Option(t('allLessons'), 'all'), ...usedCategories.map(c => new Option(pick(c.title), c.id)));
+  category.value = state.category;
+  const select = $('lesson-select');
+  select.replaceChildren();
+  if (state.category === 'all') {
+    for (const c of usedCategories) {
+      const group = document.createElement('optgroup');
+      group.label = pick(c.title);
+      group.append(...inCategory(c.id).map(l => new Option(pick(l.title), l.id)));
+      select.append(group);
+    }
+  } else {
+    select.append(...inCategory(state.category).map(l => new Option(pick(l.title), l.id)));
+  }
+  select.value = state.lesson.id;
+}
+
 function render() {
   const lesson = state.lesson;
   setLanguage(state.first);
   setKind(lesson.kind);
   applyPage();
-  for (const option of $('lesson-select').options) option.textContent = pick(lessons.find(l => l.id === option.value).title);
+  renderMenus();
   reader.renderNav();
   $('lesson-title').textContent = pick(lesson.title);
-  const mark = app.marksClass() ? ` · ${t(app.section().inClass ? 'inClass' : 'optional')}` : '';
+  const mark = app.marksClass() ? ` · ${t(app.isInClass(app.section()) ? 'inClass' : 'optional')}` : '';
   $('section-kicker').textContent = t('kicker', {reference: pick(lesson.reference), n: state.section + 1}) + mark;
   $('reading-note').hidden = !app.marksClass();
   $('section-intro').textContent = pick(app.section().intro);
@@ -245,12 +306,27 @@ function render() {
   loadEnglish();
 }
 
+// The address bar names the lesson and part on screen, so it can be copied as
+// a link at any moment. Replace, never push: the back button stays the way out.
+function syncUrl() {
+  let query = `?lesson=${state.lesson.id}&part=${state.section + 1}`;
+  if (state.classParts) query += `&parts=${partsParam([...state.classParts])}`;
+  history.replaceState(null, '', location.pathname + query);
+}
+// 21-23 when the parts run on, 1,3,5 when they do not: readable in a link.
+function partsParam(list) {
+  const parts = [...list].sort((a, b) => a - b);
+  const contiguous = parts.every((n, i) => i === 0 || n === parts[i - 1] + 1);
+  return contiguous && parts.length > 1 ? `${parts[0]}-${parts.at(-1)}` : parts.join(',');
+}
+
 app.changeSection = index => {
   audio.stop();
   panel.close();
   state.section = index;
   state.revealed.clear();
   render();
+  syncUrl();
   $('reading').scrollIntoView({block: 'start'});
 };
 
@@ -280,11 +356,14 @@ app.prepareStudy = () => {
 async function changeLesson(id) {
   audio.stop();
   panel.close();
-  state.lesson = lessons.find(l => l.id === id) || lessons[0];
+  const lesson = lessons.find(l => l.id === id) || lessons[0];
+  if (lesson !== state.lesson) state.classParts = null; // the link's marks belonged to its lesson
+  state.lesson = lesson;
   state.section = 0;
   state.revealed.clear();
   storage.save('lesson', state.lesson.id);
   render();
+  syncUrl();
   await narration.load(state.lesson);
   renderVoiceCredit();
 }
@@ -297,8 +376,14 @@ study = createStudy(app);
 app.study = study;
 
 // Reading-page controls.
-$('lesson-select').replaceChildren(...lessons.map(l => new Option(pick(l.title), l.id)));
 $('lesson-select').onchange = event => changeLesson(event.target.value);
+$('category-select').onchange = event => {
+  state.category = event.target.value;
+  storage.save('category', state.category);
+  // A category that does not hold the current lesson opens its first lesson.
+  if (state.category !== 'all' && state.lesson.category !== state.category) changeLesson(inCategory(state.category)[0].id);
+  else render();
+};
 $('flip').onclick = () => app.changeOrder(other(state.first));
 $('hide-second').onclick = () => app.setHideSecond(!state.hideSecond);
 $('pinyin').onchange = event => app.setPinyin(event.target.checked);
@@ -409,4 +494,5 @@ $('delete-recording').onclick = () => {
 };
 
 render();
+if (linkedLesson) syncUrl();
 narration.load(state.lesson).then(renderVoiceCredit);

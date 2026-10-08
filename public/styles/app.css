@@ -39,3 +39,30 @@
 :root{--hover:rgba(255,212,0,.25)}.word:not(.selected):not(.marked):hover{background:var(--hover);color:inherit}
 /* A work's living painting in art-lab (lessons of poems). */
 .painting-link{display:inline-flex;align-items:center;min-height:44px;padding:8px 15px;border:1px solid #e6cfae;border-radius:10px;background:#fff6ea;color:#8a5527;text-decoration:none;white-space:nowrap}.painting-link:hover{background:#ffedd6;border-color:#d9b88c}
+
+/* 固定宽度 · Fixed widths. A label in either language fits the same box, so flipping the language — or a button changing
+   state (暂停/继续, 这段学完了/再读一次, ✓ 遮住英文, 录音/停止录音) — never moves its neighbours. Each width is the longest
+   label in both languages and every state, measured at 1024 px, plus about 15 %:
+   header buttons 133 → 150 · 逐句学 180 → 200 · 听这一小段 153 → 200 · 拼音 66 → 80 · 默写先读的语言 212 → 240 ·
+   更多工具 70 → 100 · 上一小段 125 → 150 · 这段学完了，下一段 167 → 200 · 学这一句 114 → 130 · 重试英文 160 → 180.
+   Re-measure when a label changes; a longer label still fits (min-width), it just grows the box. */
+.header-right button{min-width:150px;justify-content:center;text-align:center}
+#open-study,#play-section{min-width:200px}
+#pause,#stop{min-width:100px}
+.pinyin-control{min-width:80px}
+.dictation-control{min-width:240px}
+.tools summary{min-width:100px}
+#previous{min-width:150px}
+#complete-next{min-width:200px}
+.verse-study{min-width:130px}
+.english-state button{min-width:180px}
+.panel-actions button{min-width:120px}
+/* Phones: the same boxes become equal grid cells, so the row never changes shape either. */
+@media(max-width:700px){.header-right{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;flex:none;width:100%;margin-left:0}.header-right button{min-width:0;width:100%;padding:7px 6px}.reading-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:10px}.reading-toolbar button,.reading-toolbar .inline-control,#open-study,#play-section,#pause,#stop{min-width:0;width:100%}.reading-toolbar .tools,.reading-toolbar .painting-link{grid-column:1/-1}.tools summary{min-width:0}.next-row{display:grid;grid-template-columns:1fr auto 1fr}.next-row button,#previous,#complete-next{min-width:0;width:100%}}
+
+/* 分类: a category menu above the lesson menu; 全部 lists every lesson grouped by category. */
+#category-select{margin-bottom:18px;font-weight:500}
+@media(max-width:700px){#category-select{margin-bottom:8px}}
+/* 视角: a unit may say how it looks at its part's theme — an idiom's scripture is a similar, opposite or related view. */
+.verse-angle{display:inline-block;align-self:flex-start;margin:0 0 -6px 44px;padding:3px 10px;border-radius:100px;background:#fff6ea;border:1px solid #e6cfae;color:#8a5a2b;font-size:11px;font-weight:600;letter-spacing:.04em}
+@media(max-width:700px){.verse-angle{margin-left:32px}}

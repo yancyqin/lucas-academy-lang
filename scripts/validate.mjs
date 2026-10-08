@@ -5,7 +5,7 @@ import {readFile, readdir, stat} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {join, relative, extname} from 'node:path';
-import {lessons as registry} from '../public/lessons/index.js';
+import {lessons as registry, categories} from '../public/lessons/index.js';
 import {PASSAGES, MAX_VERSES} from '../public/lessons/passages.js';
 import {englishBasic} from '../public/lessons/english-basic.js';
 import {chineseClauses, chineseUnits, fingerprint} from '../public/js/units.js';
@@ -22,9 +22,12 @@ const isWord = token => /[\p{L}\p{N}]/u.test(token);
 const summary = [];
 
 const lessons = [];
+check(categories.every(c => /^[a-z]+$/.test(c.id) && c.title?.zh && c.title?.en), 'categories: each needs a lower-case id and a title in both languages');
+check(new Set(categories.map(c => c.id)).size === categories.length, 'categories: duplicate ids');
 for (const entry of registry) {
   const lesson = (await entry.load()).default;
   check(lesson.id === entry.id, `registry id ${entry.id} != lesson id ${lesson.id}`);
+  check(categories.some(c => c.id === entry.category), `registry ${entry.id}: category ${entry.category} is not in the categories list`);
   lessons.push(lesson);
 }
 check(new Set(lessons.map(l => l.id)).size === lessons.length, 'duplicate lesson ids');
@@ -42,6 +45,7 @@ for (const lesson of lessons) {
     check(v.id === id, `${tag}: verse id ${v.id} should be ${id}`);
     check(v.tokens.length && v.tokens.every(t => t.length), `${tag}: ${v.id} has an empty token`);
     check(v.explain?.zh && v.explain?.en, `${tag}: ${v.id} needs both 用简单的话理解 lines`);
+    check(v.angle === undefined || ['similar', 'opposite', 'related'].includes(v.angle), `${tag}: ${v.id} angle must be similar, opposite or related`);
   });
 
   if (lesson.passage) {
@@ -50,9 +54,10 @@ for (const lesson of lessons) {
     check(allowed && allowed[0] === 1 && allowed[1] === lesson.verses.length, `${tag}: passages.js does not list verses 1–${lesson.verses.length}`);
   } else {
     // A story carries its own public-domain English, typeset, and names its
-    // sources. So does a lesson of poems, except for its scripture units: they
-    // name a verse (ref) whose English the Worker fetches.
-    check(lesson.kind === 'story' || lesson.kind === 'poems', `${tag}: a lesson without a passage must be a story or poems`);
+    // sources. So do a lesson of poems and a set of idioms, except for their
+    // scripture units: they name a verse (ref) whose English the Worker fetches.
+    const fetchesScripture = lesson.kind === 'poems' || lesson.kind === 'idioms';
+    check(lesson.kind === 'story' || fetchesScripture, `${tag}: a lesson without a passage must be a story, poems or idioms`);
     const {note, links} = lesson.sources || {};
     check(note?.zh && note?.en && links?.length && links.every(l => l.href?.startsWith('https://') && l.label?.zh && l.label?.en),
       `${tag}: a story names its sources, in both languages`);
@@ -60,7 +65,7 @@ for (const lesson of lessons) {
       if (v.ref !== undefined) {
         const m = /^([1-3]?[A-Z]{2,3})\.(\d{1,3})\.(\d{1,3})$/.exec(v.ref);
         const allowed = m && PASSAGES[`${m[1]}.${Number(m[2])}`];
-        check(lesson.kind === 'poems' && v.en === undefined, `${tag}: ${v.id} names a verse, so only a lesson of poems may, and without English of its own`);
+        check(fetchesScripture && v.en === undefined, `${tag}: ${v.id} names a verse, so only poems or idioms may, and without English of its own`);
         check(allowed && Number(m[3]) >= allowed[0] && Number(m[3]) <= allowed[1], `${tag}: ${v.id} names ${v.ref}, which passages.js does not list`);
         continue;
       }
@@ -178,8 +183,36 @@ for (const [lang, override] of Object.entries(storyStrings)) {
   }
 }
 check(zhKeys === enKeys, `strings: zh and en keys differ (${Object.keys(strings.zh).filter(k => !(k in strings.en)).concat(Object.keys(strings.en).filter(k => !(k in strings.zh))).join(', ')})`);
-const indexHtml = await readFile(join(pub, 'index.html'), 'utf8');
-for (const [, key] of indexHtml.matchAll(/data-i18n(?:-[a-z-]+)?="([^"]+)"/g)) check(key in strings.zh, `index.html: unknown string ${key}`);
+for (const page of ['index.html', 'class.html']) {
+  const html = await readFile(join(pub, page), 'utf8');
+  for (const [, key] of html.matchAll(/data-i18n(?:-[a-z-]+)?="([^"]+)"/g)) check(key in strings.zh, `${page}: unknown string ${key}`);
+}
+
+// 课程表: every week belongs to a grade, names lessons that exist, and parts
+// within them, so a typo in the schedule never reaches the class.
+const {grades, weeks} = await import('../public/lessons/schedule.js');
+check(grades.length && grades.every(g => Number.isInteger(g.id) && g.title?.zh && g.title?.en), 'schedule: each grade needs an integer id and a title in both languages');
+check(new Set(grades.map(g => g.id)).size === grades.length, 'schedule: duplicate grade ids');
+const seenWeeks = new Set();
+for (const w of weeks) {
+  const tag = `schedule: grade ${w.grade} week ${w.n}`;
+  check(grades.some(g => g.id === w.grade), `${tag}: unknown grade`);
+  check(Number.isInteger(w.n) && w.n >= 1 && !seenWeeks.has(`${w.grade}/${w.n}`), `${tag}: week numbers are positive and unique within a grade`);
+  seenWeeks.add(`${w.grade}/${w.n}`);
+  check(w.title?.zh && w.title?.en, `${tag}: needs a title in both languages`);
+  check(w.date === undefined || /^\d{4}-\d{2}-\d{2}$/.test(w.date), `${tag}: date is YYYY-MM-DD`);
+  check(w.homework === undefined || (w.homework.zh && w.homework.en), `${tag}: homework in both languages, or none`);
+  check(Array.isArray(w.readings) && w.readings.length, `${tag}: needs at least one reading`);
+  for (const r of w.readings || []) {
+    const lesson = lessons.find(l => l.id === r.lesson);
+    check(lesson, `${tag}: unknown lesson ${r.lesson}`);
+    if (!lesson) continue;
+    const ok = r.parts === undefined || (Array.isArray(r.parts) && r.parts.length
+      && r.parts.every(n => Number.isInteger(n) && n >= 1 && n <= lesson.sections.length) && new Set(r.parts).size === r.parts.length);
+    check(ok, `${tag}: ${r.lesson} parts must be distinct numbers 1–${lesson.sections.length}`);
+  }
+}
+summary.push(`Class schedule: ${weeks.length} week(s) for ${grades.length} grade(s)`);
 
 // English everyday words are lower case and complete.
 for (const [word, value] of Object.entries(englishBasic)) {
