@@ -1,7 +1,7 @@
 // One bilingual, open question per reading unit. Everyday scenes are original.
 const lines = [
   ['别人说的话和做的事不一样时，你会留意什么？', 'What do you notice when someone’s words and actions do not match?'],
-  ['如果你负责一件大事，你希望别人怎样相信你？', 'If you were in charge of something important, how would you earn people’s trust?'],
+  ['如果你负责一件大事，你会怎样让别人信任你？', 'If you were in charge of something important, how would you earn people’s trust?'],
   ['一句好听的话，可以证明一个人一定对你好了吗？', 'Can kind words alone prove that someone treats you well?'],
   ['蜜和剑为什么能用来说明两种不同的心思？', 'Why do honey and a sword picture such different intentions?'],
   ['你可以怎样看出一个人的关心不只是说说而已？', 'How can you tell that someone’s care is more than words?'],
