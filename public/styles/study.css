@@ -111,3 +111,17 @@ body.study-open{overflow:hidden}
 .study-text .word.selected{background:var(--highlight);color:var(--study-ink)}.study-text .word.selected rt{color:var(--study-ink)}
 /* Hover in the same see-through yellow as the reading page. */
 .study-text .word:not(.selected):not(.marked):hover{background:var(--hover);color:inherit}
+
+/* 固定宽度 · Fixed widths in 逐句学, measured the same way (longest of 中/英 and every state + 15 %):
+   回到课文 163 → 180 · 读整句/拆成短句 101 → 110 · 中文在前/遮住英文 99 → 110 · 听中文/Listen 70 → 80 ·
+   听这一句 · 双语 218 → 240 · 暂停/停止 → 100 · 换你来教 131 → 150 · 上一句/下一句 134 → 150 · 加入生词本 → 120. */
+#study-close{min-width:180px}
+.study-modes button{min-width:110px}
+#study-flip,#study-hide{min-width:110px;text-align:center}
+.study-language-label button{min-width:80px}
+#study-listen{min-width:240px}
+#study-pause,#study-stop{min-width:100px}
+#study-switch-teacher{min-width:150px}
+.study-footer button{min-width:150px}
+.study-word-actions button{min-width:120px}
+@media(max-width:700px){.study-modes{width:100%}.study-modes button{min-width:0;flex:1}#study-close,#study-pause,#study-stop,#study-switch-teacher{min-width:0}#study-flip,#study-hide{min-width:0;flex:1}#study-listen{min-width:0;width:100%}.study-footer{display:grid;grid-template-columns:1fr auto 1fr}.study-footer button,#study-previous,#study-next{min-width:0;width:100%}}
