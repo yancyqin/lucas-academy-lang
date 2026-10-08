@@ -8,6 +8,8 @@ const zh = {
   skip: '跳到课文',
   orderHint: '每一节先读这种语言，再读另一种。点一下，交换先后顺序。',
   wordbook: '生词本',
+  category: '分类',
+  allLessons: '全部',
   todayRead: '今天一起读',
   onePart: '每次一小段',
   parts: '学习段落',
@@ -21,6 +23,10 @@ const zh = {
   inClass: '课堂共读',
   optional: '选读',
   inClassNote: '标着「课堂共读」的小段，老师上课会带着读；其他小段是选读。',
+  // 视角: how a unit (an idiom's scripture) looks at the theme of its part.
+  angle_similar: '相似的视角',
+  angle_opposite: '相反的视角',
+  angle_related: '相关的视角',
   hideSecond: '遮住英文',
   hideHint: '打开后，英文先遮住：想一想，再点一下看。',
   revealSecond: '想一想，再点一下看英文',
@@ -176,6 +182,8 @@ const en = {
   skip: 'Skip to the reading',
   orderHint: 'Each verse is read in this language first, then in the other. Press to swap the order.',
   wordbook: 'Word book',
+  category: 'Category',
+  allLessons: 'All',
   todayRead: 'Today we read',
   onePart: 'One part at a time',
   parts: 'Parts of the lesson',
@@ -189,6 +197,9 @@ const en = {
   inClass: 'Read in class',
   optional: 'Optional reading',
   inClassNote: 'Parts marked “Read in class” are read with the teacher in class; the others are optional reading.',
+  angle_similar: 'A similar view',
+  angle_opposite: 'The opposite view',
+  angle_related: 'A related view',
   hideSecond: 'Hide Chinese',
   hideHint: 'When on, the Chinese stays hidden: think first, then tap to see it.',
   revealSecond: 'Think first, then tap to see the Chinese',
@@ -398,10 +409,10 @@ export function setLanguage(value) {
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
 }
 
-// The kind of lesson in hand: a story, or a lesson of poems, words its labels
-// by sentence.
+// The kind of lesson in hand: a story, a lesson of poems or a set of idioms
+// words its labels by sentence.
 export function setKind(value) {
-  kind = value === 'story' || value === 'poems' ? 'story' : 'scripture';
+  kind = value === 'story' || value === 'poems' || value === 'idioms' ? 'story' : 'scripture';
 }
 
 export const uiLanguage = () => language;
