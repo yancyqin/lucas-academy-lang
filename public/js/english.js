@@ -10,6 +10,7 @@
 // once and never fetched. A lesson of poems carries its poems' English the
 // same way; only its scripture units (verse.ref, like 'PSA.121.1') are fetched.
 import {t} from './strings.js';
+import {scriptureRequests} from './scripture.js';
 
 const texts = new Map(); // verse id -> text
 const inFlight = new Map(); // section key -> promise
@@ -42,44 +43,30 @@ export function retry(lesson, section) {
   return ensure(lesson, section);
 }
 
-// What a section asks the Worker for: a passage lesson's verses of its
-// chapter, or a poem lesson's scripture units (consecutive verses of one
-// chapter). Null when nothing in the section is fetched.
-function wanted(lesson, section) {
-  if (lesson.passage) {
-    return {
-      ref: `${lesson.passage.book}.${lesson.passage.chapter}.${section.range[0]}-${section.range[1]}`,
-      ids: section.verseIds,
-      numbers: section.verseIds.map(id => Number(id.split('.').pop())),
-    };
-  }
-  const verses = lesson.verses.filter(v => v.ref && section.verseIds.includes(v.id));
-  if (!verses.length) return null;
-  const [book, chapter] = verses[0].ref.split('.');
-  const numbers = verses.map(v => Number(v.ref.split('.')[2]));
-  const range = numbers.length > 1 ? `${numbers[0]}-${numbers[numbers.length - 1]}` : String(numbers[0]);
-  return {ref: `${book}.${chapter}.${range}`, ids: verses.map(v => v.id), numbers};
-}
-
 export function ensure(lesson, section) {
   const k = key(lesson, section);
   if (loaded(lesson, section)) return Promise.resolve(true);
-  const want = wanted(lesson, section);
-  if (!want || latched || failed.has(k)) return Promise.resolve(false);
+  const wants = scriptureRequests(lesson, section);
+  if (!wants.length || latched || failed.has(k)) return Promise.resolve(false);
   if (inFlight.has(k)) return inFlight.get(k);
   const request = (async () => {
     try {
-      const response = await fetch('/api/passage?' + new URLSearchParams({translation: 'NIV', ref: want.ref}));
-      if (response.status === 404) latched = 'no-server';
-      else if (response.status === 503) latched = 'not-configured';
-      if (!response.ok) throw new Error(String(response.status));
-      const data = await response.json();
-      const verses = Array.isArray(data.verses) ? data.verses : [];
-      // All or nothing: a section never shows half its English.
-      const byNumber = new Map(verses.filter(v => v && typeof v.text === 'string' && v.text.trim()).map(v => [v.n, v.text.trim()]));
-      if (want.numbers.some(n => !byNumber.has(n))) throw new Error('incomplete');
-      want.ids.forEach((id, i) => texts.set(id, byNumber.get(want.numbers[i])));
-      if (data.translation) attribution = data.translation;
+      const results = await Promise.all(wants.map(async want => {
+        const response = await fetch('/api/passage?' + new URLSearchParams({translation: 'NIV', ref: want.ref}));
+        if (response.status === 404) latched = 'no-server';
+        else if (response.status === 503) latched = 'not-configured';
+        if (!response.ok) throw new Error(String(response.status));
+        const data = await response.json();
+        const verses = Array.isArray(data.verses) ? data.verses : [];
+        const byNumber = new Map(verses.filter(v => v && typeof v.text === 'string' && v.text.trim()).map(v => [v.n, v.text.trim()]));
+        if (want.numbers.some(n => !byNumber.has(n))) throw new Error('incomplete');
+        return {entries: want.ids.map((id, i) => [id, byNumber.get(want.numbers[i])]), translation: data.translation};
+      }));
+      // Commit only when every passage succeeds: no partial scripture English.
+      for (const result of results) {
+        for (const [id, value] of result.entries) texts.set(id, value);
+        if (result.translation) attribution = result.translation;
+      }
       failed.delete(k);
       return true;
     } catch {

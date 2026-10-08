@@ -9,7 +9,7 @@
 // Only passages a lesson actually uses are served, at most seven verses at a
 // time. The app key (YVP_APP_KEY) is a Worker secret and never reaches the
 // browser.
-import {PASSAGES, TRANSLATIONS, MAX_VERSES} from '../public/lessons/passages.js';
+import {isAllowedPassage, TRANSLATIONS, MAX_VERSES} from '../public/lessons/passages.js';
 
 const YOUVERSION_API = 'https://api.youversion.com/v1';
 const EDGE_TTL_SECONDS = 30 * 24 * 60 * 60;
@@ -44,14 +44,21 @@ export function parseRef(ref) {
   const chapter = Number(chapterText);
   const first = Number(firstText);
   const last = Number(lastText ?? firstText);
-  const allowed = PASSAGES[`${book}.${chapter}`];
-  if (!allowed || first < allowed[0] || last > allowed[1] || last < first) {
+  if (!isAllowedPassage(`${book}.${chapter}`, first, last)) {
     throw new RequestError(400, 'not_a_lesson', 'That passage is not part of a lesson here.');
   }
   if (last - first + 1 > MAX_VERSES) {
     throw new RequestError(400, 'range_too_wide', `Ask for at most ${MAX_VERSES} verses at a time.`);
   }
   return {book, chapter, first, last};
+}
+
+export function verseText(content, book, chapter, n) {
+  const text = String(content ?? '').trim();
+  // The API joins these two words; the publisher's page has the space:
+  // https://www.bible.com/bible/111/2CO.3.18.NIV
+  return book === '2CO' && chapter === 3 && n === 18
+    ? text.replace(/\bcontemplatethe\b/g, 'contemplate the') : text;
 }
 
 async function youVersion(path, key) {
@@ -92,7 +99,7 @@ export async function getPassage(request, env, ctx, translationKey, ref) {
     ...numbers.map(n => cached(request, ctx, `passage-${id}-${book}.${chapter}.${n}`,
       `/bibles/${id}/passages/${book}.${chapter}.${n}?format=text&include_headings=false&include_notes=false`, key)),
   ]);
-  const texts = verses.map(v => String(v?.content ?? '').trim());
+  const texts = verses.map((v, i) => verseText(v?.content, book, chapter, numbers[i]));
   if (texts.some(text => !text)) throw new RequestError(502, 'upstream_error', 'That passage could not be loaded. Please try again.');
 
   return {
