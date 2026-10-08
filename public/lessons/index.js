@@ -14,6 +14,7 @@ export const lessons = [
   {id: 'happy-prince', category: 'story', title: {zh: '快乐王子', en: 'The Happy Prince'}, load: () => import('./happy-prince/index.js')},
   {id: 'lilliput', category: 'story', title: {zh: '格列佛游记 · 小人国', en: 'Gulliver in Lilliput'}, load: () => import('./lilliput/index.js')},
   {id: 'gentlemen', category: 'story', title: {zh: '镜花缘 · 君子国和小人国', en: 'The Land of Gentlemen'}, load: () => import('./gentlemen/index.js')},
+  {id: 'idioms-1', category: 'idiom', title: {zh: '成语 · 第一辑', en: 'Idioms · Set 1'}, load: () => import('./idioms-1/index.js')},
   {id: 'climb-higher', category: 'poem', title: {zh: '爬高一点，看远一点', en: 'Climb Higher, See Farther'}, load: () => import('./climb-higher/index.js')},
   {id: 'little-boats', category: 'poem', title: {zh: '小船去远方', en: 'Little Boats, Far Away'}, load: () => import('./little-boats/index.js')},
 ];
