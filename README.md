@@ -12,7 +12,7 @@
 - 系列「东西方的奇幻之旅」：两本写奇异国度的经典放在一起读，都按 7–10 岁孩子重写成短句（中英文都是本项目改写，不是逐字翻译），全文可选，各标三小段「课堂共读」。
   - 《格列佛游记 · 小人国》：斯威夫特（1726）第一卷，格列佛自己讲，67 句分 11 小段；课堂共读第 6–12、20–26、32–38 句（被绑着醒来、搜口袋、鸡蛋大战）。
   - 《镜花缘 · 君子国和小人国》：李汝珍（清）第八、十至十二、十九回，64 句分 11 小段；课堂共读第 17–23、30–36、55–61 句（要加价的买家、多出来的银子、小人国）。
-- 「成语 · 第一辑」：十个成语（井底之蛙、守株待兔、愚公移山、亡羊补牢、拔苗助长、自相矛盾、塞翁失马、掩耳盗铃、一诺千金、盲人摸象），一个成语一小段：成语本身、两三句小故事、再配一两节经文，经文单元标出相似、相反或相关的视角。故事的中英文都是本项目为孩子改写的；经文中文为公版和合本，英文 NIV 经 API 显示。做法见 [docs/idioms.md](docs/idioms.md)。还没有配音。
+- 「成语 · 第一辑」：十个成语（井底之蛙、守株待兔、愚公移山、亡羊补牢、拔苗助长、自相矛盾、塞翁失马、掩耳盗铃、一诺千金、盲人摸象），一个成语一小段：成语本身、两三句小故事、再配一两节经文，经文单元标出相似、相反或相关的视角。故事的中英文都是本项目为孩子改写的；经文中文为公版和合本，英文 NIV 经 API 显示。做法见 [docs/idioms.md](docs/idioms.md)。只给 10 个成语本身配音（中文 fangfang、英文 Louise），小故事和经文暂不配音。
 - 系列「看得见的诗」：给三年级左右的孩子上一小时的课。每期三件作品画的是同一个画面：一首古诗、一首斯蒂文森的英文童诗（1885，公有领域）、一段经文，整期都在课上读。每件作品有一幅 art-lab 的「活画」：古诗是淡彩水墨，英文诗是油画，经文是水彩，孩子在画上用会动的画笔画。
   - 第一期《爬高一点，看远一点》：《登鹳雀楼》、Foreign Lands（第 1、4 节）、诗篇 121:1–2。
   - 第二期《小船去远方》：《早发白帝城》、Where Go the Boats?、以赛亚书 40:31。
@@ -165,6 +165,14 @@ node scripts/narration-scripts.mjs happy-prince ../lucas-academy-media/data/proc
 npm run audio:publish -- happy-prince ../lucas-academy-media/data/processed/lucas-lang \
   zh=../lucas-academy-media/outputs/fangfang/zh/lang-happy-prince en=../lucas-academy-media/outputs/louise/en/lang-happy-prince
 ```
+
+成语 · 第一辑按主人在 2026-10-07 确认的范围，只录每小段的第一句（成语本身），中英各 10 条；小故事和经文保留系统试听。生成脚本时必须用：
+
+```bash
+node scripts/narration-scripts.mjs idioms-1 ../lucas-academy-media/data/processed/lucas-lang --idioms-only
+```
+
+`--omit-scripture` 可用于需要故事配音而不录经文的其他任务；第一辑的本次发布使用 `--idioms-only`。英文配音的文字 hash 也会在故事、诗词和成语这几类混合课文中检查。
 
 `audio:publish` 去掉合成留下的首尾静音（保留 0.15 s 起音和 0.25 s 尾音），编码为单声道 32 kHz 48 kbps MP3（MPEG-1 Layer III，Safari / iPad 都能播放），并统计实际文件大小与时长；任何一条缺失或为空都会中止。
 

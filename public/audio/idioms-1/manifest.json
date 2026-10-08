@@ -1,5 +1,226 @@
 {
  "lessonId": "idioms-1",
- "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen. No narration yet: the device voice reads this lesson.",
- "clips": []
+ "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
+ "clips": [
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 1.74,
+   "textHash": "6577805f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 2.18,
+   "textHash": "6506fd96",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.13",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v13-whole.mp3",
+   "duration": 2.71,
+   "textHash": "a0b15e8b",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.18",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v18-whole.mp3",
+   "duration": 3.42,
+   "textHash": "3b09f695",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.25",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v25-whole.mp3",
+   "duration": 3.01,
+   "textHash": "3393d90",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.30",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v30-whole.mp3",
+   "duration": 2.33,
+   "textHash": "21c5a736",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.36",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v36-whole.mp3",
+   "duration": 2.31,
+   "textHash": "b149891d",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.41",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v41-whole.mp3",
+   "duration": 1.83,
+   "textHash": "c76c4f3f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.46",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v46-whole.mp3",
+   "duration": 2.56,
+   "textHash": "c26989bf",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.50",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v50-whole.mp3",
+   "duration": 3.6,
+   "textHash": "75cc589a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 4.08,
+   "textHash": "b44a5bd1",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 3.68,
+   "textHash": "b927327f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.13",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v13-whole.mp3",
+   "duration": 3.9,
+   "textHash": "23b63a75",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.18",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v18-whole.mp3",
+   "duration": 3.54,
+   "textHash": "a399f1e7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.25",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v25-whole.mp3",
+   "duration": 3.35,
+   "textHash": "46303157",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.30",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v30-whole.mp3",
+   "duration": 4.34,
+   "textHash": "b46dfaf7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.36",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v36-whole.mp3",
+   "duration": 3.49,
+   "textHash": "64a1bd8",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.41",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v41-whole.mp3",
+   "duration": 4.24,
+   "textHash": "604387b7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.46",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v46-whole.mp3",
+   "duration": 5.15,
+   "textHash": "2d569906",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "idioms-1",
+   "verseId": "idioms-1.50",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v50-whole.mp3",
+   "duration": 2.93,
+   "textHash": "1bcb5adc",
+   "speed": 0.75
+  }
+ ]
 }

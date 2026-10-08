@@ -15,9 +15,12 @@ import {fileURLToPath} from 'node:url';
 import {lessons} from '../public/lessons/index.js';
 import {studyUnits, chineseUnits, fingerprint} from '../public/js/units.js';
 
-const [lessonId, outDir] = process.argv.slice(2);
+const [lessonId, outDir, ...options] = process.argv.slice(2);
+const omitScripture = options.includes('--omit-scripture');
+const idiomsOnly = options.includes('--idioms-only');
+if (options.some(option => !['--omit-scripture', '--idioms-only'].includes(option))) throw new Error('Unknown narration option');
 if (!lessonId || !outDir) {
-  console.error('usage: node scripts/narration-scripts.mjs <lesson> <output-dir outside this repo>');
+  console.error('usage: node scripts/narration-scripts.mjs <lesson> <output-dir outside this repo> [--omit-scripture | --idioms-only]');
   process.exit(2);
 }
 const repo = fileURLToPath(new URL('..', import.meta.url));
@@ -31,17 +34,21 @@ if (!inside.startsWith('..') && !isAbsolute(inside)) {
 const entry = lessons.find(l => l.id === lessonId);
 if (!entry) throw new Error(`Unknown lesson: ${lessonId}`);
 const lesson = (await entry.load()).default;
+if (idiomsOnly && lesson.kind !== 'idioms') throw new Error('--idioms-only requires an idiom lesson');
+const titleNumbers = new Set(lesson.sections.map(section => section.range[0]));
+const verses = idiomsOnly ? lesson.verses.filter(v => titleNumbers.has(v.n))
+  : omitScripture ? lesson.verses.filter(v => !lesson.passage && !v.ref) : lesson.verses;
 const api = process.env.LANG_API_URL || 'http://127.0.0.1:8197';
 
 const english = new Map();
-for (const section of lesson.passage ? lesson.sections : []) {
+for (const section of lesson.passage && !omitScripture && !idiomsOnly ? lesson.sections : []) {
   const ref = `${lesson.passage.book}.${lesson.passage.chapter}.${section.range[0]}-${section.range[1]}`;
   const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref})}`);
   if (!response.ok) throw new Error(`/api/passage ${ref} returned ${response.status}`);
   for (const verse of (await response.json()).verses) english.set(verse.n, verse.text);
 }
 // A poem lesson's scripture units name their verse instead (ref, 'PSA.121.1').
-for (const verse of lesson.passage ? [] : lesson.verses.filter(v => v.ref)) {
+for (const verse of lesson.passage ? [] : verses.filter(v => v.ref)) {
   const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref: verse.ref})}`);
   if (!response.ok) throw new Error(`/api/passage ${verse.ref} returned ${response.status}`);
   const found = (await response.json()).verses?.[0]?.text?.trim();
@@ -57,7 +64,7 @@ const spoken = (text, language) => text.trim()
 const pad = n => String(n).padStart(2, '0');
 const zh = [];
 const en = [];
-for (const verse of lesson.verses) {
+for (const verse of verses) {
   const text = verse.en ?? english.get(verse.ref ?? verse.n);
   if (!text) throw new Error(`No English for ${verse.id}`);
   const units = studyUnits(lesson, verse, text);

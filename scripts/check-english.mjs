@@ -24,6 +24,7 @@ const sentences = new Set();
 for (const entry of registry) {
   const lesson = (await entry.load()).default;
   if (!lesson.passage) {
+    const english = new Map(lesson.verses.filter(v => v.en).map(v => [v.id, v.en]));
     // A story's English is public domain and ships with the lesson: nothing to
     // fetch or keep out. A lesson of poems fetches only its scripture units.
     const scripture = lesson.sections.map(section => lesson.verses.filter(v => v.ref && v.n >= section.range[0] && v.n <= section.range[1])).filter(list => list.length);
@@ -40,11 +41,26 @@ for (const entry of registry) {
       for (const [i, verse] of verses.entries()) {
         const text = byNumber.get(numbers[i]);
         assert.ok(text, `${verse.id} (${verse.ref}): no English`);
+        english.set(verse.id, text);
         sentences.add(text.replace(/\s+/g, ' ').trim().toLowerCase());
       }
     }
     const fetched = scripture.flat().length;
-    lines.push(`${lesson.title.zh}: public-domain English in the lesson` + (fetched ? `; ${fetched} scripture verses fetched` : ', not fetched'));
+    let checkedClips = 0;
+    const manifestPath = join(root, 'public', lesson.audio);
+    if (existsSync(manifestPath)) {
+      const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+      for (const clip of manifest.clips.filter(c => c.language === 'en')) {
+        const verse = lesson.verses.find(v => v.id === clip.verseId);
+        assert.ok(verse, `${clip.verseId}: unknown verse`);
+        const units = studyUnits(lesson, verse, english.get(verse.id));
+        const unit = clip.unitId === 'whole' ? units.whole : units.parts.find(p => p.id === clip.unitId);
+        assert.ok(unit, `${clip.verseId}/${clip.unitId}: no such unit today`);
+        assert.equal(fingerprint(unit.en), clip.textHash, `${clip.verseId}/${clip.unitId}: English clip was recorded from different text`);
+        checkedClips += 1;
+      }
+    }
+    lines.push(`${lesson.title.zh}: public-domain English in the lesson` + (fetched ? `; ${fetched} scripture verses fetched` : ', not fetched') + `; ${checkedClips} English clips match the text`);
     continue;
   }
   const english = new Map();
