@@ -1,5 +1,21 @@
 # 发布与验收记录
 
+## 2026-10-07 · 成语第一辑只录名称
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/?lesson=idioms-1> |
+| 部署的 commit | `3d8b3f7` Narrate the ten idiom titles with Fangfang and Louise；已在 `origin/main` |
+| 部署版本 | `ba16b538-8f0a-4bff-bc88-c75d3f5dc23a`（本机 `npm run deploy`） |
+| 发布内容 | 10 个成语名称各一条中文 fangfang、一条英文 Louise；20 个 MP3，共 64.4 秒、0.38 MB，生成速度 0.75。只发布每小段第一句，小故事和圣经经文暂不配音。共 21 个新增或变更的静态资源 |
+| 可回退版本 | `2fc902c4-0180-4042-b6ec-4c9ffe0880ca`；`npx wrangler rollback 2fc902c4-0180-4042-b6ec-4c9ffe0880ca` |
+
+验证：
+
+- 中英文各 10 条逐条核对 Whisper 转写、句中停顿、无词声音和节奏，中文重录「盲人摸象」，英文重录「自相矛盾」「掩耳盗铃」「盲人摸象」，最终无剩余标记。英文比对统一直弯撇号，避免把 `one’s` 和 `one's` 当成不同的词。
+- 清单确认恰好 20 条，只对应 10 个小段的成语名称，均为指定声音、speed 0.75；没有故事或经文录音。所有文件非空。`npm run validate` 与 `LANG_API_URL=https://lang.lucasacademy.org npm run check:english` 通过，10 条英文名称录音的 hash 与课文相符。
+- 线上清单与本地完全一致，20 个 MP3 均为 200 `audio/mpeg`，响应字节与本地逐一相同。浏览器实际播放中英文名称，状态显示「配音」、播放倍率 1×；`/class` 两行选择按钮与课程链接正常，无浏览器错误。
+
 ## 2026-10-07 · 年级与周选择、成语第一辑上线
 
 | 项目 | 记录 |
