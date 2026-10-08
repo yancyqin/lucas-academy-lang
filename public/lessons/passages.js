@@ -20,6 +20,17 @@ export const PASSAGES = Object.freeze({
   'ROM.8': [28, 28],
   'PRO.15': [3, 3],
   'MAT.5': [37, 37],
+  // 成语 · 第二辑: scripture remains text-only pending the owner’s decision.
+  'PSA.55': [21, 21],
+  'MAT.7': [6, 6],
+  'ROM.12': [21, 21],
+  '1CO.15': [33, 33],
+  'LUK.6': [31, 32],
+  'GAL.6': [9, 10],
+  'PHP.4': [11, 12],
+  'PSA.23': [4, 4],
+  '1CO.9': [22, 23],
+  'ISA.43': [18, 19],
 });
 
 // A section never holds more than seven verses, and neither does a request.
