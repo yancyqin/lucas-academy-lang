@@ -6,7 +6,8 @@ import {existsSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {join, relative, extname} from 'node:path';
 import {lessons as registry, categories} from '../public/lessons/index.js';
-import {PASSAGES, MAX_VERSES} from '../public/lessons/passages.js';
+import {PASSAGES, MAX_VERSES, isAllowedPassage} from '../public/lessons/passages.js';
+import {scriptureRequests} from '../public/js/scripture.js';
 import {englishBasic} from '../public/lessons/english-basic.js';
 import {chineseClauses, chineseUnits, fingerprint} from '../public/js/units.js';
 
@@ -42,7 +43,8 @@ for (const lesson of lessons) {
   lesson.verses.forEach((v, i) => {
     check(v.n === i + 1, `${tag}: verse ${v.id} out of order`);
     const id = lesson.passage ? `${lesson.passage.book}.${lesson.passage.chapter}.${v.n}` : `${lesson.id}.${v.n}`;
-    check(v.id === id, `${tag}: verse id ${v.id} should be ${id}`);
+    check(lesson.kind === 'idioms' ? v.id.startsWith(`${lesson.id}.`) && /^[a-z0-9.-]+$/.test(v.id) : v.id === id,
+      `${tag}: verse id ${v.id} needs a stable lesson id`);
     check(v.tokens.length && v.tokens.every(t => t.length), `${tag}: ${v.id} has an empty token`);
     check(v.explain?.zh && v.explain?.en, `${tag}: ${v.id} needs both 用简单的话理解 lines`);
     check(v.angle === undefined || ['similar', 'opposite', 'related'].includes(v.angle), `${tag}: ${v.id} angle must be similar, opposite or related`);
@@ -64,18 +66,19 @@ for (const lesson of lessons) {
     for (const v of lesson.verses) {
       if (v.ref !== undefined) {
         const m = /^([1-3]?[A-Z]{2,3})\.(\d{1,3})\.(\d{1,3})$/.exec(v.ref);
-        const allowed = m && PASSAGES[`${m[1]}.${Number(m[2])}`];
         check(fetchesScripture && v.en === undefined, `${tag}: ${v.id} names a verse, so only poems or idioms may, and without English of its own`);
-        check(allowed && Number(m[3]) >= allowed[0] && Number(m[3]) <= allowed[1], `${tag}: ${v.id} names ${v.ref}, which passages.js does not list`);
+        check(m && isAllowedPassage(`${m[1]}.${Number(m[2])}`, Number(m[3])), `${tag}: ${v.id} names ${v.ref}, which passages.js does not list`);
         continue;
       }
       check(typeof v.en === 'string' && v.en.length > 1 && v.en === v.en.trim() && !/[ \t]\n|\n[ \t]|\s{2}|"/.test(v.en), `${tag}: ${v.id} needs its English (curly quotes, single spaces)`);
     }
-    // One request per section: its scripture units are consecutive verses of one chapter.
+    // Separate requests preserve the chapter and selected verse boundaries.
     for (const s of lesson.sections) {
-      const refs = lesson.verses.filter(v => v.ref && v.n >= s.range[0] && v.n <= s.range[1]).map(v => v.ref.split('.'));
-      const together = refs.every(([book, chapter, n], i) => book === refs[0][0] && chapter === refs[0][1] && Number(n) === Number(refs[0][2]) + i);
-      check(together, `${tag}: section ${s.id} mixes verses that are not one run of one chapter`);
+      for (const request of scriptureRequests(lesson, s)) {
+        const chapter = request.ref.split('.').slice(0, 2).join('.');
+        check(request.ids.length <= MAX_VERSES && isAllowedPassage(chapter, request.numbers[0], request.numbers.at(-1)),
+          `${tag}: section ${s.id} requests an unlisted passage ${request.ref}`);
+      }
       if (s.painting !== undefined) {
         check(/^[a-z0-9]+(-[a-z0-9]+)*$/.test(s.painting.id || '') && s.painting.style?.zh && s.painting.style?.en,
           `${tag}: section ${s.id} names its living painting by id, with its style in both languages`);

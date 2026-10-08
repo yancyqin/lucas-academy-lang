@@ -15,6 +15,8 @@ import {fileURLToPath} from 'node:url';
 import {join, relative, extname} from 'node:path';
 import {lessons as registry} from '../public/lessons/index.js';
 import {studyUnits, fingerprint, englishWords} from '../public/js/units.js';
+import {scriptureRequests} from '../public/js/scripture.js';
+import {englishBasic} from '../public/lessons/english-basic.js';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const api = process.env.LANG_API_URL || 'http://127.0.0.1:8197';
@@ -27,25 +29,27 @@ for (const entry of registry) {
     const english = new Map(lesson.verses.filter(v => v.en).map(v => [v.id, v.en]));
     // A story's English is public domain and ships with the lesson: nothing to
     // fetch or keep out. A lesson of poems fetches only its scripture units.
-    const scripture = lesson.sections.map(section => lesson.verses.filter(v => v.ref && v.n >= section.range[0] && v.n <= section.range[1])).filter(list => list.length);
-    for (const verses of scripture) {
-      const [book, chapter] = verses[0].ref.split('.');
-      const numbers = verses.map(v => Number(v.ref.split('.')[2]));
-      const ref = `${book}.${chapter}.${numbers.length > 1 ? `${numbers[0]}-${numbers[numbers.length - 1]}` : numbers[0]}`;
+    const scripture = lesson.sections.flatMap(section => scriptureRequests(lesson, section));
+    for (const {ref, ids, numbers} of scripture) {
       const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref})}`);
       assert.equal(response.ok, true, `${ref}: /api/passage returned ${response.status}`);
       assert.match(response.headers.get('cache-control') || '', /no-store/, `${ref}: English must not be cached by the browser`);
       const data = await response.json();
       assert.ok(data.translation?.copyright, `${ref}: the copyright notice must come with the text`);
       const byNumber = new Map(data.verses.map(v => [v.n, v.text]));
-      for (const [i, verse] of verses.entries()) {
+      for (const [i, id] of ids.entries()) {
         const text = byNumber.get(numbers[i]);
-        assert.ok(text, `${verse.id} (${verse.ref}): no English`);
-        english.set(verse.id, text);
+        assert.ok(text, `${id} (${ref}): no English`);
+        english.set(id, text);
         sentences.add(text.replace(/\s+/g, ' ').trim().toLowerCase());
       }
     }
-    const fetched = scripture.flat().length;
+    const fetched = scripture.reduce((sum, request) => sum + request.ids.length, 0);
+    if (lesson.kind === 'idioms') {
+      const words = new Set([...english.values()].flatMap(text => (text.match(/[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu) || []).map(word => word.toLowerCase())));
+      const missing = [...words].filter(word => !lesson.aliases[word] && !englishBasic[word]);
+      assert.deepEqual(missing, [], `${lesson.id}: English words need Chinese meanings`);
+    }
     let checkedClips = 0;
     const manifestPath = join(root, 'public', lesson.audio);
     if (existsSync(manifestPath)) {

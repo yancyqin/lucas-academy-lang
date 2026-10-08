@@ -21,19 +21,19 @@ const parts = [
   [5, '对牛弹琴', 'Playing music to a cow',
     '出自《牟子理惑论》。牛听不懂琴曲，弹琴的人后来换了一种声音。',
     'From the Mouzi Lihuolun: a cow cannot follow a tune, so the musician changes the sound.'],
-  [5, '以德报怨', 'Answering hurt with kindness',
+  [6, '以德报怨', 'Answering hurt with kindness',
     '《老子》第六十三章说“报怨以德”。这里是我们写的生活小故事：帮忙，也说出自己的感受。',
     'Laozi, chapter 63, speaks of answering resentment with virtue. Our everyday story shows a child helping and also speaking up.'],
   [5, '近朱者赤', 'Good company can shape us',
     '语出傅玄《太子少傅箴》，用颜料比喻环境的影响。这里是我们写的读书小故事。',
     'Fu Xuan’s Admonition to the Junior Tutor uses color to picture influence. This reading story is our everyday example.'],
-  [6, '投桃报李', 'Returning a kindness',
+  [5, '投桃报李', 'Returning a kindness',
     '语出《诗经·大雅·抑》。我们把桃子和李子的画面写成小场景，一起想想怎样回应善意。',
     'From Yi in the Shijing: we retell the peaches and plums as a little scene about kindness returned.'],
-  [6, '滴水穿石', 'Drops of water wear through stone',
+  [5, '滴水穿石', 'Drops of water wear through stone',
     '《鹤林玉露》有“水滴石穿”的比喻。这里用水滴和石头的画面，想想每天一点的坚持。',
     'The Helin Yulu uses the image of water wearing through stone. Our scene explores what a little effort each day can do.'],
-  [6, '知足常乐', 'Finding joy in enough',
+  [5, '知足常乐', 'Finding joy in enough',
     '《老子》第四十六章谈知足。这里是我们写的生活小故事：旧积木也能搭出新的小桥。',
     'Laozi, chapter 46, speaks of contentment. Our everyday story finds a new bridge in old building blocks.'],
   [5, '杯弓蛇影', 'A bow’s reflection mistaken for a snake',
@@ -46,11 +46,13 @@ const parts = [
     '出自《吕氏春秋·察今》。船向前走了，落在河里的剑却没有跟着走。',
     'From Chajin in the Lüshi Chunqiu: the boat moves on, but the sword in the river does not move with it.'],
 ];
+// Keep section identities when new scripture changes the display ranges.
+const sectionIds = ["1-5","6-10","11-15","16-20","21-26","27-32","33-38","39-43","44-49","50-55"];
 let next = 1;
-const sections = parts.map(([length, zh, en, introZh, introEn]) => {
+const sections = parts.map(([length, zh, en, introZh, introEn], i) => {
   const range = [next, next + length - 1];
   next += length;
-  return {id: range.join('-'), range, title: {zh, en}, intro: {zh: introZh, en: introEn}};
+  return {id: sectionIds[i], range, title: {zh, en}, intro: {zh: introZh, en: introEn}};
 });
 
 export default {
@@ -76,6 +78,6 @@ export default {
     ],
   },
   sections, verses, study, dict, aliases,
-  suggested:['善','珍珠','知足','影子','习惯','记号'],
+  suggested:['真心','祷告','知足','影子','习惯','记号'],
   audio:'audio/idioms-2/manifest.json',
 };

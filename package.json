@@ -11,6 +11,7 @@
     "dev": "wrangler dev --port 8197",
     "validate": "node scripts/validate.mjs",
     "check:english": "node scripts/check-english.mjs",
+    "check:scripture": "node scripts/check-scripture.mjs",
     "narration:scripts": "node scripts/narration-scripts.mjs love ../lucas-academy-media/data/processed/lucas-lang",
     "audio:publish": "node scripts/publish-audio.mjs",
     "images:list": "node scripts/word-images.mjs",
