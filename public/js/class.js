@@ -85,9 +85,9 @@ async function renderWeek() {
   const list = weeksOf(grade);
   $('week-note').hidden = !missingWeek;
   $('week-note').textContent = missingWeek ? t('noSuchWeek') : '';
+  renderWeeks(list);
   if (!week) {
     box.append(el('p', 'class-empty', t('noWeeks')));
-    renderWeeks(list);
     return;
   }
   const kicker = [pick(grade.title), t('weekN', {n: week.n})];
@@ -106,28 +106,29 @@ async function renderWeek() {
     homework.append(el('p', 'overline', t('homework')), el('p', '', pick(week.homework)));
     box.append(homework);
   }
-  renderWeeks(list);
 }
 
+// One pill per week of the grade, always shown — even a single week is a
+// choice, and the next one appears beside it. The pill carries 本周.
 function renderWeeks(list) {
-  const box = $('weeks');
-  box.replaceChildren();
-  if (list.length < 2) return;
-  box.append(el('p', 'overline', t('allWeeks')));
-  const items = el('ul', 'weeks-list');
+  const nav = $('weeks');
+  nav.replaceChildren();
   const current = currentOf(list);
   for (const w of list) {
-    const link = el('a');
-    link.href = `?${new URLSearchParams({g: String(grade.id), w: String(w.n)})}`;
-    if (w === week) link.setAttribute('aria-current', 'page');
-    link.append(el('span', 'n', t('weekN', {n: w.n})), el('span', '', pick(w.title)));
-    if (w.date) link.append(el('span', 'date', formatDate(w.date)));
-    if (w === current) link.append(el('span', 'tag', t('thisWeek')));
-    const item = el('li');
-    item.append(link);
-    items.append(item);
+    const pill = el('button', '', t('weekN', {n: w.n}));
+    pill.type = 'button';
+    pill.setAttribute('aria-pressed', String(w === week));
+    if (w === current) pill.append(el('small', 'tag', t('thisWeek')));
+    pill.title = pick(w.title);
+    pill.onclick = () => {
+      if (w === week) return;
+      week = w;
+      missingWeek = false;
+      syncUrl();
+      renderWeek();
+    };
+    nav.append(pill);
   }
-  box.append(items);
 }
 
 function renderGrades() {

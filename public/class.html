@@ -18,10 +18,12 @@
   <main class="class-page">
     <p class="overline" data-i18n="classTitle">课程表</p>
     <p class="class-intro" data-i18n="classIntro">选年级，再选一周。每一周都有自己的链接，上课前后都能打开。</p>
-    <nav id="grades" class="grade-pills" data-i18n-aria-label="grades" aria-label="年级"></nav>
+    <p class="overline pill-label" data-i18n="grades">年级</p>
+    <nav id="grades" class="pills" data-i18n-aria-label="grades" aria-label="年级"></nav>
+    <p class="overline pill-label" data-i18n="weeks">周</p>
+    <nav id="weeks" class="pills" data-i18n-aria-label="weeks" aria-label="周"></nav>
     <p id="week-note" class="class-note" hidden></p>
     <section id="week" class="week-card" aria-live="polite"></section>
-    <section id="weeks" class="weeks"></section>
   </main>
   <noscript><p class="noscript">这个页面需要打开浏览器的 JavaScript。This page needs JavaScript.</p></noscript>
   <script type="module" src="js/class.js"></script>
