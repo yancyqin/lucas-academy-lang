@@ -178,8 +178,36 @@ for (const [lang, override] of Object.entries(storyStrings)) {
   }
 }
 check(zhKeys === enKeys, `strings: zh and en keys differ (${Object.keys(strings.zh).filter(k => !(k in strings.en)).concat(Object.keys(strings.en).filter(k => !(k in strings.zh))).join(', ')})`);
-const indexHtml = await readFile(join(pub, 'index.html'), 'utf8');
-for (const [, key] of indexHtml.matchAll(/data-i18n(?:-[a-z-]+)?="([^"]+)"/g)) check(key in strings.zh, `index.html: unknown string ${key}`);
+for (const page of ['index.html', 'class.html']) {
+  const html = await readFile(join(pub, page), 'utf8');
+  for (const [, key] of html.matchAll(/data-i18n(?:-[a-z-]+)?="([^"]+)"/g)) check(key in strings.zh, `${page}: unknown string ${key}`);
+}
+
+// 课程表: every week belongs to a grade, names lessons that exist, and parts
+// within them, so a typo in the schedule never reaches the class.
+const {grades, weeks} = await import('../public/lessons/schedule.js');
+check(grades.length && grades.every(g => Number.isInteger(g.id) && g.title?.zh && g.title?.en), 'schedule: each grade needs an integer id and a title in both languages');
+check(new Set(grades.map(g => g.id)).size === grades.length, 'schedule: duplicate grade ids');
+const seenWeeks = new Set();
+for (const w of weeks) {
+  const tag = `schedule: grade ${w.grade} week ${w.n}`;
+  check(grades.some(g => g.id === w.grade), `${tag}: unknown grade`);
+  check(Number.isInteger(w.n) && w.n >= 1 && !seenWeeks.has(`${w.grade}/${w.n}`), `${tag}: week numbers are positive and unique within a grade`);
+  seenWeeks.add(`${w.grade}/${w.n}`);
+  check(w.title?.zh && w.title?.en, `${tag}: needs a title in both languages`);
+  check(w.date === undefined || /^\d{4}-\d{2}-\d{2}$/.test(w.date), `${tag}: date is YYYY-MM-DD`);
+  check(w.homework === undefined || (w.homework.zh && w.homework.en), `${tag}: homework in both languages, or none`);
+  check(Array.isArray(w.readings) && w.readings.length, `${tag}: needs at least one reading`);
+  for (const r of w.readings || []) {
+    const lesson = lessons.find(l => l.id === r.lesson);
+    check(lesson, `${tag}: unknown lesson ${r.lesson}`);
+    if (!lesson) continue;
+    const ok = r.parts === undefined || (Array.isArray(r.parts) && r.parts.length
+      && r.parts.every(n => Number.isInteger(n) && n >= 1 && n <= lesson.sections.length) && new Set(r.parts).size === r.parts.length);
+    check(ok, `${tag}: ${r.lesson} parts must be distinct numbers 1–${lesson.sections.length}`);
+  }
+}
+summary.push(`Class schedule: ${weeks.length} week(s) for ${grades.length} grade(s)`);
 
 // English everyday words are lower case and complete.
 for (const [word, value] of Object.entries(englishBasic)) {

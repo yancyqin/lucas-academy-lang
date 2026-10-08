@@ -153,6 +153,21 @@ const zh = {
   partDone: '这一小段学完了！可以再读一次，也可以换下一段。',
   lastPartDone: '最后一小段也学完了！可以再读一次，也可以换一篇。',
   lessonDone: '这一篇学完了！可以再读一次，也可以换一篇。',
+  // 课程表 (/class)
+  classTitle: '课程表',
+  classIntro: '选年级，再选一周。每一周都有自己的链接，上课前后都能打开。',
+  grades: '年级',
+  weekN: ({n}) => `第 ${n} 周`,
+  thisWeek: '本周',
+  startLesson: '开始上课 ▶',
+  wholeLesson: '整篇一起读',
+  partsList: ({list}) => `第 ${list} 小段`,
+  homework: '作业',
+  allWeeks: '各周',
+  noWeeks: '这个年级还没有安排课程。',
+  noSuchWeek: '没有这一周，先看本周的。',
+  otherLanguage: 'English',
+  otherLanguageLabel: '切换界面语言',
 };
 
 const en = {
@@ -306,6 +321,21 @@ const en = {
   partDone: 'You finished this part! Read it again, or go on to the next part.',
   lastPartDone: 'You finished the last part! Read it again, or choose another lesson.',
   lessonDone: 'You finished the lesson! Read it again, or choose another lesson.',
+  // 课程表 (/class)
+  classTitle: 'Class schedule',
+  classIntro: 'Pick a grade, then a week. Every week has its own link, before and after class.',
+  grades: 'Grade',
+  weekN: ({n}) => `Week ${n}`,
+  thisWeek: 'This week',
+  startLesson: 'Start the lesson ▶',
+  wholeLesson: 'The whole lesson, together',
+  partsList: ({list}) => `Parts ${list}`,
+  homework: 'Homework',
+  allWeeks: 'All weeks',
+  noWeeks: 'No classes are scheduled for this grade yet.',
+  noSuchWeek: "There's no such week, so here is this week's.",
+  otherLanguage: '中文',
+  otherLanguageLabel: 'Switch the interface language',
 };
 
 // A story is read sentence by sentence, not verse by verse: in a story lesson
