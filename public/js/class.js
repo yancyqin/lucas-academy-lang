@@ -168,3 +168,7 @@ $('language').onclick = () => {
 chooseWeek(params.get('w'));
 if (grade) storage.save('grade', grade.id);
 render();
+
+// Weekly waits for the app, because an iframe load event also fires when framing is blocked.
+// This readiness message contains no learner data; the parent checks our origin and window.
+if (window.parent !== window) window.parent.postMessage({type: 'language-bridge-class-ready'}, '*');
