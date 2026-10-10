@@ -1,22 +1,27 @@
 import {illustrations, illustrationBindings} from '../lessons/illustrations.js';
 import {el} from './tokens.js';
-import {pick} from './strings.js';
+import {t, pick} from './strings.js';
 
-// Reading and sentence study show the same art beside the same verse.
-export function illustrationFigure(lessonId, verseId, {study = false} = {}) {
+// Reading and sentence study show the same art beside the same verse. The
+// picture starts folded so the words come first; it loads on the first open.
+export function illustrationFigure(lessonId, verseId) {
   const id = illustrationBindings[lessonId]?.[verseId];
   const art = illustrations[id];
   if (!art) return null;
-  const figure = el('figure', 'lesson-picture');
-  figure.dataset.illustration = id;
+  const details = el('details', 'lesson-picture');
+  details.dataset.illustration = id;
+  details.append(el('summary', '', t('showPicture')));
+  const figure = el('figure');
   const image = document.createElement('img');
-  image.src = art.src;
   image.alt = pick(art.alt);
   image.width = art.width;
   image.height = art.height;
-  image.loading = study ? 'eager' : 'lazy';
   image.decoding = 'async';
-  image.addEventListener('error', () => figure.remove(), {once: true});
+  image.addEventListener('error', () => details.remove(), {once: true});
   figure.append(image);
-  return figure;
+  details.append(figure);
+  details.addEventListener('toggle', () => {
+    if (details.open && !image.src) image.src = art.src;
+  });
+  return details;
 }

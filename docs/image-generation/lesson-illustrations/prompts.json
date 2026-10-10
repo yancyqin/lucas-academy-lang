@@ -3,162 +3,6 @@
   "date": "2026-10-09",
   "images": [
     {
-      "id": "words-with-love",
-      "kind": "scripture",
-      "title": "1CO.13.1",
-      "style": "warm gouache",
-      "src": "images/lessons/scripture/words-with-love.webp",
-      "alt": {
-        "zh": "孩子放下小钹，专心听同伴说话。",
-        "en": "A child puts down cymbals and listens kindly to a friend."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm gouache.\nScene: A child puts down a small pair of toy cymbals and listens kindly to a lonely peer on a bench. Cymbals visible, caring attention is the focus. No writing or noisy marks.\nThis image accompanies 1CO.13.1. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "knowledge-with-love",
-      "kind": "scripture",
-      "title": "1CO.13.2",
-      "style": "colored-pencil illustration",
-      "src": "images/lessons/scripture/knowledge-with-love.webp",
-      "alt": {
-        "zh": "孩子放下手中的书，帮助身旁遇到困难的同伴。",
-        "en": "A child puts a book aside to help a friend in difficulty."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: colored-pencil illustration.\nScene: A child with books and a simple wooden puzzle notices a younger friend struggling and puts their own project aside to help. Knowledge joined to real care, unlettered pages.\nThis image accompanies 1CO.13.2. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "giving-with-care",
-      "kind": "scripture",
-      "title": "1CO.13.3",
-      "style": "textile collage",
-      "src": "images/lessons/scripture/giving-with-care.webp",
-      "alt": {
-        "zh": "送食物的孩子也坐下来，认真听邻居说话。",
-        "en": "A child shares food and takes time to listen to the neighbor."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: textile collage.\nScene: A child gives a simple basket of food to a neighbor while sitting at the same level and listening with warmth. The person matters, not only the gift; no money or written label.\nThis image accompanies 1CO.13.3. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "patient-kindness",
-      "kind": "scripture",
-      "title": "1CO.13.4",
-      "style": "soft pastel",
-      "src": "images/lessons/scripture/patient-kindness.webp",
-      "alt": {
-        "zh": "一个孩子耐心等同伴拼好，轻轻鼓励他。",
-        "en": "A child patiently waits and gently encourages a friend."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: soft pastel.\nScene: Two children play a cooperative wooden puzzle; one waits patiently and gently encourages the other rather than grabbing a piece or boasting. Warm ordinary scene.\nThis image accompanies 1CO.13.4. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "consider-others",
-      "kind": "scripture",
-      "title": "1CO.13.5",
-      "style": "handmade paper collage",
-      "src": "images/lessons/scripture/consider-others.webp",
-      "alt": {
-        "zh": "孩子往旁边挪一挪，给同伴留出位置。",
-        "en": "A child moves aside to make room for a friend."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: handmade paper collage.\nScene: Two children share a narrow bench; one scoots aside to give the other enough room, hands relaxed and expressions kind. Care for the other's needs rather than selfishness.\nThis image accompanies 1CO.13.5. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "joy-in-truth",
-      "kind": "scripture",
-      "title": "1CO.13.6",
-      "style": "warm pencil and gouache",
-      "src": "images/lessons/scripture/joy-in-truth.webp",
-      "alt": {
-        "zh": "孩子诚实说明打翻颜料的经过，同伴一起帮忙。",
-        "en": "A child honestly explains a spill and a friend helps."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm pencil and gouache.\nScene: A child openly admits accidentally spilling paint and another child calmly helps clean it up. Honest care, neither mocks nor cheers at the mishap. No writing or blame.\nThis image accompanies 1CO.13.6. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "steady-support",
-      "kind": "scripture",
-      "title": "1CO.13.7",
-      "style": "felt collage",
-      "src": "images/lessons/scripture/steady-support.webp",
-      "alt": {
-        "zh": "两个孩子一起护住风中的小苗。",
-        "en": "Two children patiently protect a small seedling in the wind."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: felt collage.\nScene: Two children support a fragile new seedling against wind, one holding a small protective screen while the other steadies a slender stake. Trust, hope and patient shared care, no storm danger.\nThis image accompanies 1CO.13.7. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "lasting-love",
-      "kind": "scripture",
-      "title": "1CO.13.8",
-      "style": "gentle tempera",
-      "src": "images/lessons/scripture/lasting-love.webp",
-      "alt": {
-        "zh": "长辈和长大的孩子一起照顾小孩子。",
-        "en": "An elder and a grown child continue to care for a young child."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: gentle tempera.\nScene: An elderly adult and a grown child care warmly for a young child in a modest garden, with worn toys and an old closed book nearby. Affection enduring through time, all people equally dignified.\nThis image accompanies 1CO.13.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "partial-picture",
-      "kind": "scripture",
-      "title": "1CO.13.9",
-      "style": "tactile paper illustration",
-      "src": "images/lessons/scripture/partial-picture.webp",
-      "alt": {
-        "zh": "孩子望着还没有拼完整的图画。",
-        "en": "A child looks at a picture puzzle that is only partly complete."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: tactile paper illustration.\nScene: A child studies a partly completed landscape jigsaw puzzle with many open spaces, hands resting thoughtfully beside it. Parts versus a larger whole, no printed words or labels.\nThis image accompanies 1CO.13.9. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "complete-picture",
-      "kind": "scripture",
-      "title": "1CO.13.10",
-      "style": "colored-pencil illustration",
-      "src": "images/lessons/scripture/complete-picture.webp",
-      "alt": {
-        "zh": "最后一块拼图放进去，整幅图终于完整了。",
-        "en": "The last puzzle piece makes the whole picture complete."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: colored-pencil illustration.\nScene: Two children fit the last piece into a complete large landscape puzzle. The final piece closes the visible gap and the whole picture becomes clear, no writing.\nThis image accompanies 1CO.13.10. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "growing-understanding",
-      "kind": "scripture",
-      "title": "1CO.13.11",
-      "style": "warm gouache",
-      "src": "images/lessons/scripture/growing-understanding.webp",
-      "alt": {
-        "zh": "大孩子一边搭积木，一边耐心帮助小孩子。",
-        "en": "An older child patiently helps a younger child build with blocks."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm gouache.\nScene: An older child respectfully helps a younger child build with wooden blocks; the older child's thoughtful planning differs from the younger child's playful discovery. Growth without disparaging childhood, no words.\nThis image accompanies 1CO.13.11. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "partial-seeing",
-      "kind": "scripture",
-      "title": "1CO.13.12",
-      "style": "soft pastel with clear shapes",
-      "src": "images/lessons/scripture/partial-seeing.webp",
-      "alt": {
-        "zh": "镜中倒影模糊，镜外面对面的人却看得清楚。",
-        "en": "A mirror's reflection is blurred while people beyond it are clear."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: soft pastel with clear shapes.\nScene: A simple old metal mirror in the foreground gives a blurred partial reflection of two people, while the actual people beyond it are clear and face to face. Fuller knowing beyond present limits, no supernatural faces.\nThis image accompanies 1CO.13.12. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "faith-hope-love",
-      "kind": "scripture",
-      "title": "1CO.13.13",
-      "style": "soft pastel botanical scene",
-      "src": "images/lessons/scripture/faith-hope-love.webp",
-      "alt": {
-        "zh": "孩子们一起种下种子、照顾嫩芽，也欢迎同伴加入。",
-        "en": "Children plant, care for a sprout and warmly welcome a friend."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: soft pastel botanical scene.\nScene: Three children together plant a seed, protect a small sprout and warmly make room for a friend in one continuous garden scene. Trust, hope and caring action, emphasis on welcoming love. No hearts, words or labeled symbols.\nThis image accompanies 1CO.13.13. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
       "id": "teacher-by-lake",
       "kind": "scripture",
       "title": "MRK.4.1",
@@ -435,54 +279,6 @@
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: botanical gouache.\nScene: In late-summer light, ants gather golden grains from fallen wheat heads and carry them into a nest entrance in the soil. Natural ant anatomy, no costumes.\nThis image accompanies PRO.6.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
     },
     {
-      "id": "mustard-faith",
-      "kind": "scripture",
-      "title": "MAT.17.20",
-      "style": "delicate botanical watercolor",
-      "src": "images/lessons/scripture/mustard-faith.webp",
-      "alt": {
-        "zh": "手心里的一粒芥菜种，远处是一座大山。",
-        "en": "A tiny mustard seed rests on a palm with a mountain beyond."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: delicate botanical watercolor.\nScene: A tiny mustard seed rests on a child's open palm in the foreground; a vast mountain and a path toward it stand beyond. A meditation on small faith trusting beyond size, no magically flying mountain.\nThis image accompanies MAT.17.20. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "turn-toward-light",
-      "kind": "scripture",
-      "title": "MAT.4.17",
-      "style": "gold and blue linocut print",
-      "src": "images/lessons/scripture/turn-toward-light.webp",
-      "alt": {
-        "zh": "行路的人转过身，走向有光的门。",
-        "en": "A traveler turns around toward a doorway filled with light."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: gold and blue linocut print.\nScene: A traveler deliberately turns from a dark winding path toward a warmly lit open doorway and a dawn path. Turning and returning express repentance, no fence repair, no floating castle or divine portrait.\nThis image accompanies MAT.4.17. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "patient-farmer",
-      "kind": "scripture",
-      "title": "JAS.5.7",
-      "style": "earthy watercolor",
-      "src": "images/lessons/scripture/patient-farmer.webp",
-      "alt": {
-        "zh": "农夫安静等候，雨落在生长的麦田里。",
-        "en": "A farmer patiently watches rain on the growing grain."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: earthy watercolor.\nScene: A Middle Eastern farmer calmly waits beside growing grain as gentle seasonal rain falls, hands resting on a hoe. Healthy wheat, patient attention, no pulling plants.\nThis image accompanies JAS.5.7. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "walking-darkness",
-      "kind": "scripture",
-      "title": "1JN.1.6",
-      "style": "restrained pastel chiaroscuro",
-      "src": "images/lessons/scripture/walking-darkness.webp",
-      "alt": {
-        "zh": "一个人背向光明的门，走进较暗的小路。",
-        "en": "A person walks away from a bright doorway into a darker path."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: restrained pastel chiaroscuro.\nScene: A person chooses to walk away from a clearly illuminated doorway into a darker lane. Contrasting directions and long shadow express actions conflicting with fellowship in light. Thoughtful, not frightening; no monster or text.\nThis image accompanies 1JN.1.6. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
       "id": "woven-purpose",
       "kind": "scripture",
       "title": "ROM.8.28",
@@ -531,42 +327,6 @@
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: luminous mountain watercolor.\nScene: A small traveler on a rough mountain path sees steady dawn light both ahead and around their present steps. Convey guidance and companionship; no physical portrait of God or hand in the sky.\nThis image accompanies DEU.31.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
     },
     {
-      "id": "no-oath",
-      "kind": "scripture",
-      "title": "MAT.5.34",
-      "style": "historical ink and watercolor",
-      "src": "images/lessons/scripture/no-oath.webp",
-      "alt": {
-        "zh": "两个人平静地面对面说话，双手自然放下。",
-        "en": "Two people speak calmly face to face with relaxed hands."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: historical ink and watercolor.\nScene: Two ordinary first-century Judean people calmly speak face to face in a village courtyard, relaxed open hands; neither gestures toward heaven or swears on an object. Historically plausible clothes, no writing.\nThis image accompanies MAT.5.34. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "plain-honesty",
-      "kind": "scripture",
-      "title": "MAT.5.37",
-      "style": "matte clay storybook still",
-      "src": "images/lessons/scripture/plain-honesty.webp",
-      "alt": {
-        "zh": "孩子指着自己说明打翻水杯的经过，同伴认真听。",
-        "en": "A child plainly explains that they spilled the water."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: matte clay storybook still.\nScene: A child who spilled water gently points to themselves and explains honestly to a listening peer; a cloth is ready to clean up. Clear plain truth, no blaming or oath gesture.\nThis image accompanies MAT.5.37. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "honeyed-words",
-      "kind": "idiom",
-      "title": "口蜜腹剑",
-      "style": "editorial gouache",
-      "src": "images/lessons/idioms-2/honeyed-words.webp",
-      "alt": {
-        "zh": "官员笑着向同僚行礼，背后却藏着一卷计划。",
-        "en": "An official smiles at a colleague while hiding a scroll behind his back."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: editorial gouache.\nScene: An ancient Chinese official smiles politely at another official while concealing a closed plan scroll behind his back. Suggest concealed intent by posture and shadow, no literal honey or violence."
-    },
-    {
       "id": "music-cow",
       "kind": "idiom",
       "title": "对牛弹琴",
@@ -577,30 +337,6 @@
         "en": "A musician plays a guqin while a cow keeps grazing."
       },
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: Chinese ink and green watercolor.\nScene: An ancient Chinese musician plays a seven-string guqin on a low table under a tree, while a cow pays no attention and grazes beside him. Plausible instrument and hands."
-    },
-    {
-      "id": "return-kindness",
-      "kind": "idiom",
-      "title": "以德报怨",
-      "style": "stitched-felt fabric collage",
-      "src": "images/lessons/idioms-2/return-kindness.webp",
-      "alt": {
-        "zh": "孩子把水和干净的布递给刚才弄倒积木的同伴。",
-        "en": "A child offers water and a cloth to the friend who knocked down their blocks."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: stitched-felt fabric collage.\nScene: A child offers a bowl of water and a clean cloth to a peer who previously knocked down their building-block tower. Fallen blocks remain behind; show kindness and surprise, no fight."
-    },
-    {
-      "id": "reading-friends",
-      "kind": "idiom",
-      "title": "近朱者赤",
-      "style": "soft pastel drawing",
-      "src": "images/lessons/idioms-2/reading-friends.webp",
-      "alt": {
-        "zh": "爱读书的孩子们邀请新朋友一起看书。",
-        "en": "Children who enjoy reading invite another friend to join."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: soft pastel drawing.\nScene: Three children read open picture books together; one happily invites a new friend to join. Warm shared reading habits, no readable words on pages."
     },
     {
       "id": "peaches-plums",
@@ -627,18 +363,6 @@
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: observational watercolor.\nScene: A clear water drop falls from a narrow ledge into a deep smooth hollow gradually eroded in stone. Show ripples and the worn hollow, calm close view."
     },
     {
-      "id": "joy-in-enough",
-      "kind": "idiom",
-      "title": "知足常乐",
-      "style": "warm colored-pencil drawing",
-      "src": "images/lessons/idioms-2/joy-in-enough.webp",
-      "alt": {
-        "zh": "小女孩用旧积木搭出一座小桥，开心地看着它。",
-        "en": "A girl smiles at the bridge she built with old blocks."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm colored-pencil drawing.\nScene: A young East Asian girl smiles at a small bridge made from her familiar worn wooden building blocks on the floor. Creative satisfaction with what she has, no shopping or new toys."
-    },
-    {
       "id": "bow-reflection",
       "kind": "idiom",
       "title": "杯弓蛇影",
@@ -649,18 +373,6 @@
         "en": "The host shows that the cup's reflection comes from the bow on the wall."
       },
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: delicate ink and watercolor.\nScene: An ancient Chinese host shows a visitor a curved bow hanging on the wall and the corresponding curved reflection in a wine cup on a low table. No real snake. Visitor looks relieved; reflection and bow clearly connected."
-    },
-    {
-      "id": "local-customs",
-      "kind": "idiom",
-      "title": "入乡随俗",
-      "style": "matte clay-animation still",
-      "src": "images/lessons/idioms-2/local-customs.webp",
-      "alt": {
-        "zh": "小客人看见门口的鞋架，也脱下自己的鞋子。",
-        "en": "A guest follows the home's custom of taking shoes off."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: matte clay-animation still.\nScene: At a friend's doorway, a young visitor sees neatly stored shoes and respectfully takes off his own shoes. A warm ordinary home, socks and shoe rack clearly visible."
     },
     {
       "id": "boat-mark",
@@ -675,18 +387,6 @@
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: blue and terracotta woodblock print.\nScene: An ancient Chinese man on a moving wooden ferry points to a notch he cut in its gunwale; his lost sword remains on the shallow riverbed well behind the boat. Make the different positions clear, no fighting or diving."
     },
     {
-      "id": "heart-far",
-      "kind": "scripture",
-      "title": "MAT.15.8",
-      "style": "editorial cut-paper collage",
-      "src": "images/lessons/scripture/heart-far.webp",
-      "alt": {
-        "zh": "站在祷告之处的人，目光和脚步却朝向远方。",
-        "en": "A person near a place of prayer turns their gaze and steps away."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: editorial cut-paper collage.\nScene: A person near a warmly lit place of prayer clasps hands politely, yet gaze and feet turn away toward a distant closed path. Show outward respect and inward distance through posture, no floating heart or caricature.\nThis image accompanies MAT.15.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
       "id": "listen-with-heart",
       "kind": "scripture",
       "title": "MAT.13.9",
@@ -697,54 +397,6 @@
         "en": "A child and adults listen attentively to the teacher."
       },
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: historical watercolor.\nScene: Jesus as an olive-skinned dark-haired first-century Judean teacher in simple robes speaks to attentive adults and a child leaning forward to listen. Focus on hearing with attention, no blonde European Jesus, halos or magic.\nThis image accompanies MAT.13.9. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "love-enemies",
-      "kind": "scripture",
-      "title": "MAT.5.44",
-      "style": "warm pencil and gouache",
-      "src": "images/lessons/scripture/love-enemies.webp",
-      "alt": {
-        "zh": "孩子把水递给曾对自己不友好的同伴。",
-        "en": "A child offers water to someone who had been unkind."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm pencil and gouache.\nScene: A child offers a cup of water to a peer who had been unkind; the peer looks surprised and begins to soften. Dignified ordinary children, active kindness rather than a fight.\nThis image accompanies MAT.5.44. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "shared-sun-rain",
-      "kind": "scripture",
-      "title": "MAT.5.45",
-      "style": "layered paper landscape",
-      "src": "images/lessons/scripture/shared-sun-rain.webp",
-      "alt": {
-        "zh": "阳光和细雨同样落在两家的花园里。",
-        "en": "The same sunlight and rain reach neighboring gardens."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: layered paper landscape.\nScene: Two modest neighboring gardens receive the same sunlight and rain. One gardener welcomes a neighbor, another keeps a closed posture, yet both gardens receive light and water equally. Natural rain and sunshine, no labels or caricature.\nThis image accompanies MAT.5.45. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "becoming-like-light",
-      "kind": "scripture",
-      "title": "2CO.3.18",
-      "style": "luminous impressionist gouache",
-      "src": "images/lessons/scripture/becoming-like-light.webp",
-      "alt": {
-        "zh": "窗边的镜子返照光亮，光也照在人的脸和手上。",
-        "en": "A mirror reflects window light onto a person's face and hands."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: luminous impressionist gouache.\nScene: A person beside a simple mirror turns toward a warm open window; reflected light gently falls across their face and hands. Meditation on turning to the Lord and being transformed, no portrait of God or fantasy metamorphosis.\nThis image accompanies 2CO.3.18. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
-      "id": "love-first",
-      "kind": "scripture",
-      "title": "1JN.4.19",
-      "style": "warm fabric collage",
-      "src": "images/lessons/scripture/love-first.webp",
-      "alt": {
-        "zh": "孩子先得到拥抱，又向身旁的同伴伸出手。",
-        "en": "A child receives an embrace and reaches out to a friend."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm fabric collage.\nScene: A parent first embraces a child, who warmly reaches one free hand toward another child to invite them in. Clear flow of love received becoming love given, coherent hands, no text.\nThis image accompanies 1JN.4.19. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
     },
     {
       "id": "keep-praying",
@@ -807,18 +459,6 @@
       "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm tempera painting.\nScene: Ordinary first-century Mediterranean people gather at a simple table with bread and share in attentive welcoming conversation. Fellowship and participation, no luxurious feast or readable scroll.\nThis image accompanies 1CO.9.23. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
     },
     {
-      "id": "look-forward",
-      "kind": "scripture",
-      "title": "ISA.43.18",
-      "style": "poetic linocut print",
-      "src": "images/lessons/scripture/look-forward.webp",
-      "alt": {
-        "zh": "行路的人望向新的方向，旧路的脚印留在身后。",
-        "en": "A traveler looks ahead while old footprints remain behind."
-      },
-      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: poetic linocut print.\nScene: A traveler at a fork looks toward a newly sunlit route rather than back at old footprints. Hopeful attentiveness to a new direction, no erased memory symbols or words.\nThis image accompanies ISA.43.18. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
-    },
-    {
       "id": "new-way-river",
       "kind": "scripture",
       "title": "ISA.43.19",
@@ -832,71 +472,6 @@
     }
   ],
   "bindings": [
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.1",
-      "imageId": "words-with-love"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.2",
-      "imageId": "knowledge-with-love"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.3",
-      "imageId": "giving-with-care"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.4",
-      "imageId": "patient-kindness"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.5",
-      "imageId": "consider-others"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.6",
-      "imageId": "joy-in-truth"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.7",
-      "imageId": "steady-support"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.8",
-      "imageId": "lasting-love"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.9",
-      "imageId": "partial-picture"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.10",
-      "imageId": "complete-picture"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.11",
-      "imageId": "growing-understanding"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.12",
-      "imageId": "partial-seeing"
-    },
-    {
-      "lessonId": "love",
-      "verseId": "1CO.13.13",
-      "imageId": "faith-hope-love"
-    },
     {
       "lessonId": "seed",
       "verseId": "MRK.4.1",
@@ -1014,26 +589,6 @@
     },
     {
       "lessonId": "idioms-1",
-      "verseId": "idioms-1.17",
-      "imageId": "mustard-faith"
-    },
-    {
-      "lessonId": "idioms-1",
-      "verseId": "idioms-1.mat-4-17",
-      "imageId": "turn-toward-light"
-    },
-    {
-      "lessonId": "idioms-1",
-      "verseId": "idioms-1.29",
-      "imageId": "patient-farmer"
-    },
-    {
-      "lessonId": "idioms-1",
-      "verseId": "idioms-1.1jn-1-6",
-      "imageId": "walking-darkness"
-    },
-    {
-      "lessonId": "idioms-1",
       "verseId": "idioms-1.40",
       "imageId": "woven-purpose"
     },
@@ -1053,39 +608,9 @@
       "imageId": "presence-ahead"
     },
     {
-      "lessonId": "idioms-1",
-      "verseId": "idioms-1.mat-5-34",
-      "imageId": "no-oath"
-    },
-    {
-      "lessonId": "idioms-1",
-      "verseId": "idioms-1.49",
-      "imageId": "plain-honesty"
-    },
-    {
-      "lessonId": "idioms-1",
-      "verseId": "idioms-1.54",
-      "imageId": "partial-seeing"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.1",
-      "imageId": "honeyed-words"
-    },
-    {
       "lessonId": "idioms-2",
       "verseId": "idioms-2.6",
       "imageId": "music-cow"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.11",
-      "imageId": "return-kindness"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.16",
-      "imageId": "reading-friends"
     },
     {
       "lessonId": "idioms-2",
@@ -1099,18 +624,8 @@
     },
     {
       "lessonId": "idioms-2",
-      "verseId": "idioms-2.33",
-      "imageId": "joy-in-enough"
-    },
-    {
-      "lessonId": "idioms-2",
       "verseId": "idioms-2.39",
       "imageId": "bow-reflection"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.44",
-      "imageId": "local-customs"
     },
     {
       "lessonId": "idioms-2",
@@ -1119,33 +634,8 @@
     },
     {
       "lessonId": "idioms-2",
-      "verseId": "idioms-2.mat-15-8",
-      "imageId": "heart-far"
-    },
-    {
-      "lessonId": "idioms-2",
       "verseId": "idioms-2.mat-13-9",
       "imageId": "listen-with-heart"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.mat-5-44",
-      "imageId": "love-enemies"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.mat-5-45",
-      "imageId": "shared-sun-rain"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.2co-3-18",
-      "imageId": "becoming-like-light"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.1jn-4-19",
-      "imageId": "love-first"
     },
     {
       "lessonId": "idioms-2",
@@ -1171,11 +661,6 @@
       "lessonId": "idioms-2",
       "verseId": "idioms-2.49",
       "imageId": "share-good-news"
-    },
-    {
-      "lessonId": "idioms-2",
-      "verseId": "idioms-2.54",
-      "imageId": "look-forward"
     },
     {
       "lessonId": "idioms-2",

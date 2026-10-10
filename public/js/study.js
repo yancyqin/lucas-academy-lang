@@ -167,7 +167,7 @@ export function createStudy(app) {
       reading.append(line);
     }
 
-    const illustration = illustrationFigure(lesson.id, verse().id, {study: true});
+    const illustration = illustrationFigure(lesson.id, verse().id);
     if (illustration) reading.append(illustration);
 
     $('study-listen').disabled = !current.en;

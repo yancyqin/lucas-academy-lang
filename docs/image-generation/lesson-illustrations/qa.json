@@ -2,15 +2,15 @@
   "date": "2026-10-09",
   "status": "passed",
   "assets": {
-    "images": 69,
-    "bindings": 70,
-    "bytes": 11878582,
+    "images": 39,
+    "bindings": 39,
+    "bytes": 7107540,
     "dimensions": [
       "960x720"
     ],
-    "decoded": 69,
+    "decoded": 39,
     "visualReview": {
-      "images": 69,
+      "images": 39,
       "method": "Individual native image outputs inspected for subject, composition, child suitability and legible text."
     }
   },
@@ -47,5 +47,14 @@
     "desktop WebKit",
     "mobile Chromium",
     "mobile study Chromium"
-  ]
+  ],
+  "revision": {
+    "date": "2026-10-09",
+    "change": "Removed 30 images after review: all Love Chapter art and 17 abstract-concept images (see README). Illustrations now start folded behind a 显示图 / Show picture toggle and load on first open.",
+    "checked": [
+      "npm run validate: 39 images for 39 reading units, hashes and dimensions unchanged for kept images",
+      "All 39 image paths return 200 image/webp from wrangler dev; a removed path returns 404",
+      "Chromium: pictures start folded with 显示图 / Show picture, load only when opened and decode at 960 px; The Love Chapter shows no pictures; study dialog picture also starts folded"
+    ]
+  }
 }

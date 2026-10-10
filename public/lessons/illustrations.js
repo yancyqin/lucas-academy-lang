@@ -1,174 +1,5 @@
 // Generated illustrations and bilingual visual descriptions; stable verse bindings.
 export const illustrations = {
-  "words-with-love": {
-    "src": "images/lessons/scripture/words-with-love.webp",
-    "alt": {
-      "zh": "孩子放下小钹，专心听同伴说话。",
-      "en": "A child puts down cymbals and listens kindly to a friend."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "099abaa412b933d105ea2b8d8abc0ccbe49190470d113c0362e9245210c4df33",
-    "bytes": 112152,
-    "style": "warm gouache",
-    "kind": "scripture"
-  },
-  "knowledge-with-love": {
-    "src": "images/lessons/scripture/knowledge-with-love.webp",
-    "alt": {
-      "zh": "孩子放下手中的书，帮助身旁遇到困难的同伴。",
-      "en": "A child puts a book aside to help a friend in difficulty."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "3e15438362595a3cdc2a668ca1e41431157bf98be47adeda563088899e52893b",
-    "bytes": 208190,
-    "style": "colored-pencil illustration",
-    "kind": "scripture"
-  },
-  "giving-with-care": {
-    "src": "images/lessons/scripture/giving-with-care.webp",
-    "alt": {
-      "zh": "送食物的孩子也坐下来，认真听邻居说话。",
-      "en": "A child shares food and takes time to listen to the neighbor."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "a4d64ea99043ec802da230a440e8a432e88cbebc0c285adc517824e603e0d942",
-    "bytes": 237328,
-    "style": "textile collage",
-    "kind": "scripture"
-  },
-  "patient-kindness": {
-    "src": "images/lessons/scripture/patient-kindness.webp",
-    "alt": {
-      "zh": "一个孩子耐心等同伴拼好，轻轻鼓励他。",
-      "en": "A child patiently waits and gently encourages a friend."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "1e909ca2ae77dfdddadb86e918802acf37e84c26dcc4ceef027a65fe011232ff",
-    "bytes": 156112,
-    "style": "soft pastel",
-    "kind": "scripture"
-  },
-  "consider-others": {
-    "src": "images/lessons/scripture/consider-others.webp",
-    "alt": {
-      "zh": "孩子往旁边挪一挪，给同伴留出位置。",
-      "en": "A child moves aside to make room for a friend."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "93c3721f452721086e576fb701c6fb5d3da095f26f8bcfe5f52fcdc1861b9081",
-    "bytes": 141776,
-    "style": "handmade paper collage",
-    "kind": "scripture"
-  },
-  "joy-in-truth": {
-    "src": "images/lessons/scripture/joy-in-truth.webp",
-    "alt": {
-      "zh": "孩子诚实说明打翻颜料的经过，同伴一起帮忙。",
-      "en": "A child honestly explains a spill and a friend helps."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "150174191e6e5d2834fdbd76c464d0248435ea71fcb7e43533e3e11cd8a47bcd",
-    "bytes": 118626,
-    "style": "warm pencil and gouache",
-    "kind": "scripture"
-  },
-  "steady-support": {
-    "src": "images/lessons/scripture/steady-support.webp",
-    "alt": {
-      "zh": "两个孩子一起护住风中的小苗。",
-      "en": "Two children patiently protect a small seedling in the wind."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "163ec040d433feeac0caa5c60b8fb9ea08619097f97ba052f67f72a8c5f652b8",
-    "bytes": 142994,
-    "style": "felt collage",
-    "kind": "scripture"
-  },
-  "lasting-love": {
-    "src": "images/lessons/scripture/lasting-love.webp",
-    "alt": {
-      "zh": "长辈和长大的孩子一起照顾小孩子。",
-      "en": "An elder and a grown child continue to care for a young child."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "255aba960179d3a129c6fef06a1a6c3ffcc8543e783b55373e91b67e9a93a2e8",
-    "bytes": 160326,
-    "style": "gentle tempera",
-    "kind": "scripture"
-  },
-  "partial-picture": {
-    "src": "images/lessons/scripture/partial-picture.webp",
-    "alt": {
-      "zh": "孩子望着还没有拼完整的图画。",
-      "en": "A child looks at a picture puzzle that is only partly complete."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "450d6d86adbd468f132b9af4aee4916e0b048470ac424fc2602453e6d25108e5",
-    "bytes": 172362,
-    "style": "tactile paper illustration",
-    "kind": "scripture"
-  },
-  "complete-picture": {
-    "src": "images/lessons/scripture/complete-picture.webp",
-    "alt": {
-      "zh": "最后一块拼图放进去，整幅图终于完整了。",
-      "en": "The last puzzle piece makes the whole picture complete."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "e4466bfb5b5509f04b0047d12252f4c9fa05c9b90d8bcd88734aac935a5c8d4b",
-    "bytes": 252844,
-    "style": "colored-pencil illustration",
-    "kind": "scripture"
-  },
-  "growing-understanding": {
-    "src": "images/lessons/scripture/growing-understanding.webp",
-    "alt": {
-      "zh": "大孩子一边搭积木，一边耐心帮助小孩子。",
-      "en": "An older child patiently helps a younger child build with blocks."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "b0de8a45cfb8d5b2c97d5840deecbad2db894a2fa458fcfc1d7d66c531d63c31",
-    "bytes": 106286,
-    "style": "warm gouache",
-    "kind": "scripture"
-  },
-  "partial-seeing": {
-    "src": "images/lessons/scripture/partial-seeing.webp",
-    "alt": {
-      "zh": "镜中倒影模糊，镜外面对面的人却看得清楚。",
-      "en": "A mirror's reflection is blurred while people beyond it are clear."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "dc66aca0544196d9dd904b9eea4f1fdf54473b7abc4c5ec85bc693fc0b7db18b",
-    "bytes": 73926,
-    "style": "soft pastel with clear shapes",
-    "kind": "scripture"
-  },
-  "faith-hope-love": {
-    "src": "images/lessons/scripture/faith-hope-love.webp",
-    "alt": {
-      "zh": "孩子们一起种下种子、照顾嫩芽，也欢迎同伴加入。",
-      "en": "Children plant, care for a sprout and warmly welcome a friend."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "d5dfe895a78e6b9cab6b309fef1a9f7a57d35cba59a6a61ea3cff17fb8b2f8bf",
-    "bytes": 149432,
-    "style": "soft pastel botanical scene",
-    "kind": "scripture"
-  },
   "teacher-by-lake": {
     "src": "images/lessons/scripture/teacher-by-lake.webp",
     "alt": {
@@ -468,58 +299,6 @@ export const illustrations = {
     "style": "botanical gouache",
     "kind": "scripture"
   },
-  "mustard-faith": {
-    "src": "images/lessons/scripture/mustard-faith.webp",
-    "alt": {
-      "zh": "手心里的一粒芥菜种，远处是一座大山。",
-      "en": "A tiny mustard seed rests on a palm with a mountain beyond."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "3174c9c10059ffbd5915bca31adb55d6b305b49fd0c53abc1ba919e0c85d57af",
-    "bytes": 152556,
-    "style": "delicate botanical watercolor",
-    "kind": "scripture"
-  },
-  "turn-toward-light": {
-    "src": "images/lessons/scripture/turn-toward-light.webp",
-    "alt": {
-      "zh": "行路的人转过身，走向有光的门。",
-      "en": "A traveler turns around toward a doorway filled with light."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "ac7e80c2e7350988febdcbf9147318261ed32189bef4e7dcc71d53da29c28001",
-    "bytes": 282662,
-    "style": "gold and blue linocut print",
-    "kind": "scripture"
-  },
-  "patient-farmer": {
-    "src": "images/lessons/scripture/patient-farmer.webp",
-    "alt": {
-      "zh": "农夫安静等候，雨落在生长的麦田里。",
-      "en": "A farmer patiently watches rain on the growing grain."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "58908c4c22f11cce0e1e9feb0d5e1eb4ead635d47265ab172218e5938bf88dba",
-    "bytes": 215716,
-    "style": "earthy watercolor",
-    "kind": "scripture"
-  },
-  "walking-darkness": {
-    "src": "images/lessons/scripture/walking-darkness.webp",
-    "alt": {
-      "zh": "一个人背向光明的门，走进较暗的小路。",
-      "en": "A person walks away from a bright doorway into a darker path."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "71b9315ec1c8d5224b9c23f497928b153886612fb3878855b509056b8f945a29",
-    "bytes": 85780,
-    "style": "restrained pastel chiaroscuro",
-    "kind": "scripture"
-  },
   "woven-purpose": {
     "src": "images/lessons/scripture/woven-purpose.webp",
     "alt": {
@@ -572,45 +351,6 @@ export const illustrations = {
     "style": "luminous mountain watercolor",
     "kind": "scripture"
   },
-  "no-oath": {
-    "src": "images/lessons/scripture/no-oath.webp",
-    "alt": {
-      "zh": "两个人平静地面对面说话，双手自然放下。",
-      "en": "Two people speak calmly face to face with relaxed hands."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "b533cc7a653917aaf8294efbc7f8dc564a6a1e2f4d302c43bc7b67d15771d0b4",
-    "bytes": 204512,
-    "style": "historical ink and watercolor",
-    "kind": "scripture"
-  },
-  "plain-honesty": {
-    "src": "images/lessons/scripture/plain-honesty.webp",
-    "alt": {
-      "zh": "孩子指着自己说明打翻水杯的经过，同伴认真听。",
-      "en": "A child plainly explains that they spilled the water."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "726f34c4f47af463b66f227fdaa2accc7424017572ea95c550fc59dda279951f",
-    "bytes": 77312,
-    "style": "matte clay storybook still",
-    "kind": "scripture"
-  },
-  "honeyed-words": {
-    "src": "images/lessons/idioms-2/honeyed-words.webp",
-    "alt": {
-      "zh": "官员笑着向同僚行礼，背后却藏着一卷计划。",
-      "en": "An official smiles at a colleague while hiding a scroll behind his back."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "cae69f81d1fe7d244d3ea58ba4d52769da559419947635c6627ac914f8747565",
-    "bytes": 93820,
-    "style": "editorial gouache",
-    "kind": "idiom"
-  },
   "music-cow": {
     "src": "images/lessons/idioms-2/music-cow.webp",
     "alt": {
@@ -622,32 +362,6 @@ export const illustrations = {
     "sha256": "79fbd03aa2bdb8fd66933b911e096169e0d167e6b74796a98207d95a57b012a0",
     "bytes": 178162,
     "style": "Chinese ink and green watercolor",
-    "kind": "idiom"
-  },
-  "return-kindness": {
-    "src": "images/lessons/idioms-2/return-kindness.webp",
-    "alt": {
-      "zh": "孩子把水和干净的布递给刚才弄倒积木的同伴。",
-      "en": "A child offers water and a cloth to the friend who knocked down their blocks."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "50abd1e7c3bd8603d63295f930d8b5a1aa64cecceb9713ca82c30dc50bb50cf8",
-    "bytes": 137436,
-    "style": "stitched-felt fabric collage",
-    "kind": "idiom"
-  },
-  "reading-friends": {
-    "src": "images/lessons/idioms-2/reading-friends.webp",
-    "alt": {
-      "zh": "爱读书的孩子们邀请新朋友一起看书。",
-      "en": "Children who enjoy reading invite another friend to join."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "f696b9882fd602d5ac30060be3d13616f51ff903f8d184e2385a25ecb244bc75",
-    "bytes": 197632,
-    "style": "soft pastel drawing",
     "kind": "idiom"
   },
   "peaches-plums": {
@@ -676,19 +390,6 @@ export const illustrations = {
     "style": "observational watercolor",
     "kind": "idiom"
   },
-  "joy-in-enough": {
-    "src": "images/lessons/idioms-2/joy-in-enough.webp",
-    "alt": {
-      "zh": "小女孩用旧积木搭出一座小桥，开心地看着它。",
-      "en": "A girl smiles at the bridge she built with old blocks."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "893e402ef848f0c8370031539c2bc46083cbf625b80cf399cdc02dc592f9100b",
-    "bytes": 186812,
-    "style": "warm colored-pencil drawing",
-    "kind": "idiom"
-  },
   "bow-reflection": {
     "src": "images/lessons/idioms-2/bow-reflection.webp",
     "alt": {
@@ -700,19 +401,6 @@ export const illustrations = {
     "sha256": "71940efcb25406aa979a23febb2ec41902b8c7336d0bdab91aa57250ca51f9f4",
     "bytes": 139428,
     "style": "delicate ink and watercolor",
-    "kind": "idiom"
-  },
-  "local-customs": {
-    "src": "images/lessons/idioms-2/local-customs.webp",
-    "alt": {
-      "zh": "小客人看见门口的鞋架，也脱下自己的鞋子。",
-      "en": "A guest follows the home's custom of taking shoes off."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "acaa600c1111c812977e79b0abdd2fd82407a0848eadbd2367264c649aa854d6",
-    "bytes": 79572,
-    "style": "matte clay-animation still",
     "kind": "idiom"
   },
   "boat-mark": {
@@ -728,19 +416,6 @@ export const illustrations = {
     "style": "blue and terracotta woodblock print",
     "kind": "idiom"
   },
-  "heart-far": {
-    "src": "images/lessons/scripture/heart-far.webp",
-    "alt": {
-      "zh": "站在祷告之处的人，目光和脚步却朝向远方。",
-      "en": "A person near a place of prayer turns their gaze and steps away."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "e388ae5e0289f5fca6e3ce95e44cc4a719baf1eb4a50fe20eb2bc8f65aeb9464",
-    "bytes": 156408,
-    "style": "editorial cut-paper collage",
-    "kind": "scripture"
-  },
   "listen-with-heart": {
     "src": "images/lessons/scripture/listen-with-heart.webp",
     "alt": {
@@ -752,58 +427,6 @@ export const illustrations = {
     "sha256": "1fb605985c81951563dfec2394825b4d0d60b98138cbaa18d74bd5d46be6464f",
     "bytes": 144372,
     "style": "historical watercolor",
-    "kind": "scripture"
-  },
-  "love-enemies": {
-    "src": "images/lessons/scripture/love-enemies.webp",
-    "alt": {
-      "zh": "孩子把水递给曾对自己不友好的同伴。",
-      "en": "A child offers water to someone who had been unkind."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "e897b708f60528d5099a6ea837bb1ad2980014ee664c87a0599c05a0ed81b960",
-    "bytes": 129130,
-    "style": "warm pencil and gouache",
-    "kind": "scripture"
-  },
-  "shared-sun-rain": {
-    "src": "images/lessons/scripture/shared-sun-rain.webp",
-    "alt": {
-      "zh": "阳光和细雨同样落在两家的花园里。",
-      "en": "The same sunlight and rain reach neighboring gardens."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "f7b8e7315b04b0398a65e4eaa8d2ebfaa6842bc1a2ca572e23ce2db6f64098e0",
-    "bytes": 161214,
-    "style": "layered paper landscape",
-    "kind": "scripture"
-  },
-  "becoming-like-light": {
-    "src": "images/lessons/scripture/becoming-like-light.webp",
-    "alt": {
-      "zh": "窗边的镜子返照光亮，光也照在人的脸和手上。",
-      "en": "A mirror reflects window light onto a person's face and hands."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "54d3d01a651527315856606b11917da87bd6587bf753361f1779adb1f9c455d9",
-    "bytes": 129396,
-    "style": "luminous impressionist gouache",
-    "kind": "scripture"
-  },
-  "love-first": {
-    "src": "images/lessons/scripture/love-first.webp",
-    "alt": {
-      "zh": "孩子先得到拥抱，又向身旁的同伴伸出手。",
-      "en": "A child receives an embrace and reaches out to a friend."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "25c24b5a18bbef539faecfe07c30488f3e7f15864cefb3a8f556f3bce4ebf14c",
-    "bytes": 182964,
-    "style": "warm fabric collage",
     "kind": "scripture"
   },
   "keep-praying": {
@@ -871,19 +494,6 @@ export const illustrations = {
     "style": "warm tempera painting",
     "kind": "scripture"
   },
-  "look-forward": {
-    "src": "images/lessons/scripture/look-forward.webp",
-    "alt": {
-      "zh": "行路的人望向新的方向，旧路的脚印留在身后。",
-      "en": "A traveler looks ahead while old footprints remain behind."
-    },
-    "width": 960,
-    "height": 720,
-    "sha256": "27600aa0a3796860d5c6d549f2caf5341dfcb549845355a7bfa7bf77997b6222",
-    "bytes": 265766,
-    "style": "poetic linocut print",
-    "kind": "scripture"
-  },
   "new-way-river": {
     "src": "images/lessons/scripture/new-way-river.webp",
     "alt": {
@@ -900,21 +510,6 @@ export const illustrations = {
 };
 
 export const illustrationBindings = {
-  "love": {
-    "1CO.13.1": "words-with-love",
-    "1CO.13.2": "knowledge-with-love",
-    "1CO.13.3": "giving-with-care",
-    "1CO.13.4": "patient-kindness",
-    "1CO.13.5": "consider-others",
-    "1CO.13.6": "joy-in-truth",
-    "1CO.13.7": "steady-support",
-    "1CO.13.8": "lasting-love",
-    "1CO.13.9": "partial-picture",
-    "1CO.13.10": "complete-picture",
-    "1CO.13.11": "growing-understanding",
-    "1CO.13.12": "partial-seeing",
-    "1CO.13.13": "faith-hope-love"
-  },
   "seed": {
     "MRK.4.1": "teacher-by-lake",
     "MRK.4.2": "teaching-parables",
@@ -941,41 +536,23 @@ export const illustrationBindings = {
     "idioms-1.10": "observe-ant",
     "idioms-1.11": "ants-together",
     "idioms-1.12": "ants-harvest",
-    "idioms-1.17": "mustard-faith",
-    "idioms-1.mat-4-17": "turn-toward-light",
-    "idioms-1.29": "patient-farmer",
-    "idioms-1.1jn-1-6": "walking-darkness",
     "idioms-1.40": "woven-purpose",
     "idioms-1.1jn-1-8": "honest-mirror",
     "idioms-1.1jn-1-9": "open-confession",
-    "idioms-1.deu-31-8": "presence-ahead",
-    "idioms-1.mat-5-34": "no-oath",
-    "idioms-1.49": "plain-honesty",
-    "idioms-1.54": "partial-seeing"
+    "idioms-1.deu-31-8": "presence-ahead"
   },
   "idioms-2": {
-    "idioms-2.1": "honeyed-words",
     "idioms-2.6": "music-cow",
-    "idioms-2.11": "return-kindness",
-    "idioms-2.16": "reading-friends",
     "idioms-2.21": "peaches-plums",
     "idioms-2.27": "water-stone",
-    "idioms-2.33": "joy-in-enough",
     "idioms-2.39": "bow-reflection",
-    "idioms-2.44": "local-customs",
     "idioms-2.50": "boat-mark",
-    "idioms-2.mat-15-8": "heart-far",
     "idioms-2.mat-13-9": "listen-with-heart",
-    "idioms-2.mat-5-44": "love-enemies",
-    "idioms-2.mat-5-45": "shared-sun-rain",
-    "idioms-2.2co-3-18": "becoming-like-light",
-    "idioms-2.1jn-4-19": "love-first",
     "idioms-2.luk-18-1": "keep-praying",
     "idioms-2.heb-12-2": "joy-ahead",
     "idioms-2.2ti-1-7": "courage-love-judgment",
     "idioms-2.48": "meet-people",
     "idioms-2.49": "share-good-news",
-    "idioms-2.54": "look-forward",
     "idioms-2.55": "new-way-river"
   }
 };
