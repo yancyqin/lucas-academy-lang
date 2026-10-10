@@ -1,0 +1,671 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-09",
+  "images": [
+    {
+      "id": "teacher-by-lake",
+      "kind": "scripture",
+      "title": "MRK.4.1",
+      "style": "historically grounded watercolor",
+      "src": "images/lessons/scripture/teacher-by-lake.webp",
+      "alt": {
+        "zh": "耶稣坐在岸边的小船上，众人站在岸上听。",
+        "en": "Jesus teaches from a boat while people listen on the shore."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: historically grounded watercolor.\nScene: Jesus, a dark-haired olive-skinned first-century Judean teacher in simple robes, sits in a small wooden boat close to a calm lake shore. An attentive crowd stands on the bank. Coherent boat scale, no halos or miracles.\nThis image accompanies MRK.4.1. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "teaching-parables",
+      "kind": "scripture",
+      "title": "MRK.4.2",
+      "style": "earthy historical gouache",
+      "src": "images/lessons/scripture/teaching-parables.webp",
+      "alt": {
+        "zh": "老师用小故事讲道理，岸边的人认真听。",
+        "en": "The teacher tells a parable to attentive listeners on the shore."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: earthy historical gouache.\nScene: A first-century Judean teacher in a small lakeside boat gestures gently while telling a story to an attentive family group on shore. Listeners imagine and reflect, no speech bubbles or written text.\nThis image accompanies MRK.4.2. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "sower-seeds",
+      "kind": "scripture",
+      "title": "MRK.4.3",
+      "style": "ochre and green linocut",
+      "src": "images/lessons/scripture/sower-seeds.webp",
+      "alt": {
+        "zh": "撒种的人从袋里取出种子，撒向田地。",
+        "en": "A sower scatters grain seeds across the field."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: ochre and green linocut.\nScene: A first-century Middle Eastern farmer scatters small grain seeds from an open cloth pouch across a field. One clear sowing gesture, plausible hands and seeds, no modern tractor.\nThis image accompanies MRK.4.3. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "birds-path",
+      "kind": "scripture",
+      "title": "MRK.4.4",
+      "style": "botanical watercolor",
+      "src": "images/lessons/scripture/birds-path.webp",
+      "alt": {
+        "zh": "落在硬路上的种子被小鸟啄食。",
+        "en": "Birds peck seeds that fell on a hard path."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: botanical watercolor.\nScene: Small birds peck grain seeds on a hard earth path beside a field. Show seeds and compacted path clearly; natural bird anatomy, no labels.\nThis image accompanies MRK.4.4. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "shallow-soil",
+      "kind": "scripture",
+      "title": "MRK.4.5",
+      "style": "cut-paper botanical illustration",
+      "src": "images/lessons/scripture/shallow-soil.webp",
+      "alt": {
+        "zh": "薄土下面是石头，小苗的根很浅。",
+        "en": "A seedling has shallow roots in thin soil over rock."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: cut-paper botanical illustration.\nScene: A small fresh sprout grows quickly in a thin patch of soil over a clearly visible rock. Side-view soil edge reveals shallow roots with little room to grow. One clear scene, no diagram labels.\nThis image accompanies MRK.4.5. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "wilted-seedling",
+      "kind": "scripture",
+      "title": "MRK.4.6",
+      "style": "observational watercolor",
+      "src": "images/lessons/scripture/wilted-seedling.webp",
+      "alt": {
+        "zh": "太阳晒着薄土上的小苗，小苗开始枯萎。",
+        "en": "A shallow-rooted seedling wilts in the sun."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: observational watercolor.\nScene: A young plant with shallow roots over rock wilts under strong midday sunlight, while thin dry soil is visible. Gentle factual plant scene, no sad faces or labels.\nThis image accompanies MRK.4.6. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "crowded-thorns",
+      "kind": "scripture",
+      "title": "MRK.4.7",
+      "style": "textured colored-pencil drawing",
+      "src": "images/lessons/scripture/crowded-thorns.webp",
+      "alt": {
+        "zh": "荆棘长在小苗周围，挡住了它的光和空间。",
+        "en": "Thorns crowd a small plant and block its light and space."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: textured colored-pencil drawing.\nScene: A small wheat plant is crowded by vigorous thorny plants growing around it, visibly limiting its space and light. Natural botany, no exaggerated threatening spikes or labels.\nThis image accompanies MRK.4.7. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "fruitful-soil",
+      "kind": "scripture",
+      "title": "MRK.4.8",
+      "style": "layered paper landscape",
+      "src": "images/lessons/scripture/fruitful-soil.webp",
+      "alt": {
+        "zh": "好土里的麦子长得结实，结出许多麦粒。",
+        "en": "Wheat grows strong in good soil and bears many grains."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: layered paper landscape.\nScene: Healthy golden wheat grows in deep rich soil, with many grains on full ears and strong roots suggested at the soil edge. Abundant natural harvest, no numeric labels or arrows.\nThis image accompanies MRK.4.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "ears-to-hear",
+      "kind": "scripture",
+      "title": "MRK.4.9",
+      "style": "warm historical pastel",
+      "src": "images/lessons/scripture/ears-to-hear.webp",
+      "alt": {
+        "zh": "岸边的孩子和大人专心听，记住老师的话。",
+        "en": "A child and adults listen carefully to the teacher."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm historical pastel.\nScene: A child and adults on a lakeshore lean forward attentively toward a first-century Judean teacher in simple robes, listening with calm open faces. Natural ears, no giant ear symbols or text.\nThis image accompanies MRK.4.9. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "well-frog",
+      "kind": "idiom",
+      "title": "井底之蛙",
+      "style": "Chinese ink and watercolor",
+      "src": "images/lessons/idioms-1/well-frog.webp",
+      "alt": {
+        "zh": "井底的青蛙仰望井口的一小片天空。",
+        "en": "A frog in a well looks up at a small circle of sky."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for the Chinese idiom 井底之蛙 in a bilingual children's reader, ages 7–10. Scene: a small green frog sits on a damp stone at the bottom of an old round stone well, looking upward. Seen from near the frog, the tall inner walls of the well frame only a small circular patch of clear blue sky high above; the small view of the sky is the central idea. Style: gentle Chinese ink and watercolor on lightly textured ivory paper, clear expressive shapes and natural proportions. Keep the frog, well and small sky opening visually coherent and easy to read. One complete illustration, generous breathing room, keep the entire meaningful scene inside the frame. No words, calligraphy, letters, numbers, labels, captions, watermark, logo, decorative frame or UI."
+    },
+    {
+      "id": "waiting-rabbit",
+      "kind": "idiom",
+      "title": "守株待兔",
+      "style": "layered handmade paper collage",
+      "src": "images/lessons/idioms-1/waiting-rabbit.webp",
+      "alt": {
+        "zh": "农夫坐在树桩旁等兔子，田里的锄头闲在一边。",
+        "en": "A farmer waits by a stump while his hoe and field lie idle."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: layered handmade paper collage.\nScene: An ancient Chinese farmer sits beside a tree stump watching an empty path; his hoe and field are unused. A rabbit runs safely past in the distance. No injured animals."
+    },
+    {
+      "id": "moving-mountain",
+      "kind": "idiom",
+      "title": "愚公移山",
+      "style": "earthy woodcut print",
+      "src": "images/lessons/idioms-1/moving-mountain.webp",
+      "alt": {
+        "zh": "愚公和家人一起挖山，提着小篮子运土。",
+        "en": "An old man and his family carry baskets of earth from a mountain."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: earthy woodcut print.\nScene: An elderly ancient Chinese man and his family patiently shovel a mountain slope and carry small baskets of soil together. Show their small steady effort against the immense mountain."
+    },
+    {
+      "id": "mending-fence",
+      "kind": "idiom",
+      "title": "亡羊补牢",
+      "style": "warm gouache storybook art",
+      "src": "images/lessons/idioms-1/mending-fence.webp",
+      "alt": {
+        "zh": "牧羊人修补羊圈的缺口，羊在圈内安静地站着。",
+        "en": "A shepherd repairs a gap in the fence around his sheep."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm gouache storybook art.\nScene: An ancient Chinese shepherd closes a broken sheep-pen fence with a new plank and rope while healthy sheep stand safely inside. Show the gap being repaired."
+    },
+    {
+      "id": "pulling-seedlings",
+      "kind": "idiom",
+      "title": "拔苗助长",
+      "style": "soft pastel and colored pencil",
+      "src": "images/lessons/idioms-1/pulling-seedlings.webp",
+      "alt": {
+        "zh": "农夫把幼苗往上拔，根露出了泥土。",
+        "en": "A farmer pulls a seedling upward, exposing its roots."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: soft pastel and colored pencil.\nScene: An ancient Chinese farmer pulls a small seedling upward by the stem, exposing shallow roots; nearby pulled seedlings wilt while untouched plants remain green. Clear gentle educational scene."
+    },
+    {
+      "id": "spear-shield",
+      "kind": "idiom",
+      "title": "自相矛盾",
+      "style": "ink drawing and ochre watercolor",
+      "src": "images/lessons/idioms-1/spear-shield.webp",
+      "alt": {
+        "zh": "卖矛和盾的人面对一位提出疑问的客人。",
+        "en": "A seller of a spear and shield faces a questioning customer."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: ink drawing and ochre watercolor.\nScene: An ancient Chinese market seller displays a spear and a shield while a thoughtful customer looks from one to the other with a questioning gesture. No battle or injury."
+    },
+    {
+      "id": "lost-horse",
+      "kind": "idiom",
+      "title": "塞翁失马",
+      "style": "gentle tempera painting",
+      "src": "images/lessons/idioms-1/lost-horse.webp",
+      "alt": {
+        "zh": "老人站在门边，看着走失的马带另一匹马回来。",
+        "en": "An old man watches his lost horse return with another horse."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: gentle tempera painting.\nScene: An elderly ancient Chinese man calmly watches his lost horse return through an open village gate accompanied by another horse. Open countryside beyond."
+    },
+    {
+      "id": "covered-ears",
+      "kind": "idiom",
+      "title": "掩耳盗铃",
+      "style": "matte clay stop-motion still",
+      "src": "images/lessons/idioms-1/covered-ears.webp",
+      "alt": {
+        "zh": "一个人捂住自己的耳朵，旁边的人却听见了钟声。",
+        "en": "A man covers his ears, but someone nearby hears the bell."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: matte clay stop-motion still.\nScene: An ancient Chinese man covers both ears beside a hanging bronze bell; his elbow touches the bell while a passerby turns toward its sound. Clear humorous staging without injury."
+    },
+    {
+      "id": "kept-promise",
+      "kind": "idiom",
+      "title": "一诺千金",
+      "style": "warm colored-pencil storybook illustration",
+      "src": "images/lessons/idioms-1/kept-promise.webp",
+      "alt": {
+        "zh": "朋友按约定来到村口，把借来的东西还给对方。",
+        "en": "A friend arrives as promised and returns a borrowed bundle."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm colored-pencil storybook illustration.\nScene: Two ancient Chinese friends meet at an agreed village gate; one respectfully returns a borrowed bundle with both hands. Show a promise kept, no gold or money."
+    },
+    {
+      "id": "elephant-parts",
+      "kind": "idiom",
+      "title": "盲人摸象",
+      "style": "tactile cut-paper collage",
+      "src": "images/lessons/idioms-1/elephant-parts.webp",
+      "alt": {
+        "zh": "四个人分别摸着大象的腿、鼻子、身子和耳朵。",
+        "en": "Four people each feel a different part of one elephant."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: tactile cut-paper collage.\nScene: Four blind ancient travelers respectfully explore different parts of one calm complete elephant: leg, trunk, side and ear. Whole elephant visible, coherent anatomy, closed eyes without comic blindfolds or caricature."
+    },
+    {
+      "id": "higher-ways",
+      "kind": "scripture",
+      "title": "ISA.55.9",
+      "style": "luminous watercolor landscape",
+      "src": "images/lessons/scripture/higher-ways.webp",
+      "alt": {
+        "zh": "行路的人仰望群山和高远的天空。",
+        "en": "A traveler looks toward mountains and the vast sky."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: luminous watercolor landscape.\nScene: A tiny traveler on a winding path looks up at immense mountains, high clouds and a vast open sky. Humble wonder at wisdom greater than one's view. Do not depict God as a human figure.\nThis image accompanies ISA.55.9. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "observe-ant",
+      "kind": "scripture",
+      "title": "PRO.6.6",
+      "style": "nature-journal colored pencil",
+      "src": "images/lessons/scripture/observe-ant.webp",
+      "alt": {
+        "zh": "孩子蹲下来，认真观察搬种子的蚂蚁。",
+        "en": "A child watches an ant carrying a seed."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: nature-journal colored pencil.\nScene: A child crouches thoughtfully to observe a foreground ant carrying a seed along a leaf edge. Ant large enough to see, natural anatomy, no scientific labels.\nThis image accompanies PRO.6.6. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "ants-together",
+      "kind": "scripture",
+      "title": "PRO.6.7",
+      "style": "handmade paper collage",
+      "src": "images/lessons/scripture/ants-together.webp",
+      "alt": {
+        "zh": "蚂蚁们各自搬运食物，一起沿着小路前进。",
+        "en": "Ants work together along a trail, each carrying food."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: handmade paper collage.\nScene: Natural ants carry grains together along a forest-floor trail without a crowned leader or overseer. Clear coordinated work, no human clothing.\nThis image accompanies PRO.6.7. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "ants-harvest",
+      "kind": "scripture",
+      "title": "PRO.6.8",
+      "style": "botanical gouache",
+      "src": "images/lessons/scripture/ants-harvest.webp",
+      "alt": {
+        "zh": "夏末的蚂蚁把麦粒搬到巢穴里。",
+        "en": "Ants gather wheat grains into their nest in late summer."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: botanical gouache.\nScene: In late-summer light, ants gather golden grains from fallen wheat heads and carry them into a nest entrance in the soil. Natural ant anatomy, no costumes.\nThis image accompanies PRO.6.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "woven-purpose",
+      "kind": "scripture",
+      "title": "ROM.8.28",
+      "style": "handmade thread and fabric collage",
+      "src": "images/lessons/scripture/woven-purpose.webp",
+      "alt": {
+        "zh": "不同颜色的线在手中慢慢织成一块布。",
+        "en": "Threads of many colors are patiently woven into one cloth."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: handmade thread and fabric collage.\nScene: Caring hands patiently weave irregular threads of varied colors, including dark threads, into one coherent warm cloth. Varied experiences being worked toward good purpose, no lettering or divine human portrait.\nThis image accompanies ROM.8.28. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "honest-mirror",
+      "kind": "scripture",
+      "title": "1JN.1.8",
+      "style": "quiet colored pencil",
+      "src": "images/lessons/scripture/honest-mirror.webp",
+      "alt": {
+        "zh": "孩子放下面具，在镜子里认真看自己。",
+        "en": "A child lowers a mask and looks honestly at their reflection."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: quiet colored pencil.\nScene: A child looks honestly into a simple mirror after lowering a smiling paper mask to their side. Real reflected face plain and sincere, mask visibly separate. No grotesque face or written words.\nThis image accompanies 1JN.1.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "open-confession",
+      "kind": "scripture",
+      "title": "1JN.1.9",
+      "style": "gentle gouache",
+      "src": "images/lessons/scripture/open-confession.webp",
+      "alt": {
+        "zh": "孩子敞开双手承认过失，大人温和地向他伸出手。",
+        "en": "A child admits a mistake and is met with a welcoming hand."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: gentle gouache.\nScene: A child sits with open empty hands and an honest posture near a softly lit doorway, a broken clay cup nearby; a calm adult offers a welcoming hand after the child admits a mistake. Everyday reflection on confession and forgiveness, no punishment.\nThis image accompanies 1JN.1.9. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "presence-ahead",
+      "kind": "scripture",
+      "title": "DEU.31.8",
+      "style": "luminous mountain watercolor",
+      "src": "images/lessons/scripture/presence-ahead.webp",
+      "alt": {
+        "zh": "前方的光也照亮了行路人的脚边。",
+        "en": "Light ahead also reaches the traveler's present steps."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: luminous mountain watercolor.\nScene: A small traveler on a rough mountain path sees steady dawn light both ahead and around their present steps. Convey guidance and companionship; no physical portrait of God or hand in the sky.\nThis image accompanies DEU.31.8. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "music-cow",
+      "kind": "idiom",
+      "title": "对牛弹琴",
+      "style": "Chinese ink and green watercolor",
+      "src": "images/lessons/idioms-2/music-cow.webp",
+      "alt": {
+        "zh": "琴师在树下弹琴，牛仍低头吃草。",
+        "en": "A musician plays a guqin while a cow keeps grazing."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: Chinese ink and green watercolor.\nScene: An ancient Chinese musician plays a seven-string guqin on a low table under a tree, while a cow pays no attention and grazes beside him. Plausible instrument and hands."
+    },
+    {
+      "id": "peaches-plums",
+      "kind": "idiom",
+      "title": "投桃报李",
+      "style": "hand-painted gouache",
+      "src": "images/lessons/idioms-2/peaches-plums.webp",
+      "alt": {
+        "zh": "两个朋友交换桃子和李子，一起笑了。",
+        "en": "Two friends exchange peaches and plums with warm smiles."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: hand-painted gouache.\nScene: Two ancient Chinese friends happily exchange a basket of peaches and a bowl of plums in an orchard. Distinct fruits and shared joy, coherent hands."
+    },
+    {
+      "id": "water-stone",
+      "kind": "idiom",
+      "title": "滴水穿石",
+      "style": "observational watercolor",
+      "src": "images/lessons/idioms-2/water-stone.webp",
+      "alt": {
+        "zh": "一滴水落在石头上，石头已有一个磨出的深凹。",
+        "en": "A drop falls into a hollow gradually worn into stone."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: observational watercolor.\nScene: A clear water drop falls from a narrow ledge into a deep smooth hollow gradually eroded in stone. Show ripples and the worn hollow, calm close view."
+    },
+    {
+      "id": "bow-reflection",
+      "kind": "idiom",
+      "title": "杯弓蛇影",
+      "style": "delicate ink and watercolor",
+      "src": "images/lessons/idioms-2/bow-reflection.webp",
+      "alt": {
+        "zh": "主人指着墙上的弓，客人发现杯里的影子来自那张弓。",
+        "en": "The host shows that the cup's reflection comes from the bow on the wall."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: delicate ink and watercolor.\nScene: An ancient Chinese host shows a visitor a curved bow hanging on the wall and the corresponding curved reflection in a wine cup on a low table. No real snake. Visitor looks relieved; reflection and bow clearly connected."
+    },
+    {
+      "id": "boat-mark",
+      "kind": "idiom",
+      "title": "刻舟求剑",
+      "style": "blue and terracotta woodblock print",
+      "src": "images/lessons/idioms-2/boat-mark.webp",
+      "alt": {
+        "zh": "船已向前走，剑留在河底，船上的刻痕也跟着移动。",
+        "en": "The boat and its mark move ahead while the sword remains on the riverbed."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: blue and terracotta woodblock print.\nScene: An ancient Chinese man on a moving wooden ferry points to a notch he cut in its gunwale; his lost sword remains on the shallow riverbed well behind the boat. Make the different positions clear, no fighting or diving."
+    },
+    {
+      "id": "listen-with-heart",
+      "kind": "scripture",
+      "title": "MAT.13.9",
+      "style": "historical watercolor",
+      "src": "images/lessons/scripture/listen-with-heart.webp",
+      "alt": {
+        "zh": "孩子和大人坐在一起，专心听老师讲道。",
+        "en": "A child and adults listen attentively to the teacher."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: historical watercolor.\nScene: Jesus as an olive-skinned dark-haired first-century Judean teacher in simple robes speaks to attentive adults and a child leaning forward to listen. Focus on hearing with attention, no blonde European Jesus, halos or magic.\nThis image accompanies MAT.13.9. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "keep-praying",
+      "kind": "scripture",
+      "title": "LUK.18.1",
+      "style": "quiet watercolor nocturne",
+      "src": "images/lessons/scripture/keep-praying.webp",
+      "alt": {
+        "zh": "天快亮了，孩子仍安静地祷告。",
+        "en": "At dawn, a child continues to pray calmly."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: quiet watercolor nocturne.\nScene: At early dawn an ordinary child kneels by a window in a calm room, praying with relaxed hands, steady morning light entering. Peaceful perseverance and hope, no magic answers or written prayer.\nThis image accompanies LUK.18.1. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "joy-ahead",
+      "kind": "scripture",
+      "title": "HEB.12.2",
+      "style": "restrained woodcut with sunrise color",
+      "src": "images/lessons/scripture/joy-ahead.webp",
+      "alt": {
+        "zh": "背负十字架的耶稣沿山路前行，前方有晨光。",
+        "en": "Jesus carries the cross along a hillside path toward morning light."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: restrained woodcut with sunrise color.\nScene: Jesus, a dark-haired Middle Eastern adult in simple robes, modestly carries a wooden cross along a rocky hill path toward warm morning light. Steady hopeful expression, reverent distance. No wounds, blood, torture, soldiers or gore.\nThis image accompanies HEB.12.2. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "courage-love-judgment",
+      "kind": "scripture",
+      "title": "2TI.1.7",
+      "style": "pastel and pencil",
+      "src": "images/lessons/scripture/courage-love-judgment.webp",
+      "alt": {
+        "zh": "孩子稳住脚步，细心帮助更小的同伴走过石头小路。",
+        "en": "A child carefully helps a younger friend along a stone path."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: pastel and pencil.\nScene: An apprehensive child takes a steady breath and carefully helps a younger child along a safe stepping-stone path. Attentive eyes and balanced posture convey courage, care and good judgment, no dangerous river or cliff.\nThis image accompanies 2TI.1.7. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "meet-people",
+      "kind": "scripture",
+      "title": "1CO.9.22",
+      "style": "historical paper collage",
+      "src": "images/lessons/scripture/meet-people.webp",
+      "alt": {
+        "zh": "旅人蹲下来，与坐着的人平视交谈。",
+        "en": "A traveler kneels to speak at a seated person's eye level."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: historical paper collage.\nScene: A first-century Mediterranean traveler kneels to the eye level of a tired seated listener and listens kindly. A few different ordinary people nearby, plausible clothes, no writing or throne.\nThis image accompanies 1CO.9.22. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "share-good-news",
+      "kind": "scripture",
+      "title": "1CO.9.23",
+      "style": "warm tempera painting",
+      "src": "images/lessons/scripture/share-good-news.webp",
+      "alt": {
+        "zh": "人们围坐在简单的桌边，一起听、一起分享。",
+        "en": "People gather at a simple table to listen and share together."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: warm tempera painting.\nScene: Ordinary first-century Mediterranean people gather at a simple table with bread and share in attentive welcoming conversation. Fellowship and participation, no luxurious feast or readable scroll.\nThis image accompanies 1CO.9.23. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    },
+    {
+      "id": "new-way-river",
+      "kind": "scripture",
+      "title": "ISA.43.19",
+      "style": "luminous watercolor",
+      "src": "images/lessons/scripture/new-way-river.webp",
+      "alt": {
+        "zh": "干旱的山谷里有了河流，水边长出绿色嫩芽。",
+        "en": "A river opens through a dry valley with green shoots along its banks."
+      },
+      "prompt": "Use case: illustration-story. Asset type: one landscape 4:3 illustration for a bilingual children's reader, ages 7–10. One complete scene, natural expressive proportions, coherent anatomy and object contacts, readable at a small size. Keep all meaningful subjects inside the frame. No words, letters, numerals, calligraphy, labels, captions, watermark, logo, decorative border or UI.\nStyle/medium: luminous watercolor.\nScene: A new clear river flows through a dry desert valley, green shoots appearing on its banks and a simple path opening beside it toward distant hills. Hopeful natural scene, no modern machinery or divine portrait.\nThis image accompanies ISA.43.19. Modern or symbolic scenes are visual reflections, not claims that these exact events occurred in Scripture."
+    }
+  ],
+  "bindings": [
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.1",
+      "imageId": "teacher-by-lake"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.2",
+      "imageId": "teaching-parables"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.3",
+      "imageId": "sower-seeds"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.4",
+      "imageId": "birds-path"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.5",
+      "imageId": "shallow-soil"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.6",
+      "imageId": "wilted-seedling"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.7",
+      "imageId": "crowded-thorns"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.8",
+      "imageId": "fruitful-soil"
+    },
+    {
+      "lessonId": "seed",
+      "verseId": "MRK.4.9",
+      "imageId": "ears-to-hear"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.1",
+      "imageId": "well-frog"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.6",
+      "imageId": "waiting-rabbit"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.13",
+      "imageId": "moving-mountain"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.18",
+      "imageId": "mending-fence"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.25",
+      "imageId": "pulling-seedlings"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.30",
+      "imageId": "spear-shield"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.36",
+      "imageId": "lost-horse"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.41",
+      "imageId": "covered-ears"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.46",
+      "imageId": "kept-promise"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.50",
+      "imageId": "elephant-parts"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.5",
+      "imageId": "higher-ways"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.10",
+      "imageId": "observe-ant"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.11",
+      "imageId": "ants-together"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.12",
+      "imageId": "ants-harvest"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.40",
+      "imageId": "woven-purpose"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.1jn-1-8",
+      "imageId": "honest-mirror"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.1jn-1-9",
+      "imageId": "open-confession"
+    },
+    {
+      "lessonId": "idioms-1",
+      "verseId": "idioms-1.deu-31-8",
+      "imageId": "presence-ahead"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.6",
+      "imageId": "music-cow"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.21",
+      "imageId": "peaches-plums"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.27",
+      "imageId": "water-stone"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.39",
+      "imageId": "bow-reflection"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.50",
+      "imageId": "boat-mark"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.mat-13-9",
+      "imageId": "listen-with-heart"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.luk-18-1",
+      "imageId": "keep-praying"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.heb-12-2",
+      "imageId": "joy-ahead"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.2ti-1-7",
+      "imageId": "courage-love-judgment"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.48",
+      "imageId": "meet-people"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.49",
+      "imageId": "share-good-news"
+    },
+    {
+      "lessonId": "idioms-2",
+      "verseId": "idioms-2.55",
+      "imageId": "new-way-river"
+    }
+  ]
+}

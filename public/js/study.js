@@ -7,6 +7,7 @@ import {studyUnits} from './units.js';
 import * as dictionary from './dictionary.js';
 import * as english from './english.js';
 import {picture} from './wordpanel.js';
+import {illustrationFigure} from './illustrations.js';
 import {t, pick} from './strings.js';
 
 const $ = id => document.getElementById(id);
@@ -41,10 +42,8 @@ export function createStudy(app) {
 
   function renderTeacher() {
     const text = $('study-teach-text');
-    text.textContent = teacher === 'zh'
-      ? '这次你来教中文。选这句里的一个词，说说它的意思。'
-      : 'Your turn to teach English. Pick a word in this sentence and explain it.';
-    text.lang = teacher === 'zh' ? 'zh-CN' : 'en';
+    text.textContent = t('teach_' + teacher);
+    text.lang = document.documentElement.lang;
   }
 
   function hideWord() {
@@ -124,7 +123,7 @@ export function createStudy(app) {
     $('study-parts').setAttribute('aria-pressed', String(mode === 'parts'));
     $('study-parts').disabled = !data.parts.length;
     $('study-parts').title = t({loading: 'partsLoading', changed: 'partsChanged', unavailable: 'partsUnavailable'}[data.reason] || 'partsReady');
-    $('study-flip').textContent = (first === 'zh' ? '中文在前' : 'English first') + ' ⇅';
+    $('study-flip').textContent = t('first_' + first) + ' ⇅';
     $('study-pinyin').checked = app.state.pinyin;
 
     $('study-angle').hidden = !verse().angle;
@@ -167,6 +166,9 @@ export function createStudy(app) {
       line.append(header, text);
       reading.append(line);
     }
+
+    const illustration = illustrationFigure(lesson.id, verse().id);
+    if (illustration) reading.append(illustration);
 
     $('study-listen').disabled = !current.en;
     $('study-listen').textContent = t(mode === 'parts' ? 'listenBothPart' : 'listenBothVerse');

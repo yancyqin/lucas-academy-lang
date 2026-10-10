@@ -1,9 +1,11 @@
-// 课程表 · the class schedule shown at /class: a grade, then a week. One entry
+// 课程表 · the class schedule shown at /class: pick a week. One entry
 // per week; readings are lessons from the registry (the whole lesson, or the
 // parts listed), so a week needs no new code — add a line here, run validate,
-// deploy. The link for a week is /class?g=<grade>&w=<week>, before and after
+// deploy. The link for a week is /class?w=<week>, before and after
 // class. `date` (YYYY-MM-DD, the class day) is optional: with dates, /class
 // opens the next class on or after today; without, the latest week.
+// Legacy grade metadata is retained for validation. The page currently shows
+// the first class without a picker; group selection can be added later.
 export const grades = [
   {id: 3, title: {zh: '三年级', en: 'Grade 3'}},
 ];

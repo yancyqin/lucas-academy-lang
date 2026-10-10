@@ -12,6 +12,7 @@ import {scriptureRequests} from '../public/js/scripture.js';
 import {englishBasic} from '../public/lessons/english-basic.js';
 import {chineseClauses, chineseUnits, fingerprint} from '../public/js/units.js';
 import {WEB_TRANSLATION, WEB_ENGLISH} from '../public/lessons/scripture-web.js';
+import {illustrations, illustrationBindings} from '../public/lessons/illustrations.js';
 
 const ENGLISH_WORDS = /[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu;
 
@@ -265,6 +266,32 @@ for (const c of pictures.concepts) {
   check(c.alt && c.alt.length > 4, `images: ${c.id} needs alt text`);
 }
 summary.push(`Word pictures: ${pictured} of ${pictures.concepts.length} concepts`);
+
+// Illustration bindings must point to existing reading units and verified assets.
+const usedIllustrations = new Set();
+for (const [lessonId, bindings] of Object.entries(illustrationBindings)) {
+  const lesson = lessons.find(l => l.id === lessonId);
+  check(!!lesson, `illustrations: unknown lesson ${lessonId}`);
+  for (const [verseId, imageId] of Object.entries(bindings)) {
+    check(lesson?.verses.some(v => v.id === verseId), `illustrations: ${lessonId}/${verseId} is not a reading unit`);
+    check(!!illustrations[imageId], `illustrations: ${verseId} references missing image ${imageId}`);
+    usedIllustrations.add(imageId);
+  }
+}
+for (const [id, art] of Object.entries(illustrations)) {
+  check(usedIllustrations.has(id), `illustrations: ${id} is unused`);
+  check(/^images\/lessons\/[a-z0-9/-]+\.webp$/.test(art.src), `illustrations: ${id} needs a local WebP path`);
+  check(!!art.alt?.zh && !!art.alt?.en, `illustrations: ${id} needs bilingual visual descriptions`);
+  check(art.width === 960 && art.height > 0 && art.width / art.height > 1.1 && art.width / art.height < 1.9,
+    `illustrations: ${id} needs a landscape image with its natural aspect ratio`);
+  const file = join(pub, art.src);
+  if (existsSync(file)) {
+    const bytes = await readFile(file);
+    check(bytes.length === art.bytes && createHash('sha256').update(bytes).digest('hex') === art.sha256,
+      `illustrations: ${id} has changed bytes`);
+  } else check(false, `illustrations: ${id} is missing`);
+}
+summary.push(`Lesson illustrations: ${Object.keys(illustrations).length} images for ${Object.values(illustrationBindings).reduce((n, b) => n + Object.keys(b).length, 0)} reading units`);
 
 // The site is ./public and nothing else: no secrets, scripts or notes in it.
 async function walk(dir) {

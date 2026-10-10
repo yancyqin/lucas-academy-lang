@@ -80,7 +80,7 @@ export function createWordPanel(app) {
     }
   }
 
-  function openWordbook() {
+  function openWordbook(focus = true) {
     selected = null;
     show();
     $('panel-label').textContent = t('myWordbook', {count: state.marks.length});
@@ -103,7 +103,7 @@ export function createWordPanel(app) {
         render();
       }, 'wordbook-row'));
     }
-    $('close-panel').focus({preventScroll: true});
+    if (focus) $('close-panel').focus({preventScroll: true});
   }
 
   $('close-panel').onclick = close;
@@ -115,5 +115,11 @@ export function createWordPanel(app) {
     if (event.key === 'Escape' && !app.study?.isOpen && !$('word-panel').hidden) close();
   });
 
-  return {open, close, refresh: render, get selected() { return selected; }};
+  function refresh() {
+    if ($('word-panel').hidden) return;
+    if (selected) render();
+    else openWordbook(false);
+  }
+
+  return {open, close, refresh, get selected() { return selected; }};
 }
