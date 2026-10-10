@@ -1,6 +1,6 @@
 // 语言的桥 · Language Bridge — page entry. Holds the reading state and wires
 // the reader, the word panel, the study dialog and the one audio controller.
-// The interface speaks the language read first (strings.js).
+// The interface speaks the other language, to support the language read first (strings.js).
 import {lessons as registry, categories} from '../lessons/index.js';
 import * as storage from './storage.js';
 import * as audio from './audio.js';
@@ -12,7 +12,7 @@ import {spokenWords} from './tokens.js';
 import {createReader} from './reader.js';
 import {createWordPanel} from './wordpanel.js';
 import {createStudy} from './study.js';
-import {t, pick, setLanguage, setKind, applyPage, uiLanguage} from './strings.js';
+import {t, pick, setReadingLanguage, setKind, applyPage, uiLanguage} from './strings.js';
 
 const $ = id => document.getElementById(id);
 const other = lang => (lang === 'zh' ? 'en' : 'zh');
@@ -85,7 +85,7 @@ if (linkedLesson) {
 const savedSpeed = String(storage.load('speed', '0.75'));
 if ([...$('speed').options].some(o => o.value === savedSpeed)) $('speed').value = savedSpeed;
 audio.setSpeed($('speed').value);
-setLanguage(state.first);
+setReadingLanguage(state.first);
 
 // Created below, once `app` exists; declared here so early callbacks never
 // meet them uninitialised.
@@ -278,7 +278,7 @@ function renderMenus() {
 
 function render() {
   const lesson = state.lesson;
-  setLanguage(state.first);
+  setReadingLanguage(state.first);
   setKind(lesson.kind);
   applyPage();
   renderMenus();
@@ -291,8 +291,8 @@ function render() {
   renderSources();
   renderPainting();
   // The button names the language read first; flipping (here or in 逐句学) relabels it.
-  $('flip-label').textContent = state.first === 'zh' ? '中文在前' : 'English first';
-  $('flip').lang = state.first === 'zh' ? 'zh-CN' : 'en';
+  $('flip-label').textContent = t('first_' + state.first);
+  $('flip').lang = document.documentElement.lang;
   renderHide();
   $('complete-next').dataset.review = 'false';
   $('pinyin').checked = state.pinyin;
@@ -304,6 +304,7 @@ function render() {
   $('pause').textContent = t(audio.isPaused() ? 'resume' : 'pause');
   $('word-count').textContent = state.marks.length;
   reader.renderVerses();
+  panel?.refresh();
   renderVoiceCredit();
   renderRecording();
   loadEnglish();

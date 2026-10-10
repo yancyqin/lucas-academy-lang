@@ -1,12 +1,14 @@
-// Interface text in both languages. The interface speaks the language that is
-// read first: flip the order and every button, label and message follows.
+// Interface text in both languages. The interface supports the language read
+// first by speaking the other language: English first gets Chinese controls.
 // Lesson content (verses, questions, explanations) is bilingual data and is
 // not translated here.
 const zh = {
   name: '语言的桥',
   tagline: '你教我，我教你',
   skip: '跳到课文',
-  orderHint: '每一节先读这种语言，再读另一种。点一下，交换先后顺序。',
+  orderHint: '点击切换中文和英文的阅读顺序。',
+  first_zh: '中文在前',
+  first_en: '英文在前',
   wordbook: '生词本',
   category: '分类',
   allLessons: '全部',
@@ -27,10 +29,10 @@ const zh = {
   angle_similar: '相似的视角',
   angle_opposite: '相反的视角',
   angle_related: '相关的视角',
-  hideSecond: '遮住英文',
-  hideHint: '打开后，英文先遮住：想一想，再点一下看。',
-  revealSecond: '想一想，再点一下看英文',
-  revealSecondLabel: ({n}) => `显示第${n}节英文`,
+  hideSecond: '遮住中文',
+  hideHint: '打开后，中文先遮住：想一想，再点一下看。',
+  revealSecond: '想一想，再点一下看中文',
+  revealSecondLabel: ({n}) => `显示第${n}节中文`,
   studyAll: '逐句学',
   playSection: '听这一小段',
   paintingLink: ({style}) => `活画 · ${style} ↗`,
@@ -101,7 +103,7 @@ const zh = {
   wordbookReview: '听发音，复习这个词',
   suggestedWords: '这篇可以一起学的词',
   zh: '中文',
-  en: 'English',
+  en: '英文',
   studyOverline: '你教我，我教你 · 逐句学',
   backToReading: '回到课文',
   studyContext: ({title, first, last}) => `${title} · 第 ${first}–${last} 节`,
@@ -126,10 +128,13 @@ const zh = {
   discussTitle: '说说你会怎么做',
   hint: '给我一点小提示',
   explainVerse: '用简单的话理解这一整句',
+  showPicture: '显示图',
   teachOverline: '换个角色，再试一次',
   teachSwitch: '换你来教',
+  teach_zh: '这次你来教中文。选这句里的一个词，说说它的意思。',
+  teach_en: '这次你来教英文。选这句里的一个词，说说它的意思。',
   noteSummary: '记下这一句的想法',
-  noteLabel: '可以用中文，也可以用 English。',
+  noteLabel: '可以用中文，也可以用英文。',
   notePlaceholder: '我想说……',
   noteSmall: '只保存在这台设备。',
   prevVerse: '上一句',
@@ -161,8 +166,7 @@ const zh = {
   lessonDone: '这一篇学完了！可以再读一次，也可以换一篇。',
   // 课程表 (/class)
   classTitle: '课程表',
-  classIntro: '选年级，再选一周。每一周都有自己的链接，上课前后都能打开。',
-  grades: '年级',
+  classLink: '课程表',
   weeks: '周',
   weekN: ({n}) => `第 ${n} 周`,
   thisWeek: '本周',
@@ -170,7 +174,7 @@ const zh = {
   wholeLesson: '整篇一起读',
   partsList: ({list}) => `第 ${list} 小段`,
   homework: '作业',
-  noWeeks: '这个年级还没有安排课程。',
+  noWeeks: '还没有安排课程。',
   noSuchWeek: '没有这一周，先看本周的。',
   otherLanguage: 'English',
   otherLanguageLabel: '切换界面语言',
@@ -180,7 +184,9 @@ const en = {
   name: 'Language Bridge',
   tagline: 'You teach me, I teach you',
   skip: 'Skip to the reading',
-  orderHint: 'Each verse is read in this language first, then in the other. Press to swap the order.',
+  orderHint: 'Swap the Chinese and English reading order.',
+  first_zh: 'Chinese first',
+  first_en: 'English first',
   wordbook: 'Word book',
   category: 'Category',
   allLessons: 'All',
@@ -200,10 +206,10 @@ const en = {
   angle_similar: 'A similar view',
   angle_opposite: 'The opposite view',
   angle_related: 'A related view',
-  hideSecond: 'Hide Chinese',
-  hideHint: 'When on, the Chinese stays hidden: think first, then tap to see it.',
-  revealSecond: 'Think first, then tap to see the Chinese',
-  revealSecondLabel: ({n}) => `Show the Chinese of verse ${n}`,
+  hideSecond: 'Hide English',
+  hideHint: 'When on, the English stays hidden: think first, then tap to see it.',
+  revealSecond: 'Think first, then tap to see the English',
+  revealSecondLabel: ({n}) => `Show the English of verse ${n}`,
   studyAll: 'Study verse by verse',
   playSection: 'Listen to this part',
   paintingLink: ({style}) => `Living painting · ${style} ↗`,
@@ -299,8 +305,11 @@ const en = {
   discussTitle: 'What would you do?',
   hint: 'Give me a hint',
   explainVerse: 'This verse in simple words',
+  showPicture: 'Show picture',
   teachOverline: 'Switch roles and try again',
   teachSwitch: 'Your turn to teach',
+  teach_zh: 'Your turn to teach Chinese. Pick a word in this sentence and explain it.',
+  teach_en: 'Your turn to teach English. Pick a word in this sentence and explain it.',
   noteSummary: 'Write down a thought about this verse',
   noteLabel: 'You can write in English or in Chinese.',
   notePlaceholder: "I'd like to say…",
@@ -334,8 +343,7 @@ const en = {
   lessonDone: 'You finished the lesson! Read it again, or choose another lesson.',
   // 课程表 (/class)
   classTitle: 'Class schedule',
-  classIntro: 'Pick a grade, then a week. Every week has its own link, before and after class.',
-  grades: 'Grade',
+  classLink: 'Classes',
   weeks: 'Week',
   weekN: ({n}) => `Week ${n}`,
   thisWeek: 'This week',
@@ -343,7 +351,7 @@ const en = {
   wholeLesson: 'The whole lesson, together',
   partsList: ({list}) => `Parts ${list}`,
   homework: 'Homework',
-  noWeeks: 'No classes are scheduled for this grade yet.',
+  noWeeks: 'No classes are scheduled yet.',
   noSuchWeek: "There's no such week, so here is this week's.",
   otherLanguage: '中文',
   otherLanguageLabel: 'Switch the interface language',
@@ -352,13 +360,12 @@ const en = {
 // A story is read sentence by sentence, not verse by verse: in a story lesson
 // (lesson.kind === 'story') these keys replace the ones above.
 const storyZh = {
-  orderHint: '每一句先读这种语言，再读另一种。点一下，交换先后顺序。',
   sectionMeta: ({first, last}) => first === last ? `第 ${first} 句` : `第 ${first}–${last} 句`,
   versesLabel: '逐句双语课文',
   readVerse: ({n, language}) => `读第${n}句${language}`,
   slowVerse: ({n, language}) => `逐词慢读第${n}句${language}`,
   revealLabel: ({n, language}) => `显示第${n}句${language}原文`,
-  revealSecondLabel: ({n}) => `显示第${n}句英文`,
+  revealSecondLabel: ({n}) => `显示第${n}句中文`,
   studyThisLabel: ({n}) => `学第${n}句`,
   verseSimple: ({n}) => `第 ${n} 句 · 用简单的话理解`,
   studyContext: ({title, first, last}) => first === last ? `${title} · 第 ${first} 句` : `${title} · 第 ${first}–${last} 句`,
@@ -368,7 +375,6 @@ const storyZh = {
 };
 
 const storyEn = {
-  orderHint: 'Each sentence is read in this language first, then in the other. Press to swap the order.',
   sectionMeta: ({first, last}) => first === last ? `Sentence ${first}` : `Sentences ${first}–${last}`,
   studyAll: 'Study sentence by sentence',
   readingHint: 'Read one part first, then press "Study sentence by sentence" to go slowly and talk it over. You can tap any word.',
@@ -376,7 +382,7 @@ const storyEn = {
   readVerse: ({n, language}) => `Read sentence ${n} in ${language}`,
   slowVerse: ({n, language}) => `Read sentence ${n} in ${language} word by word`,
   revealLabel: ({n, language}) => `Show sentence ${n} in ${language}`,
-  revealSecondLabel: ({n}) => `Show the Chinese of sentence ${n}`,
+  revealSecondLabel: ({n}) => `Show the English of sentence ${n}`,
   studyThis: 'Study this sentence',
   studyThisLabel: ({n}) => `Study sentence ${n}`,
   partsUnavailable: 'This lesson is read sentence by sentence for now',
@@ -407,6 +413,10 @@ let kind = 'scripture';
 export function setLanguage(value) {
   language = value === 'en' ? 'en' : 'zh';
   document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+}
+
+export function setReadingLanguage(first) {
+  setLanguage(first === 'en' ? 'zh' : 'en');
 }
 
 // The kind of lesson in hand: a story, a lesson of poems or a set of idioms

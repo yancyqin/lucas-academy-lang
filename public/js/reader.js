@@ -3,6 +3,7 @@
 import {el, button, fill} from './tokens.js';
 import {t, pick} from './strings.js';
 import * as english from './english.js';
+import {illustrationFigure} from './illustrations.js';
 
 const $ = id => document.getElementById(id);
 
@@ -114,6 +115,8 @@ export function createReader(app) {
       // 视角: a unit may say how it looks at the part's theme (an idiom's scripture).
       if (verse.angle) content.append(el('p', 'verse-angle', t('angle_' + verse.angle)));
       for (const lang of [state.first, app.other(state.first)]) content.append(line(verse, lang));
+      const illustration = illustrationFigure(app.lesson().id, verse.id);
+      if (illustration) content.append(illustration);
       if (!state.dictation) {
         const actions = el('div', 'verse-actions');
         const detail = el('details', 'sentence-explain');

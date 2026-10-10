@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-09",
+  "status": "passed",
+  "assets": {
+    "images": 39,
+    "bindings": 39,
+    "bytes": 7107540,
+    "dimensions": [
+      "960x720"
+    ],
+    "decoded": 39,
+    "visualReview": {
+      "images": 39,
+      "method": "Individual native image outputs inspected for subject, composition, child suitability and legible text."
+    }
+  },
+  "browser": {
+    "images": 69,
+    "results": [
+      {
+        "engine": "chromium",
+        "positions": 70,
+        "errors": 0,
+        "missing": 0
+      },
+      {
+        "engine": "webkit",
+        "positions": 70,
+        "errors": 0,
+        "missing": 0
+      }
+    ]
+  },
+  "browserSetup": "Real application assets served by Playwright route fulfillment from this checkout; licensed English API requests forwarded to the production read-only passage endpoint and kept in memory.",
+  "checked": [
+    "All 70 illustration bindings in reading pages and whole-sentence study, including image decode and matching source",
+    "Aligned-clause mode keeps the illustration for its parent verse in The Love Chapter",
+    "Chinese and English alt descriptions follow reading order",
+    "Mobile reading and study widths at 390 x 844; desktop at 1440 x 1000",
+    "Illustration-free story lessons remain usable",
+    "No page errors or missing local resource requests in Chromium or WebKit",
+    "69 original generation outputs visually inspected; final WebP bytes, hashes and dimensions decoded and checked",
+    "npm run validate and git diff --check"
+  ],
+  "visualScreenshotsReviewed": [
+    "desktop Chromium",
+    "desktop WebKit",
+    "mobile Chromium",
+    "mobile study Chromium"
+  ],
+  "revision": {
+    "date": "2026-10-09",
+    "change": "Removed 30 images after review: all Love Chapter art and 17 abstract-concept images (see README). Illustrations now start folded behind a 显示图 / Show picture toggle and load on first open.",
+    "checked": [
+      "npm run validate: 39 images for 39 reading units, hashes and dimensions unchanged for kept images",
+      "All 39 image paths return 200 image/webp from wrangler dev; a removed path returns 404",
+      "Chromium: pictures start folded with 显示图 / Show picture, load only when opened and decode at 960 px; The Love Chapter shows no pictures; study dialog picture also starts folded"
+    ]
+  }
+}
