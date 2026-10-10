@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-09",
+  "status": "passed",
+  "assets": {
+    "images": 69,
+    "bindings": 70,
+    "bytes": 11878582,
+    "dimensions": [
+      "960x720"
+    ],
+    "decoded": 69,
+    "visualReview": {
+      "images": 69,
+      "method": "Individual native image outputs inspected for subject, composition, child suitability and legible text."
+    }
+  },
+  "browser": {
+    "images": 69,
+    "results": [
+      {
+        "engine": "chromium",
+        "positions": 70,
+        "errors": 0,
+        "missing": 0
+      },
+      {
+        "engine": "webkit",
+        "positions": 70,
+        "errors": 0,
+        "missing": 0
+      }
+    ]
+  },
+  "browserSetup": "Real application assets served by Playwright route fulfillment from this checkout; licensed English API requests forwarded to the production read-only passage endpoint and kept in memory.",
+  "checked": [
+    "All 70 illustration bindings in reading pages and whole-sentence study, including image decode and matching source",
+    "Aligned-clause mode keeps the illustration for its parent verse in The Love Chapter",
+    "Chinese and English alt descriptions follow reading order",
+    "Mobile reading and study widths at 390 x 844; desktop at 1440 x 1000",
+    "Illustration-free story lessons remain usable",
+    "No page errors or missing local resource requests in Chromium or WebKit",
+    "69 original generation outputs visually inspected; final WebP bytes, hashes and dimensions decoded and checked",
+    "npm run validate and git diff --check"
+  ],
+  "visualScreenshotsReviewed": [
+    "desktop Chromium",
+    "desktop WebKit",
+    "mobile Chromium",
+    "mobile study Chromium"
+  ]
+}

@@ -1,0 +1,1179 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-10-09",
+  "images": [
+    {
+      "id": "words-with-love",
+      "sourceFile": "exec-2abd741f-1309-4ea3-9f66-24a71b43f5b9.png",
+      "sourceSha256": "2f492c3434da11f1dd5ff615e2bd00c99cb8c70f7f886f47a045dfc86b0298e8",
+      "src": "images/lessons/scripture/words-with-love.webp",
+      "sha256": "099abaa412b933d105ea2b8d8abc0ccbe49190470d113c0362e9245210c4df33",
+      "bytes": 112152,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子放下小钹，专心听同伴说话。",
+        "en": "A child puts down cymbals and listens kindly to a friend."
+      },
+      "style": "warm gouache",
+      "kind": "scripture",
+      "reference": "1CO.13.1"
+    },
+    {
+      "id": "knowledge-with-love",
+      "sourceFile": "exec-7f857c73-3af6-49ba-b3f0-5fe4424d8ed4.png",
+      "sourceSha256": "349629dfd957ed44e4dce4752207b06f0b49f174173ec0c0ccab6613294c1a97",
+      "src": "images/lessons/scripture/knowledge-with-love.webp",
+      "sha256": "3e15438362595a3cdc2a668ca1e41431157bf98be47adeda563088899e52893b",
+      "bytes": 208190,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子放下手中的书，帮助身旁遇到困难的同伴。",
+        "en": "A child puts a book aside to help a friend in difficulty."
+      },
+      "style": "colored-pencil illustration",
+      "kind": "scripture",
+      "reference": "1CO.13.2"
+    },
+    {
+      "id": "giving-with-care",
+      "sourceFile": "exec-07c6fe76-a2eb-4535-8340-f3d017b53c95.png",
+      "sourceSha256": "7f629b35bc77a40ec6aebd69913f738a43eb2ed424c73003e2f297c1dfe835af",
+      "src": "images/lessons/scripture/giving-with-care.webp",
+      "sha256": "a4d64ea99043ec802da230a440e8a432e88cbebc0c285adc517824e603e0d942",
+      "bytes": 237328,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "送食物的孩子也坐下来，认真听邻居说话。",
+        "en": "A child shares food and takes time to listen to the neighbor."
+      },
+      "style": "textile collage",
+      "kind": "scripture",
+      "reference": "1CO.13.3"
+    },
+    {
+      "id": "patient-kindness",
+      "sourceFile": "exec-cf4e361f-14cd-4409-978b-1d223e14ff47.png",
+      "sourceSha256": "87b93b1796e824bd79d076aac0b666285bf2a290d5949121f4d6e41083f40e36",
+      "src": "images/lessons/scripture/patient-kindness.webp",
+      "sha256": "1e909ca2ae77dfdddadb86e918802acf37e84c26dcc4ceef027a65fe011232ff",
+      "bytes": 156112,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "一个孩子耐心等同伴拼好，轻轻鼓励他。",
+        "en": "A child patiently waits and gently encourages a friend."
+      },
+      "style": "soft pastel",
+      "kind": "scripture",
+      "reference": "1CO.13.4"
+    },
+    {
+      "id": "consider-others",
+      "sourceFile": "exec-cf095e0e-ff9a-4ac4-973f-6af239f9057a.png",
+      "sourceSha256": "f42920a5752a2a60ba1024a009136d2506fa7f23f297631e2922f03c09da86c1",
+      "src": "images/lessons/scripture/consider-others.webp",
+      "sha256": "93c3721f452721086e576fb701c6fb5d3da095f26f8bcfe5f52fcdc1861b9081",
+      "bytes": 141776,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子往旁边挪一挪，给同伴留出位置。",
+        "en": "A child moves aside to make room for a friend."
+      },
+      "style": "handmade paper collage",
+      "kind": "scripture",
+      "reference": "1CO.13.5"
+    },
+    {
+      "id": "joy-in-truth",
+      "sourceFile": "exec-4f539c23-e4b8-4f86-979b-4c79f6f46996.png",
+      "sourceSha256": "96a0a44f274dc91f2312518274c10052d1e58fc750e7b7019827a52cf785a0c2",
+      "src": "images/lessons/scripture/joy-in-truth.webp",
+      "sha256": "150174191e6e5d2834fdbd76c464d0248435ea71fcb7e43533e3e11cd8a47bcd",
+      "bytes": 118626,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子诚实说明打翻颜料的经过，同伴一起帮忙。",
+        "en": "A child honestly explains a spill and a friend helps."
+      },
+      "style": "warm pencil and gouache",
+      "kind": "scripture",
+      "reference": "1CO.13.6"
+    },
+    {
+      "id": "steady-support",
+      "sourceFile": "exec-f66a1f83-bb32-4ac5-8037-e6d7d59d0d64.png",
+      "sourceSha256": "44f82367cd2ab80db7cdab0ac5180282b70657a63f68da265452b952effaf709",
+      "src": "images/lessons/scripture/steady-support.webp",
+      "sha256": "163ec040d433feeac0caa5c60b8fb9ea08619097f97ba052f67f72a8c5f652b8",
+      "bytes": 142994,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "两个孩子一起护住风中的小苗。",
+        "en": "Two children patiently protect a small seedling in the wind."
+      },
+      "style": "felt collage",
+      "kind": "scripture",
+      "reference": "1CO.13.7"
+    },
+    {
+      "id": "lasting-love",
+      "sourceFile": "exec-2c5bb93a-bcf1-4ae2-aa51-d647a5b91573.png",
+      "sourceSha256": "464a78dbdac534ce696b6e67b5d6ed71035816161f3ca363c3446efcd3007246",
+      "src": "images/lessons/scripture/lasting-love.webp",
+      "sha256": "255aba960179d3a129c6fef06a1a6c3ffcc8543e783b55373e91b67e9a93a2e8",
+      "bytes": 160326,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "长辈和长大的孩子一起照顾小孩子。",
+        "en": "An elder and a grown child continue to care for a young child."
+      },
+      "style": "gentle tempera",
+      "kind": "scripture",
+      "reference": "1CO.13.8"
+    },
+    {
+      "id": "partial-picture",
+      "sourceFile": "exec-5b4a8b63-8b92-442f-ba60-6d99604ef2d7.png",
+      "sourceSha256": "e4e1dfff210595391f695028271cfa2387e9aebe011c357ccbbff89739e999d1",
+      "src": "images/lessons/scripture/partial-picture.webp",
+      "sha256": "450d6d86adbd468f132b9af4aee4916e0b048470ac424fc2602453e6d25108e5",
+      "bytes": 172362,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子望着还没有拼完整的图画。",
+        "en": "A child looks at a picture puzzle that is only partly complete."
+      },
+      "style": "tactile paper illustration",
+      "kind": "scripture",
+      "reference": "1CO.13.9"
+    },
+    {
+      "id": "complete-picture",
+      "sourceFile": "exec-fad2b486-d911-456f-905e-a0449c878b44.png",
+      "sourceSha256": "269de1ddfc3e787c963e240492a231d62ef3088927213ac9ba39f9653a036f32",
+      "src": "images/lessons/scripture/complete-picture.webp",
+      "sha256": "e4466bfb5b5509f04b0047d12252f4c9fa05c9b90d8bcd88734aac935a5c8d4b",
+      "bytes": 252844,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "最后一块拼图放进去，整幅图终于完整了。",
+        "en": "The last puzzle piece makes the whole picture complete."
+      },
+      "style": "colored-pencil illustration",
+      "kind": "scripture",
+      "reference": "1CO.13.10"
+    },
+    {
+      "id": "growing-understanding",
+      "sourceFile": "exec-a2347b0b-0872-4569-88bd-104c244f013e.png",
+      "sourceSha256": "2b0ae3b326ee1eeac39bc2a2da4e690ac6105701068d4462163edccd92127b33",
+      "src": "images/lessons/scripture/growing-understanding.webp",
+      "sha256": "b0de8a45cfb8d5b2c97d5840deecbad2db894a2fa458fcfc1d7d66c531d63c31",
+      "bytes": 106286,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "大孩子一边搭积木，一边耐心帮助小孩子。",
+        "en": "An older child patiently helps a younger child build with blocks."
+      },
+      "style": "warm gouache",
+      "kind": "scripture",
+      "reference": "1CO.13.11"
+    },
+    {
+      "id": "partial-seeing",
+      "sourceFile": "exec-90e663ac-84bc-4c3e-a2b3-2a6c5b4b1fa6.png",
+      "sourceSha256": "909ca10b13e8bc02264fd41c9a060d290cfa8b41156406ee7e4ed0391d29bfdb",
+      "src": "images/lessons/scripture/partial-seeing.webp",
+      "sha256": "dc66aca0544196d9dd904b9eea4f1fdf54473b7abc4c5ec85bc693fc0b7db18b",
+      "bytes": 73926,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "镜中倒影模糊，镜外面对面的人却看得清楚。",
+        "en": "A mirror's reflection is blurred while people beyond it are clear."
+      },
+      "style": "soft pastel with clear shapes",
+      "kind": "scripture",
+      "reference": "1CO.13.12"
+    },
+    {
+      "id": "faith-hope-love",
+      "sourceFile": "exec-7abb0475-e65a-45c8-8ea7-4f2c352abde2.png",
+      "sourceSha256": "ae527850c81bf81c48a91fca0c3cd53046f9a53deccdb0f0e078a104a4b5b54d",
+      "src": "images/lessons/scripture/faith-hope-love.webp",
+      "sha256": "d5dfe895a78e6b9cab6b309fef1a9f7a57d35cba59a6a61ea3cff17fb8b2f8bf",
+      "bytes": 149432,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子们一起种下种子、照顾嫩芽，也欢迎同伴加入。",
+        "en": "Children plant, care for a sprout and warmly welcome a friend."
+      },
+      "style": "soft pastel botanical scene",
+      "kind": "scripture",
+      "reference": "1CO.13.13"
+    },
+    {
+      "id": "teacher-by-lake",
+      "sourceFile": "exec-53dbaf8e-ec6b-4c56-86a8-d2bfb5ec1c5c.png",
+      "sourceSha256": "fa767196b188f65d67cee0124325f0ed3d52b03fe18f57e0c11cfa1847fa4c1a",
+      "src": "images/lessons/scripture/teacher-by-lake.webp",
+      "sha256": "40485c14db420d9e1f3cf697f67966c35b062bcea0fbaba8c26119e791204784",
+      "bytes": 149530,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "耶稣坐在岸边的小船上，众人站在岸上听。",
+        "en": "Jesus teaches from a boat while people listen on the shore."
+      },
+      "style": "historically grounded watercolor",
+      "kind": "scripture",
+      "reference": "MRK.4.1"
+    },
+    {
+      "id": "teaching-parables",
+      "sourceFile": "exec-b37bb7d8-23f3-45e4-8eb9-6ad778147e4f.png",
+      "sourceSha256": "a8ad684f6c6f500f5ab2092f3fccbbe4ea4fa5ac55fca0683c21d2b60be888b0",
+      "src": "images/lessons/scripture/teaching-parables.webp",
+      "sha256": "32f9dcbf217a989413d3b2d74665ae4541b589de6ed71809eb7719fe7b0fbde7",
+      "bytes": 144718,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "老师用小故事讲道理，岸边的人认真听。",
+        "en": "The teacher tells a parable to attentive listeners on the shore."
+      },
+      "style": "earthy historical gouache",
+      "kind": "scripture",
+      "reference": "MRK.4.2"
+    },
+    {
+      "id": "sower-seeds",
+      "sourceFile": "exec-611f1a2f-d4f9-4a4a-a94a-dbaeda4643d7.png",
+      "sourceSha256": "a9aad311b715bd270ceac284919a3fc6faec9b96a102e09ec11d17f51c4d1391",
+      "src": "images/lessons/scripture/sower-seeds.webp",
+      "sha256": "664ccce2cc9fb8d53fa23d0d4562e556d119b1b7d1c98b65f1faed2af8e0682f",
+      "bytes": 262464,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "撒种的人从袋里取出种子，撒向田地。",
+        "en": "A sower scatters grain seeds across the field."
+      },
+      "style": "ochre and green linocut",
+      "kind": "scripture",
+      "reference": "MRK.4.3"
+    },
+    {
+      "id": "birds-path",
+      "sourceFile": "exec-0c37f017-195d-4790-8608-82d5ef806d58.png",
+      "sourceSha256": "7faf8fea4a7d3e2d135c0ff892e2a5c02f9b70c8b289ef719590bd099ed690d6",
+      "src": "images/lessons/scripture/birds-path.webp",
+      "sha256": "23cd448519314702c6e926f51b3ebc718f5ccfa1da14528885a652c5b27110dd",
+      "bytes": 199142,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "落在硬路上的种子被小鸟啄食。",
+        "en": "Birds peck seeds that fell on a hard path."
+      },
+      "style": "botanical watercolor",
+      "kind": "scripture",
+      "reference": "MRK.4.4"
+    },
+    {
+      "id": "shallow-soil",
+      "sourceFile": "exec-c24d6175-ccba-41e1-859a-fe79e19e1a6f.png",
+      "sourceSha256": "cb0b43dc0018f9d431f3e007ca9d42293e9e124b74fc73deb66b574910b0acb6",
+      "src": "images/lessons/scripture/shallow-soil.webp",
+      "sha256": "3930e9e357dcf67571b188e18283e75b95d52dddc64c22c9167fda4c2e9a535b",
+      "bytes": 141130,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "薄土下面是石头，小苗的根很浅。",
+        "en": "A seedling has shallow roots in thin soil over rock."
+      },
+      "style": "cut-paper botanical illustration",
+      "kind": "scripture",
+      "reference": "MRK.4.5"
+    },
+    {
+      "id": "wilted-seedling",
+      "sourceFile": "exec-e5600365-9899-478e-bd55-377f195d7db5.png",
+      "sourceSha256": "157325b16ae77641b078265b8f185f383078a02e023f0ea720a4f7483bf33f3f",
+      "src": "images/lessons/scripture/wilted-seedling.webp",
+      "sha256": "cfe39937e06ba20994d7782fd9721e160c453f26571752a0cf6c87870d26b312",
+      "bytes": 167316,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "太阳晒着薄土上的小苗，小苗开始枯萎。",
+        "en": "A shallow-rooted seedling wilts in the sun."
+      },
+      "style": "observational watercolor",
+      "kind": "scripture",
+      "reference": "MRK.4.6"
+    },
+    {
+      "id": "crowded-thorns",
+      "sourceFile": "exec-2eaced9c-569b-41a1-b86d-e3c783893c7d.png",
+      "sourceSha256": "e99a94670955ed9cb387f446142410454e8501fc0d56b9d9fb66b6fd90a1f1f3",
+      "src": "images/lessons/scripture/crowded-thorns.webp",
+      "sha256": "390ccf527989714b47a11a041308fb7c5945ea77ee792f4c41ade4eeaffa2801",
+      "bytes": 266568,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "荆棘长在小苗周围，挡住了它的光和空间。",
+        "en": "Thorns crowd a small plant and block its light and space."
+      },
+      "style": "textured colored-pencil drawing",
+      "kind": "scripture",
+      "reference": "MRK.4.7"
+    },
+    {
+      "id": "fruitful-soil",
+      "sourceFile": "exec-01ab1df6-8cd8-46d7-a656-8ee38b9ce078.png",
+      "sourceSha256": "af59748801b1690d9607d02d6e4a4138010cac62074b3449744fa96451066a48",
+      "src": "images/lessons/scripture/fruitful-soil.webp",
+      "sha256": "5c7a901baf5d8b419c45fefac8252720c80731efdc9b029277b65b1ab9026029",
+      "bytes": 195326,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "好土里的麦子长得结实，结出许多麦粒。",
+        "en": "Wheat grows strong in good soil and bears many grains."
+      },
+      "style": "layered paper landscape",
+      "kind": "scripture",
+      "reference": "MRK.4.8"
+    },
+    {
+      "id": "ears-to-hear",
+      "sourceFile": "exec-e6f0fbfe-5bc4-448a-95cd-6c3c03b8cebe.png",
+      "sourceSha256": "f0699d0812fe5797bc02483919f310d301172cab87798e9b33ec681d18c27dcd",
+      "src": "images/lessons/scripture/ears-to-hear.webp",
+      "sha256": "824b27f2670298ed8bf8bc400db802a0ed8d6e6f16ca61f8aaa94d65d1a883b5",
+      "bytes": 141208,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "岸边的孩子和大人专心听，记住老师的话。",
+        "en": "A child and adults listen carefully to the teacher."
+      },
+      "style": "warm historical pastel",
+      "kind": "scripture",
+      "reference": "MRK.4.9"
+    },
+    {
+      "id": "well-frog",
+      "sourceFile": "exec-0a61c47a-14f8-4e5d-9d64-38531d9cd977.png",
+      "sourceSha256": "263e0b3c1dc2021022f68e83cc76b049e94e3eddb9d1e14ae1ca07073fdf4f7f",
+      "src": "images/lessons/idioms-1/well-frog.webp",
+      "sha256": "0ba9b8c9633c0df18cd4a71fec8fb983b71c5527ebc8eeec405d5d3445403c94",
+      "bytes": 178640,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "井底的青蛙仰望井口的一小片天空。",
+        "en": "A frog in a well looks up at a small circle of sky."
+      },
+      "style": "Chinese ink and watercolor",
+      "kind": "idiom",
+      "reference": "井底之蛙"
+    },
+    {
+      "id": "waiting-rabbit",
+      "sourceFile": "exec-1b157b97-eae3-420a-86df-2aac86843b60.png",
+      "sourceSha256": "fe49a08cbd528491aafffa234ef36a5460e189b02170a944d97142505c697c3a",
+      "src": "images/lessons/idioms-1/waiting-rabbit.webp",
+      "sha256": "99697c8938a313a1bfcce5d3902f0e67b5259769e74e4900d2ae9d47c44d6892",
+      "bytes": 189054,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "农夫坐在树桩旁等兔子，田里的锄头闲在一边。",
+        "en": "A farmer waits by a stump while his hoe and field lie idle."
+      },
+      "style": "layered handmade paper collage",
+      "kind": "idiom",
+      "reference": "守株待兔"
+    },
+    {
+      "id": "moving-mountain",
+      "sourceFile": "exec-56d6d0c7-8349-4064-bd60-89c530c45cce.png",
+      "sourceSha256": "a8529ffcf33f83a249f8021abcf8308f785a9b466ce99d54d0cd89942e8c97d4",
+      "src": "images/lessons/idioms-1/moving-mountain.webp",
+      "sha256": "59bca3c03546e645070d4221fbd68e028c931d20b7caf2b041839a55da4fade4",
+      "bytes": 329290,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "愚公和家人一起挖山，提着小篮子运土。",
+        "en": "An old man and his family carry baskets of earth from a mountain."
+      },
+      "style": "earthy woodcut print",
+      "kind": "idiom",
+      "reference": "愚公移山"
+    },
+    {
+      "id": "mending-fence",
+      "sourceFile": "exec-4d1472f2-009f-40e1-9ab8-d80ff8a41f83.png",
+      "sourceSha256": "4285e37bc2c18d15ef05de6c703a523a0266954e6a951ba6f958924665417c76",
+      "src": "images/lessons/idioms-1/mending-fence.webp",
+      "sha256": "4ab36b33f41cbcd9441000a3674b7dbdd50e3d9bc02ec9faa46d51789a6f7d7f",
+      "bytes": 193566,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "牧羊人修补羊圈的缺口，羊在圈内安静地站着。",
+        "en": "A shepherd repairs a gap in the fence around his sheep."
+      },
+      "style": "warm gouache storybook art",
+      "kind": "idiom",
+      "reference": "亡羊补牢"
+    },
+    {
+      "id": "pulling-seedlings",
+      "sourceFile": "exec-6a136096-4359-45bb-a829-2c4cb0913d28.png",
+      "sourceSha256": "d6520d94528ecd8e2e215b65bf26336be1f19a3600976e7e9dac837e8307bf65",
+      "src": "images/lessons/idioms-1/pulling-seedlings.webp",
+      "sha256": "40f4652961dbebff47a75a09d13b456ffd3756b783023000f25bfa8dc3474c60",
+      "bytes": 196130,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "农夫把幼苗往上拔，根露出了泥土。",
+        "en": "A farmer pulls a seedling upward, exposing its roots."
+      },
+      "style": "soft pastel and colored pencil",
+      "kind": "idiom",
+      "reference": "拔苗助长"
+    },
+    {
+      "id": "spear-shield",
+      "sourceFile": "exec-3fccbc86-0285-4abb-9808-ec59f98212b9.png",
+      "sourceSha256": "c3c9654c0edfae0c9d350563150deeeeadda680f76ad87c6d98fe16a7fce6b70",
+      "src": "images/lessons/idioms-1/spear-shield.webp",
+      "sha256": "0786798f22b99c04e880bd30505cd49f2a815c2689e4a119aa07416248127329",
+      "bytes": 179300,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "卖矛和盾的人面对一位提出疑问的客人。",
+        "en": "A seller of a spear and shield faces a questioning customer."
+      },
+      "style": "ink drawing and ochre watercolor",
+      "kind": "idiom",
+      "reference": "自相矛盾"
+    },
+    {
+      "id": "lost-horse",
+      "sourceFile": "exec-64f21de8-4b99-4f49-8cfc-bcc403d4882d.png",
+      "sourceSha256": "9ba0127998f45b664eec3c892815af8cf913d537391b2f7f84dcdb9526a8cd26",
+      "src": "images/lessons/idioms-1/lost-horse.webp",
+      "sha256": "7c73069148c211b136f939d5efc32b61b05cb703cc88b679dc245e96b0a8fb81",
+      "bytes": 137668,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "老人站在门边，看着走失的马带另一匹马回来。",
+        "en": "An old man watches his lost horse return with another horse."
+      },
+      "style": "gentle tempera painting",
+      "kind": "idiom",
+      "reference": "塞翁失马"
+    },
+    {
+      "id": "covered-ears",
+      "sourceFile": "exec-489c49a2-8131-4f4e-b1d9-849401cb0c3c.png",
+      "sourceSha256": "9a9aa63d5b73f5e4cece90c1e902337dbb7d8c5a09c50541ada6f244328e24de",
+      "src": "images/lessons/idioms-1/covered-ears.webp",
+      "sha256": "509ad931c6853a2d5f1a7947204b33e046fa0d594a10eb856ee7b4fc96b32e32",
+      "bytes": 105098,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "一个人捂住自己的耳朵，旁边的人却听见了钟声。",
+        "en": "A man covers his ears, but someone nearby hears the bell."
+      },
+      "style": "matte clay stop-motion still",
+      "kind": "idiom",
+      "reference": "掩耳盗铃"
+    },
+    {
+      "id": "kept-promise",
+      "sourceFile": "exec-18984fe9-9a4b-435f-84dc-28b8c513a795.png",
+      "sourceSha256": "71c404be3e06dba96ca38ef6d4b805ec397714bc7261f68d3cb6cb28deac4e05",
+      "src": "images/lessons/idioms-1/kept-promise.webp",
+      "sha256": "b8a6470c37675e2a94f1b9829c570c39eda3f19716d86d8dd40aa0feec92df46",
+      "bytes": 189864,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "朋友按约定来到村口，把借来的东西还给对方。",
+        "en": "A friend arrives as promised and returns a borrowed bundle."
+      },
+      "style": "warm colored-pencil storybook illustration",
+      "kind": "idiom",
+      "reference": "一诺千金"
+    },
+    {
+      "id": "elephant-parts",
+      "sourceFile": "exec-545bf229-dce3-4e42-9db5-6a0db7eec082.png",
+      "sourceSha256": "5160b7819e28098d32e2bf6906a9775e271d48e02772fea5f30d0ffb87e51fd4",
+      "src": "images/lessons/idioms-1/elephant-parts.webp",
+      "sha256": "183104b98fa4b4c0b65ce34ee303e465c15bb6fcfff8ad605f0d048e98e7ca3c",
+      "bytes": 143160,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "四个人分别摸着大象的腿、鼻子、身子和耳朵。",
+        "en": "Four people each feel a different part of one elephant."
+      },
+      "style": "tactile cut-paper collage",
+      "kind": "idiom",
+      "reference": "盲人摸象"
+    },
+    {
+      "id": "higher-ways",
+      "sourceFile": "exec-82e012ce-9f0e-404d-98df-32fe69526f4b.png",
+      "sourceSha256": "8391cb1e6f66ae864e18bd9e9cc7786756d4fb4fab5b61cc8e4cbf54f50688a5",
+      "src": "images/lessons/scripture/higher-ways.webp",
+      "sha256": "918385687984a172697acea10dc0da0c4e3973a02852750ee5697e1ddf0391a0",
+      "bytes": 177242,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "行路的人仰望群山和高远的天空。",
+        "en": "A traveler looks toward mountains and the vast sky."
+      },
+      "style": "luminous watercolor landscape",
+      "kind": "scripture",
+      "reference": "ISA.55.9"
+    },
+    {
+      "id": "observe-ant",
+      "sourceFile": "exec-cfef8854-d136-461f-85d9-e3ffe503ba0f.png",
+      "sourceSha256": "f682c864cabfbe07486736fbea813e6f2d1ed35d5d56de483d6a84649015667a",
+      "src": "images/lessons/scripture/observe-ant.webp",
+      "sha256": "deeeba2b4fb5378820f2eb8df0e16188b97085f4969027cfcd00b893331bbdc0",
+      "bytes": 194466,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子蹲下来，认真观察搬种子的蚂蚁。",
+        "en": "A child watches an ant carrying a seed."
+      },
+      "style": "nature-journal colored pencil",
+      "kind": "scripture",
+      "reference": "PRO.6.6"
+    },
+    {
+      "id": "ants-together",
+      "sourceFile": "exec-36e9c28b-09b1-44f0-b73c-e46f2950bdbe.png",
+      "sourceSha256": "c62eef4ebb05ffe0ce44ed24739305631218f4b0a5c576df0e4c01b996b99bde",
+      "src": "images/lessons/scripture/ants-together.webp",
+      "sha256": "f722aee61347286a9c02f52b03962f7b4d1edcbee7e3a1a2a610752d7f630bf4",
+      "bytes": 167108,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "蚂蚁们各自搬运食物，一起沿着小路前进。",
+        "en": "Ants work together along a trail, each carrying food."
+      },
+      "style": "handmade paper collage",
+      "kind": "scripture",
+      "reference": "PRO.6.7"
+    },
+    {
+      "id": "ants-harvest",
+      "sourceFile": "exec-fa0c6d8b-e5ce-4ac8-ade1-be578b4410c8.png",
+      "sourceSha256": "e20a04eb6d23204353e705ae8dd4245a250ad1950a0427010faa9975434f8f13",
+      "src": "images/lessons/scripture/ants-harvest.webp",
+      "sha256": "2ce3a24548ced6ab7c1b8a7d51b936f9b2594b96ba3e7fa79956ba8fb7da0ab1",
+      "bytes": 176766,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "夏末的蚂蚁把麦粒搬到巢穴里。",
+        "en": "Ants gather wheat grains into their nest in late summer."
+      },
+      "style": "botanical gouache",
+      "kind": "scripture",
+      "reference": "PRO.6.8"
+    },
+    {
+      "id": "mustard-faith",
+      "sourceFile": "exec-a2a9ac41-bfc7-42c4-bd86-3b3a5ef4bf9b.png",
+      "sourceSha256": "27ed19c625b63accfeb107ef7c2b364e1f27d1f42ffcca283f30679034b4c1ba",
+      "src": "images/lessons/scripture/mustard-faith.webp",
+      "sha256": "3174c9c10059ffbd5915bca31adb55d6b305b49fd0c53abc1ba919e0c85d57af",
+      "bytes": 152556,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "手心里的一粒芥菜种，远处是一座大山。",
+        "en": "A tiny mustard seed rests on a palm with a mountain beyond."
+      },
+      "style": "delicate botanical watercolor",
+      "kind": "scripture",
+      "reference": "MAT.17.20"
+    },
+    {
+      "id": "turn-toward-light",
+      "sourceFile": "exec-5f04de96-0b2c-48cb-b9fb-0ca8833b9826.png",
+      "sourceSha256": "922734f79773841e297f75806a44e0b2a5f10ef9bdf3264a6ce6e0ddc9c490db",
+      "src": "images/lessons/scripture/turn-toward-light.webp",
+      "sha256": "ac7e80c2e7350988febdcbf9147318261ed32189bef4e7dcc71d53da29c28001",
+      "bytes": 282662,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "行路的人转过身，走向有光的门。",
+        "en": "A traveler turns around toward a doorway filled with light."
+      },
+      "style": "gold and blue linocut print",
+      "kind": "scripture",
+      "reference": "MAT.4.17"
+    },
+    {
+      "id": "patient-farmer",
+      "sourceFile": "exec-44bc2300-e1d3-48db-8e77-59f422c308d7.png",
+      "sourceSha256": "47bbd9ecfd9c47d1b3ad9b2b352003e87cd82ca1ba9569c06fc341f053fbe568",
+      "src": "images/lessons/scripture/patient-farmer.webp",
+      "sha256": "58908c4c22f11cce0e1e9feb0d5e1eb4ead635d47265ab172218e5938bf88dba",
+      "bytes": 215716,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "农夫安静等候，雨落在生长的麦田里。",
+        "en": "A farmer patiently watches rain on the growing grain."
+      },
+      "style": "earthy watercolor",
+      "kind": "scripture",
+      "reference": "JAS.5.7"
+    },
+    {
+      "id": "walking-darkness",
+      "sourceFile": "exec-99e39f6a-968c-4fce-a9ec-270427d7d3e3.png",
+      "sourceSha256": "79898316cc3f222593dc6878bce79e04bb00f55781fb5ce02162f525c0684337",
+      "src": "images/lessons/scripture/walking-darkness.webp",
+      "sha256": "71b9315ec1c8d5224b9c23f497928b153886612fb3878855b509056b8f945a29",
+      "bytes": 85780,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "一个人背向光明的门，走进较暗的小路。",
+        "en": "A person walks away from a bright doorway into a darker path."
+      },
+      "style": "restrained pastel chiaroscuro",
+      "kind": "scripture",
+      "reference": "1JN.1.6"
+    },
+    {
+      "id": "woven-purpose",
+      "sourceFile": "exec-f9411752-5c71-4232-b170-50f9725181da.png",
+      "sourceSha256": "a0ccfbbc4e42a6f0f3e59a337f9f6c7a4cca37c62af843ba0fd3ae435746b5cc",
+      "src": "images/lessons/scripture/woven-purpose.webp",
+      "sha256": "73a4c1ab0a7ea7578804b873393bf73068f4519bdf615b5901cea2399e75326f",
+      "bytes": 220524,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "不同颜色的线在手中慢慢织成一块布。",
+        "en": "Threads of many colors are patiently woven into one cloth."
+      },
+      "style": "handmade thread and fabric collage",
+      "kind": "scripture",
+      "reference": "ROM.8.28"
+    },
+    {
+      "id": "honest-mirror",
+      "sourceFile": "exec-d823254a-1c3d-4083-aac6-c3da0ab80379.png",
+      "sourceSha256": "86b3a43420eba076f9875f203522e0e9276d7e56515494dc067cffb36dd4875a",
+      "src": "images/lessons/scripture/honest-mirror.webp",
+      "sha256": "8d06624ff65540849c713b960ee483a282d5ede2f382733e248ec311d22e8d6d",
+      "bytes": 160616,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子放下面具，在镜子里认真看自己。",
+        "en": "A child lowers a mask and looks honestly at their reflection."
+      },
+      "style": "quiet colored pencil",
+      "kind": "scripture",
+      "reference": "1JN.1.8"
+    },
+    {
+      "id": "open-confession",
+      "sourceFile": "exec-20c3d543-8936-4a62-8c66-5f77e647b1f0.png",
+      "sourceSha256": "a15e580c85ef5f7f8722eb1a1121101722ac899f2e5d0bfdf02262286792b0a1",
+      "src": "images/lessons/scripture/open-confession.webp",
+      "sha256": "b711e33dd3dc1b644930e7198303cf8c82ecbff9504e51c8ea4fc3fe070cce47",
+      "bytes": 94838,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子敞开双手承认过失，大人温和地向他伸出手。",
+        "en": "A child admits a mistake and is met with a welcoming hand."
+      },
+      "style": "gentle gouache",
+      "kind": "scripture",
+      "reference": "1JN.1.9"
+    },
+    {
+      "id": "presence-ahead",
+      "sourceFile": "exec-676c428a-a499-4353-8a5e-af267b972357.png",
+      "sourceSha256": "f2f172d2a5830f8804cf2c8b01471bdd0b48c736369202ebc93bee998fedca25",
+      "src": "images/lessons/scripture/presence-ahead.webp",
+      "sha256": "e63fff4f7e7f43cae9ea08bda51588dcf47ac8136c37551d17b916372e119e58",
+      "bytes": 192604,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "前方的光也照亮了行路人的脚边。",
+        "en": "Light ahead also reaches the traveler's present steps."
+      },
+      "style": "luminous mountain watercolor",
+      "kind": "scripture",
+      "reference": "DEU.31.8"
+    },
+    {
+      "id": "no-oath",
+      "sourceFile": "exec-41c31ba1-2b19-42f9-8a3a-2aeda5ea59d7.png",
+      "sourceSha256": "2851cb17ddbb810516a464bb0ea8939094ef67ed27e40d6602cd8ba80f387d9b",
+      "src": "images/lessons/scripture/no-oath.webp",
+      "sha256": "b533cc7a653917aaf8294efbc7f8dc564a6a1e2f4d302c43bc7b67d15771d0b4",
+      "bytes": 204512,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "两个人平静地面对面说话，双手自然放下。",
+        "en": "Two people speak calmly face to face with relaxed hands."
+      },
+      "style": "historical ink and watercolor",
+      "kind": "scripture",
+      "reference": "MAT.5.34"
+    },
+    {
+      "id": "plain-honesty",
+      "sourceFile": "exec-d8eea333-810c-4a98-8fe1-48e0825ce3f8.png",
+      "sourceSha256": "001a6b89ad6b5bb596c928dc8ffdbe24a3b93e88aadf2c46777d0071d8665049",
+      "src": "images/lessons/scripture/plain-honesty.webp",
+      "sha256": "726f34c4f47af463b66f227fdaa2accc7424017572ea95c550fc59dda279951f",
+      "bytes": 77312,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子指着自己说明打翻水杯的经过，同伴认真听。",
+        "en": "A child plainly explains that they spilled the water."
+      },
+      "style": "matte clay storybook still",
+      "kind": "scripture",
+      "reference": "MAT.5.37"
+    },
+    {
+      "id": "honeyed-words",
+      "sourceFile": "exec-b121e5b5-2f75-4405-9c51-6aae6f8f9a3c.png",
+      "sourceSha256": "e55a138759ed70ec9a04eeeae59b0f7787e71957024022eabb6ff2f680fba560",
+      "src": "images/lessons/idioms-2/honeyed-words.webp",
+      "sha256": "cae69f81d1fe7d244d3ea58ba4d52769da559419947635c6627ac914f8747565",
+      "bytes": 93820,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "官员笑着向同僚行礼，背后却藏着一卷计划。",
+        "en": "An official smiles at a colleague while hiding a scroll behind his back."
+      },
+      "style": "editorial gouache",
+      "kind": "idiom",
+      "reference": "口蜜腹剑"
+    },
+    {
+      "id": "music-cow",
+      "sourceFile": "exec-ec435383-3eef-4f78-864a-8df88929a562.png",
+      "sourceSha256": "2ae02ff593c945c69ba743b2fb921bbc5544674bd06025eacf821fbdd1674a4c",
+      "src": "images/lessons/idioms-2/music-cow.webp",
+      "sha256": "79fbd03aa2bdb8fd66933b911e096169e0d167e6b74796a98207d95a57b012a0",
+      "bytes": 178162,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "琴师在树下弹琴，牛仍低头吃草。",
+        "en": "A musician plays a guqin while a cow keeps grazing."
+      },
+      "style": "Chinese ink and green watercolor",
+      "kind": "idiom",
+      "reference": "对牛弹琴"
+    },
+    {
+      "id": "return-kindness",
+      "sourceFile": "exec-8e8ee0de-f88a-4b3c-bd18-78b9406c1a22.png",
+      "sourceSha256": "cf182dee56feda3d7e7b4a552a91cc81b58bfd4b56cfc013175a0d30b5552111",
+      "src": "images/lessons/idioms-2/return-kindness.webp",
+      "sha256": "50abd1e7c3bd8603d63295f930d8b5a1aa64cecceb9713ca82c30dc50bb50cf8",
+      "bytes": 137436,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子把水和干净的布递给刚才弄倒积木的同伴。",
+        "en": "A child offers water and a cloth to the friend who knocked down their blocks."
+      },
+      "style": "stitched-felt fabric collage",
+      "kind": "idiom",
+      "reference": "以德报怨"
+    },
+    {
+      "id": "reading-friends",
+      "sourceFile": "exec-9261da89-5f47-4811-a0e7-c272eb78d087.png",
+      "sourceSha256": "2324ec80c64be9636073d40829f36f340dad6b59bb763e8ff4ec15c0f7824a5c",
+      "src": "images/lessons/idioms-2/reading-friends.webp",
+      "sha256": "f696b9882fd602d5ac30060be3d13616f51ff903f8d184e2385a25ecb244bc75",
+      "bytes": 197632,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "爱读书的孩子们邀请新朋友一起看书。",
+        "en": "Children who enjoy reading invite another friend to join."
+      },
+      "style": "soft pastel drawing",
+      "kind": "idiom",
+      "reference": "近朱者赤"
+    },
+    {
+      "id": "peaches-plums",
+      "sourceFile": "exec-58de9094-caf7-41e2-9720-859881e0d76e.png",
+      "sourceSha256": "4d08bd69ed834044aa326db292b4bc6f93e1b3a334ba17d43dceda2c4395b049",
+      "src": "images/lessons/idioms-2/peaches-plums.webp",
+      "sha256": "bf722eef8f6cfb6f7161377629e14215719fbce437bff47dc3c7c5754de0a0fb",
+      "bytes": 174700,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "两个朋友交换桃子和李子，一起笑了。",
+        "en": "Two friends exchange peaches and plums with warm smiles."
+      },
+      "style": "hand-painted gouache",
+      "kind": "idiom",
+      "reference": "投桃报李"
+    },
+    {
+      "id": "water-stone",
+      "sourceFile": "exec-9fd9ec0b-3b67-43b9-9ad3-95926c42d82d.png",
+      "sourceSha256": "ec6e1337a568c98556f209518d6a872d0fd299212fce2fb251bc7d0fb053046d",
+      "src": "images/lessons/idioms-2/water-stone.webp",
+      "sha256": "88e43132d95eb6fd67ee3de62ed6d5142592338e2f1414cf177f0b0e098e27c4",
+      "bytes": 172314,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "一滴水落在石头上，石头已有一个磨出的深凹。",
+        "en": "A drop falls into a hollow gradually worn into stone."
+      },
+      "style": "observational watercolor",
+      "kind": "idiom",
+      "reference": "滴水穿石"
+    },
+    {
+      "id": "joy-in-enough",
+      "sourceFile": "exec-9bda26b7-5789-407c-b446-2a6150c64b7e.png",
+      "sourceSha256": "67170f9323163deb47a36060e0b08f5f8924ed0e3281422d87b696ce8b247fc4",
+      "src": "images/lessons/idioms-2/joy-in-enough.webp",
+      "sha256": "893e402ef848f0c8370031539c2bc46083cbf625b80cf399cdc02dc592f9100b",
+      "bytes": 186812,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "小女孩用旧积木搭出一座小桥，开心地看着它。",
+        "en": "A girl smiles at the bridge she built with old blocks."
+      },
+      "style": "warm colored-pencil drawing",
+      "kind": "idiom",
+      "reference": "知足常乐"
+    },
+    {
+      "id": "bow-reflection",
+      "sourceFile": "exec-78e3e60a-a6dc-4a6e-a3fb-63b5a4aaf6a0.png",
+      "sourceSha256": "b2a0b9ee92cbb6745119698275466a1e4d3dfe2cafa2f82b2c50cdbb010c276e",
+      "src": "images/lessons/idioms-2/bow-reflection.webp",
+      "sha256": "71940efcb25406aa979a23febb2ec41902b8c7336d0bdab91aa57250ca51f9f4",
+      "bytes": 139428,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "主人指着墙上的弓，客人发现杯里的影子来自那张弓。",
+        "en": "The host shows that the cup's reflection comes from the bow on the wall."
+      },
+      "style": "delicate ink and watercolor",
+      "kind": "idiom",
+      "reference": "杯弓蛇影"
+    },
+    {
+      "id": "local-customs",
+      "sourceFile": "exec-415e33b4-bf43-4f76-a9fe-6fea1dd3c193.png",
+      "sourceSha256": "108c147c2af395386e2d70ee25329e123c12eda4af1a5264cfa9feea94c30df5",
+      "src": "images/lessons/idioms-2/local-customs.webp",
+      "sha256": "acaa600c1111c812977e79b0abdd2fd82407a0848eadbd2367264c649aa854d6",
+      "bytes": 79572,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "小客人看见门口的鞋架，也脱下自己的鞋子。",
+        "en": "A guest follows the home's custom of taking shoes off."
+      },
+      "style": "matte clay-animation still",
+      "kind": "idiom",
+      "reference": "入乡随俗"
+    },
+    {
+      "id": "boat-mark",
+      "sourceFile": "exec-39d2123b-5ecd-4d96-9522-a9dc531adbea.png",
+      "sourceSha256": "90beb680c1495690b20202962ee586f626cc6745782752df43b4211c667b8655",
+      "src": "images/lessons/idioms-2/boat-mark.webp",
+      "sha256": "dbfc696eff347ce66c2b0e6b937c40874603dd5faa35c6fd2872ce10e46f0b64",
+      "bytes": 280718,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "船已向前走，剑留在河底，船上的刻痕也跟着移动。",
+        "en": "The boat and its mark move ahead while the sword remains on the riverbed."
+      },
+      "style": "blue and terracotta woodblock print",
+      "kind": "idiom",
+      "reference": "刻舟求剑"
+    },
+    {
+      "id": "heart-far",
+      "sourceFile": "exec-248fdff3-b2d6-47b7-8941-7a23ce3f5554.png",
+      "sourceSha256": "c7de18e442eb8a78dc5e02182254d56f7f927025c70f1c44c84b3721bfae7ef4",
+      "src": "images/lessons/scripture/heart-far.webp",
+      "sha256": "e388ae5e0289f5fca6e3ce95e44cc4a719baf1eb4a50fe20eb2bc8f65aeb9464",
+      "bytes": 156408,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "站在祷告之处的人，目光和脚步却朝向远方。",
+        "en": "A person near a place of prayer turns their gaze and steps away."
+      },
+      "style": "editorial cut-paper collage",
+      "kind": "scripture",
+      "reference": "MAT.15.8"
+    },
+    {
+      "id": "listen-with-heart",
+      "sourceFile": "exec-b452c66f-f3ec-4bac-91ee-6b3b1d73fed8.png",
+      "sourceSha256": "032ce40b3811122e20f51e49b7b9bd666fd0dce33e88a10731b7a3c476aff3be",
+      "src": "images/lessons/scripture/listen-with-heart.webp",
+      "sha256": "1fb605985c81951563dfec2394825b4d0d60b98138cbaa18d74bd5d46be6464f",
+      "bytes": 144372,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子和大人坐在一起，专心听老师讲道。",
+        "en": "A child and adults listen attentively to the teacher."
+      },
+      "style": "historical watercolor",
+      "kind": "scripture",
+      "reference": "MAT.13.9"
+    },
+    {
+      "id": "love-enemies",
+      "sourceFile": "exec-e9f9f7ca-4166-48d9-8848-990642f63f37.png",
+      "sourceSha256": "c498ccf5fb5442d3f1a46bc06d5e3dcfa919b6f7f6b4a8095a27287b158a171d",
+      "src": "images/lessons/scripture/love-enemies.webp",
+      "sha256": "e897b708f60528d5099a6ea837bb1ad2980014ee664c87a0599c05a0ed81b960",
+      "bytes": 129130,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子把水递给曾对自己不友好的同伴。",
+        "en": "A child offers water to someone who had been unkind."
+      },
+      "style": "warm pencil and gouache",
+      "kind": "scripture",
+      "reference": "MAT.5.44"
+    },
+    {
+      "id": "shared-sun-rain",
+      "sourceFile": "exec-4b61f03e-12e9-42f8-bd35-ec7d939a8736.png",
+      "sourceSha256": "aeac68ddb18a4cb8b49dc92944b322324c68925e48fe4f252dcd322a52e3e041",
+      "src": "images/lessons/scripture/shared-sun-rain.webp",
+      "sha256": "f7b8e7315b04b0398a65e4eaa8d2ebfaa6842bc1a2ca572e23ce2db6f64098e0",
+      "bytes": 161214,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "阳光和细雨同样落在两家的花园里。",
+        "en": "The same sunlight and rain reach neighboring gardens."
+      },
+      "style": "layered paper landscape",
+      "kind": "scripture",
+      "reference": "MAT.5.45"
+    },
+    {
+      "id": "becoming-like-light",
+      "sourceFile": "exec-1d9939c3-8044-4c2d-8b4d-064e995ff33b.png",
+      "sourceSha256": "6bce80dd33b02f72b8749e29bfd89327ace613664a2143f34aeb97ea1a561ecb",
+      "src": "images/lessons/scripture/becoming-like-light.webp",
+      "sha256": "54d3d01a651527315856606b11917da87bd6587bf753361f1779adb1f9c455d9",
+      "bytes": 129396,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "窗边的镜子返照光亮，光也照在人的脸和手上。",
+        "en": "A mirror reflects window light onto a person's face and hands."
+      },
+      "style": "luminous impressionist gouache",
+      "kind": "scripture",
+      "reference": "2CO.3.18"
+    },
+    {
+      "id": "love-first",
+      "sourceFile": "exec-550f65ab-c664-4a15-b168-4d1ab55aade2.png",
+      "sourceSha256": "26afe2b28dedea7760fee4ec29b51b66e9918b9f79221eb67e9a8dfd3597294f",
+      "src": "images/lessons/scripture/love-first.webp",
+      "sha256": "25c24b5a18bbef539faecfe07c30488f3e7f15864cefb3a8f556f3bce4ebf14c",
+      "bytes": 182964,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子先得到拥抱，又向身旁的同伴伸出手。",
+        "en": "A child receives an embrace and reaches out to a friend."
+      },
+      "style": "warm fabric collage",
+      "kind": "scripture",
+      "reference": "1JN.4.19"
+    },
+    {
+      "id": "keep-praying",
+      "sourceFile": "exec-d457b8ca-4d67-48ed-a58c-88509a613cc4.png",
+      "sourceSha256": "5fb7eb0ce4d9d957d8e360081a3251f00706651a57ec5561c0f2ab0bd69701d4",
+      "src": "images/lessons/scripture/keep-praying.webp",
+      "sha256": "51e6266752928a67b05beafb065a1e8b5f25a9f8f320b56668bf44e2892768d0",
+      "bytes": 118060,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "天快亮了，孩子仍安静地祷告。",
+        "en": "At dawn, a child continues to pray calmly."
+      },
+      "style": "quiet watercolor nocturne",
+      "kind": "scripture",
+      "reference": "LUK.18.1"
+    },
+    {
+      "id": "joy-ahead",
+      "sourceFile": "exec-4c6d8b9f-5178-4406-8826-3826935a5e9d.png",
+      "sourceSha256": "f266c67de512531bed90e0bbb2290471e3181b842c2eb97c8e59916340c41bdd",
+      "src": "images/lessons/scripture/joy-ahead.webp",
+      "sha256": "02d77c2c2efecacbb2112e1334ef5d97845ab26a3a140f6ed822cc0bbb4518c0",
+      "bytes": 274208,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "背负十字架的耶稣沿山路前行，前方有晨光。",
+        "en": "Jesus carries the cross along a hillside path toward morning light."
+      },
+      "style": "restrained woodcut with sunrise color",
+      "kind": "scripture",
+      "reference": "HEB.12.2"
+    },
+    {
+      "id": "courage-love-judgment",
+      "sourceFile": "exec-66e8cb00-64cb-44f1-95ad-a0c76b905ca0.png",
+      "sourceSha256": "c2dc67df6da0f79e945e2710e2bd8164f64e62099517cb563e0ec208cf3eb629",
+      "src": "images/lessons/scripture/courage-love-judgment.webp",
+      "sha256": "5132125a9b9323032b0c5d3dc9cb5d23fa6965018f6d5d36baf2ae10d8d12520",
+      "bytes": 183978,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "孩子稳住脚步，细心帮助更小的同伴走过石头小路。",
+        "en": "A child carefully helps a younger friend along a stone path."
+      },
+      "style": "pastel and pencil",
+      "kind": "scripture",
+      "reference": "2TI.1.7"
+    },
+    {
+      "id": "meet-people",
+      "sourceFile": "exec-cf4f830a-1946-4325-806d-f2d03287a7a8.png",
+      "sourceSha256": "a7adef5ad79533e856bbd30eca56a801fd143fc8fd33869fc3647a5842e59a7c",
+      "src": "images/lessons/scripture/meet-people.webp",
+      "sha256": "dfce1e70f57deb823fe79d5241c0c996f04826c9300e39887bbefd8c5f89efae",
+      "bytes": 198622,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "旅人蹲下来，与坐着的人平视交谈。",
+        "en": "A traveler kneels to speak at a seated person's eye level."
+      },
+      "style": "historical paper collage",
+      "kind": "scripture",
+      "reference": "1CO.9.22"
+    },
+    {
+      "id": "share-good-news",
+      "sourceFile": "exec-441a128f-2c5d-4800-9d7b-a82455cbc3eb.png",
+      "sourceSha256": "0a892cba0b4bac55a1637dabac9273b5855fc177e856bde9dd1afa976021a322",
+      "src": "images/lessons/scripture/share-good-news.webp",
+      "sha256": "cb9d790e4d71dca4c345baeb10bfe101b6a73b1ac95a231180b206f56b8a044e",
+      "bytes": 121026,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "人们围坐在简单的桌边，一起听、一起分享。",
+        "en": "People gather at a simple table to listen and share together."
+      },
+      "style": "warm tempera painting",
+      "kind": "scripture",
+      "reference": "1CO.9.23"
+    },
+    {
+      "id": "look-forward",
+      "sourceFile": "exec-e67af32f-68a4-497f-b947-31898b32747c.png",
+      "sourceSha256": "6afb167f4b4b429a5b8da3c7924d615155a83943ba2effcb696c333ca86d3943",
+      "src": "images/lessons/scripture/look-forward.webp",
+      "sha256": "27600aa0a3796860d5c6d549f2caf5341dfcb549845355a7bfa7bf77997b6222",
+      "bytes": 265766,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "行路的人望向新的方向，旧路的脚印留在身后。",
+        "en": "A traveler looks ahead while old footprints remain behind."
+      },
+      "style": "poetic linocut print",
+      "kind": "scripture",
+      "reference": "ISA.43.18"
+    },
+    {
+      "id": "new-way-river",
+      "sourceFile": "exec-c4753685-6295-406f-88ba-62c7e32b8b3e.png",
+      "sourceSha256": "43a3588f789855ef416a70ed1214ea9817ad9b4f91db6047153ca5a4182d24e1",
+      "src": "images/lessons/scripture/new-way-river.webp",
+      "sha256": "987fae9e6229de6c7e8eca4ff7b845b423a663f24137f1a40a09d4620fc93f7b",
+      "bytes": 228616,
+      "width": 960,
+      "height": 720,
+      "alt": {
+        "zh": "干旱的山谷里有了河流，水边长出绿色嫩芽。",
+        "en": "A river opens through a dry valley with green shoots along its banks."
+      },
+      "style": "luminous watercolor",
+      "kind": "scripture",
+      "reference": "ISA.43.19"
+    }
+  ]
+}

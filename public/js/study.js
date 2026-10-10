@@ -7,6 +7,7 @@ import {studyUnits} from './units.js';
 import * as dictionary from './dictionary.js';
 import * as english from './english.js';
 import {picture} from './wordpanel.js';
+import {illustrationFigure} from './illustrations.js';
 import {t, pick} from './strings.js';
 
 const $ = id => document.getElementById(id);
@@ -167,6 +168,9 @@ export function createStudy(app) {
       line.append(header, text);
       reading.append(line);
     }
+
+    const illustration = illustrationFigure(lesson.id, verse().id, {study: true});
+    if (illustration) reading.append(illustration);
 
     $('study-listen').disabled = !current.en;
     $('study-listen').textContent = t(mode === 'parts' ? 'listenBothPart' : 'listenBothVerse');
