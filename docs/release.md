@@ -1,5 +1,21 @@
 # 发布与验收记录
 
+## 2026-10-09 · 成语与经文插图（默认收起）、课程导航与界面语言
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/> |
+| 部署的 commit | `b1b6784` Merge pull request #16（含 #14 WEB 经文配音、#15 插图与导航）；已在 `origin/main` |
+| 部署版本 | `c3790b79-95dd-40ff-aeae-8273f80a625b`（本机 `npm run deploy`） |
+| 发布内容 | 两辑成语搭配经文改用 WEB 文本与中英经文配音；首页可直接进入 `/class`，课程页只显示周选择、课文卡片与作业；界面语言辅助先读的语言。插图 39 张用于 39 个阅读单元（两辑共 15 个成语、15 节搭配经文、《种子与好土》9 节），默认收起，点「显示图」/ Show picture 才展开并加载；《爱的篇章》和画抽象概念效果不好的 17 张审图后删去。共 118 个新增或变更的静态资源 |
+| 可回退版本 | `a1247fd0-4bc2-475a-b2f6-4353b5498dd7`；`npx wrangler rollback a1247fd0-4bc2-475a-b2f6-4353b5498dd7` |
+
+验证：
+
+- 部署前 `npm run validate` 通过；部署后 `LANG_API_URL=https://lang.lucasacademy.org npm run check:english` 通过。
+- 线上 `js/illustrations.js`、`js/strings.js`、`lessons/illustrations.js` 与 main 逐字节相同；39 张插图均返回 200，字节数与记录一致；删去的图返回 404。
+- 浏览器：《种子与好土》第 1 段 4 张插图默认收起、未加载，点开后加载并显示（960 px）；《爱的篇章》不显示插图。控制台只有 Cloudflare Insights 信标被 CSP 拦截的报错，与本次发布无关。
+
 ## 2026-10-07 · 成语第二辑与两辑经文视角
 
 | 项目 | 记录 |
