@@ -3,6 +3,7 @@
 import assert from 'node:assert/strict';
 import {readFile, readdir, stat} from 'node:fs/promises';
 import {existsSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {join, relative, extname} from 'node:path';
 import {lessons as registry, categories} from '../public/lessons/index.js';
@@ -10,6 +11,7 @@ import {PASSAGES, MAX_VERSES, isAllowedPassage} from '../public/lessons/passages
 import {scriptureRequests} from '../public/js/scripture.js';
 import {englishBasic} from '../public/lessons/english-basic.js';
 import {chineseClauses, chineseUnits, fingerprint} from '../public/js/units.js';
+import {WEB_TRANSLATION, WEB_ENGLISH} from '../public/lessons/scripture-web.js';
 
 const ENGLISH_WORDS = /[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu;
 
@@ -66,7 +68,10 @@ for (const lesson of lessons) {
     for (const v of lesson.verses) {
       if (v.ref !== undefined) {
         const m = /^([1-3]?[A-Z]{2,3})\.(\d{1,3})\.(\d{1,3})$/.exec(v.ref);
-        check(fetchesScripture && v.en === undefined, `${tag}: ${v.id} names a verse, so only poems or idioms may, and without English of its own`);
+        const bundled = lesson.scriptureTranslation?.id === 'WEB';
+        check(fetchesScripture && (bundled ? v.en === WEB_ENGLISH[v.ref] && !!v.en : v.en === undefined),
+          `${tag}: ${v.id} needs exact bundled WEB English or runtime NIV English`);
+        if (bundled) check(lesson.scriptureTranslation === WEB_TRANSLATION, `${tag}: bundled scripture needs the WEB Classic source and public-domain credit`);
         check(m && isAllowedPassage(`${m[1]}.${Number(m[2])}`, Number(m[3])), `${tag}: ${v.id} names ${v.ref}, which passages.js does not list`);
         continue;
       }
@@ -150,6 +155,25 @@ for (const lesson of lessons) {
       const file = join(pub, lesson.audio, '..', c.src);
       const info = existsSync(file) ? await stat(file) : null;
       check(info && info.size > 2000, `${tag}: clip file ${c.src} is missing or empty`);
+      if (c.ref && verse) {
+        const text = c.language === 'zh' ? verse.tokens.join('') : verse.en;
+        check(c.ref === verse.ref && c.unitId === 'whole' && c.speed === 0.85,
+          `${tag}: scripture clip ${key} must match its whole verse at speed 0.85`);
+        check(c.translation === (c.language === 'zh' ? 'CUV' : 'WEB'), `${tag}: scripture clip ${key} has the wrong translation`);
+        check(c.provenance?.kind === 'reuse' ? c.provenance.status === 'published' : c.provenance?.status === 'checked',
+          `${tag}: scripture clip ${key} lacks published reuse or checked-take provenance`);
+        if (c.provenance?.kind === 'generated') {
+          const homophone = c.language === 'en' && c.ref === 'MAT.5.45' && c.provenance.wordExact === false &&
+            c.provenance.wordSoundExact === true && c.provenance.qaPolicy === 'web-exact-word-sounds/1' &&
+            JSON.stringify(c.provenance.homophones) === JSON.stringify([{expected: 'sun', recognized: 'son', ipa: '/sʌn/'}]);
+          check(c.language === 'zh' ? c.provenance.syllableExact === true : c.provenance.wordExact === true || homophone,
+            `${tag}: scripture clip ${key} must pass exact syllable/word checking`);
+        }
+        check(text && fingerprint(text) === c.textHash && createHash('sha256').update(text).digest('hex') === c.textSha256,
+          `${tag}: scripture clip ${key} was checked on different text`);
+        if (info) check(info.size === c.bytes && createHash('sha256').update(await readFile(file)).digest('hex') === c.sha256,
+          `${tag}: scripture clip ${key} has changed bytes`);
+      }
       if (verse && c.language === 'zh') {
         const text = c.unitId === 'whole' ? verse.tokens.join('') : chineseUnits(lesson, verse).find(u => u.id === c.unitId)?.zh;
         check(text && fingerprint(text) === c.textHash, `${tag}: clip ${key} was recorded from different Chinese text`);
@@ -166,6 +190,8 @@ for (const lesson of lessons) {
   if (!lesson.passage) {
     const english = new Set(lesson.verses.filter(v => v.en).flatMap(v => (v.en.match(ENGLISH_WORDS) || []).map(w => w.toLowerCase())));
     const glossed = [...english].filter(w => lesson.aliases[w] || englishBasic[w]).length;
+    if (lesson.kind === 'idioms') check(glossed === english.size,
+      `${tag}: every English word needs a Chinese meaning: ${[...english].filter(w => !lesson.aliases[w] && !englishBasic[w]).join(', ')}`);
     summary.push(`${lesson.title.zh}: ${glossed} of ${english.size} distinct English words have a Chinese meaning`);
   }
   if (lesson.id === 'love') {

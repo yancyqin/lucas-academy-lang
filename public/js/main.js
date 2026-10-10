@@ -197,7 +197,7 @@ function afterEnglish() {
 function renderSources() {
   const lesson = state.lesson;
   const scripture = !lesson.sources || lesson.verses.some(v => v.ref);
-  const credit = scripture ? english.credit() : null;
+  const credit = scripture ? english.credit(lesson) : null;
   $('scripture-links').hidden = !scripture;
   $('story-links').hidden = !lesson.sources;
   if (lesson.sources) {
@@ -214,7 +214,10 @@ function renderSources() {
     $('copyright').textContent = credit?.copyright || '';
   }
   if (!scripture) return;
-  if (credit?.youVersionDeepLink?.startsWith('https://')) $('youversion-link').href = credit.youVersionDeepLink;
+  const englishSource = $('youversion-link');
+  englishSource.textContent = credit?.id === 'WEB' ? 'WEB Classic' : 'YouVersion';
+  englishSource.href = credit?.id === 'WEB' ? credit.source
+    : credit?.youVersionDeepLink?.startsWith('https://') ? credit.youVersionDeepLink : 'https://www.bible.com/versions/111';
   $('chinese-source').href = lesson.chineseSource;
 }
 
