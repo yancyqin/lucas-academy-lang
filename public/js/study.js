@@ -42,10 +42,8 @@ export function createStudy(app) {
 
   function renderTeacher() {
     const text = $('study-teach-text');
-    text.textContent = teacher === 'zh'
-      ? '这次你来教中文。选这句里的一个词，说说它的意思。'
-      : 'Your turn to teach English. Pick a word in this sentence and explain it.';
-    text.lang = teacher === 'zh' ? 'zh-CN' : 'en';
+    text.textContent = t('teach_' + teacher);
+    text.lang = document.documentElement.lang;
   }
 
   function hideWord() {
@@ -125,7 +123,7 @@ export function createStudy(app) {
     $('study-parts').setAttribute('aria-pressed', String(mode === 'parts'));
     $('study-parts').disabled = !data.parts.length;
     $('study-parts').title = t({loading: 'partsLoading', changed: 'partsChanged', unavailable: 'partsUnavailable'}[data.reason] || 'partsReady');
-    $('study-flip').textContent = (first === 'zh' ? '中文在前' : 'English first') + ' ⇅';
+    $('study-flip').textContent = t('first_' + first) + ' ⇅';
     $('study-pinyin').checked = app.state.pinyin;
 
     $('study-angle').hidden = !verse().angle;

@@ -1,6 +1,5 @@
 /* 课程表 · /class. Shares the header, fonts and colours of app.css. */
 .class-page{max-width:760px;margin:0 auto;padding:40px 24px 80px}
-.class-intro{color:var(--muted);font-size:14px;margin:0 0 22px}
 .class-note{color:#9c4f37;font-size:13px;margin:0 0 14px}
 .pill-label{margin:0 0 8px}
 .pills{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px}

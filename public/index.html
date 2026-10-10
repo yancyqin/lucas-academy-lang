@@ -10,10 +10,10 @@
   <link rel="stylesheet" href="styles/app.css">
   <link rel="stylesheet" href="styles/study.css">
 </head>
-<body>
+<body class="reader-body">
   <a class="skip" href="#reading" data-i18n="skip">跳到课文</a>
   <header class="site-header">
-    <a class="brand" href="./"><span class="brand-name" data-i18n="name">语言的桥</span><span class="brand-sub" data-i18n="tagline">你教我，我教你</span></a>
+    <div class="header-home"><a class="brand" href="./"><span class="brand-name" data-i18n="name">语言的桥</span><span class="brand-sub" data-i18n="tagline">你教我，我教你</span></a><a class="class-link" href="/class" data-i18n="classLink">课程表</a></div>
     <div class="header-right"><span class="academy">LUCAS ACADEMY · LANG</span><button id="flip" class="order-button" type="button" aria-describedby="order-hint"><span id="flip-label">中文在前</span> <span class="order-icon" aria-hidden="true">⇅</span></button><span id="order-hint" class="visually-hidden" data-i18n="orderHint">每一节先读这种语言，再读另一种。点一下，交换先后顺序。</span><button id="hide-second" class="hide-button" type="button" aria-pressed="true" aria-describedby="hide-hint" data-i18n="hideSecond">遮住英文</button><span id="hide-hint" class="visually-hidden" data-i18n="hideHint">打开后，英文先遮住：想一想，再点一下看。</span><button id="open-wordbook" type="button"><span data-i18n="wordbook">生词本</span> <span id="word-count">0</span></button></div>
   </header>
   <div id="workspace" class="workspace">

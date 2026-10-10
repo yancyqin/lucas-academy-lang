@@ -12,6 +12,11 @@
 .noscript{max-width:640px;margin:40px auto;padding:0 20px;font-size:16px}
 /* On phones the tools panel spans the toolbar instead of hanging off its summary, which ran past a 320 px screen. */
 @media(max-width:700px){.reading-toolbar{position:relative}.tools{position:static}.tools-content{left:0;right:0;width:auto}}
+/* The homepage class link shares the brand row on phones. */
+.reader-body .site-header{flex-wrap:wrap}
+.header-home{display:flex;align-items:center;gap:24px}
+.class-link{display:inline-flex;align-items:center;justify-content:center;min-height:44px;font-size:13px;font-weight:600;white-space:nowrap}
+@media(max-width:700px){.header-home{width:100%;justify-content:space-between;gap:12px}}
 /* Which language comes first: one button at the top of the page, named after that language. */
 .order-button{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent);background:var(--soft);border-color:#c9d8c7;white-space:nowrap}.order-button:hover{background:#dfe9dc}.order-icon{font-size:17px;line-height:1}
 .visually-hidden{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
