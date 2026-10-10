@@ -6,7 +6,7 @@
 // - every aligned verse splits into its clauses and rebuilds both languages
 //   exactly; changed or missing English falls back to the whole verse;
 // - every English narration clip was recorded from today's English;
-// - no file in this repository contains the English text (file names only are
+// - no file in this repository contains licensed NIV text (file names only are
 //   printed — the text itself stays in memory).
 import assert from 'node:assert/strict';
 import {readFile, readdir} from 'node:fs/promises';
@@ -64,7 +64,9 @@ for (const entry of registry) {
         checkedClips += 1;
       }
     }
-    lines.push(`${lesson.title.zh}: public-domain English in the lesson` + (fetched ? `; ${fetched} scripture verses fetched` : ', not fetched') + `; ${checkedClips} English clips match the text`);
+    lines.push(`${lesson.title.zh}: public-domain English in the lesson` +
+      (lesson.scriptureTranslation?.id === 'WEB' ? `; ${lesson.verses.filter(v => v.ref).length} WEB Classic verses bundled` : fetched ? `; ${fetched} NIV scripture verses fetched` : ', not fetched') +
+      `; ${checkedClips} English clips match the text`);
     continue;
   }
   const english = new Map();
@@ -139,4 +141,4 @@ for (const file of await walk(root)) {
   if ([...sentences].some(sentence => text.includes(sentence))) leaks.push(relative(root, file));
 }
 assert.deepEqual(leaks, [], `English text found in: ${leaks.join(', ')}`);
-console.log('PASS\n' + lines.map(l => '- ' + l).join('\n') + `\n- No English sentence found in the repository (${sentences.size} sentences and clauses checked)`);
+console.log('PASS\n' + lines.map(l => '- ' + l).join('\n') + `\n- No licensed NIV sentence found in the repository (${sentences.size} sentences and clauses checked)`);

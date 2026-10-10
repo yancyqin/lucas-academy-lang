@@ -1,6 +1,7 @@
+import {WEB_TRANSLATION, WEB_ENGLISH} from '../scripture-web.js';
 import {units} from './text.js';
 import {questions} from './study.js';
-import {words, connectors, extra} from './words.js';
+import {words, connectors, extra, scriptureAliases} from './words.js';
 
 const dict = {};
 const aliases = {};
@@ -10,7 +11,9 @@ for (const [list, small] of [[words, false], [connectors, true], [extra, false]]
     for (const alias of english) aliases[alias] = word;
   }
 }
-const verses = units.map((unit, i) => ({id: `idioms-2.${i + 1}`, n: i + 1, ...unit}));
+Object.assign(aliases, scriptureAliases);
+
+const verses = units.map((unit, i) => ({id: `idioms-2.${i + 1}`, n: i + 1, ...unit, ...(unit.ref ? {en: WEB_ENGLISH[unit.ref]} : {})}));
 const study = Object.fromEntries(verses.map((verse, i) => [verse.id, {question: questions[i]}]));
 
 // [length, Chinese title, English title, Chinese source intro, English source intro]
@@ -56,14 +59,15 @@ const sections = parts.map(([length, zh, en, introZh, introEn], i) => {
 });
 
 export default {
+  scriptureTranslation: WEB_TRANSLATION,
   id: 'idioms-2', kind: 'idioms',
   title: {zh:'成语 · 第二辑', en:'Idioms · Set 2'},
   reference: {zh:'十个成语：说话、待人和看事情', en:'Ten idioms about words, kindness and perspective'},
   chineseSource: 'https://b.ibible.hk/',
   sources: {
     note: {
-      zh:'成语出处见下方古籍与词典链接。口蜜腹剑、对牛弹琴、杯弓蛇影、刻舟求剑改写古书里的故事；投桃报李和滴水穿石写诗句或比喻的画面；其余四篇是本项目写的生活小故事，不是古籍中的人物故事。中英文均由 Lucas Academy 为孩子重写。经文中文为公版和合本，英文 NIV 在阅读时请求。',
-      en:'Sources are linked below. Four tales retell ancient accounts: honeyed words, music for a cow, the snake reflection, and the lost sword. Peaches and plums and drops on stone illustrate a poetic image or comparison. The other four scenes are original everyday stories, not ancient accounts. Both languages are written for children by Lucas Academy. Scripture uses public-domain Chinese Union Version; English NIV is requested when reading.',
+      zh:'成语出处见下方古籍与词典链接。口蜜腹剑、对牛弹琴、杯弓蛇影、刻舟求剑改写古书里的故事；投桃报李和滴水穿石写诗句或比喻的画面；其余四篇是本项目写的生活小故事，不是古籍中的人物故事。中英文均由 Lucas Academy 为孩子重写。经文中文为公版和合本，英文为公版 WEB Classic（2020 stable text），随课文提供。',
+      en:'Sources are linked below. Four tales retell ancient accounts: honeyed words, music for a cow, the snake reflection, and the lost sword. Peaches and plums and drops on stone illustrate a poetic image or comparison. The other four scenes are original everyday stories, not ancient accounts. Both languages are written for children by Lucas Academy. Scripture uses public-domain Chinese Union Version; English is the public-domain World English Bible Classic (2020 stable text), included with the lesson.',
     },
     links: [
       {label:{zh:'口蜜腹剑：《资治通鉴》卷215',en:'Hidden sword: Zizhi Tongjian 215'},href:'https://zh.wikisource.org/wiki/資治通鑑/卷215'},

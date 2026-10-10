@@ -12,8 +12,8 @@
 - 系列「东西方的奇幻之旅」：两本写奇异国度的经典放在一起读，都按 7–10 岁孩子重写成短句（中英文都是本项目改写，不是逐字翻译），全文可选，各标三小段「课堂共读」。
   - 《格列佛游记 · 小人国》：斯威夫特（1726）第一卷，格列佛自己讲，67 句分 11 小段；课堂共读第 6–12、20–26、32–38 句（被绑着醒来、搜口袋、鸡蛋大战）。
   - 《镜花缘 · 君子国和小人国》：李汝珍（清）第八、十至十二、十九回，64 句分 11 小段；课堂共读第 17–23、30–36、55–61 句（要加价的买家、多出来的银子、小人国）。
-- 「成语 · 第一辑」：十个成语（井底之蛙、守株待兔、愚公移山、亡羊补牢、拔苗助长、自相矛盾、塞翁失马、掩耳盗铃、一诺千金、盲人摸象），一个成语一小段：成语本身、两三句小故事、再配经文。经文解释引导孩子思想与神的关系；一诺千金有「神的应许」和「人的诚实」两个视角。故事的中英文都是本项目为孩子改写的；经文中文为公版和合本，英文 NIV 经 API 显示。做法见 [docs/idioms.md](docs/idioms.md)。只给 10 个成语本身配音（中文 fangfang、英文 Louise），小故事和经文暂不配音。
-- 「成语 · 第二辑」：口蜜腹剑、对牛弹琴、以德报怨、近朱者赤、投桃报李、滴水穿石、知足常乐、杯弓蛇影、入乡随俗、刻舟求剑。10 小段、53 单元；古籍故事、诗句或比喻的小场景、项目原创生活故事都在导语注明。中英短句、逐句问题与词典齐备，配 13 节经文（中文公版和合本、英文运行时取 NIV）。知足常乐用希伯来书 12:2 思想喜乐的根基。只给 10 个成语名称配音：中文 fangfang、英文 Louise，语速 0.75；故事和经文暂不配音。内容继续供评阅。
+- 「成语 · 第一辑」：十个成语（井底之蛙、守株待兔、愚公移山、亡羊补牢、拔苗助长、自相矛盾、塞翁失马、掩耳盗铃、一诺千金、盲人摸象），一个成语一小段：成语本身、两三句小故事、再配经文。经文解释引导孩子思想与神的关系；一诺千金有「神的应许」和「人的诚实」两个视角。故事的中英文都是本项目为孩子改写的；经文中文为公版和合本，英文为公版 WEB Classic（2020 stable text），随课文提供。做法见 [docs/idioms.md](docs/idioms.md)。成语名称配音语速 0.75，经文 Fangfang CUV / Louise WEB 整节配音语速 0.85；小故事保留系统试听。
+- 「成语 · 第二辑」：口蜜腹剑、对牛弹琴、以德报怨、近朱者赤、投桃报李、滴水穿石、知足常乐、杯弓蛇影、入乡随俗、刻舟求剑。10 小段、53 单元；古籍故事、诗句或比喻的小场景、项目原创生活故事都在导语注明。中英短句、逐句问题与词典齐备，配 13 节经文（中文公版和合本、英文为公版 WEB Classic 2020 stable text）。知足常乐用希伯来书 12:2 思想喜乐的根基。10 个成语名称配音：中文 fangfang、英文 Louise，语速 0.75；经文整节配音语速 0.85，小故事保留系统试听。
 - 系列「看得见的诗」：给三年级左右的孩子上一小时的课。每期三件作品画的是同一个画面：一首古诗、一首斯蒂文森的英文童诗（1885，公有领域）、一段经文，整期都在课上读。每件作品有一幅 art-lab 的「活画」：古诗是淡彩水墨，英文诗是油画，经文是水彩，孩子在画上用会动的画笔画。
   - 第一期《爬高一点，看远一点》：《登鹳雀楼》、Foreign Lands（第 1、4 节）、诗篇 121:1–2。
   - 第二期《小船去远方》：《早发白帝城》、Where Go the Boats?、以赛亚书 40:31。
@@ -32,13 +32,13 @@ cp .dev.vars.example .dev.vars   # 填入 YVP_APP_KEY（只在本机，已被 .g
 npm run dev                      # http://127.0.0.1:8197 ，含 /api/passage
 ```
 
-没有 `.dev.vars` 或没有网络时，中文、配音和所有工具照常可用，英文处显示原因和「重试英文」。
+没有 `.dev.vars` 时，中文、配音、工具和随课文提供的公版英文照常可用；需要 NIV 的英文处显示原因和「重试英文」。
 
 | 命令 | 作用 |
 | --- | --- |
 | `npm run dev` | Wrangler 本地运行 Worker + `public/` |
 | `npm run validate` | 离线校验：13 节 / 4·4·5 分段 / 43 短句拼回原文、每个单元的双语问题、词典与拼音全覆盖、配音 manifest（文件真实存在、时长、声音、中文 hash）、配图 manifest、`public/` 里没有密钥或不该发布的文件；故事课文另查英文排版与文字来源，并报告多少英文词能查到中文 |
-| `npm run check:english` | 连接英文接口（默认本地 dev；`LANG_API_URL=https://lang.lucasacademy.org` 查线上）：短句按当天英文精确拼回、改动/缺失时回退整句、英文配音 hash 与当天英文一致、仓库任何文件里都没有英文经文（故事课文的英文是公有领域，随课文提供，不请求） |
+| `npm run check:english` | 连接英文接口（默认本地 dev；`LANG_API_URL=https://lang.lucasacademy.org` 查线上）：短句按当天英文精确拼回、改动/缺失时回退整句、英文配音 hash 与当前英文一致、仓库任何文件里都没有受许可的 NIV 经文。公版故事和两辑 WEB 经文随课文提供，不请求 API |
 | `npm run deploy` | 先 validate，再 `wrangler deploy` |
 | `npm run images:list` | 从词条刷新配图清单 `docs/word-images.md` 与 `public/images/words/manifest.json` |
 
@@ -98,9 +98,11 @@ preview/  design/           # 本轮确认依据，不部署
 - `/class` 是课程表：先选年级，再选一周。`/class?g=3&w=1` 固定指向三年级第 1 周，上课前发群里、上完课发作业都用它。每周的数据在 `public/lessons/schedule.js`：年级、周号、标题、`readings`（整篇，或 `parts: [21, 22, 23]`；可以几篇混排）、`homework`，以及可选的 `date`（上课那天）。有日期时 `/class` 打开今天或之后最近的一周，没有就打开最后一周；年级记在 `lucas-lang.grade`，下次直接看自己年级。`validate` 检查年级、周号、课文 id、小段范围和双语文字，所以排错的课表不会部署出去。每周只改这一个文件。
 - 课文单元可以带 `angle: 'similar' | 'opposite' | 'related'`：阅读页和逐句学里显示一个「相似的视角 / 相反的视角 / 相关的视角」小标签，用于成语配的经文；没有这个字段的单元不显示任何东西。
 
-## 英文（NIV）
+## 英文经文（WEB Classic / NIV）
 
-英文经文有版权：Worker 用 `YVP_APP_KEY` 逐节向 YouVersion 请求（区间请求会返回无编号的整块，不能可靠拆开），每次最多 7 节，且只允许 `passages.js` 里登记的课文范围。服务端 edge cache 保存 30 天；返回给浏览器时 `Cache-Control: no-store`，页面只放在内存。版权信息集中显示在页尾「文字来源」，学习区不显示版本标签。
+两辑成语的 28 节英文经文使用 [World English Bible Classic（2020 stable text）](https://ebible.org/details.php?id=eng-web)，[公有领域](https://ebible.org/eng-web/copyright.htm)，从 Bible 项目已缓存的 `public/web/*.json` 按经文引用提取，保留原文用词与句读。`public/lessons/scripture-web.js` 记录版本、来源工作区快照（基底提交及每个源文件 SHA-256）；每节的 `en` 直接注册，离线、没有 Worker 或密钥时也可以读。页尾显示 WEB Classic 来源，不把这些经文送给 NIV API。
+
+原有两篇经文课文和诗词配的英文经文继续使用 NIV。英文经文有版权：Worker 用 `YVP_APP_KEY` 逐节向 YouVersion 请求（区间请求会返回无编号的整块，不能可靠拆开），每次最多 7 节，且只允许 `passages.js` 里登记的课文范围。服务端 edge cache 保存 30 天；返回给浏览器时 `Cache-Control: no-store`，页面只放在内存。版权信息集中显示在页尾「文字来源」，学习区不显示版本标签。
 
 生产密钥只放在 Worker secret：
 
@@ -167,14 +169,25 @@ npm run audio:publish -- happy-prince ../lucas-academy-media/data/processed/luca
   zh=../lucas-academy-media/outputs/fangfang/zh/lang-happy-prince en=../lucas-academy-media/outputs/louise/en/lang-happy-prince
 ```
 
-两辑成语按主人确认的范围，都只录每小段的第一句（成语名称），每辑中英各 10 条，中文 fangfang、英文 Louise，语速 0.75；小故事和经文保留系统试听。生成脚本时必须用：
+两辑成语的名称录音保持每辑中英各 10 条，中文 fangfang、英文 Louise，语速 0.75；小故事保留系统试听。生成名称配音脚本使用：
 
 ```bash
 node scripts/narration-scripts.mjs idioms-1 ../lucas-academy-media/data/processed/lucas-lang --idioms-only
 node scripts/narration-scripts.mjs idioms-2 ../lucas-academy-media/data/processed/lucas-lang --idioms-only
 ```
 
-`--omit-scripture` 可用于需要故事配音而不录经文的其他任务；两辑成语使用 `--idioms-only`，合成和检查重录都显式传 `--speed 0.75`。英文配音的文字 hash 也会在故事、诗词和成语这几类混合课文中检查。
+`--omit-scripture` 可用于需要故事配音而不录经文的其他任务；生成成语名称使用 `--idioms-only`，合成和检查重录显式传 `--speed 0.75`。英文配音的文字 hash 也会在故事、诗词和成语这几类混合课文中检查。
+
+两辑经文另用 Fangfang 中文、Louise 英文，语速 0.85。优先复用 `lucas-academy-bible` 已发布的 CUV / WEB Classic MP3：复制时核验源目录的发布状态、原文、SHA-256 与字节数，原文件保持不变；这 28 节中有 5 节的中英录音可直接复用，其余 23 节分别新录并逐音节 / 逐词机器检查。只导入已发布的原录音或当前文字、当前 WAV 已检查通过的新录音，不把机器检查记录成所有者人工试听。录音在 `public/audio/scripture/{zh,en}/`，文件名带内容 SHA-256；两个成语 manifest 绑定稳定单元 ID、经文引用、版本、屏幕文字 hash、文件 SHA 与来源。中文当前注释和文字保留，英文按 WEB Classic 精确原文录制。
+
+```bash
+# 只读源 Bible 项目，复用已发布录音；外部 JSON 可同时提供已检查新录音。
+node scripts/import-scripture-audio.mjs ../lucas-academy-bible /absolute/private/checked-takes.json
+```
+
+输入 JSON 是 `{clips:[{ref,language,wavPath,wavSha256,textHash,speed:0.85,qa:{status:"checked",policy,checkedAt,score,syllableExact:true,wordExact:true,issues:[]}}]}`；中文必须逐音节一致（`syllableExact:true`），英文逐词核对，实际 ASR 原文分数如实保留；中文同音字不要求识别器选字完全相同。马太福音 5:45 的识别结果把 sun 写成同音的 Son（都是 /sʌn/），单独记录 `web-exact-word-sounds/1`、`wordExact:false`、`wordSoundExact:true` 与这一处差异，保留原始分数 0.971；不把识别文字标为完全一致。私人 WAV、声音参考、识别全文均不进入仓库。切换经文、Stop 和播放失败沿用现有播放器；文字不一致时会回退系统试听。
+
+这一处同音核对见 Cambridge Dictionary 的 [sun](https://dictionary.cambridge.org/us/dictionary/english/sun) 和 [son](https://dictionary.cambridge.org/dictionary/english/son) 发音。
 
 `audio:publish` 去掉合成留下的首尾静音（保留 0.15 s 起音和 0.25 s 尾音），编码为单声道 32 kHz 48 kbps MP3（MPEG-1 Layer III，Safari / iPad 都能播放），并统计实际文件大小与时长；任何一条缺失或为空都会中止。
 

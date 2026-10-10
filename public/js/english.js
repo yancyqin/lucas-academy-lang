@@ -6,7 +6,7 @@
 // key) means no English this visit: say so once instead of asking again for
 // every section. A 502 or a dropped connection stays retryable.
 //
-// A public-domain story carries its own English (verse.en): it is registered
+// Public-domain WEB scripture and stories carry their English (verse.en), registered
 // once and never fetched. A lesson of poems carries its poems' English the
 // same way; only its scripture units (verse.ref, like 'PSA.121.1') are fetched.
 import {t} from './strings.js';
@@ -21,7 +21,7 @@ let attribution = null;
 const key = (lesson, section) => `${lesson.id}/${section.id}`;
 
 export const text = verseId => texts.get(verseId);
-export const credit = () => attribution;
+export const credit = lesson => lesson?.scriptureTranslation || attribution;
 
 export function register(lesson) {
   for (const verse of lesson.verses) if (typeof verse.en === 'string' && verse.en) texts.set(verse.id, verse.en);

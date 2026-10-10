@@ -48,7 +48,7 @@ for (const section of lesson.passage && !omitScripture && !idiomsOnly ? lesson.s
   for (const verse of (await response.json()).verses) english.set(verse.n, verse.text);
 }
 // A poem lesson's scripture units name their verse instead (ref, 'PSA.121.1').
-for (const verse of lesson.passage ? [] : verses.filter(v => v.ref)) {
+for (const verse of lesson.passage ? [] : verses.filter(v => v.ref && !v.en)) {
   const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref: verse.ref})}`);
   if (!response.ok) throw new Error(`/api/passage ${verse.ref} returned ${response.status}`);
   const found = (await response.json()).verses?.[0]?.text?.trim();

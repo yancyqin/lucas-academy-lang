@@ -3,7 +3,7 @@
 // null, English words that point here]
 // Pinyin follows the textbooks: 轻声 is marked, 一 and 不 change tone inside a
 // word, and a single 一 or 不 keeps its dictionary tone. Polyphones keep one
-// reading here (see text.js). The scripture's English is fetched (NIV), so its
+// reading here (see text.js). The scripture's English is bundled WEB Classic, so its
 // words point here too (sluggard, commander, mustard, fellowship …).
 export const words = [
   ["井底", "jǐng dǐ", "the bottom of a well", "井的最下面。", null, ["bottom"]],
@@ -416,3 +416,38 @@ extra.push(
   ["只要","zhǐ yào","simply; only need to","只需这样做。",null,["simply"]],
   ["再多","zài duō","beyond; more","还要增加的部分。",null,["beyond"]],
 );
+
+// Additional words in the exact public-domain WEB Classic verses.
+extra.push(
+  ["她","tā","she; her","说到的女孩子或女人；英文也把这里的蚂蚁叫作 her。",null,["her"]],
+  ["不信","bú xìn","unbelief","不相信，或者相信得不够。",null,["unbelief"]],
+  ["最","zuì","most","比其他的更突出。",null,["most"]],
+  ["手","shǒu","hand","用来拿东西的身体部分；at hand 这个说法表示很近了。",null,["hand"]],
+  ["所以","suǒ yǐ","therefore","前面说了原因，后面说因此该怎样。",null,["therefore"]],
+  ["看哪","kàn nǎ","behold","提醒大家留心看、留心听。",null,["behold"]],
+  ["早","zǎo","early","在前面的时候。",null,["early"]],
+  ["晚","wǎn","late","在后面的时候。",null,["late"]],
+  ["雨","yǔ","rain","从云里落下来的水滴。",null,["rain"]],
+  ["让","ràng","let","允许，或者请某人去做。",null,["let"]]
+);
+
+export const scriptureAliases = {
+  "having": "有",
+  "chief": "元帅",
+  "provides": "预备",
+  "bread": "食物",
+  "certainly": "实在",
+  "grain": "一粒",
+  "precious": "宝贵",
+  "fruit": "出产",
+  "receives": "得",
+  "don’t": "不",
+  "righteous": "公义",
+  "cleanse": "洗净",
+  "yahweh": "耶和华",
+  "fail": "撇下",
+  "neither": "也不",
+  "more": "再多",
+  "dimly": "模糊不清",
+  "also": "也"
+};

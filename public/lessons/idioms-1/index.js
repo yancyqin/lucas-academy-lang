@@ -1,6 +1,7 @@
+import {WEB_TRANSLATION, WEB_ENGLISH} from '../scripture-web.js';
 import {units} from './text.js';
 import {questions} from './study.js';
-import {words, connectors, extra} from './words.js';
+import {words, connectors, extra, scriptureAliases} from './words.js';
 
 const dict = {};
 const aliases = {};
@@ -11,7 +12,9 @@ for (const [list, small] of [[words, false], [connectors, true], [extra, false]]
   }
 }
 
-const verses = units.map((unit, i) => ({id: `idioms-1.${i + 1}`, n: i + 1, ...unit}));
+Object.assign(aliases, scriptureAliases);
+
+const verses = units.map((unit, i) => ({id: `idioms-1.${i + 1}`, n: i + 1, ...unit, ...(unit.ref ? {en: WEB_ENGLISH[unit.ref]} : {})}));
 const study = Object.fromEntries(verses.map((verse, i) => [verse.id, {question: questions[i]}]));
 
 // Section ids stay stable when reading ranges change.
@@ -43,13 +46,14 @@ const sections = [
 export default {
   id: 'idioms-1',
   kind: 'idioms',
+  scriptureTranslation: WEB_TRANSLATION,
   title: {zh: '成语 · 第一辑', en: 'Idioms · Set 1'},
   reference: {zh: '十个成语，各配一点圣经', en: 'Ten idioms, each with a little scripture'},
   chineseSource: 'https://b.ibible.hk/',
   sources: {
     note: {
-      zh: '十个成语都出自公有领域的古书（《庄子》《韩非子》《列子》《战国策》《孟子》《淮南子》《吕氏春秋》《史记》和佛经），小故事的中英文都是 Lucas Academy 为孩子改写的。经文的中文是公版和合本（1919），英文是 NIV。',
-      en: 'The ten idioms come from public-domain classics (the Zhuangzi, Han Feizi, Liezi, Strategies of the Warring States, Mencius, Huainanzi, Lüshi Chunqiu, Records of the Grand Historian and a Buddhist sutra); the little stories are retold for children by Lucas Academy in both languages. Scripture: Chinese Union Version (1919); English NIV.',
+      zh: '十个成语都出自公有领域的古书（《庄子》《韩非子》《列子》《战国策》《孟子》《淮南子》《吕氏春秋》《史记》和佛经），小故事的中英文都是 Lucas Academy 为孩子改写的。经文的中文是公版和合本（1919），英文是公版 WEB Classic（2020 stable text）。',
+      en: 'The ten idioms come from public-domain classics (the Zhuangzi, Han Feizi, Liezi, Strategies of the Warring States, Mencius, Huainanzi, Lüshi Chunqiu, Records of the Grand Historian and a Buddhist sutra); the little stories are retold for children by Lucas Academy in both languages. Scripture: Chinese Union Version (1919); English World English Bible Classic (2020 stable text), public domain.',
     },
     links: [
       {label: {zh: '成语的出处（维基文库）', en: 'The classics (Chinese Wikisource)'}, href: 'https://zh.wikisource.org/'},

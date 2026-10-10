@@ -439,3 +439,32 @@ export const extra = [
   ["下来","xià lái","down","向下，或完成动作后的状态。",null,["down"]],
   ["手","shǒu","hand","身体上用来拿东西的部分。",null,["hand"]],
 ];
+
+// Additional words in the exact public-domain WEB Classic verses.
+extra.push(
+  ["祝福","zhù fú","bless","为别人求好处、求神照顾他。",null,["bless"]],
+  ["咒诅","zhòu zǔ","curse","说盼望别人遭殃的话。",null,["curse"]],
+  ["恨","hèn","hate","心里很讨厌、敌视一个人。",null,["hate"]],
+  ["苦待","kǔ dài","mistreat","不友善地对待别人，让他受苦。",null,["mistreat"]],
+  ["观看","guān kàn","see; look at","仔细地看。",null,["seeing"]],
+  ["创始者","chuàng shǐ zhě","author; originator","开始一件事、带我们踏出第一步的人。",null,["author"]],
+  ["节制","jié zhì","self-control","能管住自己的行为和脾气。",null,["self-control"]],
+  ["共同","gòng tóng","joint","与别人一起。",null,["joint"]],
+  ["分享者","fēn xiǎng zhě","partaker","一起分享、一起得到的人。",null,["partaker"]],
+  ["察看","chá kàn","consider","仔细看，也认真想一想。",null,["consider"]],
+  ["看哪","kàn nǎ","behold","提醒大家留心看、留心听。",null,["behold"]]
+);
+
+export const scriptureAliases = {
+  "draw": "近",
+  "makes": "使",
+  "unjust": "不义",
+  "face": "脸",
+  "mirror": "镜子",
+  "also": "也",
+  "must": "要",
+  "looking": "仰望",
+  "despising": "轻看",
+  "news": "福音",
+  "rivers": "江河"
+};

@@ -6,6 +6,8 @@ export function scriptureRequests(lesson, section) {
   const ids = section.verseIds || lesson.verses.filter(v => v.n >= section.range[0] && v.n <= section.range[1]).map(v => v.id);
   for (const id of ids) {
     const verse = byId.get(id);
+    // Bundled public-domain scripture already has its exact English.
+    if (verse.ref && typeof verse.en === 'string' && verse.en) continue;
     const ref = verse.ref || (lesson.passage && `${lesson.passage.book}.${lesson.passage.chapter}.${verse.n}`);
     if (!ref) continue;
     const [book, chapter, number] = ref.split('.');
