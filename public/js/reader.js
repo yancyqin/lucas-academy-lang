@@ -32,8 +32,9 @@ export function createReader(app) {
       if (done) item.setAttribute('aria-label', t('sectionDone', {title: pick(section.title)}));
       nav.append(item);
     });
-    // A story has many parts: the list scrolls, and keeps the current part in view.
-    nav.classList.toggle('many', lesson.sections.length > 4);
+    // Three cards need a scrolling row on phones so their sentence ranges fit.
+    // Longer lists also scroll in the sidebar and keep the current part in view.
+    nav.classList.toggle('many', lesson.sections.length > 2);
     const current = nav.querySelector('[aria-current="step"]');
     if (current && nav.classList.contains('many')) {
       nav.scrollTop = current.offsetTop - (nav.clientHeight - current.offsetHeight) / 2;

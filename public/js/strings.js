@@ -375,6 +375,7 @@ const storyZh = {
 };
 
 const storyEn = {
+  modeWhole: 'Whole sentence',
   sectionMeta: ({first, last}) => first === last ? `Sentence ${first}` : `Sentences ${first}–${last}`,
   studyAll: 'Study sentence by sentence',
   readingHint: 'Read one part first, then press "Study sentence by sentence" to go slowly and talk it over. You can tap any word.',

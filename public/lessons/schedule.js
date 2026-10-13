@@ -18,4 +18,10 @@ export const weeks = [
       zh: '在家把三件作品再读一遍，听一听配音，录一次自己的朗读。',
       en: 'Read all three works again at home, listen to the narration, and record yourself reading once.',
     }},
+  {grade: 3, n: 2,
+    title: {zh: '责任感与井底之蛙', en: 'Responsibility and the Frog in the Well'},
+    readings: [
+      {lesson: 'responsible', parts: [1]},
+      {lesson: 'idioms-1', parts: [1]},
+    ]},
 ];

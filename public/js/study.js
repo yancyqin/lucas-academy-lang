@@ -118,6 +118,10 @@ export function createStudy(app) {
       if (index === i) jump.setAttribute('aria-current', 'step');
       nav.append(jump);
     });
+    const currentJump = nav.querySelector('[aria-current="step"]');
+    if (currentJump && nav.scrollWidth > nav.clientWidth) {
+      nav.scrollLeft = currentJump.offsetLeft - (nav.clientWidth - currentJump.offsetWidth) / 2;
+    }
 
     $('study-whole').setAttribute('aria-pressed', String(mode === 'whole'));
     $('study-parts').setAttribute('aria-pressed', String(mode === 'parts'));
