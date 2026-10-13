@@ -5,6 +5,7 @@ export const categories = [
   {id: 'idiom', title: {zh: '成语', en: 'Idioms'}},
   {id: 'poem', title: {zh: '诗词', en: 'Poems'}},
   {id: 'story', title: {zh: '小说', en: 'Stories'}},
+  {id: 'original', title: {zh: '自创', en: 'Original Writing'}},
   {id: 'scripture', title: {zh: '圣经', en: 'Bible'}},
 ];
 
@@ -18,4 +19,5 @@ export const lessons = [
   {id: 'idioms-2', category: 'idiom', title: {zh: '成语 · 第二辑', en: 'Idioms · Set 2'}, load: () => import('./idioms-2/index.js')},
   {id: 'climb-higher', category: 'poem', title: {zh: '爬高一点，看远一点', en: 'Climb Higher, See Farther'}, load: () => import('./climb-higher/index.js')},
   {id: 'little-boats', category: 'poem', title: {zh: '小船去远方', en: 'Little Boats, Far Away'}, load: () => import('./little-boats/index.js')},
+  {id: 'responsible', category: 'original', title: {zh: '你是一个有责任感的人', en: 'You Are a Responsible Person'}, load: () => import('./responsible/index.js')},
 ];

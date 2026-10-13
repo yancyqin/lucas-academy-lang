@@ -58,14 +58,16 @@ for (const lesson of lessons) {
     const allowed = PASSAGES[`${lesson.passage.book}.${lesson.passage.chapter}`];
     check(allowed && allowed[0] === 1 && allowed[1] === lesson.verses.length, `${tag}: passages.js does not list verses 1–${lesson.verses.length}`);
   } else {
-    // A story carries its own public-domain English, typeset, and names its
-    // sources. So do a lesson of poems and a set of idioms, except for their
+    // A story carries its own English, typeset, and names its sources or
+    // original authorship. So do poems and idioms, except for their
     // scripture units: they name a verse (ref) whose English the Worker fetches.
     const fetchesScripture = lesson.kind === 'poems' || lesson.kind === 'idioms';
     check(lesson.kind === 'story' || fetchesScripture, `${tag}: a lesson without a passage must be a story, poems or idioms`);
     const {note, links} = lesson.sources || {};
-    check(note?.zh && note?.en && links?.length && links.every(l => l.href?.startsWith('https://') && l.label?.zh && l.label?.en),
-      `${tag}: a story names its sources, in both languages`);
+    const original = registry.find(e => e.id === tag)?.category === 'original';
+    check(note?.zh && note?.en && Array.isArray(links) && (original || links.length > 0)
+      && links.every(l => l.href?.startsWith('https://') && l.label?.zh && l.label?.en),
+      `${tag}: a story names its sources or original authorship, in both languages`);
     for (const v of lesson.verses) {
       if (v.ref !== undefined) {
         const m = /^([1-3]?[A-Z]{2,3})\.(\d{1,3})\.(\d{1,3})$/.exec(v.ref);
@@ -191,7 +193,7 @@ for (const lesson of lessons) {
   if (!lesson.passage) {
     const english = new Set(lesson.verses.filter(v => v.en).flatMap(v => (v.en.match(ENGLISH_WORDS) || []).map(w => w.toLowerCase())));
     const glossed = [...english].filter(w => lesson.aliases[w] || englishBasic[w]).length;
-    if (lesson.kind === 'idioms') check(glossed === english.size,
+    if (lesson.kind === 'idioms' || registry.find(e => e.id === tag)?.category === 'original') check(glossed === english.size,
       `${tag}: every English word needs a Chinese meaning: ${[...english].filter(w => !lesson.aliases[w] && !englishBasic[w]).join(', ')}`);
     summary.push(`${lesson.title.zh}: ${glossed} of ${english.size} distinct English words have a Chinese meaning`);
   }

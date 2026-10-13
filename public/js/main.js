@@ -199,7 +199,7 @@ function renderSources() {
   const scripture = !lesson.sources || lesson.verses.some(v => v.ref);
   const credit = scripture ? english.credit(lesson) : null;
   $('scripture-links').hidden = !scripture;
-  $('story-links').hidden = !lesson.sources;
+  $('story-links').hidden = !lesson.sources?.links?.length;
   if (lesson.sources) {
     $('copyright').textContent = [pick(lesson.sources.note), credit?.copyright].filter(Boolean).join('\n');
     $('story-links').replaceChildren(...lesson.sources.links.flatMap((link, i) => {

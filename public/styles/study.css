@@ -89,7 +89,7 @@ body.study-open{overflow:hidden}
  .study-header{padding:18px 20px 14px}.study-header h2{font-size:22px}.study-header button span[aria-hidden]{margin-left:8px}
  .study-scroll{padding:19px 20px 26px;scrollbar-gutter:auto}
  .study-path{align-items:start;flex-direction:column;gap:12px;margin-bottom:18px}
- #study-verse-nav{gap:9px}#study-verse-nav button{width:44px;min-height:44px}
+ #study-verse-nav{gap:9px;max-width:100%;overflow-x:auto;position:relative}#study-verse-nav button{width:44px;min-height:44px;flex-shrink:0}
  .study-options{align-items:start;gap:12px;flex-wrap:wrap}.study-options-right{gap:16px;justify-content:space-between;flex:1;min-width:150px}
  .study-modes button{padding:8px 14px;min-height:44px}.study-unit{margin-top:19px}
  .study-options-right button,.study-options-right label,.study-language-label button,.study-word-heading button{min-height:44px}
