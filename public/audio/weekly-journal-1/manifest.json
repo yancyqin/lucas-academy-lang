@@ -1,5 +1,138 @@
 {
-  "lessonId": "weekly-journal-1",
-  "note": "Journal text with no recorded narration; the reader uses its labelled system-voice preview.",
-  "clips": []
+ "lessonId": "weekly-journal-1",
+ "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
+ "clips": [
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 10.45,
+   "textHash": "ee83809a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.2",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v02-whole.mp3",
+   "duration": 7.66,
+   "textHash": "ea5f1136",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.3",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v03-whole.mp3",
+   "duration": 6.94,
+   "textHash": "75455839",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.4",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v04-whole.mp3",
+   "duration": 6.2,
+   "textHash": "5c082ae5",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.5",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v05-whole.mp3",
+   "duration": 4.38,
+   "textHash": "3d0f1b78",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "fangfang/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 8.48,
+   "textHash": "33a62333",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 9.47,
+   "textHash": "d4da33f4",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.2",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v02-whole.mp3",
+   "duration": 7.27,
+   "textHash": "850a04fc",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.3",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v03-whole.mp3",
+   "duration": 4.35,
+   "textHash": "752a09f7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.4",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v04-whole.mp3",
+   "duration": 4.69,
+   "textHash": "4880e402",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.5",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v05-whole.mp3",
+   "duration": 4.49,
+   "textHash": "295c07fb",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "weekly-journal-1",
+   "verseId": "weekly-journal-1.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "louise/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 7.16,
+   "textHash": "5feb06b2",
+   "speed": 0.75
+  }
+ ]
 }

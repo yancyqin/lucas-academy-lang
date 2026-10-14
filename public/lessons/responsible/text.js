@@ -15,7 +15,7 @@ const lines = [
   ['You are a responsible person.',
     '你/是/一个/有/责任感/的/人/。',
     '你愿意爱惜别人交给你的东西。', 'You take care of things that other people let you use.'],
-  ['You remember what you promise your friends and do it with care.',
+  ['You remember what you promised your friends and do it with care.',
     '答应/朋友/的/事/，/你/会/记/在/心里/，/认真/去/做/。',
     '说好要做的事，你放在心上，也努力去做到。', 'You remember what you said you would do and try to do it.'],
   ['You are a responsible person.',
