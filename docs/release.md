@@ -1,5 +1,23 @@
 # 发布与验收记录
 
+## 2026-10-13 · 周记第 1 期、第 3 周与两篇课文配音
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | <https://lang.lucasacademy.org/class?w=3> |
+| 部署的 commit | `632e79c` Merge pull request #18；已在 `origin/main` |
+| 部署版本 | `105293ec-e8c4-4c27-8a28-d6e5d313789c`（100% 流量；本机 `npm run deploy -- --keep-vars`） |
+| 发布内容 | 新增「周记」分类，上一周六则生活分享组成第 1 期，安排在第 3 周共读。周记 6 句及责任感课文 18 句均有中文 Fangfang、英文 Louise 配音，语速 0.75，共 48 个 MP3、250.48 秒。58 个新增或变更的静态文件，按内容去重后上传 44 个资源 |
+| 可回退版本 | `05674d0a-21fa-4a7b-976e-a57e63059da8`；`npx wrangler rollback 05674d0a-21fa-4a7b-976e-a57e63059da8` |
+
+验证：
+
+- 部署前 `npm run validate`、部署后 `LANG_API_URL=https://lang.lucasacademy.org npm run check:english` 通过；两篇新增配音的文字 hash 与当前正文一致。
+- 58 个线上文件逐字节匹配部署 commit，其中 48 个 MP3 均为 `audio/mpeg`。
+- Chromium 与 WebKit 在线核验第 3 周入口、周记六句双语正文、周记分类、两种阅读顺序、第 2 周课程及责任感最后一段。每种浏览器实际播放 8 条新配音，默认倍率为 1×；双语连读与关闭弹窗后停止正常。系统语音回退、页面错误、缺失资源和两篇课文的经文 API 请求均为 0。
+- 验收文件保留在 `/Users/yqin/Downloads/lucas-lang-pr18-release-ui67dhgi/`。本地预览已迁至主目录，继续使用 8095 端口。
+- 同次整理的 4 个额外 worktree 已移除，代码均已提交；用户随后取消的《我家的一年》草稿及其本地、远程分支已删除。配置与缓存另有私有本地备份，见 [worktree 清理记录](worktree-cleanup.md)。
+
 ## 2026-10-13 · 自创责任感课文与第 2 周课程
 
 | 项目 | 记录 |
