@@ -27,8 +27,8 @@ for (const entry of registry) {
   const lesson = (await entry.load()).default;
   if (!lesson.passage) {
     const english = new Map(lesson.verses.filter(v => v.en).map(v => [v.id, v.en]));
-    // A story's English is public domain and ships with the lesson: nothing to
-    // fetch or keep out. A lesson of poems fetches only its scripture units.
+    // Bundled English, including original writing and journals, needs no API.
+    // A lesson of poems fetches only its scripture units.
     const scripture = lesson.sections.flatMap(section => scriptureRequests(lesson, section));
     for (const {ref, ids, numbers} of scripture) {
       const response = await fetch(`${api}/api/passage?${new URLSearchParams({translation: 'NIV', ref})}`);
@@ -64,7 +64,8 @@ for (const entry of registry) {
         checkedClips += 1;
       }
     }
-    lines.push(`${lesson.title.zh}: public-domain English in the lesson` +
+    const authored = ['original', 'journal'].includes(entry.category);
+    lines.push(`${lesson.title.zh}: ${authored ? 'project-authored' : 'public-domain'} English in the lesson` +
       (lesson.scriptureTranslation?.id === 'WEB' ? `; ${lesson.verses.filter(v => v.ref).length} WEB Classic verses bundled` : fetched ? `; ${fetched} NIV scripture verses fetched` : ', not fetched') +
       `; ${checkedClips} English clips match the text`);
     continue;

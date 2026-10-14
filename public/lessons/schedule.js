@@ -24,4 +24,7 @@ export const weeks = [
       {lesson: 'responsible', parts: [1]},
       {lesson: 'idioms-1', parts: [1]},
     ]},
+  {grade: 3, n: 3,
+    title: {zh: '分享上周的小事', en: 'Sharing Last Week’s Moments'},
+    readings: [{lesson: 'weekly-journal-1'}]},
 ];

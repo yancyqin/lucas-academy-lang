@@ -7,8 +7,9 @@
 // The Chinese comes from the lesson. A passage's English is licensed: it is
 // fetched from /api/passage (LANG_API_URL, default http://127.0.0.1:8197 —
 // `npm run dev`) and written only to the output directory, which must be
-// outside this repository so it can never be committed here. A story's
-// English is public domain and comes from the lesson itself.
+// outside this repository so it can never be committed here.
+// Bundled English, including original writing and journals, comes from the
+// lesson itself.
 import {mkdir, writeFile} from 'node:fs/promises';
 import {resolve, relative, isAbsolute} from 'node:path';
 import {fileURLToPath} from 'node:url';

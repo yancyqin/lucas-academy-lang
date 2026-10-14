@@ -64,8 +64,8 @@ for (const lesson of lessons) {
     const fetchesScripture = lesson.kind === 'poems' || lesson.kind === 'idioms';
     check(lesson.kind === 'story' || fetchesScripture, `${tag}: a lesson without a passage must be a story, poems or idioms`);
     const {note, links} = lesson.sources || {};
-    const original = registry.find(e => e.id === tag)?.category === 'original';
-    check(note?.zh && note?.en && Array.isArray(links) && (original || links.length > 0)
+    const authored = ['original', 'journal'].includes(registry.find(e => e.id === tag)?.category);
+    check(note?.zh && note?.en && Array.isArray(links) && (authored || links.length > 0)
       && links.every(l => l.href?.startsWith('https://') && l.label?.zh && l.label?.en),
       `${tag}: a story names its sources or original authorship, in both languages`);
     for (const v of lesson.verses) {
@@ -193,7 +193,7 @@ for (const lesson of lessons) {
   if (!lesson.passage) {
     const english = new Set(lesson.verses.filter(v => v.en).flatMap(v => (v.en.match(ENGLISH_WORDS) || []).map(w => w.toLowerCase())));
     const glossed = [...english].filter(w => lesson.aliases[w] || englishBasic[w]).length;
-    if (lesson.kind === 'idioms' || registry.find(e => e.id === tag)?.category === 'original') check(glossed === english.size,
+    if (lesson.kind === 'idioms' || ['original', 'journal'].includes(registry.find(e => e.id === tag)?.category)) check(glossed === english.size,
       `${tag}: every English word needs a Chinese meaning: ${[...english].filter(w => !lesson.aliases[w] && !englishBasic[w]).join(', ')}`);
     summary.push(`${lesson.title.zh}: ${glossed} of ${english.size} distinct English words have a Chinese meaning`);
   }

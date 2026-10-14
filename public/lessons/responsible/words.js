@@ -14,7 +14,7 @@ export const words = [
   ['保管', 'bǎo guǎn', 'look after; take care of', '照顾好东西，不让它丢失或损坏。', null, ['take', 'care']],
   ['记得', 'jì de', 'remember', '心里还记着，没有忘记。', null, ['remember']],
   ['归还', 'guī huán', 'return', '把借来的东西还给原来的主人。', null, ['return']],
-  ['答应', 'dā ying', 'promise', '同意去做一件事，让别人知道你愿意去做。', null, ['promise']],
+  ['答应', 'dā ying', 'promise; promised', '同意去做一件事，让别人知道你愿意去做；promised 是 promise 的过去式。', null, ['promise', 'promised']],
   ['朋友', 'péng you', 'friend', '和你相处、玩耍，互相关心的人。', null, ['friends']],
   ['事', 'shì', 'thing to do; job', '要去做或已经发生的事情。', null, ['something']],
   ['记', 'jì', 'remember; keep in mind', '把一件事留在心里。', null, []],
