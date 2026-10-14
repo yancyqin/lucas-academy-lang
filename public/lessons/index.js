@@ -6,6 +6,7 @@ export const categories = [
   {id: 'poem', title: {zh: '诗词', en: 'Poems'}},
   {id: 'story', title: {zh: '小说', en: 'Stories'}},
   {id: 'original', title: {zh: '自创', en: 'Original Writing'}},
+  {id: 'journal', title: {zh: '周记', en: 'Weekly Journals'}},
   {id: 'scripture', title: {zh: '圣经', en: 'Bible'}},
 ];
 
@@ -20,4 +21,5 @@ export const lessons = [
   {id: 'climb-higher', category: 'poem', title: {zh: '爬高一点，看远一点', en: 'Climb Higher, See Farther'}, load: () => import('./climb-higher/index.js')},
   {id: 'little-boats', category: 'poem', title: {zh: '小船去远方', en: 'Little Boats, Far Away'}, load: () => import('./little-boats/index.js')},
   {id: 'responsible', category: 'original', title: {zh: '你是一个有责任感的人', en: 'You Are a Responsible Person'}, load: () => import('./responsible/index.js')},
+  {id: 'weekly-journal-1', category: 'journal', title: {zh: '周记 · 第 1 期', en: 'Weekly Journal · No. 1'}, load: () => import('./weekly-journal-1/index.js')},
 ];
