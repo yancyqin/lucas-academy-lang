@@ -1,0 +1,270 @@
+{
+ "lessonId": "can-beauty-last",
+ "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
+ "clips": [
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 6.25,
+   "textHash": "8b7b7512",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.2",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v02-whole.mp3",
+   "duration": 6.43,
+   "textHash": "dde1b834",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.3",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v03-whole.mp3",
+   "duration": 6,
+   "textHash": "65b38f5b",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.4",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v04-whole.mp3",
+   "duration": 5.51,
+   "textHash": "67e38130",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.5",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v05-whole.mp3",
+   "duration": 10.67,
+   "textHash": "b1a51069",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 14.47,
+   "textHash": "da2663f7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.7",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v07-whole.mp3",
+   "duration": 12.31,
+   "textHash": "abdf3d74",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.8",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v08-whole.mp3",
+   "duration": 13.56,
+   "textHash": "ac06b00f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.9",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v09-whole.mp3",
+   "duration": 12.74,
+   "textHash": "9dcc9d8",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.10",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v10-whole.mp3",
+   "duration": 14.61,
+   "textHash": "8127078",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.11",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v11-whole.mp3",
+   "duration": 16.2,
+   "textHash": "f170ad5d",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.12",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v12-whole.mp3",
+   "duration": 20.42,
+   "textHash": "44fc2f55",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 5.96,
+   "textHash": "4d7279a5",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.2",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v02-whole.mp3",
+   "duration": 6.6,
+   "textHash": "5720a576",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.3",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v03-whole.mp3",
+   "duration": 8.72,
+   "textHash": "e40b74df",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.4",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v04-whole.mp3",
+   "duration": 10.24,
+   "textHash": "2480e8e6",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.5",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v05-whole.mp3",
+   "duration": 7.69,
+   "textHash": "8abfb66f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 8.56,
+   "textHash": "511b39ad",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.7",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v07-whole.mp3",
+   "duration": 7.44,
+   "textHash": "fb5aee5f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.8",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v08-whole.mp3",
+   "duration": 9.08,
+   "textHash": "df506b19",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.9",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v09-whole.mp3",
+   "duration": 7.96,
+   "textHash": "80cf9c3f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.10",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v10-whole.mp3",
+   "duration": 8.23,
+   "textHash": "f8ff2f67",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.11",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v11-whole.mp3",
+   "duration": 8.37,
+   "textHash": "39418095",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "can-beauty-last",
+   "verseId": "can-beauty-last.12",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v12-whole.mp3",
+   "duration": 15.61,
+   "textHash": "4c479c88",
+   "speed": 0.75
+  }
+ ]
+}

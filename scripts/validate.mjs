@@ -18,6 +18,9 @@ const ENGLISH_WORDS = /[\p{L}\p{N}]+(?:[’'-][\p{L}\p{N}]+)*/gu;
 
 const root = fileURLToPath(new URL('..', import.meta.url));
 const pub = join(root, 'public');
+// The narrators a clip may name: Fangfang and Louise (AI voices), and Sunny and
+// Matthew, made from their own recordings (看得见的诗 · 第三期 onwards).
+const VOICE_CHOICES = {zh: ['fangfang/zh', 'sunny/zh'], en: ['louise/en', 'matthew/en']};
 const failures = [];
 const check = (ok, message) => {
   if (!ok) failures.push(message);
@@ -153,7 +156,7 @@ for (const lesson of lessons) {
       check(c.lessonId === lesson.id, `${tag}: clip ${key} belongs to ${c.lessonId}`);
       const verse = lesson.verses.find(v => v.id === c.verseId);
       check(verse, `${tag}: clip for unknown verse ${c.verseId}`);
-      check(c.voice === (c.language === 'zh' ? 'fangfang/zh' : 'louise/en'), `${tag}: clip ${key} has voice ${c.voice}`);
+      check(VOICE_CHOICES[c.language]?.includes(c.voice), `${tag}: clip ${key} has voice ${c.voice}`);
       check(c.duration > 0.3, `${tag}: clip ${key} has no real duration`);
       const file = join(pub, lesson.audio, '..', c.src);
       const info = existsSync(file) ? await stat(file) : null;
