@@ -10,6 +10,7 @@ export const PASSAGES = Object.freeze({
   'MRK.4': [1, 9],
   'PSA.121': [1, 2],
   'ISA.40': [31, 31],
+  'ECC.3': [11, 11],
   // 成语 · 第一辑: one verse or run per idiom.
   'ISA.55': [9, 9],
   'PRO.6': [6, 8],

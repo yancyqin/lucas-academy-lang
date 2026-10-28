@@ -20,6 +20,7 @@ export const lessons = [
   {id: 'idioms-2', category: 'idiom', title: {zh: '成语 · 第二辑', en: 'Idioms · Set 2'}, load: () => import('./idioms-2/index.js')},
   {id: 'climb-higher', category: 'poem', title: {zh: '爬高一点，看远一点', en: 'Climb Higher, See Farther'}, load: () => import('./climb-higher/index.js')},
   {id: 'little-boats', category: 'poem', title: {zh: '小船去远方', en: 'Little Boats, Far Away'}, load: () => import('./little-boats/index.js')},
+  {id: 'can-beauty-last', category: 'poem', title: {zh: '美好能否留存？', en: 'Can Beauty Last?'}, load: () => import('./can-beauty-last/index.js')},
   {id: 'shuidiaogetou', category: 'poem', title: {zh: '水调歌头·明月几时有', en: 'Prelude to Water Melody · When Did the Bright Moon Appear?'}, load: () => import('./shuidiaogetou/index.js')},
   {id: 'responsible', category: 'original', title: {zh: '你是一个有责任感的人', en: 'You Are a Responsible Person'}, load: () => import('./responsible/index.js')},
   {id: 'weekly-journal-1', category: 'journal', title: {zh: '周记 · 第 1 期', en: 'Weekly Journal · No. 1'}, load: () => import('./weekly-journal-1/index.js')},

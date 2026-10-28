@@ -6,7 +6,8 @@
 //
 // speed=<n> is the lucas-narrate --speed the takes were made at (default 0.75,
 // the children's pace; love and seed were made at 0.85, so republish them
-// with speed=0.85).
+// with speed=0.85). voice.zh=<voice> / voice.en=<voice> name another voice than
+// Fangfang / Louise (see VOICE_CHOICES in validate.mjs), e.g. voice.zh=sunny/zh.
 //
 // For every line of <scripts>/<lesson>-<lang>.json (from narration-scripts.mjs)
 // it takes <wav-dir>/<id>.wav, trims the silence the synthesiser leaves around
@@ -21,16 +22,17 @@ import {join, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {fingerprint} from '../public/js/units.js';
 
-const VOICES = {zh: 'fangfang/zh', en: 'louise/en'};
+const DEFAULT_VOICES = {zh: 'fangfang/zh', en: 'louise/en'};
 const LEAD_IN = 0.15;
 const TAIL = 0.25;
 
 const [lessonId, scriptsDir, ...dirs] = process.argv.slice(2);
 const args = dirs.map(arg => arg.split('='));
-const wavDirs = Object.fromEntries(args.filter(([lang, dir]) => VOICES[lang] && dir));
+const VOICES = {...DEFAULT_VOICES, ...Object.fromEntries(args.filter(([key]) => key.startsWith('voice.')).map(([key, voice]) => [key.slice(6), voice]))};
+const wavDirs = Object.fromEntries(args.filter(([lang, dir]) => DEFAULT_VOICES[lang] && dir));
 const NATIVE_SPEED = Number(Object.fromEntries(args).speed) || 0.75; // lucas-narrate --speed
 if (!lessonId || !scriptsDir || !Object.keys(wavDirs).length) {
-  console.error('usage: node scripts/publish-audio.mjs <lesson> <scripts-dir> zh=<wav-dir> en=<wav-dir> [speed=0.75]');
+  console.error('usage: node scripts/publish-audio.mjs <lesson> <scripts-dir> zh=<wav-dir> en=<wav-dir> [speed=0.75] [voice.zh=sunny/zh] [voice.en=matthew/en]');
   process.exit(2);
 }
 const root = fileURLToPath(new URL('..', import.meta.url));
