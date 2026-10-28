@@ -14,17 +14,21 @@ for (const [list, small] of [[words, false], [connectors, true], [extra, false]]
 const verses = units.map((unit, i) => ({id: `can-beauty-last.${i + 1}`, n: i + 1, ...unit}));
 const study = Object.fromEntries(verses.map((verse, i) => [verse.id, {question: questions[i]}]));
 
-// Three works, one part each, all read in class (about an hour). The living
-// paintings of the first two issues are made in art-lab; this issue's are not
-// made yet, so its parts name no painting.
+// Three works, one part each, all read in class (about an hour). Each work has
+// a living painting in art-lab, where children paint living brushes onto it:
+// ink and wash for the Chinese poem, oils for the English poem, watercolour
+// for scripture.
+const INK = {zh: '淡彩水墨', en: 'ink and wash'};
+const OIL = {zh: '油画', en: 'oil painting'};
+const WATERCOLOUR = {zh: '水彩', en: 'watercolour'};
 const sections = [
-  {id: '1-4', range: [1, 4],
+  {id: '1-4', range: [1, 4], painting: {id: 'chun-ye-xi-yu', style: INK},
     title: {zh: '春夜喜雨', en: 'Happy Rain on a Spring Night'},
     intro: {zh: '唐朝诗人杜甫住在成都，夜里听到春雨，心里很高兴。', en: 'The Tang poet Du Fu, living in Chengdu, hears the spring rain at night and is glad.'}},
-  {id: '5-11', range: [5, 11],
+  {id: '5-11', range: [5, 11], painting: {id: 'sonnet-18', style: OIL},
     title: {zh: '第十八首十四行诗', en: 'Sonnet 18'},
     intro: {zh: '英国作家莎士比亚问：美好的东西，能不能一直留下来？', en: 'The English writer William Shakespeare asks: can something beautiful last forever?'}},
-  {id: '12-12', range: [12, 12],
+  {id: '12-12', range: [12, 12], painting: {id: 'ecclesiastes-3-11', style: WATERCOLOUR},
     title: {zh: '传道书 3:11', en: 'Ecclesiastes 3:11'},
     intro: {zh: '一切都会过去，可是神让万物在合适的时候成为美好。', en: 'Everything passes, but God makes everything beautiful in its time.'}},
 ];
