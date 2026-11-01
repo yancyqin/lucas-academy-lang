@@ -14,17 +14,21 @@ for (const [list, small] of [[words, false], [connectors, true], [extra, false]]
 const verses = units.map((unit, i) => ({id: `count-the-stars.${i + 1}`, n: i + 1, ...unit}));
 const study = Object.fromEntries(verses.map((verse, i) => [verse.id, {question: questions[i]}]));
 
-// Three works, one part each, all read in class (about an hour). The living
-// paintings are being made in art-lab; until they are deployed the parts name
-// no painting.
+// Three works, one part each, all read in class (about an hour). Each work has
+// a living painting in art-lab, where children paint living brushes onto it:
+// ink and wash for the Chinese poem, oils for the English poem, watercolour
+// for scripture.
+const INK = {zh: '淡彩水墨', en: 'ink and wash'};
+const OIL = {zh: '油画', en: 'oil painting'};
+const WATERCOLOUR = {zh: '水彩', en: 'watercolour'};
 const sections = [
-  {id: '1-2', range: [1, 2],
+  {id: '1-2', range: [1, 2], painting: {id: 'ye-su-shan-si', style: INK},
     title: {zh: '夜宿山寺', en: 'A Night at the Mountain Temple'},
     intro: {zh: '唐朝诗人李白夜里住在山上的寺庙，楼高得好像伸手就能摘到星星。', en: 'The Tang poet Li Bai spends the night at a temple on a mountain, in a tower so high he could almost pick the stars.'}},
-  {id: '3-7', range: [3, 7],
+  {id: '3-7', range: [3, 7], painting: {id: 'the-star', style: OIL},
     title: {zh: '小星星', en: 'The Star'},
     intro: {zh: '英国作家简·泰勒写给孩子的诗，后来配上一首法国老曲子，成了大家都会唱的《小星星》。', en: 'An English poem for children by Jane Taylor; set to an old French tune, it became the song everyone knows, “Twinkle, Twinkle, Little Star.”'}},
-  {id: '8-9', range: [8, 9],
+  {id: '8-9', range: [8, 9], painting: {id: 'genesis-15-5', style: WATERCOLOUR},
     title: {zh: '创世记 15:5–6', en: 'Genesis 15:5–6'},
     intro: {zh: '神带亚伯兰（后来叫亚伯拉罕）到外面看星星，应许他的子孙会像星星一样多。', en: 'God takes Abram (later called Abraham) outside to look at the stars, and promises him a family as many as the stars.'}},
 ];

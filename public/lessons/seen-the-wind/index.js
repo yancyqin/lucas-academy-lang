@@ -14,17 +14,21 @@ for (const [list, small] of [[words, false], [connectors, true], [extra, false]]
 const verses = units.map((unit, i) => ({id: `seen-the-wind.${i + 1}`, n: i + 1, ...unit}));
 const study = Object.fromEntries(verses.map((verse, i) => [verse.id, {question: questions[i]}]));
 
-// Three works, one part each, all read in class (about an hour). The living
-// paintings are being made in art-lab; until they are deployed the parts name
-// no painting.
+// Three works, one part each, all read in class (about an hour). Each work has
+// a living painting in art-lab, where children paint living brushes onto it:
+// ink and wash for the Chinese poem, oils for the English poem, watercolour
+// for scripture.
+const INK = {zh: '淡彩水墨', en: 'ink and wash'};
+const OIL = {zh: '油画', en: 'oil painting'};
+const WATERCOLOUR = {zh: '水彩', en: 'watercolour'};
 const sections = [
-  {id: '1-4', range: [1, 4],
+  {id: '1-4', range: [1, 4], painting: {id: 'fu-de-gu-yuan-cao', style: INK},
     title: {zh: '赋得古原草送别', en: 'Grass on the Old Plain: A Farewell'},
     intro: {zh: '唐朝诗人白居易写原野上的草：野火烧不完，春风一吹，又长出来了。', en: 'The Tang poet Bai Juyi writes about the grass on an open plain: wildfire cannot burn it all, and the spring wind brings it back.'}},
-  {id: '5-10', range: [5, 10],
+  {id: '5-10', range: [5, 10], painting: {id: 'the-wind', style: OIL},
     title: {zh: '风', en: 'The Wind'},
     intro: {zh: '苏格兰作家斯蒂文森问风：我看得见你做的事，可是你自己在哪里？', en: 'The Scottish writer Robert Louis Stevenson asks the wind: I can see what you do, but where are you?'}},
-  {id: '11-11', range: [11, 11],
+  {id: '11-11', range: [11, 11], painting: {id: 'john-3-8', style: WATERCOLOUR},
     title: {zh: '约翰福音 3:8', en: 'John 3:8'},
     intro: {zh: '耶稣对尼哥底母说：风看不见，却听得见；从圣灵生的人也是这样。', en: 'Jesus tells Nicodemus: you cannot see the wind, but you can hear it; it is the same with everyone born of the Spirit.'}},
 ];
