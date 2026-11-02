@@ -1,0 +1,248 @@
+{
+ "lessonId": "seen-the-wind",
+ "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
+ "clips": [
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 7.03,
+   "textHash": "979ad3fe",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.2",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v02-whole.mp3",
+   "duration": 6.54,
+   "textHash": "69f1851e",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.3",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v03-whole.mp3",
+   "duration": 6.34,
+   "textHash": "26559b8d",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.4",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v04-whole.mp3",
+   "duration": 6.47,
+   "textHash": "c7b39ca2",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.5",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v05-whole.mp3",
+   "duration": 19.71,
+   "textHash": "96ded11f",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 10.48,
+   "textHash": "319c0da2",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.7",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v07-whole.mp3",
+   "duration": 18.66,
+   "textHash": "d581c736",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.8",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v08-whole.mp3",
+   "duration": 10.11,
+   "textHash": "319c0da2",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.9",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v09-whole.mp3",
+   "duration": 18.9,
+   "textHash": "4d36bd0a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.10",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v10-whole.mp3",
+   "duration": 12.93,
+   "textHash": "319c0da2",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.11",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v11-whole.mp3",
+   "duration": 19.32,
+   "textHash": "5cc82279",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 8.25,
+   "textHash": "cc58edb7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.2",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v02-whole.mp3",
+   "duration": 6.95,
+   "textHash": "dfaeaf41",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.3",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v03-whole.mp3",
+   "duration": 7.12,
+   "textHash": "64b9e9ee",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.4",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v04-whole.mp3",
+   "duration": 9.48,
+   "textHash": "36fef84e",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.5",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v05-whole.mp3",
+   "duration": 11.25,
+   "textHash": "5987af5b",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 6.61,
+   "textHash": "38a6ad5a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.7",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v07-whole.mp3",
+   "duration": 11.02,
+   "textHash": "e856962c",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.8",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v08-whole.mp3",
+   "duration": 6.57,
+   "textHash": "38a6ad5a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.9",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v09-whole.mp3",
+   "duration": 10.89,
+   "textHash": "3e026261",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.10",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v10-whole.mp3",
+   "duration": 6.07,
+   "textHash": "38a6ad5a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "seen-the-wind",
+   "verseId": "seen-the-wind.11",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v11-whole.mp3",
+   "duration": 13.54,
+   "textHash": "634578aa",
+   "speed": 0.75
+  }
+ ]
+}

@@ -18,6 +18,8 @@
   - 第一期《爬高一点，看远一点》：《登鹳雀楼》、Foreign Lands（第 1、4 节）、诗篇 121:1–2。
   - 第二期《小船去远方》：《早发白帝城》、Where Go the Boats?、以赛亚书 40:31。
   - 第三期《美好能否留存？》：《春夜喜雨》（杜甫）、莎士比亚《第十八首十四行诗》（1609，公有领域；这一期的英文诗不是斯蒂文森）、传道书 3:11。十四行诗的中文和现代英语释义由本项目翻译，现代英语放在「In simple words」。配音换了声音：中文 Sunny、英文 Matthew，用他们自己的录音由 AI 合成，模仿他们自己读同类文字的语气和速度（`lucas-academy-video` 的 `scripts/zhong-ying/lesson_voice.py`）；《春夜喜雨》和经文用 owner 已经听过的整段录音，按停顿切成每联。manifest 记 speed 0.75，默认「慢一点」时按原速播放。三件作品的活画在 art-lab：`chun-ye-xi-yu`、`sonnet-18`、`ecclesiastes-3-11`。
+  - 第四期《谁看见过风？》：白居易《赋得古原草送别》（全诗八句）、斯蒂文森 “The Wind”（三节，每节四句一个单元，副歌各自一个单元）、约翰福音 3:8（和合本写「从那里来，往那里去」，「那里」读 nǎ li）。配音同第三期：中文 Sunny、英文 Matthew。活画：`fu-de-gu-yuan-cao`、`the-wind`、`john-3-8`。
+  - 第五期《星星数得完吗？》：李白《夜宿山寺》、简·泰勒 “The Star”（1806，按古登堡计划 #77549 的 1831 年版：“trav’ller”、“As your bright and tiny spark”；英文诗不是斯蒂文森），每节一个单元、创世记 15:5–6。配音同第三期。活画：`ye-su-shan-si`、`the-star`、`genesis-15-5`。
 - 自创《你是一个有责任感的人》（You Are a Responsible Person）：18 句按 6 / 6 / 6 分为三小段，每个生活行动后接一句肯定，反复说「你是一个有责任感的人」。中文为用户审定的自创文案，英文为本项目编写；逐句问题、中英词语解释和拼音齐备，英文随课文提供，离线可读。每句有中文 Fangfang、英文 Louise 配音，语速 0.75。
 - 诗词《水调歌头·明月几时有》：苏轼词的完整正文及小序，按小序、上阕、下阕分三部分，共 9 个阅读单元。中文对照香港教育局参考文本，英文为本项目翻译；附拼音、词义、简单释义与逐句问题。不制作配音。
 - 「周记」每期收录上一周去除个人信息的生活分享，稍作润色，配成中英对照，作为下一周的共读内容。第 1 期为六则分享，安排在第 3 周：山上游泳池的青蛙、星期六在朋友家玩、读完章节书、找到喜欢的歌、学拼魔方的新算法、四天假期。正文、词典及逐句问题在 `public/lessons/weekly-journal-1/`；英文随课文提供，每句有中文 Fangfang、英文 Louise 配音，语速 0.75。后续新增一期课文及下一周的课程引用，保留旧期内容和链接。
@@ -84,7 +86,7 @@ public/                     # 唯一的网站静态资源目录
     happy-prince/           # 《快乐王子》：text.js（132 个编号单元，英文原文 + 中文译文）、study.js（每个单元的问题）、
                             # words.js（词典与英文对应）、index.js（24 小段，标出课堂共读）
     lilliput/ gentlemen/    # 东西方的奇幻之旅：格列佛的小人国、镜花缘的君子国和小人国（同样的四个文件，各 11 小段）
-    climb-higher/ little-boats/ can-beauty-last/  # 看得见的诗：第一期至第三期（kind: 'poems'，每件作品一小段）
+    climb-higher/ little-boats/ can-beauty-last/ seen-the-wind/ count-the-stars/  # 看得见的诗：第一期至第五期（kind: 'poems'，每件作品一小段）
     idioms-1/               # 成语 · 第一辑（kind: 'idioms'，一个成语一小段；契约见 docs/idioms.md）
   audio/<lesson>/{zh,en}/*.mp3 + manifest.json
   images/words/manifest.json  # 词语配图（24 个概念，WebP 与双语 alt 已齐全）
@@ -143,7 +145,7 @@ npx wrangler secret put YVP_APP_KEY
 
 课文的 `kind: 'poems'` 是「看得见的诗」：
 
-- 每个小段是一件作品。诗的英文写在 `en` 里，随课文提供；经文的单元不写英文，只写 `ref`（如 `PSA.121.1`），英文 NIV 由 Worker 按段去取，不进仓库。经文范围要登记在 `passages.js`（现在有 `PSA.121` 1–2、`ISA.40` 31），一个小段里的经文必须是同一章连着的几节。
+- 每个小段是一件作品。诗的英文写在 `en` 里，随课文提供；经文的单元不写英文，只写 `ref`（如 `PSA.121.1`），英文 NIV 由 Worker 按段去取，不进仓库。经文范围要登记在 `passages.js`（现在有 `PSA.121` 1–2、`ISA.40` 31、`ECC.3` 11、`JHN.3` 8、`GEN.15` 5–6），一个小段里的经文必须是同一章连着的几节。
 - 诗按行显示：中文里 `\n` 单独算一个词，英文里直接写 `\n`，页面上就是换行。
 - 小段可以有 `painting: {id, style}`：工具栏上出现「活画 · 淡彩水墨 ↗」，新窗口打开 `https://art-lab.lucasacademy.org/living?w=<id>&lang=<界面语言>`，孩子在那幅画上用会动的画笔画。没有 `painting` 的小段不显示这个按钮。
 - 页尾「文字来源」显示课文自己的来源，经文部分另外显示 NIV 版权、YouVersion 和中文经文来源。

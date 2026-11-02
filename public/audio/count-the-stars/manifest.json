@@ -1,0 +1,204 @@
+{
+ "lessonId": "count-the-stars",
+ "note": "Narration clips for one lesson. textHash fingerprints the exact text each clip reads (public/js/units.js); a clip only plays while it matches the text on screen.",
+ "clips": [
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.1",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v01-whole.mp3",
+   "duration": 6.7,
+   "textHash": "cdeeb49d",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.2",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v02-whole.mp3",
+   "duration": 6.58,
+   "textHash": "8b89005c",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.3",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v03-whole.mp3",
+   "duration": 15.6,
+   "textHash": "1d204670",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.4",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v04-whole.mp3",
+   "duration": 16.05,
+   "textHash": "b4b728fe",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.5",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v05-whole.mp3",
+   "duration": 17.4,
+   "textHash": "3edb661e",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.6",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v06-whole.mp3",
+   "duration": 16.17,
+   "textHash": "cb0098b7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.7",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v07-whole.mp3",
+   "duration": 16.42,
+   "textHash": "ffe0db6a",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.8",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v08-whole.mp3",
+   "duration": 16.04,
+   "textHash": "28681a43",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.9",
+   "unitId": "whole",
+   "language": "zh",
+   "voice": "sunny/zh",
+   "src": "zh/v09-whole.mp3",
+   "duration": 8.47,
+   "textHash": "f26fc93e",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.1",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v01-whole.mp3",
+   "duration": 8.06,
+   "textHash": "81ac44a7",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.2",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v02-whole.mp3",
+   "duration": 8.41,
+   "textHash": "6a4483ec",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.3",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v03-whole.mp3",
+   "duration": 10.46,
+   "textHash": "8157a80b",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.4",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v04-whole.mp3",
+   "duration": 10.64,
+   "textHash": "bd16c7ca",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.5",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v05-whole.mp3",
+   "duration": 9.84,
+   "textHash": "bf4b5a50",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.6",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v06-whole.mp3",
+   "duration": 11.14,
+   "textHash": "33929a76",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.7",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v07-whole.mp3",
+   "duration": 10.81,
+   "textHash": "ff6708a2",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.8",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v08-whole.mp3",
+   "duration": 11.62,
+   "textHash": "895f5e69",
+   "speed": 0.75
+  },
+  {
+   "lessonId": "count-the-stars",
+   "verseId": "count-the-stars.9",
+   "unitId": "whole",
+   "language": "en",
+   "voice": "matthew/en",
+   "src": "en/v09-whole.mp3",
+   "duration": 6.59,
+   "textHash": "ddda6399",
+   "speed": 0.75
+  }
+ ]
+}
