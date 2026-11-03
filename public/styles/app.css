@@ -79,3 +79,8 @@
 .lesson-picture img{display:block;width:100%;height:auto;border-radius:12px;background:#f1efe8}
 #study-reading .lesson-picture{margin:20px auto 0;max-width:560px;text-align:center}
 @media(max-width:700px){.lesson-picture{margin-left:32px}}
+
+/* Plain lessons (柏拉图学园): one bilingual passage per part, no study tools. */
+.plain-lesson #open-study,.plain-lesson .dictation-control,.plain-lesson .reading-hint,.plain-lesson #hide-second{display:none}
+.passage{padding:26px 0;border-bottom:1px solid var(--line)}
+@media(max-width:700px){.plain-lesson .header-right{grid-template-columns:repeat(2,1fr)}}

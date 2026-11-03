@@ -7,6 +7,7 @@ export const categories = [
   {id: 'story', title: {zh: '小说', en: 'Stories'}},
   {id: 'original', title: {zh: '自创', en: 'Original Writing'}},
   {id: 'journal', title: {zh: '周记', en: 'Weekly Journals'}},
+  {id: 'garden', title: {zh: '柏拉图学园', en: "Plato's Garden"}},
   {id: 'scripture', title: {zh: '圣经', en: 'Bible'}},
 ];
 
@@ -26,4 +27,5 @@ export const lessons = [
   {id: 'shuidiaogetou', category: 'poem', title: {zh: '水调歌头·明月几时有', en: 'Prelude to Water Melody · When Did the Bright Moon Appear?'}, load: () => import('./shuidiaogetou/index.js')},
   {id: 'responsible', category: 'original', title: {zh: '你是一个有责任感的人', en: 'You Are a Responsible Person'}, load: () => import('./responsible/index.js')},
   {id: 'weekly-journal-1', category: 'journal', title: {zh: '周记 · 第 1 期', en: 'Weekly Journal · No. 1'}, load: () => import('./weekly-journal-1/index.js')},
+  {id: 'plato-garden-1', category: 'garden', title: {zh: '柏拉图学园 · 第 1 周', en: "Plato's Garden · Week 1"}, load: () => import('./plato-garden-1/index.js')},
 ];

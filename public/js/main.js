@@ -294,6 +294,9 @@ function render() {
   $('flip-label').textContent = t('first_' + state.first);
   $('flip').lang = document.documentElement.lang;
   renderHide();
+  // A plain lesson has no 逐句学, cover or dictation; CSS hides their controls.
+  document.body.classList.toggle('plain-lesson', lesson.layout === 'plain');
+  if (lesson.layout === 'plain') state.dictation = false;
   $('complete-next').dataset.review = 'false';
   $('pinyin').checked = state.pinyin;
   $('dictation').checked = state.dictation;
@@ -432,10 +435,15 @@ $('play-section').onclick = () => {
     notify(t('englishNotLoadedSection'));
     return;
   }
-  audio.play(verses.flatMap(verse => [state.first, other(state.first)].map(lang => {
+  const languages = [state.first, other(state.first)];
+  // A plain lesson is read the way it is shown: the whole part in one language, then the other.
+  const order = state.lesson.layout === 'plain'
+    ? languages.flatMap(lang => verses.map(verse => [verse, lang]))
+    : verses.flatMap(verse => languages.map(lang => [verse, lang]));
+  audio.play(order.map(([verse, lang]) => {
     const text = lang === 'zh' ? verse.tokens.join('') : english.text(verse.id);
     return {text, lang, verseId: verse.id, where: t('whereVerse', {n: verse.n}), clip: app.clipFor(verse.id, 'whole', lang, text)};
-  })));
+  }));
 };
 $('pause').onclick = () => audio.togglePause();
 $('stop').onclick = () => audio.stop();
