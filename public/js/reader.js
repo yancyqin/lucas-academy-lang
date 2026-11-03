@@ -4,6 +4,7 @@ import {el, button, fill} from './tokens.js';
 import {t, pick} from './strings.js';
 import * as english from './english.js';
 import {illustrationFigure} from './illustrations.js';
+import {sentenceGames} from './sentence-games.js';
 
 const $ = id => document.getElementById(id);
 
@@ -96,15 +97,6 @@ export function createReader(app) {
     return row;
   }
 
-  // 用简单的话理解, in the reading order: the first language's line on top.
-  function explanation(verse) {
-    return [state.first, app.other(state.first)].map(lang => {
-      const p = el('p', '', verse.explain[lang]);
-      p.lang = lang === 'zh' ? 'zh-CN' : 'en';
-      return p;
-    });
-  }
-
   // A plain lesson (柏拉图学园) reads as one passage per language: the whole
   // part in the first language, then in the second, both shown, no study tools.
   function renderPassage(container) {
@@ -147,11 +139,12 @@ export function createReader(app) {
       if (illustration) content.append(illustration);
       if (!state.dictation) {
         const actions = el('div', 'verse-actions');
-        const detail = el('details', 'sentence-explain');
-        detail.append(el('summary', '', t('simpleWords')), ...explanation(verse));
+        const games = sentenceGames({zh: verse.tokens.join(''), en: english.text(verse.id),
+          title: `${pick(app.lesson().title)} · ${verse.n}`, first: state.first,
+          onOpen: () => app.audio.stop()});
         const learn = button(t('studyThis'), () => app.study.open(verse.id, learn), 'verse-study');
         learn.setAttribute('aria-label', t('studyThisLabel', {n: verse.n}));
-        actions.append(detail, learn);
+        actions.append(games, learn);
         content.append(actions);
       }
       row.append(content);
@@ -171,5 +164,5 @@ export function createReader(app) {
     document.querySelectorAll('.verse-group, .passage-sentence').forEach(node => node.classList.toggle('playing', node.dataset.verse === verseId));
   }
 
-  return {renderNav, renderVerses, markPlaying, explanation};
+  return {renderNav, renderVerses, markPlaying};
 }

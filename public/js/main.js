@@ -378,7 +378,6 @@ async function changeLesson(id) {
 reader = createReader(app);
 panel = createWordPanel(app);
 app.openWord = panel.open;
-app.explanation = reader.explanation;
 study = createStudy(app);
 app.study = study;
 

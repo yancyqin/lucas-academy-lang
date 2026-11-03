@@ -9,6 +9,7 @@ import * as english from './english.js';
 import {picture} from './wordpanel.js';
 import {illustrationFigure} from './illustrations.js';
 import {t, pick} from './strings.js';
+import {sentenceGames} from './sentence-games.js';
 
 const $ = id => document.getElementById(id);
 const other = lang => (lang === 'zh' ? 'en' : 'zh');
@@ -177,10 +178,11 @@ export function createStudy(app) {
     $('study-listen').disabled = !current.en;
     $('study-listen').textContent = t(mode === 'parts' ? 'listenBothPart' : 'listenBothVerse');
     $('study-retry').hidden = Boolean(current.en) || !english.problem(lesson, section);
-    $('study-explain-zh').textContent = verse().explain.zh;
-    $('study-explain-en').textContent = verse().explain.en;
+    $('study-games').replaceChildren(sentenceGames({zh: current.zh, en: current.en,
+      title: `${pick(lesson.title)} · ${where()}`, first,
+      onOpen: () => app.audio.stop()}));
     // Bilingual helper text follows the reading order too.
-    for (const id of ['study-explain-text', 'study-hint-text']) {
+    for (const id of ['study-hint-text']) {
       const box = $(id);
       box.append(box.querySelector(`[data-language="${first}"]`), box.querySelector(`[data-language="${other(first)}"]`));
     }
@@ -206,7 +208,6 @@ export function createStudy(app) {
   function move() {
     app.audio.stop();
     hideWord();
-    $('study-explain').open = false;
     $('study-notes').open = false;
     dialog.querySelector('.study-hint').open = false;
     render();
