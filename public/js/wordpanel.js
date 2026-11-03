@@ -2,7 +2,9 @@
 // on phones) and the wordbook. The study dialog shows words inside itself.
 import {el, button} from './tokens.js';
 import * as dictionary from './dictionary.js';
-import {t} from './strings.js';
+import {t, pick} from './strings.js';
+import * as english from './english.js';
+import {sentenceGames} from './sentence-games.js';
 
 const $ = id => document.getElementById(id);
 
@@ -72,10 +74,12 @@ export function createWordPanel(app) {
     body.append(actions);
     const figure = picture(info);
     if (figure) body.append(figure);
-    // A plain lesson's sentences have no 用简单的话理解 lines to show here.
-    if (verse?.explain) {
+    // A plain lesson (柏拉图学园) keeps to the passage: no sentence tools here.
+    if (verse && app.lesson().layout !== 'plain') {
       const context = el('div', 'panel-sentence');
-      context.append(el('span', 'overline', t('verseSimple', {n: verse.n})), ...app.explanation(verse));
+      context.append(sentenceGames({zh: verse.tokens.join(''), en: english.text(verse.id),
+        title: `${pick(app.lesson().title)} · ${verse.n}`, first: state.first,
+        onOpen: () => app.audio.stop()}));
       context.append(button(t('hearVerse'), () => app.readVerse(verse, lang)));
       body.append(context);
     }

@@ -1,0 +1,43 @@
+// Eleven owner-approved, anonymised first-person updates for Week 4.
+// Each unit: [English, segmented Chinese, 用简单的话理解, In simple words]
+const lines = [
+  ['When I grow up, I want to be a Rubik’s Cube solver.',
+    '长大/以后/，/我/想/成为/一名/魔方/玩家/。',
+    '我长大后，想成为研究和拼魔方的人。', 'When I am older, I want to solve Rubik’s Cubes.'],
+  ['When I grow up, I want to be an artist.',
+    '长大/以后/，/我/想/成为/一名/艺术家/。',
+    '我长大后，想做艺术创作。', 'When I am older, I want to make art.'],
+  ['When I grow up, I want to be a baker.',
+    '长大/以后/，/我/想/成为/一名/烘焙师/。',
+    '我长大后，想烘焙面包、蛋糕等食物。', 'When I am older, I want to bake food such as bread and cakes.'],
+  ['When I grow up, I want to be a barista.',
+    '长大/以后/，/我/想/成为/一名/咖啡师/。',
+    '我长大后，想学习制作咖啡。', 'When I am older, I want to make coffee.'],
+  ['I ate barbecue chicken, and I felt very happy.',
+    '我/吃/了/烤鸡/，/觉得/很/开心/。',
+    '我吃了烤鸡，心里很高兴。', 'I had barbecue chicken and felt happy.'],
+  ['I took care of my little sister.',
+    '我/照顾/了/妹妹/。',
+    '我关心妹妹，照料她。', 'I looked after my younger sister.'],
+  ['I ate Shin Ramyun that my dad made.',
+    '我/吃/了/爸爸/做/的/辛拉面/。',
+    '我吃了爸爸煮的辛拉面。', 'My dad cooked Shin Ramyun, and I ate it.'],
+  ['I hosted a birthday party.',
+    '我/办/了/一场/生日/聚会/。',
+    '我组织了一场庆祝生日的聚会。', 'I organised a party to celebrate a birthday.'],
+  ['On Saturday, I went to my friend’s house to play.',
+    '星期六/，/我/去/了/朋友/家/玩/。',
+    '星期六，我到朋友家一起玩。', 'I visited my friend’s home to play on Saturday.'],
+  ['Our washing machine is broken. I pray that God will help us get it fixed.',
+    '家/里/的/洗衣机/坏/了/，/我/祷告/求/神/帮助/我们/把/它/修好/。',
+    '家里的洗衣机不能用了，我求神帮助我们把它修好。', 'Our washing machine does not work. I ask God to help us get it repaired.'],
+  ['I pray that God will help my little brother stop attacking me.',
+    '我/祷告/，/求/神/帮助/弟弟/不再/攻击/我/。',
+    '我求神帮助弟弟停止攻击我。', 'I ask God to help my younger brother stop attacking me.'],
+];
+
+export const units = lines.map(([en, zh, explainZh, explainEn]) => ({
+  en,
+  tokens: zh.split('/'),
+  explain: {zh: explainZh, en: explainEn},
+}));

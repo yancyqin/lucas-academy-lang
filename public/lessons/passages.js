@@ -42,5 +42,6 @@ export function isAllowedPassage(chapter, first, last = first) {
   return ranges.some(([start, end]) => first >= start && last <= end);
 }
 
-// A section never holds more than seven verses, and neither does a request.
+// Scripture sections and requests hold at most seven verses. Bundled stories
+// may have longer sections because their text needs no scripture request.
 export const MAX_VERSES = 7;

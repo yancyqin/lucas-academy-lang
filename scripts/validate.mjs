@@ -99,12 +99,14 @@ for (const lesson of lessons) {
     if (lesson.verses.some(v => v.ref)) check(lesson.chineseSource?.startsWith('https://'), `${tag}: a lesson with scripture names its Chinese source`);
   }
 
-  // Sections: ≤ 7 verses, contiguous, covering every verse once.
+  // Sections are contiguous and cover every verse once. Bundled stories can
+  // have longer sections; scripture-bearing lessons keep the seven-verse cap.
   let next = 1;
   for (const s of lesson.sections) {
     check(s.range[0] === next, `${tag}: section ${s.id} should start at verse ${next}`);
     const size = s.range[1] - s.range[0] + 1;
-    check(size >= 1 && size <= MAX_VERSES, `${tag}: section ${s.id} has ${size} verses (max ${MAX_VERSES})`);
+    check(size >= 1, `${tag}: section ${s.id} needs at least one verse`);
+    if (lesson.kind !== 'story') check(size <= MAX_VERSES, `${tag}: section ${s.id} has ${size} verses (max ${MAX_VERSES})`);
     check(s.title?.zh && s.title?.en && s.intro?.zh && s.intro?.en, `${tag}: section ${s.id} needs a title and intro in both languages`);
     check(s.inClass === undefined || s.inClass === true, `${tag}: section ${s.id} marks inClass with true or not at all`);
     next = s.range[1] + 1;
