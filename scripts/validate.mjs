@@ -42,6 +42,7 @@ check(new Set(lessons.map(l => l.id)).size === lessons.length, 'duplicate lesson
 for (const lesson of lessons) {
   const tag = lesson.id;
   check(lesson.title?.zh && lesson.title?.en && lesson.reference?.zh && lesson.reference?.en, `${tag}: title and reference need both languages`);
+  check(lesson.layout === undefined || lesson.layout === 'plain', `${tag}: layout must be 'plain' or left out`);
   check(registry.find(e => e.id === tag)?.title?.en === lesson.title.en, `${tag}: registry title differs from the lesson`);
   // Verses: stable ids, numbered in order, text intact.
   const ids = lesson.verses.map(v => v.id);
@@ -52,7 +53,7 @@ for (const lesson of lessons) {
     check(lesson.kind === 'idioms' ? v.id.startsWith(`${lesson.id}.`) && /^[a-z0-9.-]+$/.test(v.id) : v.id === id,
       `${tag}: verse id ${v.id} needs a stable lesson id`);
     check(v.tokens.length && v.tokens.every(t => t.length), `${tag}: ${v.id} has an empty token`);
-    check(v.explain?.zh && v.explain?.en, `${tag}: ${v.id} needs both 用简单的话理解 lines`);
+    check(lesson.layout === 'plain' || (v.explain?.zh && v.explain?.en), `${tag}: ${v.id} needs both 用简单的话理解 lines`);
     check(v.angle === undefined || ['similar', 'opposite', 'related'].includes(v.angle), `${tag}: ${v.id} angle must be similar, opposite or related`);
   });
 
@@ -67,7 +68,7 @@ for (const lesson of lessons) {
     const fetchesScripture = lesson.kind === 'poems' || lesson.kind === 'idioms';
     check(lesson.kind === 'story' || fetchesScripture, `${tag}: a lesson without a passage must be a story, poems or idioms`);
     const {note, links} = lesson.sources || {};
-    const authored = ['original', 'journal'].includes(registry.find(e => e.id === tag)?.category);
+    const authored = ['original', 'journal', 'garden'].includes(registry.find(e => e.id === tag)?.category);
     check(note?.zh && note?.en && Array.isArray(links) && (authored || links.length > 0)
       && links.every(l => l.href?.startsWith('https://') && l.label?.zh && l.label?.en),
       `${tag}: a story names its sources or original authorship, in both languages`);
@@ -115,6 +116,11 @@ for (const lesson of lessons) {
   let clauseCount = 0;
   for (const v of lesson.verses) {
     const data = lesson.study[v.id];
+    // A plain lesson has no 逐句学, so no questions either.
+    if (lesson.layout === 'plain') {
+      check(!data, `${tag}: ${v.id} has study data, but a plain lesson has no 逐句学`);
+      continue;
+    }
     check(data?.question?.zh?.length > 5 && data?.question?.en?.length > 5, `${tag}: ${v.id} needs a bilingual question`);
     if (!data?.units) continue;
     check(/^[0-9a-f]{1,8}$/.test(data.hash || ''), `${tag}: ${v.id} needs the English fingerprint its alignment was checked on`);
@@ -196,7 +202,7 @@ for (const lesson of lessons) {
   if (!lesson.passage) {
     const english = new Set(lesson.verses.filter(v => v.en).flatMap(v => (v.en.match(ENGLISH_WORDS) || []).map(w => w.toLowerCase())));
     const glossed = [...english].filter(w => lesson.aliases[w] || englishBasic[w]).length;
-    if (lesson.kind === 'idioms' || ['original', 'journal'].includes(registry.find(e => e.id === tag)?.category)) check(glossed === english.size,
+    if (lesson.kind === 'idioms' || ['original', 'journal', 'garden'].includes(registry.find(e => e.id === tag)?.category)) check(glossed === english.size,
       `${tag}: every English word needs a Chinese meaning: ${[...english].filter(w => !lesson.aliases[w] && !englishBasic[w]).join(', ')}`);
     summary.push(`${lesson.title.zh}: ${glossed} of ${english.size} distinct English words have a Chinese meaning`);
   }

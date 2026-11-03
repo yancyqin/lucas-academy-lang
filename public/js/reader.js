@@ -105,10 +105,37 @@ export function createReader(app) {
     });
   }
 
+  // A plain lesson (柏拉图学园) reads as one passage per language: the whole
+  // part in the first language, then in the second, both shown, no study tools.
+  function renderPassage(container) {
+    for (const lang of [state.first, app.other(state.first)]) {
+      const row = el('article', 'language-line passage');
+      row.dataset.language = lang;
+      const tools = el('div', 'line-controls');
+      tools.append(el('span', 'lang-code', lang === 'zh' ? '中' : 'EN'));
+      const text = el('p', 'verse-text ' + lang);
+      text.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      app.verses().forEach((verse, i) => {
+        const words = lang === 'zh' ? verse.tokens.join('') : english.text(verse.id);
+        if (!words) return;
+        if (lang === 'en' && i) text.append(' ');
+        const sentence = el('span', 'passage-sentence');
+        sentence.dataset.verse = verse.id;
+        fill(sentence, {lang, text: words, tokens: verse.tokens}, app.tokenContext(),
+          (word, language, source) => app.openWord(word, language, verse, source));
+        text.append(sentence);
+      });
+      row.append(tools, text);
+      container.append(row);
+    }
+  }
+
   function renderVerses() {
     const container = $('verses');
     container.replaceChildren();
-    for (const verse of app.verses()) {
+    const plain = app.lesson().layout === 'plain';
+    if (plain) renderPassage(container);
+    for (const verse of plain ? [] : app.verses()) {
       const row = el('article', 'verse-group');
       row.dataset.verse = verse.id;
       row.append(el('span', 'verse-number', String(verse.n).padStart(2, '0')));
@@ -141,7 +168,7 @@ export function createReader(app) {
   }
 
   function markPlaying(verseId) {
-    document.querySelectorAll('.verse-group').forEach(node => node.classList.toggle('playing', node.dataset.verse === verseId));
+    document.querySelectorAll('.verse-group, .passage-sentence').forEach(node => node.classList.toggle('playing', node.dataset.verse === verseId));
   }
 
   return {renderNav, renderVerses, markPlaying, explanation};

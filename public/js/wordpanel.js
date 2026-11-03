@@ -72,7 +72,8 @@ export function createWordPanel(app) {
     body.append(actions);
     const figure = picture(info);
     if (figure) body.append(figure);
-    if (verse) {
+    // A plain lesson's sentences have no 用简单的话理解 lines to show here.
+    if (verse?.explain) {
       const context = el('div', 'panel-sentence');
       context.append(el('span', 'overline', t('verseSimple', {n: verse.n})), ...app.explanation(verse));
       context.append(button(t('hearVerse'), () => app.readVerse(verse, lang)));
