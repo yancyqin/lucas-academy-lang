@@ -64,7 +64,7 @@ export const words = [
   ['不一样', 'bù yí yàng', 'different', '两样东西有不同的地方。', null, ['different']],
   ['指了指', 'zhǐ le zhǐ', 'pointed', '用手指给别人看一下在哪里。', null, ['pointed']],
   ['脸颊', 'liǎn jiá', 'cheek', '鼻子两边的脸蛋。', null, ['cheeks']],
-  ['圆圆', 'yuán yuán', 'Yuanyuan', '故事里画了一个打哈欠的孩子的同学。', null, ['yuanyuan']],
+  ['圆圆', 'yuán yuán', 'Jennifer', '故事里画了一个打哈欠的孩子的同学。', null, ['jennifer']],
   ['打哈欠', 'dǎ hā qian', 'yawn', '困的时候，嘴巴张大吸一口气。', null, ['yawning']],
   ['以前', 'yǐ qián', 'before; used to', '现在之前。used to say 指以前常说或说过。', null, ['used']],
   ['说', 'shuō', 'say', '把心里想的话讲出来。', null, ['say']],
