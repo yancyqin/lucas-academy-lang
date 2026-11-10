@@ -148,9 +148,14 @@ for (const lesson of lessons) {
     clauseCount += data.units.length;
   }
 
-  // Every word in the text can be looked up, with pinyin.
+  // Every word can be looked up. Tokens containing Chinese characters need pinyin.
   const missing = new Set();
-  for (const v of lesson.verses) for (const t of v.tokens) if (isWord(t) && !lesson.dict[t]?.pinyin) missing.add(t);
+  for (const {tokens} of lesson.verses) {
+    for (const token of tokens) {
+      const entry = lesson.dict[token];
+      if (isWord(token) && (!entry || (/\p{Script=Han}/u.test(token) && !entry.pinyin))) missing.add(token);
+    }
+  }
   check(!missing.size, `${tag}: no dictionary entry or pinyin for ${[...missing].join(' ')}`);
   for (const [alias, zh] of Object.entries(lesson.aliases)) {
     check(lesson.dict[zh], `${tag}: English "${alias}" points at missing word ${zh}`);

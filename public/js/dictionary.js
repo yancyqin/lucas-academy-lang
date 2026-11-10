@@ -74,7 +74,7 @@ export function info(word, lang, lesson) {
   if (found) {
     return {
       word, lang,
-      pronunciation: `${found.zh} · ${found.entry.pinyin}`,
+      pronunciation: [found.zh, found.entry.pinyin].filter(Boolean).join(' · '),
       meaning: found.zh,
       explain: found.entry.meaningZh || '',
       picture: found.entry.concept ? pictures[found.entry.concept] || null : null,
