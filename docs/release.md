@@ -1,5 +1,19 @@
 # 发布与验收记录
 
+## 2026-11-09 · 柏拉图学园第 2 周《香蕉掉下来以后》
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | [柏拉图学园 · 第 2 周](https://lang.lucasacademy.org/?lesson=plato-garden-2) |
+| 发布源 | GitHub `main` 的 `ed0ce6ff8f4b4c10f9a0608c11cca8d024a082c3`，从该提交导出的快照发布 |
+| 部署版本 | `674e86d1-be3f-42ba-8185-ee3b63af80e0`，承接 100% 流量，使用 `--keep-vars` |
+| 变更 | 新增第 2 周双语故事和五道讨论题，使用课堂称呼，圆圆在英文版写作 Jennifer。新增 4 个静态资源，更新 2 个 |
+| 可回退版本 | `33eff625-fd27-4407-92cf-d3a1789597b5` |
+
+- `npm run validate`、`npm run check:scripture`、两项句子游戏测试、Wrangler dry-run 和发布前后的线上 `npm run check:english` 通过。
+- Chromium 在本地和正式网址核对了两种阅读顺序、完整正文、课堂称呼、点词释义、五道双语讨论题和 320px、375px 手机布局。第一周、《秋天》、《愚公移山》和周记第 2 期回归通过。
+- 发布前核对 125 个线上资源，发布后核对 130 个，均与对应发布源逐字节一致。发布快照、版本记录及验收结果保存在 `/Users/yqin/repo/playground/output/lang-plato-garden-2-20261109.aUTBHc/`。
+
 ## 2026-11-03 · 自创《秋天》
 
 | 项目 | 记录 |
