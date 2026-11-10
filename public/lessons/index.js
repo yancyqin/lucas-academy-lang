@@ -31,4 +31,5 @@ export const lessons = [
   {id: 'weekly-journal-2', category: 'journal', title: {zh: '周记 · 第 2 期', en: 'Weekly Journal · No. 2'}, load: () => import('./weekly-journal-2/index.js')},
   {id: 'weekly-journal-3', category: 'journal', title: {zh: '周记 · 第 3 期', en: 'Weekly Journal · No. 3'}, load: () => import('./weekly-journal-3/index.js')},
   {id: 'plato-garden-1', category: 'garden', title: {zh: '柏拉图学园 · 第 1 周', en: "Plato's Garden · Week 1"}, load: () => import('./plato-garden-1/index.js')},
+  {id: 'plato-garden-2', category: 'garden', title: {zh: '柏拉图学园 · 第 2 周', en: "Plato's Garden · Week 2"}, load: () => import('./plato-garden-2/index.js')},
 ];
