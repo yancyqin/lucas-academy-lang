@@ -320,7 +320,7 @@ export function createStudy(app) {
     open(verseId, source) {
       app.prepareStudy();
       opener = source;
-      verses = app.verses();
+      verses = app.studyVerses();
       index = Math.max(0, verses.findIndex(v => v.id === verseId));
       part = 0;
       mode = 'whole';

@@ -79,6 +79,8 @@ export const units = lines.map(([english, zh, explainZh, explainEn, angle]) => (
 
 `study.js`：每个单元一道问题 `{zh, en}`，和这句有关的生活小事；成语那一句问「你见过这样的事吗」一类，经文那一句把成语和经文连起来问。
 
+《愚公移山》小段使用 `layout: 'passage'`：按主人提供的文字整段阅读，先显示一种语言的标题、完整故事和成语含义，再显示另一种语言。`questions` 放两道总体讨论问题；故事没有逐句学习入口，词语仍可点击。经文继续独立显示，保留原文、录音和讨论问题，顶部「学经文」只进入本段的经文。原有单元 ID、经文与录音绑定保持稳定。
+
 `words.js`：课文里每一个中文词一条 `[词, pinyin, English gloss, 用简单的话解释, 图片概念或 null, [指向这个词的英文词]]`。`validate` 会报告有多少英文词能点出中文，目标是 100%：故事和经文的每个英文词，要么在 `aliases` 里，要么在 `english-basic.js` 里（常用小词可以加进去）。经文按 `WEB_ENGLISH` 的原句写 aliases；`scriptureAliases` 为英文词指向合适的中文词条，必要时新增带拼音的释义。`validate` 强制两辑覆盖 100%，`check:english` 再核对配音文本 hash。
 
 ## 检查

@@ -104,6 +104,7 @@ const app = {
   lesson: () => state.lesson,
   section: () => state.lesson.sections[state.section],
   verses: () => state.lesson.verses.filter(v => app.section().verseIds.includes(v.id)),
+  studyVerses: () => app.verses().filter(v => app.section().layout !== 'passage' || v.ref),
   isDone: section => Boolean(state.done[`${state.lesson.id}/${section.id}`]),
   // A lesson may mark the parts read with the teacher in class; then the rest are 选读.
   // A link's &parts= marks replace the lesson's own for this visit.
@@ -281,6 +282,10 @@ function render() {
   setReadingLanguage(state.first);
   setKind(lesson.kind);
   applyPage();
+  if (app.section().layout === 'passage') {
+    $('open-study').textContent = t('studyScripture');
+    document.querySelector('.reading-hint').textContent = t('passageReadingHint');
+  }
   renderMenus();
   reader.renderNav();
   $('lesson-title').textContent = pick(lesson.title);
@@ -296,7 +301,8 @@ function render() {
   renderHide();
   // A plain lesson has no 逐句学, cover or dictation; CSS hides their controls.
   document.body.classList.toggle('plain-lesson', lesson.layout === 'plain');
-  if (lesson.layout === 'plain') state.dictation = false;
+  document.body.classList.toggle('passage-section', app.section().layout === 'passage');
+  if (lesson.layout === 'plain' || app.section().layout === 'passage') state.dictation = false;
   $('complete-next').dataset.review = 'false';
   $('pinyin').checked = state.pinyin;
   $('dictation').checked = state.dictation;
@@ -436,7 +442,10 @@ $('play-section').onclick = () => {
   }
   const languages = [state.first, other(state.first)];
   // A plain lesson is read the way it is shown: the whole part in one language, then the other.
-  const order = state.lesson.layout === 'plain'
+  const order = app.section().layout === 'passage'
+    ? [...languages.flatMap(lang => verses.filter(v => !v.ref).map(verse => [verse, lang])),
+      ...verses.filter(v => v.ref).flatMap(verse => languages.map(lang => [verse, lang]))]
+    : state.lesson.layout === 'plain'
     ? languages.flatMap(lang => verses.map(verse => [verse, lang]))
     : verses.flatMap(verse => languages.map(lang => [verse, lang]));
   audio.play(order.map(([verse, lang]) => {
@@ -446,7 +455,7 @@ $('play-section').onclick = () => {
 };
 $('pause').onclick = () => audio.togglePause();
 $('stop').onclick = () => audio.stop();
-$('open-study').onclick = event => study.open(app.verses()[0].id, event.currentTarget);
+$('open-study').onclick = event => study.open(app.studyVerses()[0].id, event.currentTarget);
 
 // The reader's own recording: one take, kept on this device, never uploaded.
 function renderRecording() {

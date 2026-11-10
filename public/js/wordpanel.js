@@ -75,7 +75,7 @@ export function createWordPanel(app) {
     const figure = picture(info);
     if (figure) body.append(figure);
     // A plain lesson (柏拉图学园) keeps to the passage: no sentence tools here.
-    if (verse && app.lesson().layout !== 'plain') {
+    if (verse && app.lesson().layout !== 'plain' && (app.section().layout !== 'passage' || verse.ref)) {
       const context = el('div', 'panel-sentence');
       context.append(sentenceGames({zh: verse.tokens.join(''), en: english.text(verse.id),
         title: `${pick(app.lesson().title)} · ${verse.n}`, first: state.first,

@@ -26,6 +26,7 @@ export const lessons = [
   {id: 'count-the-stars', category: 'poem', title: {zh: '星星数得完吗？', en: 'Can You Count the Stars?'}, load: () => import('./count-the-stars/index.js')},
   {id: 'shuidiaogetou', category: 'poem', title: {zh: '水调歌头·明月几时有', en: 'Prelude to Water Melody · When Did the Bright Moon Appear?'}, load: () => import('./shuidiaogetou/index.js')},
   {id: 'responsible', category: 'original', title: {zh: '你是一个有责任感的人', en: 'You Are a Responsible Person'}, load: () => import('./responsible/index.js')},
+  {id: 'autumn', category: 'original', title: {zh: '秋天', en: 'Autumn'}, load: () => import('./autumn/index.js')},
   {id: 'weekly-journal-1', category: 'journal', title: {zh: '周记 · 第 1 期', en: 'Weekly Journal · No. 1'}, load: () => import('./weekly-journal-1/index.js')},
   {id: 'weekly-journal-2', category: 'journal', title: {zh: '周记 · 第 2 期', en: 'Weekly Journal · No. 2'}, load: () => import('./weekly-journal-2/index.js')},
   {id: 'weekly-journal-3', category: 'journal', title: {zh: '周记 · 第 3 期', en: 'Weekly Journal · No. 3'}, load: () => import('./weekly-journal-3/index.js')},

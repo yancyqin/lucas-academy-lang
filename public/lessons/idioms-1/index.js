@@ -26,6 +26,11 @@ const sections = [
   {id: '6-12', range: [6, 12], title: {zh: '守株待兔', en: 'Waiting by the stump'},
     intro: {zh: '出自《韩非子》。农夫捡到一只撞死的兔子，从此天天守着树桩。', en: 'From the Han Feizi: a farmer finds a rabbit that ran into a stump, and waits there ever after.'}},
   {id: '13-17', range: [13, 17], title: {zh: '愚公移山', en: 'Yugong moves the mountains'},
+    layout: 'passage',
+    questions: [
+      {zh: '愚公为什么不怕别人说他傻，还能坚持做这件事？', en: 'Why was Yugong not afraid of being called foolish, and how could he keep going?'},
+      {zh: '有什么事你做了很久才做成？', en: 'What took you a long time to finish?'},
+    ],
     intro: {zh: '出自《列子》。一位老人要把门前的两座大山挖走。', en: 'From the Liezi: an old man sets out to dig away the two mountains in front of his door.'}},
   {id: '18-24', range: [18, 22], title: {zh: '亡羊补牢', en: 'Mending the pen'},
     intro: {zh: '出自《战国策》。丢了羊，马上修好羊圈。', en: 'From the Strategies of the Warring States: a sheep is lost, and the pen is mended at once.'}},

@@ -109,6 +109,16 @@ for (const lesson of lessons) {
     if (lesson.kind !== 'story') check(size <= MAX_VERSES, `${tag}: section ${s.id} has ${size} verses (max ${MAX_VERSES})`);
     check(s.title?.zh && s.title?.en && s.intro?.zh && s.intro?.en, `${tag}: section ${s.id} needs a title and intro in both languages`);
     check(s.inClass === undefined || s.inClass === true, `${tag}: section ${s.id} marks inClass with true or not at all`);
+    check(s.layout === undefined || (s.layout === 'passage' && lesson.kind === 'idioms'), `${tag}: section ${s.id} passage layout is for an idiom story with scripture`);
+    if (s.questions !== undefined) {
+      check((lesson.layout === 'plain' || s.layout === 'passage') && Array.isArray(s.questions) && s.questions.length > 0
+        && s.questions.every(q => q.zh?.length > 5 && q.en?.length > 5), `${tag}: section ${s.id} needs bilingual passage questions`);
+    }
+    if (s.layout === 'passage') {
+      const verses = lesson.verses.filter(v => v.n >= s.range[0] && v.n <= s.range[1]);
+      check(verses.filter(v => !v.ref).length >= 2 && verses.some(v => v.ref), `${tag}: section ${s.id} needs an idiom title, story and scripture`);
+      check(s.questions?.length > 0 && s.questions.every(q => q.zh?.length > 5 && q.en?.length > 5), `${tag}: section ${s.id} needs bilingual story questions`);
+    }
     next = s.range[1] + 1;
   }
   check(next === lesson.verses.length + 1, `${tag}: sections do not cover every verse`);

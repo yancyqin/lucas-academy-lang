@@ -97,7 +97,7 @@ export function createReader(app) {
     return row;
   }
 
-  // A plain lesson (柏拉图学园) reads as one passage per language: the whole
+  // A plain lesson reads as one passage per language: the whole
   // part in the first language, then in the second, both shown, no study tools.
   function renderPassage(container) {
     for (const lang of [state.first, app.other(state.first)]) {
@@ -122,12 +122,67 @@ export function createReader(app) {
     }
   }
 
+  function renderQuestions(container, questions, title) {
+    const discussion = el('section', 'discussion passage-discussion');
+    discussion.append(el('h3', '', title));
+    for (const question of questions) {
+      const item = el('div', 'question');
+      for (const lang of [state.first, app.other(state.first)]) {
+        const text = el('p', '', question[lang]);
+        text.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        item.append(text);
+      }
+      discussion.append(item);
+    }
+    container.append(discussion);
+  }
+
+  // Read the idiom and its story together, then discuss the whole story.
+  // Scripture keeps its own reading, recording and discussion below it.
+  function renderIdiomPassage(container) {
+    const [title, ...story] = app.verses().filter(verse => !verse.ref);
+    for (const lang of [state.first, app.other(state.first)]) {
+      const row = el('article', 'language-line passage idiom-passage');
+      row.dataset.language = lang;
+      const label = el('div', 'line-controls');
+      label.append(el('span', 'lang-code', lang === 'zh' ? '中' : 'EN'));
+      const content = el('div');
+      const heading = el('h3', 'passage-sentence');
+      heading.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      heading.dataset.verse = title.id;
+      fill(heading, {lang, text: lang === 'zh' ? title.tokens.join('') : english.text(title.id), tokens: title.tokens}, app.tokenContext(),
+        (word, language, source) => app.openWord(word, language, title, source));
+      const text = el('p', 'verse-text ' + lang);
+      text.lang = heading.lang;
+      story.forEach((verse, i) => {
+        if (lang === 'en' && i) text.append(' ');
+        const sentence = el('span', 'passage-sentence');
+        sentence.dataset.verse = verse.id;
+        fill(sentence, {lang, text: lang === 'zh' ? verse.tokens.join('') : english.text(verse.id), tokens: verse.tokens}, app.tokenContext(),
+          (word, language, source) => app.openWord(word, language, verse, source));
+        text.append(sentence);
+      });
+      const meaning = el('p', 'idiom-meaning', title.explain[lang]);
+      meaning.lang = heading.lang;
+      content.append(heading, text, meaning);
+      row.append(label, content);
+      container.append(row);
+    }
+    const illustration = illustrationFigure(app.lesson().id, title.id);
+    if (illustration) container.append(illustration);
+    renderQuestions(container, app.section().questions, t('passageDiscussion'));
+    container.append(el('h3', 'scripture-heading', t('scriptureReading')));
+  }
+
   function renderVerses() {
     const container = $('verses');
     container.replaceChildren();
     const plain = app.lesson().layout === 'plain';
+    const passage = app.section().layout === 'passage';
     if (plain) renderPassage(container);
-    for (const verse of plain ? [] : app.verses()) {
+    if (plain && app.section().questions) renderQuestions(container, app.section().questions, t('readingDiscussion'));
+    if (passage) renderIdiomPassage(container);
+    for (const verse of plain ? [] : passage ? app.studyVerses() : app.verses()) {
       const row = el('article', 'verse-group');
       row.dataset.verse = verse.id;
       row.append(el('span', 'verse-number', String(verse.n).padStart(2, '0')));
@@ -149,6 +204,7 @@ export function createReader(app) {
       }
       row.append(content);
       container.append(row);
+      if (passage) renderQuestions(container, [app.lesson().study[verse.id].question], t('scriptureDiscussion'));
     }
     if (app.playingVerse) markPlaying(app.playingVerse);
 
