@@ -1,5 +1,12 @@
 # 发布与验收记录
 
+## 2026-11-19 · 课程表第 6 周
+
+- [第 6 周课程](https://lang.lucasacademy.org/class?w=6) 仅安排《柏拉图学园 · 第 3 周》，课程表默认打开这一期。
+- 发布提交 2c0334a，部署版本 782ace60-9db2-4a95-9daf-ecec7054feae，使用 --keep-vars，上传 1 个课程表资源。
+- 课文校验通过。Chromium 在线核验单篇课程卡片、默认周、双语切换、手机布局及进入课文后的三道讨论题。
+- 发布快照和验收记录位于 /Users/yqin/repo/playground/output/lang-class-week6-20261119.P9qhcx/。
+
 ## 2026-11-19 · 柏拉图学园第 3 周《Bella 想先学做一样》
 
 | 项目 | 记录 |
