@@ -1,5 +1,19 @@
 # 发布与验收记录
 
+## 2026-11-19 · 柏拉图学园第 3 周《Bella 想先学做一样》
+
+| 项目 | 记录 |
+| --- | --- |
+| 网站 | [柏拉图学园 · 第 3 周](https://lang.lucasacademy.org/?lesson=plato-garden-3) |
+| 发布源 | GitHub main 的 b0ee16d |
+| 部署版本 | 3ff7a5d5-dc86-4be4-ac10-cbb07fa7617e，承接 100% 流量，使用 --keep-vars |
+| 内容 | PDF 提案中的四段短文及三道讨论题，提供中英文正文和点词释义。新增 4 个资源，更新课文分类入口 |
+| 可回退版本 | c41ccdf7-fc4d-47fb-a7d9-fd183070bd6c |
+
+- 课文校验通过，68 个英文词均可点开释义。线上逐字节核对 5 个新增或更新资源。
+- Chromium 在线核验双语全文、三道讨论题、点词释义、分类入口和 320px、375px 布局，第 2 周入口回归通过。
+- 发布快照、部署日志和验收结果位于 /Users/yqin/repo/playground/output/lang-plato-garden-3-20261119.QGoto3/。
+
 ## 2026-11-10 · 柏拉图学园第 2 周《Ethan 想造一座桥》
 
 | 项目 | 记录 |
