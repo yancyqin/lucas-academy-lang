@@ -33,4 +33,7 @@ export const weeks = [
   {grade: 3, n: 5,
     title: {zh: '周记 · 第 3 期', en: 'Weekly Journal · No. 3'},
     readings: [{lesson: 'weekly-journal-3'}]},
+  {grade: 3, n: 6,
+    title: {zh: 'Bella 想先学做一样', en: 'Bella Wants to Learn One Thing First'},
+    readings: [{lesson: 'plato-garden-3'}]},
 ];
